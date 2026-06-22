@@ -1,9 +1,9 @@
 const work = [
   {
     title: "DynNav",
-    meta: "Risk-aware robotic navigation · 2025–Present",
+    meta: "Independent Research Project · DUTH · 2025–Present",
     text:
-      "A ROS2-based research framework for navigation in dynamic environments. The work explores CVaR-based risk-aware planning, multi-agent coordination, reinforcement-learning rerouting, and simulation analytics through Streamlit and Plotly.",
+      "DynNav is an independent research project developed under academic supervision at the Democritus University of Thrace. The project explores risk-aware navigation in dynamic environments through ROS2-based experimentation, reinforcement learning, multi-agent coordination, and adaptive decision-making methods under uncertainty.",
     tech: ["ROS2", "Python", "CVaR", "Reinforcement Learning", "Plotly"],
     link: "https://github.com/PanagiotaGr",
   },
