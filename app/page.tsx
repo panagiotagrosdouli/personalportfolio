@@ -2,17 +2,29 @@ const projects = [
   {
     title: "DynNav",
     category: "Autonomous Navigation",
+    status: "Research project",
     desc: "Dynamic rerouting for robots operating in unknown or changing environments, with emphasis on safe decisions under uncertainty.",
+    impact: "Focus: path planning, uncertainty, adaptive navigation.",
+    tech: ["Robotics", "Path Planning", "Optimization"],
+    github: "https://github.com/panagiotagrosdouli",
   },
   {
     title: "Trajectory Prediction",
     category: "Intelligent Transportation",
+    status: "Machine learning project",
     desc: "Prediction models for vulnerable road users in autonomous driving scenarios, connecting machine learning with mobility safety.",
+    impact: "Focus: motion forecasting, risk-aware mobility, data-driven prediction.",
+    tech: ["Machine Learning", "Computer Vision", "Python"],
+    github: "https://github.com/panagiotagrosdouli",
   },
   {
     title: "AI Decision Systems",
     category: "Research Systems",
+    status: "AI systems project",
     desc: "Planning and reasoning pipelines that combine prediction, optimization, and interpretable control decisions.",
+    impact: "Focus: decision-making, explainability, intelligent control.",
+    tech: ["AI", "Planning", "Uncertainty"],
+    github: "https://github.com/panagiotagrosdouli",
   },
 ];
 
@@ -63,7 +75,7 @@ export default function Home() {
 
           <div className="mt-10 flex flex-wrap gap-4">
             <a href="#projects" className="rounded-full bg-cyan-300 px-8 py-4 font-semibold text-slate-950 transition hover:-translate-y-1 hover:bg-cyan-200">
-              Explore Projects
+              View Case Studies
             </a>
 
             <a href="https://github.com/panagiotagrosdouli" target="_blank" rel="noreferrer" className="rounded-full border border-white/20 px-8 py-4 font-semibold transition hover:-translate-y-1 hover:bg-white/10">
@@ -73,10 +85,10 @@ export default function Home() {
         </div>
 
         <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-6 backdrop-blur-xl">
-          <p className="text-sm uppercase tracking-[0.35em] text-cyan-300">Focus</p>
-          <h2 className="mt-4 text-3xl font-bold">Engineering intelligent systems that move, predict, and adapt.</h2>
+          <p className="text-sm uppercase tracking-[0.35em] text-cyan-300">Portfolio standard</p>
+          <h2 className="mt-4 text-3xl font-bold">Professional project presentation, not just a simple list.</h2>
           <div className="mt-8 grid gap-4">
-            {["ECE background", "AI research direction", "Robotics application area"].map((item) => (
+            {["Problem-driven project cards", "GitHub link per project", "Clear research and technical focus"].map((item) => (
               <div key={item} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5 text-slate-300">
                 {item}
               </div>
@@ -103,17 +115,36 @@ export default function Home() {
       </section>
 
       <section id="projects" className="relative z-10 mx-auto max-w-7xl px-6 py-24">
-        <div className="mb-12">
-          <p className="text-sm uppercase tracking-[0.4em] text-cyan-300">Selected Work</p>
-          <h2 className="mt-4 text-4xl font-bold">Research & Projects</h2>
+        <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div>
+            <p className="text-sm uppercase tracking-[0.4em] text-cyan-300">Selected Work</p>
+            <h2 className="mt-4 text-4xl font-bold">Project Case Studies</h2>
+          </div>
+          <p className="max-w-xl text-slate-400">
+            Each card presents the project like a professional portfolio item: context, technical focus, tools, and a direct GitHub link.
+          </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-3">
           {projects.map((project) => (
-            <article key={project.title} className="group rounded-3xl border border-white/10 bg-white/[0.055] p-8 backdrop-blur-xl transition hover:-translate-y-2 hover:border-cyan-300/60">
-              <p className="text-sm font-medium text-cyan-300">{project.category}</p>
-              <h3 className="mt-4 text-2xl font-bold text-white">{project.title}</h3>
+            <article key={project.title} className="group flex min-h-full flex-col rounded-3xl border border-white/10 bg-white/[0.055] p-8 backdrop-blur-xl transition hover:-translate-y-2 hover:border-cyan-300/60">
+              <div className="flex items-center justify-between gap-4">
+                <p className="text-sm font-medium text-cyan-300">{project.category}</p>
+                <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-300">{project.status}</span>
+              </div>
+              <h3 className="mt-5 text-2xl font-bold text-white">{project.title}</h3>
               <p className="mt-4 leading-7 text-slate-300">{project.desc}</p>
+              <p className="mt-4 text-sm leading-6 text-slate-400">{project.impact}</p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {project.tech.map((item) => (
+                  <span key={item} className="rounded-full bg-cyan-300/10 px-3 py-1 text-xs text-cyan-100">
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <a href={project.github} target="_blank" rel="noreferrer" className="mt-8 inline-flex w-fit rounded-full border border-cyan-300/30 px-5 py-3 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-300 hover:text-slate-950">
+                View on GitHub
+              </a>
             </article>
           ))}
         </div>
