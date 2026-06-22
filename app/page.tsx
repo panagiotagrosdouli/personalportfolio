@@ -13,6 +13,19 @@ const projects = [
     github: "https://github.com/PanagiotaGr",
   },
   {
+    title: "EYLO AI",
+    category: "Applied AI Product",
+    status: "AI project",
+    problem:
+      "Designing an intelligent assistant-style AI system that turns user needs into a structured, usable digital experience.",
+    method:
+      "Product-oriented AI development with emphasis on user interaction, clear information flow, and practical automation logic.",
+    outcome:
+      "Presented as a portfolio project that shows initiative in building AI tools beyond coursework and research prototypes.",
+    tech: ["Artificial Intelligence", "Product Design", "Automation", "Web App"],
+    github: "https://github.com/PanagiotaGr",
+  },
+  {
     title: "Trajectory Prediction of Vulnerable Road Users",
     category: "Autonomous Driving Thesis",
     status: "Diploma Thesis",
@@ -121,6 +134,7 @@ export default function Home() {
             {[
               ["Thesis", "Trajectory prediction at smart intersections"],
               ["Framework", "DynNav risk-aware robotic navigation"],
+              ["AI Product", "EYLO AI intelligent assistant project"],
               ["Internship", "Robotics & computer vision at OZZIE Robotics"],
             ].map(([label, value]) => (
               <div key={label} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
@@ -160,7 +174,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2">
           {projects.map((project) => (
             <article key={project.title} className="group flex min-h-full flex-col rounded-3xl border border-white/10 bg-white/[0.055] p-8 backdrop-blur-xl transition hover:-translate-y-2 hover:border-cyan-300/60 hover:bg-white/[0.08]">
               <div className="flex items-center justify-between gap-4">
