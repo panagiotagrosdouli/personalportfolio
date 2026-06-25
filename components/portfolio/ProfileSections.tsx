@@ -13,7 +13,7 @@ export function Experience() {
           <h3 className="mt-4 text-3xl font-semibold tracking-tight text-stone-950">OZZIE Robotics</h3>
           <p className="mt-2 text-sm text-stone-500">Jul–Aug 2025</p>
           <p className="mt-5 max-w-3xl text-base leading-8 text-stone-700">
-            Developed perception pipelines and contributed to robotic vision systems in an applied engineering environment.
+            Worked on perception pipelines and robotic vision systems in an applied engineering environment. This experience strengthened my interest in the connection between perception, autonomy, and safe decision making for robotic systems.
           </p>
         </article>
       </div>
@@ -25,8 +25,8 @@ export function Skills() {
   return (
     <section id="skills" className="bg-[#f8f6f0] px-6 py-12 md:px-10 lg:px-12">
       <div className="mx-auto max-w-7xl">
-        <p className="section-kicker">Technical Profile</p>
-        <h2 className="mt-3 font-serif text-4xl tracking-[-0.035em] text-stone-950 md:text-5xl">Skills</h2>
+        <p className="section-kicker">Research Toolkit</p>
+        <h2 className="mt-3 font-serif text-4xl tracking-[-0.035em] text-stone-950 md:text-5xl">Tools I use to investigate autonomous systems</h2>
         <div className="mt-8 grid gap-5 lg:grid-cols-3">
           {skillGroups.map((group) => (
             <article key={group.title} className="rounded-sm border border-stone-200 bg-white/84 p-7 shadow-[0_26px_80px_-66px_rgba(28,25,23,0.72)]">
@@ -78,7 +78,7 @@ export function Education() {
           <article className="rounded-sm border border-stone-200 bg-white/84 p-7 shadow-[0_26px_80px_-66px_rgba(28,25,23,0.72)]">
             <h3 className="text-2xl font-semibold tracking-tight text-stone-950">Electrical & Computer Engineering</h3>
             <p className="mt-2 text-sm text-stone-500">Democritus University of Thrace · 2020–2026</p>
-            <p className="mt-5 leading-8 text-stone-700">Diploma thesis on trajectory prediction of vulnerable road users at smart intersections.</p>
+            <p className="mt-5 leading-8 text-stone-700">Expected graduation: 2026. Diploma thesis on trajectory prediction of vulnerable road users at smart intersections.</p>
           </article>
           <article className="rounded-sm border border-stone-200 bg-white/84 p-7 shadow-[0_26px_80px_-66px_rgba(28,25,23,0.72)]">
             <h3 className="text-2xl font-semibold tracking-tight text-stone-950">Artificial Intelligence for Robotics</h3>
