@@ -1,33 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Panagiota Grosdouli | Robotics, AI & Autonomous Systems",
+  title: "Panagiota Grosdouli | Trajectory Prediction & Autonomous Systems",
   description:
-    "Research portfolio of Panagiota Grosdouli, Electrical & Computer Engineering student working on robotics, autonomous navigation, vulnerable road user trajectory prediction, ROS2, reinforcement learning, and computer vision.",
-  keywords: [
-    "Panagiota Grosdouli",
-    "Robotics",
-    "Artificial Intelligence",
-    "Autonomous Systems",
-    "ROS2",
-    "Reinforcement Learning",
-    "Trajectory Prediction",
-    "Computer Vision",
-    "Autonomous Driving",
-    "Electrical and Computer Engineering",
-  ],
+    "Personal research homepage focused on trajectory prediction, autonomous systems, risk-aware navigation, robotics, and intelligent transportation.",
   authors: [{ name: "Panagiota Grosdouli" }],
 };
 
@@ -39,7 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
+      className={`${inter.variable} ${cormorant.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
