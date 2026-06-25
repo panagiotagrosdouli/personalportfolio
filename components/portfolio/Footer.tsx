@@ -13,10 +13,11 @@ export function Footer() {
             Research at the intersection of prediction, autonomy, and safety.
           </h2>
           <p className="mt-6 max-w-3xl text-base leading-8 text-stone-650 md:text-lg">
-            Open to PhD opportunities, research internships, and collaborations related to robotics, autonomous systems, machine learning, and intelligent transportation.
+            I welcome conversations about PhD opportunities, research internships, and collaborations related to robotics, autonomous systems, machine learning, and intelligent transportation.
           </p>
           <div className="mt-8 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.16em]">
-            <a href="mailto:panagiota.grosdouli@gmail.com" className="rounded-full border border-stone-300 bg-white px-5 py-3 text-stone-800 transition hover:border-emerald-900 hover:text-emerald-950">Email</a>
+            <a href="mailto:panagros1@ee.duth.gr" className="rounded-full border border-emerald-950 bg-emerald-950 px-5 py-3 text-white transition hover:bg-stone-950">Academic Email</a>
+            <a href="mailto:panagiotagrosdouli@gmail.com" className="rounded-full border border-stone-300 bg-white px-5 py-3 text-stone-800 transition hover:border-emerald-900 hover:text-emerald-950">Personal Email</a>
             <a href="https://github.com/PanagiotaGr" target="_blank" rel="noreferrer" className="rounded-full border border-stone-300 bg-white px-5 py-3 text-stone-800 transition hover:border-emerald-900 hover:text-emerald-950">GitHub</a>
             <a href="https://www.linkedin.com/in/panagiota-grosdouli-b468b0201/" target="_blank" rel="noreferrer" className="rounded-full border border-stone-300 bg-white px-5 py-3 text-stone-800 transition hover:border-emerald-900 hover:text-emerald-950">LinkedIn</a>
           </div>
