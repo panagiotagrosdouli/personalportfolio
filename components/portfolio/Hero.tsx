@@ -8,13 +8,13 @@ const contactLinks = [
 
 export function Hero() {
   return (
-    <section id="top" className="relative min-h-screen overflow-hidden bg-[#12150f] text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_24%,rgba(74,124,89,0.24),transparent_30%),linear-gradient(90deg,rgba(0,0,0,0.82),rgba(0,0,0,0.45),rgba(0,0,0,0.18))]" />
+    <section id="top" className="relative min-h-screen overflow-hidden bg-[#11130f] text-white">
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.86),rgba(0,0,0,0.55),rgba(0,0,0,0.20))]" />
       <div
         className="absolute inset-y-0 right-0 hidden w-[48%] bg-cover bg-center opacity-95 lg:block"
         style={{
           backgroundImage:
-            "linear-gradient(90deg,rgba(18,21,15,0.18),rgba(18,21,15,0.06)), url('/profile.png')",
+            "linear-gradient(90deg,rgba(17,19,15,0.20),rgba(17,19,15,0.04)), url('/profile.png')",
         }}
       />
       <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col px-6 md:px-10 lg:px-12">
@@ -39,10 +39,10 @@ export function Hero() {
             </h1>
             <div className="mt-9 h-px w-16 bg-emerald-300" />
             <p className="mt-7 max-w-2xl text-2xl font-semibold uppercase leading-snug tracking-[0.22em] text-emerald-100 md:text-3xl">
-              Autonomous Systems<br />Trajectory Prediction<br />Risk-Aware Navigation
+              Trajectory Prediction<br />Autonomous Systems<br />Risk-Aware Navigation
             </p>
             <p className="mt-7 max-w-xl text-lg leading-9 text-white/76">
-              Investigating how intelligent systems predict motion, reason under uncertainty, and make safer decisions in dynamic environments.
+              I study how intelligent systems predict human motion, reason under uncertainty, and make safer decisions in dynamic environments.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
@@ -55,12 +55,12 @@ export function Hero() {
 
             <div className="mt-10 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.16em]">
               {contactLinks.map((link) => (
-                <a key={link.label} href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" className="rounded-full border border-white/18 px-5 py-3 text-white/88 transition hover:-translate-y-0.5 hover:border-emerald-200 hover:text-emerald-100">
+                <a key={link.label} href={link.href} target={link.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="rounded-full border border-white/18 px-5 py-3 text-white/88 transition hover:-translate-y-0.5 hover:border-emerald-200 hover:text-emerald-100">
                   {link.label}
                 </a>
               ))}
               <a href="#research" className="rounded-full border border-emerald-200 bg-emerald-100 px-5 py-3 text-emerald-950 transition hover:-translate-y-0.5 hover:bg-white">
-                Research
+                Current Research
               </a>
             </div>
           </div>
@@ -70,7 +70,7 @@ export function Hero() {
               className="h-[440px] border border-white/12 bg-cover bg-center shadow-[0_30px_100px_-70px_rgba(0,0,0,0.95)]"
               style={{
                 backgroundImage:
-                  "linear-gradient(180deg,rgba(18,21,15,0.03),rgba(18,21,15,0.16)), url('/profile.png')",
+                  "linear-gradient(180deg,rgba(17,19,15,0.03),rgba(17,19,15,0.16)), url('/profile.png')",
               }}
             />
           </div>
