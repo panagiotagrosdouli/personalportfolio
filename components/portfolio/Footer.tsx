@@ -1,17 +1,16 @@
 export function Footer() {
   return (
-    <footer id="contact" className="relative overflow-hidden bg-[#12150f] px-6 py-12 text-white md:px-10 lg:px-12">
-      <div className="absolute bottom-0 left-6 hidden text-7xl opacity-90 md:block" aria-hidden="true">
-        🐈‍⬛
-      </div>
-      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[0.45fr_0.55fr] md:items-end">
-        <div className="md:pl-28">
-          <p className="text-sm font-medium text-white/55">Thanks for stopping by.</p>
-          <p className="mt-2 text-xs uppercase tracking-[0.26em] text-emerald-200/80">Academic research portfolio</p>
+    <footer id="contact" className="bg-[#11130f] px-6 py-20 text-white md:px-10 lg:px-12">
+      <div className="mx-auto grid max-w-7xl gap-10 border-t border-white/10 pt-12 md:grid-cols-[0.38fr_0.62fr] md:items-end">
+        <div>
+          <p className="font-serif text-3xl tracking-tight text-white">Panagiota Grosdouli</p>
+          <p className="mt-3 text-xs uppercase tracking-[0.26em] text-emerald-200/80">
+            Trajectory Prediction · Autonomous Systems
+          </p>
         </div>
         <div>
           <h2 className="font-serif text-4xl leading-tight tracking-[-0.04em] md:text-6xl">
-            Interested in autonomous systems, trajectory prediction, and research collaborations.
+            Interested in research at the intersection of prediction, autonomy, and safety.
           </h2>
           <p className="mt-6 max-w-3xl text-base leading-8 text-white/68 md:text-lg">
             Open to research internships, graduate opportunities, and engineering collaborations related to robotics, autonomous systems, machine learning, and intelligent transportation.
