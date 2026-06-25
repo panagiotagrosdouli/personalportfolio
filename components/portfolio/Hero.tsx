@@ -1,7 +1,7 @@
 import { researchInterests } from "@/data/portfolio";
 
 const contactLinks = [
-  { label: "Email", href: "mailto:panagiota.grosdouli@gmail.com" },
+  { label: "Academic Email", href: "mailto:panagros1@ee.duth.gr" },
   { label: "GitHub", href: "https://github.com/PanagiotaGr" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/panagiota-grosdouli-b468b0201/" },
 ];
@@ -16,7 +16,7 @@ export function Hero() {
           <div className="hidden items-center gap-8 md:flex">
             <a href="#research" className="transition hover:text-emerald-900">Research</a>
             <a href="#experience" className="transition hover:text-emerald-900">Experience</a>
-            <a href="#skills" className="transition hover:text-emerald-900">Skills</a>
+            <a href="#skills" className="transition hover:text-emerald-900">Toolkit</a>
             <a href="#notes" className="transition hover:text-emerald-900">Notes</a>
             <a href="#contact" className="transition hover:text-emerald-900">Contact</a>
           </div>
@@ -28,12 +28,19 @@ export function Hero() {
               Panagiota Grosdouli
             </p>
             <h1 className="mt-6 max-w-5xl font-serif text-6xl leading-[0.9] tracking-[-0.06em] text-stone-950 md:text-8xl lg:text-9xl">
-              Trajectory prediction for autonomous systems.
+              Predicting human motion for safer autonomous systems.
             </h1>
             <div className="mt-9 h-px w-20 bg-emerald-900" />
-            <p className="mt-7 max-w-2xl text-xl font-semibold uppercase leading-snug tracking-[0.18em] text-emerald-950 md:text-2xl">
-              Autonomous Systems · Risk-Aware Navigation · Robotics
-            </p>
+            <div className="mt-7 grid gap-5 text-stone-700 md:grid-cols-2">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-stone-400">Academic profile</p>
+                <p className="mt-2 text-base leading-7">Electrical & Computer Engineering<br />Democritus University of Thrace</p>
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-stone-400">Research interests</p>
+                <p className="mt-2 text-base leading-7">Trajectory Prediction · Autonomous Systems · Intelligent Transportation</p>
+              </div>
+            </div>
             <p className="mt-7 max-w-2xl text-lg leading-9 text-stone-650 md:text-xl md:leading-10">
               I study how intelligent systems predict human motion, reason under uncertainty, and make safer decisions in dynamic environments.
             </p>
