@@ -23,28 +23,36 @@ export function FeaturedHome() {
   return (
     <section className="bg-[#fbfaf7] px-6 py-20 md:px-10 lg:px-12">
       <div className="mx-auto max-w-7xl">
-        <div className="flex flex-col justify-between gap-6 border-t border-stone-200 pt-10 md:flex-row md:items-end">
+        <div className="grid gap-8 border-t border-stone-200 pt-12 lg:grid-cols-[0.4fr_0.6fr] lg:items-end">
           <div>
             <p className="section-kicker">Featured Work</p>
-            <h2 className="mt-4 max-w-3xl font-serif text-5xl leading-[0.92] tracking-[-0.05em] text-stone-950 md:text-7xl">
-              Three threads: prediction, estimation, and risk-aware robotics.
+            <h2 className="mt-4 font-serif text-5xl leading-[0.92] tracking-[-0.05em] text-stone-950 md:text-7xl">
+              Prediction, estimation, and risk-aware robotics.
             </h2>
           </div>
-          <a href="/projects" className="text-sm font-medium text-emerald-900 underline decoration-emerald-900/25 underline-offset-4 transition hover:decoration-emerald-950">
-            View all projects →
-          </a>
+          <div>
+            <p className="max-w-3xl text-lg leading-9 text-stone-700">
+              A small selection of work that best reflects my research direction in safe autonomous systems.
+            </p>
+            <a href="/projects" className="mt-6 inline-block text-sm font-medium text-emerald-900 underline decoration-emerald-900/25 underline-offset-4 transition hover:decoration-emerald-950">
+              View all projects →
+            </a>
+          </div>
         </div>
 
-        <div className="mt-10 grid gap-10 lg:grid-cols-3">
-          {featured.map((item, index) => (
-            <a key={item.title} href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="group border-t border-stone-300 pt-6 transition hover:border-emerald-900">
-              <p className="font-serif text-5xl tracking-[-0.05em] text-stone-300">0{index + 1}</p>
-              <h3 className="mt-6 font-serif text-4xl leading-none tracking-[-0.04em] text-stone-950">{item.title}</h3>
-              <p className="mt-3 text-sm font-medium uppercase tracking-[0.18em] text-emerald-900">{item.subtitle}</p>
-              <p className="mt-5 text-base leading-8 text-stone-700">{item.description}</p>
-              <p className="mt-6 text-sm font-medium text-emerald-900 underline decoration-emerald-900/25 underline-offset-4 group-hover:decoration-emerald-950">
-                Open →
-              </p>
+        <div className="mt-12 divide-y divide-stone-200 border-y border-stone-200">
+          {featured.map((item) => (
+            <a key={item.title} href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="group grid gap-6 py-8 transition hover:bg-white/50 md:grid-cols-[0.32fr_0.68fr] md:px-4">
+              <div>
+                <h3 className="font-serif text-4xl leading-none tracking-[-0.04em] text-stone-950 md:text-5xl">{item.title}</h3>
+                <p className="mt-3 text-sm font-medium uppercase tracking-[0.18em] text-emerald-900">{item.subtitle}</p>
+              </div>
+              <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+                <p className="max-w-2xl text-base leading-8 text-stone-700">{item.description}</p>
+                <span className="shrink-0 text-sm font-medium text-emerald-900 underline decoration-emerald-900/25 underline-offset-4 group-hover:decoration-emerald-950">
+                  Open →
+                </span>
+              </div>
             </a>
           ))}
         </div>
