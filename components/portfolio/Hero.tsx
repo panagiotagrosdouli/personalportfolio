@@ -24,23 +24,8 @@ export function Hero() {
               Predicting human motion for safe autonomous systems.
             </h1>
             <p className="mt-8 max-w-3xl text-xl leading-9 text-stone-700 md:text-2xl md:leading-10">
-              Research in robotics, machine learning, and intelligent transportation, with a focus on prediction, uncertainty, and safer decision making around people.
+              Developing autonomous systems that anticipate human motion and make safer decisions under uncertainty.
             </p>
-
-            <div className="mt-10 grid max-w-3xl gap-4 border-y border-stone-200 py-7 md:grid-cols-3">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-400">Current</p>
-                <p className="mt-2 text-sm leading-6 text-stone-700">Diploma thesis on trajectory prediction</p>
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-400">Direction</p>
-                <p className="mt-2 text-sm leading-6 text-stone-700">Safe autonomy and robot perception</p>
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-400">Academic</p>
-                <p className="mt-2 text-sm leading-6 text-stone-700">ECE, Democritus University of Thrace</p>
-              </div>
-            </div>
 
             <div className="mt-10 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.16em]">
               {contactLinks.map((link, index) => (
