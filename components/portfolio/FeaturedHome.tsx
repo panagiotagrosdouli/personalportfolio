@@ -3,19 +3,19 @@ const featured = [
     title: "Diploma Thesis",
     subtitle: "Trajectory prediction at smart intersections",
     href: "/research",
-    description: "Current research on forecasting vulnerable road-user motion for safer autonomous behavior in intelligent transportation settings.",
+    description: "Research question: how can autonomous systems anticipate vulnerable road-user motion before making safety-critical decisions?",
   },
   {
     title: "AEGIS-VIO",
     subtitle: "Uncertainty-aware visual-inertial navigation",
     href: "https://github.com/PanagiotaGr/aegis-vio",
-    description: "A robotics prototype linking state estimation, uncertainty signals, and ROS2-based navigation logic.",
+    description: "Technical focus: connecting state estimation, uncertainty signals, and ROS2-based navigation logic for more reliable robot behavior.",
   },
   {
     title: "DynNav",
     subtitle: "Risk-aware robot navigation",
     href: "/projects",
-    description: "Independent work on navigation in dynamic environments using risk-aware reasoning and multi-agent coordination.",
+    description: "Research direction: navigation in dynamic environments using risk-aware reasoning and multi-agent coordination.",
   },
 ];
 
@@ -27,12 +27,12 @@ export function FeaturedHome() {
           <div>
             <p className="section-kicker">Selected Work</p>
             <h2 className="mt-4 font-serif text-5xl leading-[0.92] tracking-[-0.05em] text-stone-950 md:text-7xl">
-              Evidence of a focused robotics direction.
+              Research evidence, not a project list.
             </h2>
           </div>
           <div>
             <p className="max-w-3xl text-lg leading-9 text-stone-700">
-              These projects are selected to show one coherent thread: prediction, uncertainty, and safer autonomous systems.
+              A small selection of work that supports one direction: prediction, uncertainty, and safer autonomous systems.
             </p>
             <a href="/projects" className="mt-6 inline-block text-sm font-medium text-emerald-900 underline decoration-emerald-900/25 underline-offset-4 transition hover:decoration-emerald-950">
               View all projects →
