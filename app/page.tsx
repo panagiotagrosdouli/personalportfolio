@@ -3,6 +3,7 @@ import { Hero } from "@/components/portfolio/Hero";
 import { AcademicFuture } from "@/components/portfolio/AcademicFuture";
 import { Education, Experience, Notes, Skills } from "@/components/portfolio/ProfileSections";
 import { ResearchV6 as Research } from "@/components/portfolio/ResearchV6";
+import { SelectedWork } from "@/components/portfolio/SelectedWork";
 import { Vision } from "@/components/portfolio/Vision";
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <Vision />
       <Research />
+      <SelectedWork />
       <Experience />
       <Skills />
       <Education />
