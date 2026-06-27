@@ -22,12 +22,12 @@ export function Hero() {
           </div>
         </nav>
 
-        <div className="grid flex-1 items-center gap-12 py-20 lg:grid-cols-[0.58fr_0.42fr]">
+        <div className="grid flex-1 items-center gap-16 py-24 lg:grid-cols-[0.58fr_0.42fr]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.58em] text-emerald-900/70">
               Panagiota Grosdouli
             </p>
-            <h1 className="mt-6 max-w-5xl font-serif text-6xl leading-[0.9] tracking-[-0.06em] text-stone-950 md:text-8xl lg:text-9xl">
+            <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-[0.92] tracking-[-0.05em] text-stone-950 md:text-7xl lg:text-[6.8rem]">
               Predicting human motion for safer autonomous systems.
             </h1>
             <div className="mt-9 h-px w-20 bg-emerald-900" />
@@ -75,9 +75,6 @@ export function Hero() {
                   "linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,0.04)), url('/profile.png')",
               }}
             />
-            <p className="mt-4 text-right text-xs uppercase tracking-[0.22em] text-stone-400">
-              Research profile · PhD applications
-            </p>
           </div>
         </div>
       </div>
