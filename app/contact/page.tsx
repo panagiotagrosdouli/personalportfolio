@@ -3,19 +3,19 @@ import { SiteNav } from "@/components/portfolio/SiteNav";
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-[#f8f6f0] text-stone-950">
+    <main className="min-h-screen bg-[#fbfaf7] text-stone-950">
       <SiteNav />
       <section className="px-6 py-24 md:px-10 lg:px-12">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.38fr_0.62fr] lg:items-end">
           <div>
             <p className="section-kicker">Contact</p>
-            <h1 className="mt-4 font-serif text-6xl leading-[0.9] tracking-[-0.055em] text-stone-950 md:text-8xl">
-              Research conversations and opportunities.
+            <h1 className="mt-4 font-serif text-6xl leading-[0.88] tracking-[-0.06em] text-stone-950 md:text-8xl">
+              Research conversations in robotics and autonomy.
             </h1>
           </div>
           <div>
-            <p className="max-w-3xl text-lg leading-9 text-stone-700 md:text-xl md:leading-10">
-              I welcome conversations about PhD opportunities, research internships, and collaborations in robotics, autonomous systems, trajectory prediction, and intelligent transportation.
+            <p className="max-w-4xl text-xl leading-10 text-stone-700 md:text-2xl md:leading-[3rem]">
+              I am open to PhD opportunities, research internships, and collaborations related to robotics, autonomous systems, trajectory prediction, robot perception, and safe decision making under uncertainty.
             </p>
             <div className="mt-8 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.16em]">
               <a href="mailto:panagros1@ee.duth.gr" className="rounded-full border border-emerald-950 bg-emerald-950 px-5 py-3 text-white transition hover:bg-stone-950">Academic Email</a>
