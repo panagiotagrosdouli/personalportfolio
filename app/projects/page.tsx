@@ -5,16 +5,16 @@ import { SiteNav } from "@/components/portfolio/SiteNav";
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-[#f8f6f0] text-stone-950">
+    <main className="min-h-screen bg-[#fbfaf7] text-stone-950">
       <SiteNav />
-      <section className="px-6 py-20 md:px-10 lg:px-12">
+      <section className="px-6 py-24 md:px-10 lg:px-12">
         <div className="mx-auto max-w-7xl">
-          <p className="section-kicker">Projects</p>
-          <h1 className="mt-4 max-w-5xl font-serif text-6xl leading-[0.9] tracking-[-0.055em] text-stone-950 md:text-8xl">
-            Technical work in robotics, perception, and autonomy.
+          <p className="section-kicker">Research Projects</p>
+          <h1 className="mt-4 max-w-6xl font-serif text-6xl leading-[0.88] tracking-[-0.06em] text-stone-950 md:text-8xl">
+            Robotics work shaped by prediction, perception, and uncertainty.
           </h1>
-          <p className="mt-8 max-w-3xl text-lg leading-9 text-stone-700 md:text-xl md:leading-10">
-            A focused collection of research-oriented and engineering projects connected by autonomous systems, robot perception, risk-aware navigation, and intelligent transportation.
+          <p className="mt-8 max-w-4xl text-xl leading-10 text-stone-700 md:text-2xl md:leading-[3rem]">
+            These projects are selected not as isolated demos, but as evidence of a coherent preparation for graduate research in robotics and autonomous systems.
           </p>
         </div>
       </section>
