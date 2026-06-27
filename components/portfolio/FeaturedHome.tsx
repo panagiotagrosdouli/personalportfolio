@@ -3,19 +3,19 @@ const featured = [
     title: "Diploma Thesis",
     subtitle: "Trajectory prediction at smart intersections",
     href: "/research",
-    description: "Current research on predicting the motion of vulnerable road users to support safer autonomous decision making.",
+    description: "Current research on forecasting vulnerable road-user motion for safer autonomous behavior in intelligent transportation settings.",
   },
   {
     title: "AEGIS-VIO",
     subtitle: "Uncertainty-aware visual-inertial navigation",
     href: "https://github.com/PanagiotaGr/aegis-vio",
-    description: "A robotics prototype connecting state estimation, uncertainty metrics, risk scoring, and ROS2-based navigation.",
+    description: "A robotics prototype linking state estimation, uncertainty signals, and ROS2-based navigation logic.",
   },
   {
     title: "DynNav",
     subtitle: "Risk-aware robot navigation",
     href: "/projects",
-    description: "Independent research project exploring CVaR-inspired decision making, reinforcement learning, and multi-agent coordination.",
+    description: "Independent work on navigation in dynamic environments using risk-aware reasoning and multi-agent coordination.",
   },
 ];
 
@@ -25,14 +25,14 @@ export function FeaturedHome() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-8 border-t border-stone-200 pt-12 lg:grid-cols-[0.4fr_0.6fr] lg:items-end">
           <div>
-            <p className="section-kicker">Featured Work</p>
+            <p className="section-kicker">Selected Work</p>
             <h2 className="mt-4 font-serif text-5xl leading-[0.92] tracking-[-0.05em] text-stone-950 md:text-7xl">
-              Prediction, estimation, and risk-aware robotics.
+              Evidence of a focused robotics direction.
             </h2>
           </div>
           <div>
             <p className="max-w-3xl text-lg leading-9 text-stone-700">
-              A small selection of work that best reflects my research direction in safe autonomous systems.
+              These projects are selected to show one coherent thread: prediction, uncertainty, and safer autonomous systems.
             </p>
             <a href="/projects" className="mt-6 inline-block text-sm font-medium text-emerald-900 underline decoration-emerald-900/25 underline-offset-4 transition hover:decoration-emerald-950">
               View all projects →
