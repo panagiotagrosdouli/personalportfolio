@@ -1,4 +1,5 @@
 import { researchInterests } from "@/data/portfolio";
+import { SiteNav } from "@/components/portfolio/SiteNav";
 
 const contactLinks = [
   { label: "Email", href: "mailto:panagros1@ee.duth.gr" },
@@ -6,29 +7,14 @@ const contactLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/panagiota-grosdouli-b468b0201/" },
 ];
 
-const navLinks = [
-  { label: "Home", href: "#top" },
-  { label: "Research", href: "#research" },
-  { label: "Projects", href: "#work" },
-  { label: "CV", href: "#cv" },
-  { label: "Contact", href: "#contact" },
-];
-
 export function Hero() {
   return (
     <section id="top" className="relative min-h-screen overflow-hidden bg-[#fbfaf7] text-stone-950">
       <div className="absolute inset-x-0 top-0 h-px bg-stone-200" />
       <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col px-6 md:px-10 lg:px-12">
-        <nav className="sticky top-0 z-20 -mx-6 flex items-center justify-between border-b border-stone-200 bg-[#fbfaf7]/90 px-6 py-5 text-xs font-semibold uppercase tracking-[0.22em] text-stone-500 backdrop-blur md:-mx-10 md:px-10 lg:-mx-12 lg:px-12">
-          <a href="#top" className="font-serif text-2xl normal-case tracking-tight text-stone-950">PG</a>
-          <div className="hidden items-center gap-7 md:flex">
-            {navLinks.map((link) => (
-              <a key={link.label} href={link.href} className="transition hover:text-emerald-900">
-                {link.label}
-              </a>
-            ))}
-          </div>
-        </nav>
+        <div className="-mx-6 md:-mx-10 lg:-mx-12">
+          <SiteNav />
+        </div>
 
         <div className="grid flex-1 items-center gap-16 py-24 lg:grid-cols-[0.58fr_0.42fr]">
           <div>
@@ -62,7 +48,7 @@ export function Hero() {
             </div>
 
             <div className="mt-10 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.16em]">
-              <a href="#research" className="rounded-full border border-emerald-950 bg-emerald-950 px-5 py-3 text-white transition hover:-translate-y-0.5 hover:bg-stone-950">
+              <a href="/research" className="rounded-full border border-emerald-950 bg-emerald-950 px-5 py-3 text-white transition hover:-translate-y-0.5 hover:bg-stone-950">
                 Current Research
               </a>
               {contactLinks.map((link) => (
