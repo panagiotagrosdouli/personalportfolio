@@ -2,6 +2,7 @@ import { Footer } from "@/components/portfolio/Footer";
 import { Hero } from "@/components/portfolio/Hero";
 import { AcademicFuture } from "@/components/portfolio/AcademicFuture";
 import { Education, Experience, Notes, Skills } from "@/components/portfolio/ProfileSections";
+import { HomeGateway } from "@/components/portfolio/HomeGateway";
 import { Leadership } from "@/components/portfolio/Leadership";
 import { ResearchFocus } from "@/components/portfolio/ResearchFocus";
 import { ResearchV6 as Research } from "@/components/portfolio/ResearchV6";
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <Vision />
       <ResearchFocus />
+      <HomeGateway />
       <Research />
       <SelectedWork />
       <Experience />
