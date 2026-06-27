@@ -1,7 +1,6 @@
 import { FeaturedHome } from "@/components/portfolio/FeaturedHome";
 import { Footer } from "@/components/portfolio/Footer";
 import { Hero } from "@/components/portfolio/Hero";
-import { HomeGateway } from "@/components/portfolio/HomeGateway";
 import { HomeNarrative } from "@/components/portfolio/HomeNarrative";
 
 export default function Home() {
@@ -10,7 +9,6 @@ export default function Home() {
       <Hero />
       <HomeNarrative />
       <FeaturedHome />
-      <HomeGateway />
       <Footer />
     </main>
   );
