@@ -17,15 +17,11 @@ export function ResearchMap() {
               From human motion to safer autonomous decisions.
             </h2>
           </div>
-          <div className="relative">
-            <div className="absolute left-4 top-6 hidden h-px w-[calc(100%-2rem)] bg-stone-300 md:block" />
-            <div className="grid gap-5 md:grid-cols-5">
-              {steps.map((step, index) => (
-                <div key={step} className="relative bg-[#fbfaf7]">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-full border border-emerald-900 bg-[#fbfaf7] text-xs font-semibold text-emerald-900">
-                    {index + 1}
-                  </div>
-                  <p className="mt-5 font-serif text-3xl leading-none tracking-[-0.04em] text-stone-950">
+          <div>
+            <div className="grid gap-4 md:grid-cols-5 md:items-stretch">
+              {steps.map((step) => (
+                <div key={step} className="group border-t border-stone-300 pt-5 transition hover:border-emerald-900">
+                  <p className="font-serif text-3xl leading-none tracking-[-0.04em] text-stone-950">
                     {step}
                   </p>
                 </div>
