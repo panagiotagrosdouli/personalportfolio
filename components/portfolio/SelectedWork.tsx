@@ -1,6 +1,23 @@
 const selectedWork = [
   {
+    title: "Diploma Thesis",
+    subtitle: "Trajectory Prediction of Vulnerable Road Users at Smart Intersections",
+    label: "Current research",
+    href: "#research",
+    description:
+      "My main research work focuses on predicting future human motion at smart intersections, with the goal of supporting safer autonomous driving and intelligent transportation systems.",
+    details: [
+      "Human motion prediction",
+      "Vulnerable road-user behaviour",
+      "Smart intersections",
+      "Autonomous decision support",
+    ],
+    tech: ["Trajectory Prediction", "Autonomous Driving", "Motion Forecasting", "Uncertainty"],
+    featured: true,
+  },
+  {
     title: "AEGIS-VIO",
+    subtitle: "Uncertainty-Aware Visual-Inertial Navigation",
     label: "Research prototype",
     href: "https://github.com/PanagiotaGr/aegis-vio",
     description:
@@ -12,7 +29,16 @@ const selectedWork = [
       "ROS2 package, evaluation scripts, and unit tests",
     ],
     tech: ["Python", "ROS2", "EKF", "VIO", "Uncertainty", "Navigation"],
-    featured: true,
+  },
+  {
+    title: "DynNav",
+    subtitle: "Risk-Aware Navigation for Autonomous Robots",
+    label: "Independent research project",
+    href: "https://github.com/PanagiotaGr",
+    description:
+      "Independent research project exploring risk-aware navigation and decision making for robots in dynamic environments, shaped after academic discussion and developed independently.",
+    details: ["ROS2 experimentation", "CVaR-inspired risk reasoning", "Reinforcement learning", "Multi-agent coordination"],
+    tech: ["ROS2", "Risk-Aware Navigation", "RL", "Multi-Agent Systems"],
   },
   {
     title: "Risk-Aware Return-to-Home Policy for UAVs",
@@ -22,6 +48,15 @@ const selectedWork = [
       "A UAV decision-making project focused on safe return-to-home behavior under battery uncertainty and wind disturbances, connecting autonomy, risk-aware planning, and robust control decisions.",
     details: ["Battery uncertainty", "Wind disturbances", "Return-to-home policy", "Risk-aware UAV autonomy"],
     tech: ["UAVs", "Risk-Aware Planning", "Simulation", "Autonomy"],
+  },
+  {
+    title: "Semantic Segmentation for Autonomous Driving",
+    label: "Computer vision for autonomy",
+    href: "https://github.com/PanagiotaGr/Semantic-Segmentation-for-Road-and-Dynamic-Object-Understanding-in-Autonomous-Driving",
+    description:
+      "A computer vision project for road and dynamic-object understanding in autonomous driving scenarios, focused on semantic segmentation as a perception layer for intelligent mobility systems.",
+    details: ["Road-scene understanding", "Dynamic object perception", "Semantic segmentation", "Autonomous driving context"],
+    tech: ["Computer Vision", "Segmentation", "Autonomous Driving", "Deep Learning"],
   },
   {
     title: "Neuromorphic Robot SNN",
@@ -41,15 +76,6 @@ const selectedWork = [
     details: ["Robotic manipulation", "Control implementation", "Arm kinematics", "Engineering prototype"],
     tech: ["Robotics", "Control", "Kinematics", "Engineering"],
   },
-  {
-    title: "Semantic Segmentation for Autonomous Driving",
-    label: "Computer vision for autonomy",
-    href: "https://github.com/PanagiotaGr/Semantic-Segmentation-for-Road-and-Dynamic-Object-Understanding-in-Autonomous-Driving",
-    description:
-      "A computer vision project for road and dynamic-object understanding in autonomous driving scenarios, focused on semantic segmentation as a perception layer for intelligent mobility systems.",
-    details: ["Road-scene understanding", "Dynamic object perception", "Semantic segmentation", "Autonomous driving context"],
-    tech: ["Computer Vision", "Segmentation", "Autonomous Driving", "Deep Learning"],
-  },
 ];
 
 export function SelectedWork() {
@@ -60,13 +86,13 @@ export function SelectedWork() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-8 lg:grid-cols-[0.38fr_0.62fr] lg:items-end">
           <div>
-            <p className="section-kicker">Selected Technical Work</p>
+            <p className="section-kicker">Selected Research & Technical Projects</p>
             <h2 className="mt-3 font-serif text-4xl tracking-[-0.035em] text-stone-950 md:text-5xl">
-              Robotics, autonomy, and perception projects.
+              A coherent path through prediction, autonomy, and robotics.
             </h2>
           </div>
           <p className="max-w-3xl text-lg leading-9 text-stone-700">
-            Technical projects that support my research direction in autonomous systems, uncertainty-aware navigation, robotics, and intelligent transportation.
+            These projects support my research direction in trajectory prediction, autonomous systems, uncertainty-aware navigation, robotics, and intelligent transportation.
           </p>
         </div>
 
@@ -74,8 +100,9 @@ export function SelectedWork() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-900">{featuredProject.label}</p>
             <h3 className="mt-4 font-serif text-5xl tracking-[-0.045em] text-stone-950">{featuredProject.title}</h3>
-            <a href={featuredProject.href} target="_blank" rel="noreferrer" className="mt-5 inline-block text-sm font-medium text-emerald-900 underline decoration-emerald-900/25 underline-offset-4 transition hover:decoration-emerald-950">
-              View repository
+            {featuredProject.subtitle ? <p className="mt-3 text-sm leading-6 text-stone-500">{featuredProject.subtitle}</p> : null}
+            <a href={featuredProject.href} className="mt-5 inline-block text-sm font-medium text-emerald-900 underline decoration-emerald-900/25 underline-offset-4 transition hover:decoration-emerald-950">
+              View research section
             </a>
           </div>
           <div>
@@ -103,6 +130,7 @@ export function SelectedWork() {
             <article key={project.title} className="rounded-sm border border-stone-200 bg-white/84 p-7 shadow-[0_26px_80px_-66px_rgba(28,25,23,0.72)]">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-900">{project.label}</p>
               <h3 className="mt-4 font-serif text-3xl leading-tight tracking-[-0.035em] text-stone-950">{project.title}</h3>
+              {project.subtitle ? <p className="mt-2 text-sm leading-6 text-stone-500">{project.subtitle}</p> : null}
               <p className="mt-5 text-sm leading-7 text-stone-700">{project.description}</p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {project.tech.map((item) => (
