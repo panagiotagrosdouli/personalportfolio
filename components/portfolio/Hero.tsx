@@ -1,9 +1,17 @@
 import { researchInterests } from "@/data/portfolio";
 
 const contactLinks = [
-  { label: "Academic Email", href: "mailto:panagros1@ee.duth.gr" },
+  { label: "Email", href: "mailto:panagros1@ee.duth.gr" },
   { label: "GitHub", href: "https://github.com/PanagiotaGr" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/panagiota-grosdouli-b468b0201/" },
+];
+
+const navLinks = [
+  { label: "Home", href: "#top" },
+  { label: "Research", href: "#research" },
+  { label: "Projects", href: "#work" },
+  { label: "CV", href: "#cv" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export function Hero() {
@@ -11,14 +19,14 @@ export function Hero() {
     <section id="top" className="relative min-h-screen overflow-hidden bg-[#fbfaf7] text-stone-950">
       <div className="absolute inset-x-0 top-0 h-px bg-stone-200" />
       <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col px-6 md:px-10 lg:px-12">
-        <nav className="flex items-center justify-between border-b border-stone-200 py-6 text-xs font-semibold uppercase tracking-[0.24em] text-stone-500">
+        <nav className="sticky top-0 z-20 -mx-6 flex items-center justify-between border-b border-stone-200 bg-[#fbfaf7]/90 px-6 py-5 text-xs font-semibold uppercase tracking-[0.22em] text-stone-500 backdrop-blur md:-mx-10 md:px-10 lg:-mx-12 lg:px-12">
           <a href="#top" className="font-serif text-2xl normal-case tracking-tight text-stone-950">PG</a>
-          <div className="hidden items-center gap-8 md:flex">
-            <a href="#research" className="transition hover:text-emerald-900">Research</a>
-            <a href="#experience" className="transition hover:text-emerald-900">Experience</a>
-            <a href="#skills" className="transition hover:text-emerald-900">Toolkit</a>
-            <a href="#notes" className="transition hover:text-emerald-900">Notes</a>
-            <a href="#contact" className="transition hover:text-emerald-900">Contact</a>
+          <div className="hidden items-center gap-7 md:flex">
+            {navLinks.map((link) => (
+              <a key={link.label} href={link.href} className="transition hover:text-emerald-900">
+                {link.label}
+              </a>
+            ))}
           </div>
         </nav>
 
@@ -46,7 +54,7 @@ export function Hero() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
-              {researchInterests.map((interest) => (
+              {researchInterests.slice(0, 4).map((interest) => (
                 <span key={interest} className="rounded-full border border-stone-200 bg-white px-3 py-1.5 text-xs font-medium text-stone-700 shadow-[0_14px_45px_-38px_rgba(28,25,23,0.55)]">
                   {interest}
                 </span>
