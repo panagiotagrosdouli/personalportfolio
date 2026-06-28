@@ -10,7 +10,7 @@ export function Footer() {
         </div>
         <div>
           <h2 className="font-serif text-4xl leading-tight tracking-[-0.04em] text-stone-950 md:text-6xl">
-            Building toward autonomous systems that understand motion and uncertainty.
+            Research at the intersection of motion prediction, uncertainty, and autonomous systems.
           </h2>
           <p className="mt-6 max-w-3xl text-base leading-8 text-stone-650 md:text-lg">
             Open to PhD opportunities, research internships, and collaborations in robotics, autonomous systems, trajectory prediction, robot perception, and intelligent transportation.
