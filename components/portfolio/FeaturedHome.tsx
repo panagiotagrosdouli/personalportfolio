@@ -9,40 +9,42 @@ const focus = [
   "Machine Learning",
 ];
 
-const stats = [
-  { value: "03", label: "Research directions" },
-  { value: "02", label: "Active projects" },
-  { value: "01", label: "Robotics internship" },
-  { value: "2026", label: "Expected graduation" },
-];
-
-const activeResearch = [
+const researchThreads = [
   {
-    title: "Diploma Thesis",
-    badge: "Current Research",
+    title: "Trajectory Prediction of Vulnerable Road Users",
+    badge: "Diploma Thesis",
     status: "Active",
+    year: "2025–2026",
     progress: 72,
     href: "/research",
-    description:
-      "Trajectory prediction of vulnerable road users at smart intersections for safer autonomous decision making.",
+    objective:
+      "Investigating how autonomous systems can anticipate human motion at smart intersections before making safety-critical decisions.",
+    tags: ["trajectory", "VRU", "uncertainty", "smart intersections"],
+    latestUpdate: "Current focus: uncertainty-aware trajectory modelling and evaluation design.",
   },
   {
-    title: "DynNav",
-    badge: "Independent Project",
+    title: "DynNav: Risk-Aware Navigation in Dynamic Environments",
+    badge: "Independent Research",
     status: "Active",
+    year: "2025–Present",
     progress: 58,
     href: "/projects",
-    description:
-      "Risk-aware navigation in dynamic environments using ROS2-based experimentation, CVaR-inspired reasoning, and multi-agent coordination.",
+    objective:
+      "Developing a self-directed research thread around robot navigation under uncertainty, unsafe outcomes, and multi-agent interaction.",
+    tags: ["ROS2", "risk", "navigation", "multi-agent"],
+    latestUpdate: "Prototype direction shaped after academic discussion and developed independently.",
   },
   {
     title: "F1 AI Forecasting Platform",
     badge: "Applied ML",
     status: "Complete",
+    year: "2025",
     progress: 100,
     href: "/projects",
-    description:
-      "Probabilistic race-outcome forecasting with telemetry analysis, uncertainty modelling, and Monte Carlo simulation.",
+    objective:
+      "A probabilistic forecasting system using historical data, uncertainty modelling, Monte Carlo simulation, and interactive analysis.",
+    tags: ["forecasting", "simulation", "probability", "data analysis"],
+    latestUpdate: "Completed as an applied machine-learning project with distributional outputs.",
   },
 ];
 
@@ -54,16 +56,16 @@ const recentActivity = [
     href: "/research",
   },
   {
-    label: "Active project",
-    title: "DynNav risk-aware navigation",
-    text: "Exploring navigation decisions that account for unsafe outcomes rather than only average performance.",
-    href: "/projects",
+    label: "Lab notebook",
+    title: "Experiments and failure cases",
+    text: "Documenting methods, metrics, limitations, and next steps so the research process stays visible.",
+    href: "/experiments",
   },
   {
-    label: "Research note",
-    title: "Why uncertainty matters in trajectory prediction",
-    text: "Motion forecasting becomes safety-critical when autonomous systems operate around pedestrians.",
-    href: "/notes",
+    label: "Reading direction",
+    title: "Trajectory prediction literature",
+    text: "Building a paper-reading trail around forecasting, uncertainty, and interaction-aware autonomy.",
+    href: "/research",
   },
 ];
 
@@ -102,8 +104,19 @@ function Chip({ label }: { label: string }) {
   );
 }
 
-function StatusDot({ active }: { active?: boolean }) {
-  return <span className={`inline-block h-1.5 w-1.5 rounded-full ${active ? "bg-emerald-600" : "bg-stone-400"}`} />;
+function StatusBadge({ status }: { status: string }) {
+  const className =
+    status === "Active"
+      ? "border-emerald-600 text-emerald-700"
+      : status === "Complete"
+        ? "border-stone-300 text-stone-500"
+        : "border-amber-500 text-amber-700";
+
+  return (
+    <span className={`border px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.18em] ${className}`}>
+      {status}
+    </span>
+  );
 }
 
 export function FeaturedHome() {
@@ -118,49 +131,52 @@ export function FeaturedHome() {
         </div>
       </div>
 
-      <div className="border-b border-stone-200">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-6 py-6 md:grid-cols-4 md:px-10 lg:px-12">
-          {stats.map((stat) => (
-            <div key={stat.label} className="border-l border-stone-200 pl-5 first:border-l-0 first:pl-0">
-              <div className="font-serif text-4xl font-semibold tracking-[-0.04em] text-stone-950">{stat.value}</div>
-              <div className="mt-1 text-xs uppercase tracking-[0.18em] text-stone-500">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:px-10 lg:grid-cols-[3fr_2fr] lg:px-12">
         <div>
-          <p className="section-kicker mb-6">Active Research</p>
+          <div className="mb-7 max-w-2xl">
+            <p className="section-kicker mb-4">Current Research Threads</p>
+            <p className="text-sm leading-7 text-stone-600">
+              Each thread is presented as a living research direction: motivation, methods, progress, and open questions rather than a finished portfolio card.
+            </p>
+          </div>
+
           <div className="divide-y divide-stone-200 border-y border-stone-200">
-            {activeResearch.map((project) => (
+            {researchThreads.map((project) => (
               <Link
                 key={project.title}
                 href={project.href}
-                className="group grid gap-6 px-0 py-7 transition hover:bg-white/60 md:grid-cols-[1fr_120px] md:px-4"
+                className="group flex items-start gap-8 px-0 py-7 transition hover:bg-white/60 md:px-6"
               >
-                <div>
+                <div className="min-w-0 flex-1">
                   <div className="mb-3 flex flex-wrap items-center gap-2">
-                    <span className="inline-flex items-center gap-2 border border-emerald-900/25 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-900">
-                      <StatusDot active={project.status === "Active"} />
-                      {project.status}
-                    </span>
+                    <StatusBadge status={project.status} />
                     <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-stone-400">{project.badge}</span>
+                    <span className="font-mono text-[10px] text-stone-400">{project.year}</span>
                   </div>
                   <h3 className="font-serif text-3xl leading-none tracking-[-0.04em] text-stone-950 group-hover:text-emerald-950 md:text-4xl">
                     {project.title}
                   </h3>
-                  <p className="mt-3 max-w-2xl text-sm leading-7 text-stone-650">{project.description}</p>
+                  <p className="mt-3 max-w-2xl text-sm leading-7 text-stone-650">{project.objective}</p>
+                  <div className="mt-4 flex flex-wrap gap-1.5">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="border border-stone-200 bg-white px-2 py-0.5 font-mono text-[10px] text-stone-500">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="mt-3 text-xs italic text-stone-400">↳ {project.latestUpdate}</p>
                 </div>
-                <div className="hidden text-right md:block">
-                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">{project.progress}%</div>
-                  <div className="mt-3 h-px bg-stone-200">
+
+                <div className="hidden shrink-0 flex-col items-end gap-2 pt-1 sm:flex">
+                  <span className="font-mono text-xs text-stone-500">{project.progress}%</span>
+                  <div className="h-px w-20 bg-stone-200">
                     <div className="h-px bg-stone-950" style={{ width: `${project.progress}%` }} />
                   </div>
                 </div>
               </Link>
             ))}
           </div>
+
           <Link href="/projects" className="mt-5 inline-block text-sm font-medium text-emerald-900 underline decoration-emerald-900/25 underline-offset-4 transition hover:decoration-emerald-950">
             View all projects →
           </Link>
