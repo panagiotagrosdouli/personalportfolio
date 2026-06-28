@@ -2,7 +2,7 @@ import { SiteNav } from "@/components/portfolio/SiteNav";
 
 const contactLinks = [
   { label: "Research", href: "/research" },
-  { label: "Portfolio", href: "/projects" },
+  { label: "Projects", href: "/projects" },
   { label: "CV", href: "/cv" },
 ];
 
