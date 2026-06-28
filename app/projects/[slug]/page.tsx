@@ -2,76 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Footer } from "@/components/portfolio/Footer";
 import { SiteNav } from "@/components/portfolio/SiteNav";
-
-const projects = {
-  "trajectory-prediction-vrus": {
-    title: "Trajectory Prediction of Vulnerable Road Users",
-    subtitle: "Diploma Thesis · Active · 2025–2026",
-    progress: 72,
-    overview:
-      "This research investigates how autonomous systems can anticipate the future motion of vulnerable road users at smart intersections. The project connects trajectory prediction, uncertainty-aware modelling, and safety-relevant decision making for intelligent transportation systems.",
-    questions: [
-      "How can future pedestrian and vulnerable road-user trajectories be forecast in complex intersection scenarios?",
-      "How should uncertainty be represented when multiple future motions are plausible?",
-      "Which failure cases matter most when trajectory prediction is used for autonomous decision making?",
-    ],
-    methodology: ["Trajectory preprocessing", "Input-output sequence modelling", "Baseline forecasting evaluation", "ADE/FDE and failure-case inspection"],
-    experiments: ["Baseline trajectory forecasting", "Uncertainty-aware evaluation design", "Smart-intersection scenario analysis"],
-    literature: ["Social GAN", "Trajectron++", "Wayformer", "Interaction-aware trajectory forecasting"],
-    future: ["Add stronger sequence models", "Evaluate multi-modal predictions", "Study calibration and rare unsafe cases"],
-  },
-  dynnav: {
-    title: "DynNav: Risk-Aware Navigation in Dynamic Environments",
-    subtitle: "Independent Research Project · Active · 2025–Present",
-    progress: 58,
-    overview:
-      "DynNav is a self-directed research project exploring robot navigation under uncertainty. The work focuses on dynamic agents, unsafe outcomes, CVaR-inspired risk reasoning, ROS2-based experimentation, reinforcement learning, and multi-agent coordination.",
-    questions: [
-      "How can navigation systems reason about low-probability but high-cost unsafe outcomes?",
-      "When does risk-aware planning become too conservative?",
-      "How should robots behave around moving agents with uncertain intent?",
-    ],
-    methodology: ["ROS2 simulation", "Risk-aware scenario design", "CVaR-inspired decision logic", "Multi-agent interaction analysis"],
-    experiments: ["Dynamic-agent navigation scenarios", "Near-miss and collision-risk analysis", "Risk sensitivity comparison"],
-    literature: ["Risk-sensitive planning", "Safe robot navigation", "CVaR in decision making", "Multi-agent reinforcement learning"],
-    future: ["Tune risk sensitivity", "Expand scenario diversity", "Compare with nominal navigation baselines"],
-  },
-  "f1-ai-forecasting": {
-    title: "F1 AI Forecasting Platform",
-    subtitle: "Applied Machine Learning · Complete · 2025",
-    progress: 100,
-    overview:
-      "A probabilistic forecasting platform for race-outcome analysis using historical racing data, feature engineering, uncertainty modelling, Monte Carlo simulation, and interactive visual analytics.",
-    questions: [
-      "How can probabilistic simulation make forecasts more informative than deterministic ranking?",
-      "Which features most influence race-outcome uncertainty?",
-      "How can uncertainty be communicated clearly through interactive tools?",
-    ],
-    methodology: ["Feature engineering", "Probabilistic modelling", "Monte Carlo simulation", "Interactive visualization"],
-    experiments: ["Race-outcome simulations", "Distributional forecast analysis", "Prediction uncertainty inspection"],
-    literature: ["Forecasting methods", "Monte Carlo simulation", "Probabilistic modelling"],
-    future: ["Add richer contextual features", "Improve calibration", "Evaluate over multiple race weekends"],
-  },
-  "robotics-vision-internship": {
-    title: "Robotics & Computer Vision Work",
-    subtitle: "Applied Robotics · Complete · 2025",
-    progress: 100,
-    overview:
-      "Applied perception work in a robotics engineering environment, connecting computer vision pipelines with autonomy and robotic decision making.",
-    questions: [
-      "How do perception pipelines support downstream robotic autonomy?",
-      "Which engineering constraints appear when vision systems move from prototypes to applied robotics?",
-      "How can perception work inform safer autonomous-system design?",
-    ],
-    methodology: ["Computer vision pipeline work", "Robotics engineering context", "Applied perception analysis"],
-    experiments: ["Perception pipeline development", "Robotic vision system support"],
-    literature: ["Computer vision for robotics", "Perception for autonomous systems"],
-    future: ["Connect perception outputs with prediction and planning", "Study robustness in real-world robotic settings"],
-  },
-};
+import { projectMap, projects } from "@/data/projects";
 
 export function generateStaticParams() {
-  return Object.keys(projects).map((slug) => ({ slug }));
+  return projects.map((project) => ({ slug: project.slug }));
 }
 
 function ReportSection({ label, children }: { label: string; children: React.ReactNode }) {
@@ -86,7 +20,7 @@ function ReportSection({ label, children }: { label: string; children: React.Rea
 }
 
 export default function ProjectDetailPage({ params }: { params: { slug: string } }) {
-  const project = projects[params.slug as keyof typeof projects];
+  const project = projectMap[params.slug];
   if (!project) notFound();
 
   return (
