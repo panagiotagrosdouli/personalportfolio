@@ -4,66 +4,12 @@ import { useState } from "react";
 import Link from "next/link";
 import { Footer } from "@/components/portfolio/Footer";
 import { SiteNav } from "@/components/portfolio/SiteNav";
+import { projects, type ProjectStatus } from "@/data/projects";
 
 const statuses = ["All", "Active", "Prototype", "Complete"] as const;
-type Status = (typeof statuses)[number];
+type FilterStatus = "All" | ProjectStatus;
 
-const projects = [
-  {
-    slug: "trajectory-prediction-vrus",
-    status: "Active",
-    badge: "Diploma Thesis",
-    year: "2025–2026",
-    title: "Trajectory Prediction of VRUs at Smart Intersections",
-    objective:
-      "Develop trajectory forecasting methods for vulnerable road users in smart-intersection environments, with attention to uncertainty and safety-relevant decision making.",
-    tags: ["trajectory prediction", "VRU", "smart intersections", "uncertainty"],
-    latestUpdate: "Current focus: uncertainty-aware modelling and evaluation design.",
-    progress: 72,
-    github: false,
-  },
-  {
-    slug: "dynnav",
-    status: "Active",
-    badge: "Independent Research",
-    year: "2025–Present",
-    title: "DynNav: Risk-Aware Navigation in Dynamic Environments",
-    objective:
-      "Explore robot navigation policies that reason about unsafe outcomes, dynamic agents, and multi-agent coordination rather than optimizing only average-case behaviour.",
-    tags: ["ROS2", "risk-aware navigation", "CVaR", "multi-agent"],
-    latestUpdate: "Project shaped after academic discussion and developed independently.",
-    progress: 58,
-    github: true,
-  },
-  {
-    slug: "f1-ai-forecasting",
-    status: "Complete",
-    badge: "Applied ML",
-    year: "2025",
-    title: "F1 AI Forecasting Platform",
-    objective:
-      "Build a probabilistic race-forecasting platform using historical data, feature engineering, uncertainty modelling, Monte Carlo simulation, and interactive visual analysis.",
-    tags: ["forecasting", "simulation", "probability", "data analysis"],
-    latestUpdate: "Completed as an applied machine-learning project with distributional outputs.",
-    progress: 100,
-    github: true,
-  },
-  {
-    slug: "robotics-vision-internship",
-    status: "Complete",
-    badge: "Applied Robotics",
-    year: "2025",
-    title: "Robotics & Computer Vision Work",
-    objective:
-      "Applied perception work in a robotics engineering environment, strengthening the connection between computer vision, autonomy, and safe decision making.",
-    tags: ["robotics", "computer vision", "perception"],
-    latestUpdate: "Completed internship at OZZIE Robotics.",
-    progress: 100,
-    github: false,
-  },
-];
-
-function StatusBadge({ status }: { status: string }) {
+function StatusBadge({ status }: { status: ProjectStatus }) {
   const className =
     status === "Active"
       ? "border-emerald-600 text-emerald-700"
@@ -79,7 +25,7 @@ function StatusBadge({ status }: { status: string }) {
 }
 
 export default function ProjectsPage() {
-  const [filter, setFilter] = useState<Status>("All");
+  const [filter, setFilter] = useState<FilterStatus>("All");
   const filtered = filter === "All" ? projects : projects.filter((project) => project.status === filter);
 
   return (
