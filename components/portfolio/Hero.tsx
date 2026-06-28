@@ -1,52 +1,66 @@
 import Link from "next/link";
 import { SiteNav } from "@/components/portfolio/SiteNav";
 
-const contactLinks = [
-  { label: "Research", href: "/research" },
-  { label: "Projects", href: "/projects" },
-  { label: "CV", href: "/cv" },
-];
+function StatusDot() {
+  return <span className="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-emerald-500" />;
+}
 
 export function Hero() {
   return (
-    <section id="top" className="relative min-h-screen overflow-hidden bg-[#fbfaf7] text-stone-950">
-      <div className="absolute inset-x-0 top-0 h-px bg-stone-200" />
-      <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col px-6 md:px-10 lg:px-12">
-        <div className="-mx-6 md:-mx-10 lg:-mx-12">
-          <SiteNav />
-        </div>
+    <section id="top" className="bg-[#fbfaf7] text-stone-950">
+      <SiteNav />
 
-        <div className="grid flex-1 items-center gap-16 py-24 lg:grid-cols-[0.6fr_0.4fr]">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.58em] text-emerald-900/70">
-              Panagiota Grosdouli
-            </p>
-            <h1 className="mt-6 max-w-5xl font-serif text-6xl leading-[0.88] tracking-[-0.06em] text-stone-950 md:text-8xl lg:text-[7.6rem]">
-              Predicting human motion for safe autonomous systems.
-            </h1>
-            <p className="mt-8 max-w-3xl text-xl leading-9 text-stone-700 md:text-2xl md:leading-10">
-              Developing autonomous systems that anticipate human motion and make safer decisions under uncertainty.
-            </p>
+      <div className="mx-auto grid max-w-5xl items-start gap-12 px-6 pb-20 pt-16 md:grid-cols-[1fr_220px]">
+        <div>
+          <p className="section-kicker mb-5">Robotics · Autonomous Systems · AI</p>
+          <h1 className="font-serif text-6xl font-bold leading-[1.02] tracking-[-0.055em] text-stone-950 md:text-7xl">
+            Panagiota Grosdouli
+          </h1>
+          <p className="mt-5 max-w-2xl font-serif text-3xl leading-[1.25] tracking-[-0.02em] text-stone-500 md:text-4xl">
+            Researching trajectory prediction, autonomous systems, and embodied AI for safe human-robot interaction.
+          </p>
 
-            <div className="mt-10 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.16em]">
-              {contactLinks.map((link, index) => (
-                <Link key={link.label} href={link.href} className={index === 0 ? "rounded-full border border-emerald-950 bg-emerald-950 px-5 py-3 text-white transition hover:-translate-y-0.5 hover:bg-stone-950" : "rounded-full border border-stone-300 bg-white px-5 py-3 text-stone-800 transition hover:-translate-y-0.5 hover:border-emerald-900 hover:text-emerald-950"}>
-                  {link.label}
-                </Link>
-              ))}
-            </div>
+          <div className="mt-8 flex flex-col gap-2 text-sm leading-7 text-stone-600 md:text-base">
+            <span className="flex items-start gap-3">
+              <StatusDot />
+              MEng Electrical & Computer Engineering — Democritus University of Thrace
+            </span>
+            <span className="flex items-start gap-3">
+              <StatusDot />
+              Applying to PhD programs · Fall 2026
+            </span>
+            <span className="flex items-start gap-3">
+              <StatusDot />
+              Open for research collaborations
+            </span>
           </div>
 
-          <div className="relative">
-            <div className="absolute -left-6 -top-6 h-24 w-24 border-l border-t border-emerald-900/30" />
-            <div className="absolute -bottom-6 -right-6 h-24 w-24 border-b border-r border-emerald-900/30" />
-            <div
-              className="relative h-[560px] border border-stone-200 bg-stone-100 bg-cover bg-center shadow-[0_36px_120px_-80px_rgba(28,25,23,0.82)] md:h-[700px]"
-              style={{
-                backgroundImage:
-                  "linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,0.04)), url('/profile.png')",
-              }}
-            />
+          <div className="mt-10 flex flex-wrap gap-3">
+            <Link href="/research" className="inline-flex items-center bg-stone-950 px-5 py-3 text-sm font-semibold text-white transition hover:opacity-80">
+              Explore Research →
+            </Link>
+            <Link href="/projects" className="inline-flex items-center border border-stone-200 bg-white px-5 py-3 text-sm font-medium text-stone-950 transition hover:bg-stone-50">
+              Projects
+            </Link>
+            <Link href="/cv" className="inline-flex items-center px-5 py-3 text-sm font-medium text-stone-500 transition hover:text-stone-950">
+              Curriculum Vitae
+            </Link>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-4 md:pt-8">
+          <div
+            className="aspect-[3/4] w-36 bg-stone-100 bg-cover bg-center grayscale md:w-full"
+            style={{ backgroundImage: "url('/profile.png')" }}
+            aria-label="Panagiota Grosdouli profile photo"
+          />
+          <div className="space-y-1 text-xs leading-6 text-stone-500">
+            <a href="https://github.com/PanagiotaGr" target="_blank" rel="noreferrer" className="block transition hover:text-stone-950">
+              github.com/PanagiotaGr
+            </a>
+            <a href="mailto:panagros1@ee.duth.gr" className="block transition hover:text-stone-950">
+              panagros1@ee.duth.gr
+            </a>
           </div>
         </div>
       </div>
