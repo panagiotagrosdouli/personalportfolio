@@ -50,7 +50,7 @@ export function Hero() {
 
         <div className="flex flex-col gap-4 md:pt-8">
           <div
-            className="aspect-[3/4] w-36 bg-stone-100 bg-cover bg-center grayscale md:w-full"
+            className="aspect-[3/4] w-36 bg-stone-100 bg-cover bg-center md:w-full"
             style={{ backgroundImage: "url('/profile.png')" }}
             aria-label="Panagiota Grosdouli profile photo"
           />
