@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function HomeNarrative() {
   return (
     <section className="bg-[#fbfaf7] px-6 py-20 md:px-10 lg:px-12">
@@ -17,15 +19,15 @@ export function HomeNarrative() {
               My work connects trajectory prediction, visual-inertial navigation, risk-aware planning, and intelligent transportation into one robotics research path.
             </p>
             <div className="grid gap-4 pt-4 md:grid-cols-3">
-              <a href="/research" className="border-t border-stone-300 pt-5 text-sm font-medium text-stone-900 transition hover:border-emerald-900 hover:text-emerald-900">
+              <Link href="/research" className="border-t border-stone-300 pt-5 text-sm font-medium text-stone-900 transition hover:border-emerald-900 hover:text-emerald-900">
                 Research focus →
-              </a>
-              <a href="/projects" className="border-t border-stone-300 pt-5 text-sm font-medium text-stone-900 transition hover:border-emerald-900 hover:text-emerald-900">
+              </Link>
+              <Link href="/projects" className="border-t border-stone-300 pt-5 text-sm font-medium text-stone-900 transition hover:border-emerald-900 hover:text-emerald-900">
                 Technical work →
-              </a>
-              <a href="/cv" className="border-t border-stone-300 pt-5 text-sm font-medium text-stone-900 transition hover:border-emerald-900 hover:text-emerald-900">
+              </Link>
+              <Link href="/cv" className="border-t border-stone-300 pt-5 text-sm font-medium text-stone-900 transition hover:border-emerald-900 hover:text-emerald-900">
                 Academic profile →
-              </a>
+              </Link>
             </div>
           </div>
         </div>

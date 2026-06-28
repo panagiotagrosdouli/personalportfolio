@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { SiteNav } from "@/components/portfolio/SiteNav";
 
 const contactLinks = [
@@ -29,9 +30,9 @@ export function Hero() {
 
             <div className="mt-10 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.16em]">
               {contactLinks.map((link, index) => (
-                <a key={link.label} href={link.href} className={index === 0 ? "rounded-full border border-emerald-950 bg-emerald-950 px-5 py-3 text-white transition hover:-translate-y-0.5 hover:bg-stone-950" : "rounded-full border border-stone-300 bg-white px-5 py-3 text-stone-800 transition hover:-translate-y-0.5 hover:border-emerald-900 hover:text-emerald-950"}>
+                <Link key={link.label} href={link.href} className={index === 0 ? "rounded-full border border-emerald-950 bg-emerald-950 px-5 py-3 text-white transition hover:-translate-y-0.5 hover:bg-stone-950" : "rounded-full border border-stone-300 bg-white px-5 py-3 text-stone-800 transition hover:-translate-y-0.5 hover:border-emerald-900 hover:text-emerald-950"}>
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
