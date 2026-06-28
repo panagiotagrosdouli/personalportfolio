@@ -14,10 +14,26 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Panagiota Grosdouli | Trajectory Prediction & Autonomous Systems",
+  title: "Panagiota Grosdouli | Robotics Research",
   description:
-    "Personal research homepage focused on trajectory prediction, autonomous systems, risk-aware navigation, robotics, and intelligent transportation.",
+    "Research homepage of Panagiota Grosdouli, focused on robotics, trajectory prediction, autonomous systems, uncertainty-aware navigation, and intelligent transportation.",
   authors: [{ name: "Panagiota Grosdouli" }],
+  keywords: [
+    "Panagiota Grosdouli",
+    "robotics",
+    "trajectory prediction",
+    "autonomous systems",
+    "risk-aware navigation",
+    "visual-inertial navigation",
+    "intelligent transportation",
+    "machine learning",
+  ],
+  openGraph: {
+    title: "Panagiota Grosdouli | Robotics Research",
+    description:
+      "Robotics research homepage focused on trajectory prediction, autonomous systems, and decision making under uncertainty.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
