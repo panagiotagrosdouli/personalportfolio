@@ -10,12 +10,12 @@ export default function ContactPage() {
           <div>
             <p className="section-kicker">Contact</p>
             <h1 className="mt-4 font-serif text-6xl leading-[0.88] tracking-[-0.06em] text-stone-950 md:text-8xl">
-              Research conversations in robotics and autonomy.
+              Robotics research conversations.
             </h1>
           </div>
           <div>
             <p className="max-w-4xl text-xl leading-10 text-stone-700 md:text-2xl md:leading-[3rem]">
-              I am open to PhD opportunities, research internships, and collaborations related to robotics, autonomous systems, trajectory prediction, robot perception, and safe decision making under uncertainty.
+              I welcome conversations about PhD opportunities, research internships, and collaborations in robotics, autonomous systems, trajectory prediction, robot perception, and decision making under uncertainty.
             </p>
             <div className="mt-8 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.16em]">
               <a href="mailto:panagros1@ee.duth.gr" className="rounded-full border border-emerald-950 bg-emerald-950 px-5 py-3 text-white transition hover:bg-stone-950">Academic Email</a>
