@@ -13,53 +13,54 @@ const cormorant = Cormorant_Garamond({
   weight: ["400", "500", "600", "700"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfoliopanagiotas.base44.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://panagiota-research-portfolio.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Panagiota Grosdouli | Robotics Research",
+    default: "Panagiota Grosdouli — Trajectory Prediction & Autonomous Systems",
     template: "%s | Panagiota Grosdouli",
   },
   description:
-    "Research homepage of Panagiota Grosdouli, focused on robotics, trajectory prediction, autonomous systems, uncertainty-aware navigation, and intelligent transportation.",
-  applicationName: "Panagiota Grosdouli Research Portfolio",
+    "Research homepage of Panagiota Grosdouli, focused on trajectory prediction, autonomous systems, risk-aware navigation, robotics, and intelligent transportation.",
+  applicationName: "Panagiota Grosdouli Research Homepage",
   authors: [{ name: "Panagiota Grosdouli" }],
   creator: "Panagiota Grosdouli",
   keywords: [
     "Panagiota Grosdouli",
-    "robotics",
     "trajectory prediction",
     "autonomous systems",
+    "human motion prediction",
     "risk-aware navigation",
-    "visual-inertial navigation",
+    "robotics",
     "intelligent transportation",
     "machine learning",
+    "autonomous driving",
   ],
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Panagiota Grosdouli | Robotics Research",
+    title: "Panagiota Grosdouli — Trajectory Prediction & Autonomous Systems",
     description:
-      "Robotics research homepage focused on trajectory prediction, autonomous systems, and decision making under uncertainty.",
+      "Research homepage focused on human motion prediction, autonomous systems, risk-aware navigation, and safer intelligent transportation.",
     url: "/",
-    siteName: "Panagiota Grosdouli Research Portfolio",
+    siteName: "Panagiota Grosdouli Research Homepage",
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Panagiota Grosdouli robotics research portfolio",
+        alt: "Panagiota Grosdouli research homepage for trajectory prediction and autonomous systems",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Panagiota Grosdouli | Robotics Research",
+    title: "Panagiota Grosdouli — Trajectory Prediction & Autonomous Systems",
     description:
-      "Trajectory prediction, uncertainty-aware navigation, and safer autonomous systems.",
+      "Human motion prediction, risk-aware navigation, and safer autonomous systems.",
     images: ["/opengraph-image"],
   },
   robots: {
