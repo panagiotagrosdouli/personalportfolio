@@ -6,15 +6,15 @@ export function HomeNarrative() {
           <div>
             <p className="section-kicker">Research Direction</p>
             <h2 className="mt-4 font-serif text-5xl leading-[0.92] tracking-[-0.05em] text-stone-950 md:text-7xl">
-              Safe autonomy begins with understanding motion.
+              Safe autonomy begins with anticipating people.
             </h2>
           </div>
           <div className="space-y-7 text-lg leading-9 text-stone-700 md:text-xl md:leading-10">
             <p>
-              My work is centered on autonomous systems that operate around people: systems that must perceive dynamic scenes, anticipate human motion, and make decisions under uncertainty.
+              I study autonomous systems that need to read dynamic scenes, forecast human motion, and act safely around people.
             </p>
             <p>
-              This connects my current thesis on trajectory prediction with robotics projects in visual-inertial navigation, risk-aware planning, and intelligent transportation.
+              My work connects trajectory prediction, visual-inertial navigation, risk-aware planning, and intelligent transportation into one robotics research path.
             </p>
             <div className="grid gap-4 pt-4 md:grid-cols-3">
               <a href="/research" className="border-t border-stone-300 pt-5 text-sm font-medium text-stone-900 transition hover:border-emerald-900 hover:text-emerald-900">
