@@ -1,9 +1,11 @@
+import Link from "next/link";
+
 const selectedWork = [
   {
     title: "Diploma Thesis",
     subtitle: "Trajectory Prediction of Vulnerable Road Users",
     label: "Current research",
-    href: "/research",
+    href: "/projects/diploma-thesis",
     description:
       "Forecasting vulnerable road-user motion at smart intersections for safer autonomous decision making.",
     tech: ["Trajectory Prediction", "Motion Forecasting", "Autonomous Driving", "Uncertainty"],
@@ -94,9 +96,9 @@ export function SelectedWork() {
                 </span>
               ))}
             </div>
-            <a href={featuredProject.href} className="mt-6 inline-block text-sm font-medium text-emerald-900 underline decoration-emerald-900/25 underline-offset-4 transition hover:decoration-emerald-950">
+            <Link href={featuredProject.href} className="mt-6 inline-block text-sm font-medium text-emerald-900 underline decoration-emerald-900/25 underline-offset-4 transition hover:decoration-emerald-950">
               Open →
-            </a>
+            </Link>
           </div>
         </article>
 
