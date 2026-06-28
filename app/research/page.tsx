@@ -41,7 +41,7 @@ const selectedProjects = [
     contribution:
       "A research direction around probabilistic forecasting, interaction-aware prediction, and evaluation of multi-modal trajectories.",
     status: "Active research",
-    href: "/projects",
+    href: "/projects/diploma-thesis",
   },
   {
     title: "AEGIS-VIO",
@@ -158,8 +158,8 @@ export default function ResearchPage() {
                 <dd className="mt-3 text-sm leading-7 text-stone-700">Active diploma thesis research.</dd>
               </div>
             </dl>
-            <Link href="/projects" className="mt-10 inline-block text-sm font-medium text-emerald-900 underline decoration-emerald-900/25 underline-offset-4 transition hover:decoration-emerald-950">
-              View related projects →
+            <Link href="/projects/diploma-thesis" className="mt-10 inline-block text-sm font-medium text-emerald-900 underline decoration-emerald-900/25 underline-offset-4 transition hover:decoration-emerald-950">
+              Open thesis page →
             </Link>
           </div>
         </div>
