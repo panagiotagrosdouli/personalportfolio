@@ -1,52 +1,17 @@
 import Link from "next/link";
+import { projects } from "@/data/projects";
 
 const focus = [
   "Trajectory Prediction",
-  "Autonomous Systems",
-  "Risk-Aware Planning",
-  "Motion Forecasting",
-  "Robotics",
-  "Machine Learning",
+  "Robot Perception",
+  "Visual-Inertial Odometry",
+  "Risk-Aware Navigation",
+  "Autonomous Driving",
+  "Embodied AI",
 ];
 
-const researchThreads = [
-  {
-    title: "Trajectory Prediction of Vulnerable Road Users",
-    badge: "Diploma Thesis",
-    status: "Active",
-    year: "2025–2026",
-    progress: 72,
-    href: "/research",
-    objective:
-      "Investigating how autonomous systems can anticipate human motion at smart intersections before making safety-critical decisions.",
-    tags: ["trajectory", "VRU", "uncertainty", "smart intersections"],
-    latestUpdate: "Current focus: uncertainty-aware trajectory modelling and evaluation design.",
-  },
-  {
-    title: "DynNav: Risk-Aware Navigation in Dynamic Environments",
-    badge: "Independent Research",
-    status: "Active",
-    year: "2025–Present",
-    progress: 58,
-    href: "/projects",
-    objective:
-      "Developing a self-directed research thread around robot navigation under uncertainty, unsafe outcomes, and multi-agent interaction.",
-    tags: ["ROS2", "risk", "navigation", "multi-agent"],
-    latestUpdate: "Prototype direction shaped after academic discussion and developed independently.",
-  },
-  {
-    title: "F1 AI Forecasting Platform",
-    badge: "Applied ML",
-    status: "Complete",
-    year: "2025",
-    progress: 100,
-    href: "/projects",
-    objective:
-      "A probabilistic forecasting system using historical data, uncertainty modelling, Monte Carlo simulation, and interactive analysis.",
-    tags: ["forecasting", "simulation", "probability", "data analysis"],
-    latestUpdate: "Completed as an applied machine-learning project with distributional outputs.",
-  },
-];
+const featuredSlugs = ["trajectory-prediction-vrus", "aegis-vio", "dynnav"];
+const researchThreads = projects.filter((project) => featuredSlugs.includes(project.slug));
 
 const recentActivity = [
   {
@@ -56,16 +21,16 @@ const recentActivity = [
     href: "/research",
   },
   {
-    label: "Lab notebook",
-    title: "Experiments and failure cases",
-    text: "Documenting methods, metrics, limitations, and next steps so the research process stays visible.",
-    href: "/experiments",
+    label: "Perception direction",
+    title: "VIO, segmentation, and robot perception",
+    text: "Building a coherent perception foundation across visual-inertial odometry and autonomous-driving scene understanding.",
+    href: "/projects/aegis-vio",
   },
   {
-    label: "Reading direction",
-    title: "Trajectory prediction literature",
-    text: "Building a paper-reading trail around forecasting, uncertainty, and interaction-aware autonomy.",
-    href: "/research",
+    label: "Risk-aware autonomy",
+    title: "Navigation and UAV decision making",
+    text: "Connecting DynNav and UAV return-to-home policies through uncertainty-aware planning and unsafe-outcome reasoning.",
+    href: "/projects/dynnav",
   },
 ];
 
@@ -77,22 +42,22 @@ const timeline = [
     desc: "Democritus University of Thrace.",
   },
   {
-    year: "2025",
-    type: "Experience",
-    title: "Robotics & Computer Vision Internship",
-    desc: "Applied perception work at OZZIE Robotics.",
+    year: "2023",
+    type: "Perception",
+    title: "Autonomous Driving Scene Segmentation",
+    desc: "Computer vision work for real-time driving-scene understanding.",
+  },
+  {
+    year: "2024",
+    type: "Robotics",
+    title: "AEGIS-VIO and Risk-Aware UAV Autonomy",
+    desc: "Visual-inertial odometry and safety-aware return-to-home decision making.",
   },
   {
     year: "2025",
     type: "Research",
-    title: "Trajectory Prediction Thesis",
-    desc: "Diploma thesis on vulnerable road users at smart intersections.",
-  },
-  {
-    year: "2026",
-    type: "Future",
-    title: "Graduate research applications",
-    desc: "Targeting PhD opportunities in autonomous systems and intelligent transportation.",
+    title: "Trajectory Prediction Thesis and DynNav",
+    desc: "Human motion forecasting and risk-aware navigation for autonomous systems.",
   },
 ];
 
@@ -136,15 +101,15 @@ export function FeaturedHome() {
           <div className="mb-7 max-w-2xl">
             <p className="section-kicker mb-4">Current Research Threads</p>
             <p className="text-sm leading-7 text-stone-600">
-              Each thread is presented as a living research direction: motivation, methods, progress, and open questions rather than a finished portfolio card.
+              A focused research path across prediction, perception, and risk-aware decision making for autonomous robotic systems.
             </p>
           </div>
 
           <div className="divide-y divide-stone-200 border-y border-stone-200">
             {researchThreads.map((project) => (
               <Link
-                key={project.title}
-                href={project.href}
+                key={project.slug}
+                href={`/projects/${project.slug}`}
                 className="group flex items-start gap-8 px-0 py-7 transition hover:bg-white/60 md:px-6"
               >
                 <div className="min-w-0 flex-1">
