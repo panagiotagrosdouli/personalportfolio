@@ -1,5 +1,6 @@
 import { Footer } from "@/components/portfolio/Footer";
 import { SiteNav } from "@/components/portfolio/SiteNav";
+import { projects } from "@/data/projects";
 
 function Section({ label, children }: { label: string; children: React.ReactNode }) {
   return (
@@ -14,22 +15,15 @@ function Section({ label, children }: { label: string; children: React.ReactNode
 
 const researchInterests = [
   ["Trajectory Prediction", "forecasting vulnerable road-user motion in dynamic environments"],
-  ["Autonomous Systems", "perception, prediction, and decision making around people"],
+  ["Robot Perception", "visual-inertial odometry, segmentation, and scene understanding"],
   ["Risk-Aware Navigation", "planning under uncertainty and safety-critical outcomes"],
-  ["Intelligent Transportation", "smart intersections and human-centered mobility"],
-  ["Robot Learning", "learning-based autonomy with interpretable behaviour"],
-];
-
-const projects = [
-  ["2025–2026", "Trajectory Prediction of VRUs at Smart Intersections", "Diploma Thesis"],
-  ["2025–Present", "DynNav: Risk-Aware Navigation in Dynamic Environments", "Independent Research Project"],
-  ["2025", "F1 AI Forecasting Platform", "Applied Machine Learning Project"],
-  ["2025", "Robotics & Computer Vision Work", "OZZIE Robotics Internship"],
+  ["Autonomous Systems", "prediction, perception, and decision making around people"],
+  ["Embodied AI", "robot learning and neuromorphic approaches to behaviour"],
 ];
 
 const skills = [
-  ["Machine Learning & Data", ["Python", "Scikit-Learn", "Computer Vision", "Forecasting", "Data Analysis"]],
-  ["Robotics & Autonomy", ["ROS2", "Motion Planning", "Navigation", "Multi-Agent Systems", "Risk-Aware Decision Making"]],
+  ["Machine Learning & Vision", ["Python", "Scikit-Learn", "Computer Vision", "Semantic Segmentation", "Forecasting", "Data Analysis"]],
+  ["Robotics & Autonomy", ["ROS2", "Visual-Inertial Odometry", "Motion Planning", "Navigation", "Multi-Agent Systems", "Risk-Aware Decision Making"]],
   ["Scientific Computing", ["C/C++", "MATLAB", "Pandas", "NumPy", "Plotly", "Streamlit", "Linux", "Git"]],
 ];
 
@@ -53,7 +47,7 @@ export default function CVPage() {
 
         <Section label="Profile">
           <p className="max-w-3xl text-base leading-8 text-stone-700">
-            Electrical and Computer Engineering student with a research direction in trajectory prediction, autonomous systems, risk-aware navigation, and intelligent transportation.
+            Electrical and Computer Engineering student with a research direction in trajectory prediction, robot perception, risk-aware navigation, and safe autonomous systems.
           </p>
         </Section>
 
@@ -83,12 +77,12 @@ export default function CVPage() {
 
         <Section label="Research Projects">
           <div className="divide-y divide-stone-200">
-            {projects.map(([year, title, role]) => (
-              <div key={title} className="flex items-start gap-6 py-5">
-                <span className="mt-0.5 w-28 shrink-0 font-mono text-xs text-stone-500">{year}</span>
+            {projects.map((project) => (
+              <div key={project.slug} className="flex items-start gap-6 py-5">
+                <span className="mt-0.5 w-28 shrink-0 font-mono text-xs text-stone-500">{project.year}</span>
                 <div>
-                  <p className="text-sm font-semibold text-stone-950">{title}</p>
-                  <p className="mt-0.5 text-xs text-stone-500">{role}</p>
+                  <p className="text-sm font-semibold text-stone-950">{project.title}</p>
+                  <p className="mt-0.5 text-xs text-stone-500">{project.badge}</p>
                 </div>
               </div>
             ))}
@@ -112,18 +106,20 @@ export default function CVPage() {
 
         <Section label="Open Source">
           <ul className="space-y-3">
-            <li>
-              <a href="https://github.com/PanagiotaGr" target="_blank" rel="noreferrer" className="font-mono text-sm text-stone-950 transition hover:text-emerald-900">
-                github.com/PanagiotaGr
-              </a>
-              <span className="ml-2 text-xs text-stone-500">— research and engineering repositories</span>
-            </li>
+            {projects.filter((project) => project.repositoryUrl).map((project) => (
+              <li key={project.slug}>
+                <a href={project.repositoryUrl} target="_blank" rel="noreferrer" className="font-mono text-sm text-stone-950 transition hover:text-emerald-900">
+                  {project.title}
+                </a>
+                <span className="ml-2 text-xs text-stone-500">— {project.badge}</span>
+              </li>
+            ))}
           </ul>
         </Section>
 
         <Section label="Graduate Research">
           <p className="max-w-3xl text-sm leading-7 text-stone-600">
-            Interested in PhD opportunities and research collaborations related to trajectory prediction, autonomous systems, robotics, machine learning, and intelligent transportation.
+            Interested in PhD opportunities and research collaborations related to robot perception, trajectory prediction, risk-aware navigation, autonomous systems, and intelligent transportation.
           </p>
         </Section>
 
