@@ -15,7 +15,7 @@ const selectedWork = [
     title: "AEGIS-VIO",
     subtitle: "Uncertainty-Aware Visual-Inertial Navigation",
     label: "Research prototype",
-    href: "https://github.com/PanagiotaGr/aegis-vio",
+    href: "/projects/aegis-vio",
     description:
       "A robotics prototype connecting state estimation, uncertainty signals, and ROS2-based navigation logic.",
     tech: ["Python", "ROS2", "EKF", "VIO", "Uncertainty", "Navigation"],
@@ -103,28 +103,40 @@ export function SelectedWork() {
         </article>
 
         <div className="mt-4 divide-y divide-stone-200 border-y border-stone-200">
-          {otherProjects.map((project) => (
-            <a key={project.title} href={project.href} target={project.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="group grid gap-5 py-6 transition hover:bg-white/50 md:grid-cols-[0.34fr_0.66fr] md:px-4">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-900">{project.label}</p>
-                <h3 className="mt-3 font-serif text-3xl leading-tight tracking-[-0.035em] text-stone-950">{project.title}</h3>
-                {project.subtitle ? <p className="mt-2 text-sm leading-6 text-stone-500">{project.subtitle}</p> : null}
-              </div>
-              <div>
-                <p className="max-w-2xl text-sm leading-7 text-stone-700">{project.description}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {project.tech.map((item) => (
-                    <span key={item} className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1.5 text-xs font-medium text-stone-650">
-                      {item}
-                    </span>
-                  ))}
+          {otherProjects.map((project) => {
+            const content = (
+              <>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-900">{project.label}</p>
+                  <h3 className="mt-3 font-serif text-3xl leading-tight tracking-[-0.035em] text-stone-950">{project.title}</h3>
+                  {project.subtitle ? <p className="mt-2 text-sm leading-6 text-stone-500">{project.subtitle}</p> : null}
                 </div>
-                <span className="mt-4 inline-block text-sm font-medium text-emerald-900 underline decoration-emerald-900/25 underline-offset-4 group-hover:decoration-emerald-950">
-                  Open →
-                </span>
-              </div>
-            </a>
-          ))}
+                <div>
+                  <p className="max-w-2xl text-sm leading-7 text-stone-700">{project.description}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {project.tech.map((item) => (
+                      <span key={item} className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1.5 text-xs font-medium text-stone-650">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                  <span className="mt-4 inline-block text-sm font-medium text-emerald-900 underline decoration-emerald-900/25 underline-offset-4 group-hover:decoration-emerald-950">
+                    Open →
+                  </span>
+                </div>
+              </>
+            );
+
+            return project.href.startsWith("http") ? (
+              <a key={project.title} href={project.href} target="_blank" rel="noreferrer" className="group grid gap-5 py-6 transition hover:bg-white/50 md:grid-cols-[0.34fr_0.66fr] md:px-4">
+                {content}
+              </a>
+            ) : (
+              <Link key={project.title} href={project.href} className="group grid gap-5 py-6 transition hover:bg-white/50 md:grid-cols-[0.34fr_0.66fr] md:px-4">
+                {content}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>
