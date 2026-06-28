@@ -11,6 +11,7 @@ export type Project = {
   latestUpdate?: string;
   progress: number;
   github: boolean;
+  repositoryUrl?: string;
   subtitle: string;
   overview: string;
   questions: string[];
@@ -47,6 +48,32 @@ export const projects: Project[] = [
     future: ["Add stronger sequence models", "Evaluate multi-modal predictions", "Study calibration and rare unsafe cases"],
   },
   {
+    slug: "aegis-vio",
+    status: "Complete",
+    badge: "Independent Research",
+    year: "2024",
+    title: "AEGIS-VIO: Uncertainty-Aware Visual-Inertial Odometry",
+    objective:
+      "Explore visual-inertial odometry with emphasis on uncertainty, robustness, sensor fusion, and state estimation for autonomous robotic systems.",
+    tags: ["visual-inertial odometry", "robot perception", "uncertainty", "sensor fusion"],
+    latestUpdate: "Repository available as part of the robotics and autonomy research portfolio.",
+    progress: 100,
+    github: true,
+    repositoryUrl: "https://github.com/PanagiotaGr/aegis-vio",
+    subtitle: "Independent Research · Complete · 2024",
+    overview:
+      "AEGIS-VIO focuses on uncertainty-aware visual-inertial odometry, a core perception capability for autonomous robots. The project strengthens the portfolio's perception side by connecting estimation, robustness, and uncertainty-aware autonomy.",
+    questions: [
+      "How can visual and inertial signals be combined for more reliable robot state estimation?",
+      "Where does uncertainty appear in visual-inertial odometry pipelines?",
+      "How can uncertainty-aware perception support safer downstream navigation and planning?",
+    ],
+    methodology: ["Visual-inertial estimation", "Sensor fusion", "Uncertainty-aware analysis", "Robotic perception pipeline design"],
+    experiments: ["VIO pipeline implementation", "State-estimation robustness inspection", "Uncertainty-focused analysis"],
+    literature: ["Visual-inertial odometry", "SLAM", "Robot perception", "State estimation"],
+    future: ["Connect VIO uncertainty to navigation risk", "Compare robustness under challenging motion", "Document failure cases more explicitly"],
+  },
+  {
     slug: "dynnav",
     status: "Active",
     badge: "Independent Research",
@@ -72,29 +99,82 @@ export const projects: Project[] = [
     future: ["Tune risk sensitivity", "Expand scenario diversity", "Compare with nominal navigation baselines"],
   },
   {
-    slug: "f1-ai-forecasting",
+    slug: "risk-aware-uav-return-home",
     status: "Complete",
-    badge: "Applied ML",
-    year: "2025",
-    title: "F1 AI Forecasting Platform",
+    badge: "Research Project",
+    year: "2024",
+    title: "Risk-Aware Return-to-Home Policy for UAVs",
     objective:
-      "Build a probabilistic race-forecasting platform using historical data, feature engineering, uncertainty modelling, Monte Carlo simulation, and interactive visual analysis.",
-    tags: ["forecasting", "simulation", "probability", "data analysis"],
-    latestUpdate: "Completed as an applied machine-learning project with distributional outputs.",
+      "Study UAV return-to-home decision making under battery uncertainty and wind disturbances, emphasizing risk-aware autonomy in safety-critical settings.",
+    tags: ["UAV", "battery uncertainty", "wind disturbances", "risk-aware control"],
+    latestUpdate: "Repository available with a focused safety-critical autonomy problem.",
     progress: 100,
     github: true,
-    subtitle: "Applied Machine Learning · Complete · 2025",
+    repositoryUrl: "https://github.com/PanagiotaGr/Risk-Aware-Return-to-Home-Policy-for-UAVs-under-Battery-Uncertainty-and-Wind-Disturbances",
+    subtitle: "Research Project · Complete · 2024",
     overview:
-      "A probabilistic forecasting platform for race-outcome analysis using historical racing data, feature engineering, uncertainty modelling, Monte Carlo simulation, and interactive visual analytics.",
+      "This project investigates risk-aware return-to-home behaviour for UAVs operating under uncertain battery conditions and wind disturbances. It supports the broader research direction of safe autonomous decision making under uncertainty.",
     questions: [
-      "How can probabilistic simulation make forecasts more informative than deterministic ranking?",
-      "Which features most influence race-outcome uncertainty?",
-      "How can uncertainty be communicated clearly through interactive tools?",
+      "How should a UAV decide when to return home under battery uncertainty?",
+      "How do wind disturbances affect safety margins and mission reliability?",
+      "How can risk-aware policies reduce unsafe outcomes compared with nominal decision rules?",
     ],
-    methodology: ["Feature engineering", "Probabilistic modelling", "Monte Carlo simulation", "Interactive visualization"],
-    experiments: ["Race-outcome simulations", "Distributional forecast analysis", "Prediction uncertainty inspection"],
-    literature: ["Forecasting methods", "Monte Carlo simulation", "Probabilistic modelling"],
-    future: ["Add richer contextual features", "Improve calibration", "Evaluate over multiple race weekends"],
+    methodology: ["Uncertainty modelling", "Risk-aware policy design", "Battery and wind disturbance scenarios", "Safety-margin analysis"],
+    experiments: ["Return-to-home scenario evaluation", "Battery uncertainty analysis", "Wind disturbance sensitivity study"],
+    literature: ["Risk-aware autonomy", "UAV planning", "Decision making under uncertainty", "Safe robotics"],
+    future: ["Compare with learning-based policies", "Add richer disturbance models", "Connect with CVaR-style risk objectives"],
+  },
+  {
+    slug: "neuromorphic-robot-snn",
+    status: "Complete",
+    badge: "Research Project",
+    year: "2023",
+    title: "Neuromorphic Robot with Spiking Neural Networks",
+    objective:
+      "Explore neuromorphic control and perception through spiking neural networks for robotic behaviour and embodied intelligence.",
+    tags: ["neuromorphic robotics", "SNN", "robot learning", "embodied AI"],
+    latestUpdate: "Repository included as part of the embodied-AI research trajectory.",
+    progress: 100,
+    github: true,
+    repositoryUrl: "https://github.com/PanagiotaGr/neuromorphic-robot-snn",
+    subtitle: "Research Project · Complete · 2023",
+    overview:
+      "This project explores robotic behaviour through spiking neural networks and neuromorphic computing. It provides an early research thread connecting robot learning, biologically inspired computation, and embodied AI.",
+    questions: [
+      "How can spiking neural networks be used for robotic behaviour?",
+      "What makes neuromorphic approaches different from conventional neural control?",
+      "How can biologically inspired computation support embodied intelligence?",
+    ],
+    methodology: ["Spiking neural networks", "Robotic behaviour design", "Neuromorphic computation", "Embodied AI experimentation"],
+    experiments: ["SNN-based robotic behaviour", "Control and response inspection", "Neuromorphic model exploration"],
+    literature: ["Spiking neural networks", "Neuromorphic computing", "Robot learning", "Embodied intelligence"],
+    future: ["Compare SNN behaviour with conventional controllers", "Document robustness and limitations", "Explore event-based sensing connections"],
+  },
+  {
+    slug: "real-time-driving-scene-segmentation",
+    status: "Complete",
+    badge: "Computer Vision",
+    year: "2023",
+    title: "Real-Time Driving Scene Segmentation",
+    objective:
+      "Develop real-time semantic segmentation for autonomous driving scenes, connecting computer vision, perception, and intelligent transportation.",
+    tags: ["semantic segmentation", "autonomous driving", "computer vision", "perception"],
+    latestUpdate: "Repository available as a perception-focused autonomous driving project.",
+    progress: 100,
+    github: true,
+    repositoryUrl: "https://github.com/PanagiotaGr/real-time-driving-scene-segmentation",
+    subtitle: "Computer Vision Project · Complete · 2023",
+    overview:
+      "This project focuses on real-time semantic segmentation for driving scenes. It strengthens the perception foundation of the portfolio and connects naturally to autonomous driving, trajectory prediction, and intelligent transportation systems.",
+    questions: [
+      "How can driving-scene semantics be extracted efficiently in real time?",
+      "Which perception errors matter most for downstream autonomous driving decisions?",
+      "How can segmentation support safer prediction and planning pipelines?",
+    ],
+    methodology: ["Semantic segmentation", "Real-time computer vision", "Autonomous-driving scene analysis", "Perception pipeline development"],
+    experiments: ["Driving-scene segmentation pipeline", "Qualitative perception inspection", "Real-time performance consideration"],
+    literature: ["Semantic segmentation", "Autonomous driving perception", "Scene understanding", "Computer vision for robotics"],
+    future: ["Evaluate segmentation failure cases", "Connect scene semantics with trajectory prediction", "Improve documentation with visual examples"],
   },
   {
     slug: "robotics-vision-internship",
