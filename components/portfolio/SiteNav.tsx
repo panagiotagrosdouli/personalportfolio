@@ -5,12 +5,11 @@ import Link from "next/link";
 
 const navLinks = [
   { label: "Research", href: "/research" },
+  { label: "PhD Fit", href: "/research#phd-fit" },
   { label: "Projects", href: "/projects" },
-  { label: "Experiments", href: "/experiments" },
   { label: "Publications", href: "/publications" },
   { label: "Notes", href: "/reading-notes" },
   { label: "Log", href: "/research-log" },
-  { label: "Open Source", href: "/open-source" },
   { label: "CV", href: "/cv" },
   { label: "Contact", href: "/contact" },
 ];
@@ -34,9 +33,6 @@ export function SiteNav() {
           <Link href="/search" aria-label="Search" className="text-2xl leading-none text-stone-500 transition hover:text-stone-950">
             ⌕
           </Link>
-          <span aria-label="Theme" className="text-xl leading-none text-stone-500">
-            ◔
-          </span>
         </div>
 
         <button
