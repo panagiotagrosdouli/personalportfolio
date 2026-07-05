@@ -13,6 +13,33 @@ const focus = [
 const featuredSlugs = ["trajectory-prediction-vrus", "aegis-vio", "dynnav"];
 const researchThreads = projects.filter((project) => featuredSlugs.includes(project.slug));
 
+const reviewerSignals = [
+  {
+    label: "Research question",
+    title: "How should autonomous systems reason about people before acting?",
+    text: "The portfolio is centered on prediction, uncertainty, and safety rather than isolated engineering demos.",
+  },
+  {
+    label: "Technical base",
+    title: "Perception, forecasting, navigation, and uncertainty-aware decision making.",
+    text: "Projects connect VIO, semantic scene understanding, trajectory prediction, ROS2 navigation, and risk-sensitive policies.",
+  },
+  {
+    label: "PhD readiness",
+    title: "Evidence is presented as methods, experiments, limitations, and future work.",
+    text: "The site is structured so a professor can quickly judge research maturity and identify conversation topics for an interview.",
+  },
+];
+
+const labFit = [
+  "Human-aware robotics",
+  "Autonomous driving and intelligent transportation",
+  "Prediction and planning under uncertainty",
+  "Embodied AI and robot learning",
+  "Risk-aware decision making",
+  "Robot perception and state estimation",
+];
+
 const recentActivity = [
   {
     label: "Latest research focus",
@@ -93,6 +120,36 @@ export function FeaturedHome() {
           {focus.map((item) => (
             <Chip key={item} label={item} />
           ))}
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-7xl px-6 py-16 md:px-10 lg:px-12">
+        <div className="grid gap-6 md:grid-cols-3">
+          {reviewerSignals.map((signal) => (
+            <article key={signal.label} className="border-t border-stone-200 pt-6">
+              <p className="section-kicker mb-4">{signal.label}</p>
+              <h2 className="font-serif text-3xl leading-none tracking-[-0.04em] text-stone-950 md:text-4xl">{signal.title}</h2>
+              <p className="mt-5 text-sm leading-7 text-stone-650">{signal.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div className="border-y border-stone-200 bg-white/45">
+        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-12 md:px-10 lg:grid-cols-[0.34fr_0.66fr] lg:px-12">
+          <div>
+            <p className="section-kicker">PhD Lab Fit</p>
+            <h2 className="mt-4 font-serif text-5xl leading-[0.92] tracking-[-0.05em] text-stone-950">
+              Designed for a robotics professor to scan in 30 seconds.
+            </h2>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {labFit.map((item) => (
+              <div key={item} className="border border-stone-200 bg-[#fbfaf7] px-4 py-3 text-sm font-medium text-stone-700">
+                {item}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
