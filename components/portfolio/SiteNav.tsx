@@ -5,11 +5,11 @@ import Link from "next/link";
 
 const navLinks = [
   { label: "Research", href: "/research" },
+  { label: "Agenda", href: "/research-agenda" },
   { label: "PhD Fit", href: "/phd-fit" },
   { label: "Projects", href: "/projects" },
   { label: "Publications", href: "/publications" },
   { label: "Notes", href: "/reading-notes" },
-  { label: "Log", href: "/research-log" },
   { label: "CV", href: "/cv" },
   { label: "Contact", href: "/contact" },
 ];
