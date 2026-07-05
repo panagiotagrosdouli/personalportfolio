@@ -41,7 +41,7 @@ const selectedProjects = [
     contribution:
       "A research direction around probabilistic forecasting, interaction-aware prediction, and evaluation of multi-modal trajectories.",
     status: "Active research",
-    href: "/projects",
+    href: "/projects/trajectory-prediction-vrus",
   },
   {
     title: "AEGIS-VIO",
@@ -61,8 +61,32 @@ const selectedProjects = [
     contribution:
       "A navigation direction centered on risk-aware reasoning, dynamic scenes, and multi-agent interaction.",
     status: "In development",
-    href: "/projects",
+    href: "/projects/dynnav",
   },
+];
+
+const methodology = [
+  {
+    title: "1. Define the safety-relevant failure mode",
+    text: "I start from the downstream risk: a missed pedestrian intention, an overconfident trajectory estimate, a navigation policy that looks good on average but fails in rare unsafe cases.",
+  },
+  {
+    title: "2. Build a minimal reproducible pipeline",
+    text: "Projects are organized around explicit inputs, assumptions, baselines, evaluation criteria, and documented limitations so that results can become technical reports or manuscripts.",
+  },
+  {
+    title: "3. Evaluate beyond average performance",
+    text: "I am especially interested in uncertainty, calibration, multi-modal futures, corner cases, near misses, and the gap between perception confidence and decision quality.",
+  },
+];
+
+const phdFit = [
+  "Human-aware robotics and autonomous systems",
+  "Trajectory forecasting and prediction-aware planning",
+  "Risk-sensitive navigation in dynamic scenes",
+  "Uncertainty-aware robot perception",
+  "Embodied AI systems that reason before acting",
+  "Intelligent transportation and smart intersections",
 ];
 
 const futureDirections = [
@@ -79,12 +103,12 @@ export default function ResearchPage() {
 
       <section className="px-6 py-24 md:px-10 lg:px-12">
         <div className="mx-auto max-w-7xl">
-          <p className="section-kicker">Research</p>
+          <p className="section-kicker">Research Statement</p>
           <h1 className="mt-4 max-w-6xl font-serif text-6xl leading-[0.88] tracking-[-0.06em] text-stone-950 md:text-8xl">
             Prediction, uncertainty, and safe autonomy.
           </h1>
           <p className="mt-8 max-w-4xl text-xl leading-10 text-stone-700 md:text-2xl md:leading-[3rem]">
-            My research interests focus on autonomous systems that must understand dynamic scenes, anticipate human motion, and make safe decisions under uncertainty.
+            I want to build autonomous systems that do not only perceive the present, but reason about what could happen next before they act.
           </p>
         </div>
       </section>
@@ -104,6 +128,26 @@ export default function ResearchPage() {
             <p>
               I am interested in the connection between trajectory prediction, uncertainty-aware perception, and robot decision making. My goal is to develop systems that can represent multiple possible futures, understand the limits of their own predictions, and use that information to act more safely around humans.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-20 md:px-10 lg:px-12">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-3xl">
+            <p className="section-kicker">Research Method</p>
+            <h2 className="mt-4 font-serif text-5xl leading-[0.92] tracking-[-0.05em] text-stone-950 md:text-6xl">
+              How I turn projects into research.
+            </h2>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {methodology.map((item) => (
+              <article key={item.title} className="border-t border-stone-200 pt-6">
+                <h3 className="text-sm font-semibold leading-7 text-stone-950">{item.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-stone-650">{item.text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -158,8 +202,8 @@ export default function ResearchPage() {
                 <dd className="mt-3 text-sm leading-7 text-stone-700">Active diploma thesis research.</dd>
               </div>
             </dl>
-            <Link href="/projects" className="mt-10 inline-block text-sm font-medium text-emerald-900 underline decoration-emerald-900/25 underline-offset-4 transition hover:decoration-emerald-950">
-              View related projects →
+            <Link href="/projects/trajectory-prediction-vrus" className="mt-10 inline-block text-sm font-medium text-emerald-900 underline decoration-emerald-900/25 underline-offset-4 transition hover:decoration-emerald-950">
+              View thesis research case →
             </Link>
           </div>
         </div>
@@ -205,6 +249,24 @@ export default function ResearchPage() {
                 </Link>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-20 md:px-10 lg:px-12">
+        <div className="mx-auto grid max-w-7xl gap-12 border-y border-stone-200 py-16 lg:grid-cols-[0.34fr_0.66fr]">
+          <div>
+            <p className="section-kicker">Where I Fit</p>
+            <h2 className="mt-4 font-serif text-5xl leading-[0.92] tracking-[-0.05em] text-stone-950 md:text-6xl">
+              Labs where prediction meets action.
+            </h2>
+          </div>
+          <div className="grid gap-3 md:grid-cols-2">
+            {phdFit.map((item) => (
+              <div key={item} className="border border-stone-200 bg-white/60 px-4 py-3 text-sm font-medium leading-7 text-stone-700">
+                {item}
+              </div>
+            ))}
           </div>
         </div>
       </section>
