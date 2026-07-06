@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const accent = "text-[#e0001b] dark:text-[#ff5a66]";
+const accent = "text-emerald-700 dark:text-emerald-300";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -130,11 +130,11 @@ const skills = [
 
 function Section({ id, label, title, children }: { id: string; label: string; title: string; children: React.ReactNode }) {
   return (
-    <section id={id} className="scroll-mt-24 border-t border-neutral-200 py-16 dark:border-neutral-800">
+    <section id={id} className="scroll-mt-24 border-t border-stone-300 py-16 dark:border-stone-800">
       <div className="grid gap-8 lg:grid-cols-[220px_1fr]">
         <div>
           <p className={`text-xs font-semibold uppercase tracking-[0.24em] ${accent}`}>{label}</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-neutral-950 dark:text-neutral-50">{title}</h2>
+          <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-stone-950 dark:text-stone-50">{title}</h2>
         </div>
         <div>{children}</div>
       </div>
@@ -144,12 +144,12 @@ function Section({ id, label, title, children }: { id: string; label: string; ti
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-neutral-900 selection:bg-red-100 dark:bg-[#090909] dark:text-neutral-100">
-      <nav className="sticky top-0 z-40 border-b border-neutral-200 bg-white/90 px-5 py-4 backdrop-blur-md dark:border-neutral-800 dark:bg-[#090909]/90 md:px-8" aria-label="Main navigation">
+    <main className="min-h-screen bg-[#f7f3ea] text-stone-900 selection:bg-emerald-200 selection:text-emerald-950 dark:bg-stone-950 dark:text-stone-100">
+      <nav className="sticky top-0 z-40 border-b border-stone-300 bg-[#f7f3ea]/95 px-5 py-4 backdrop-blur-md dark:border-stone-800 dark:bg-stone-950/90 md:px-8" aria-label="Main navigation">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-8">
-          <Link href="/" className="text-sm font-semibold tracking-tight text-neutral-950 transition hover:text-[#e0001b] dark:text-neutral-50">Panagiota Grosdouli</Link>
-          <div className="hidden items-center gap-6 text-sm text-neutral-600 dark:text-neutral-400 md:flex">
-            {navLinks.map((link) => <Link key={link.label} href={link.href} className="transition hover:text-[#e0001b] dark:hover:text-[#ff5a66]">{link.label}</Link>)}
+          <Link href="/" className="text-sm font-semibold tracking-tight text-stone-950 transition hover:text-emerald-800 dark:text-stone-50 dark:hover:text-emerald-300">Panagiota Grosdouli</Link>
+          <div className="hidden items-center gap-6 text-sm text-stone-600 dark:text-stone-400 md:flex">
+            {navLinks.map((link) => <Link key={link.label} href={link.href} className="transition hover:text-emerald-800 dark:hover:text-emerald-300">{link.label}</Link>)}
           </div>
         </div>
       </nav>
@@ -158,24 +158,24 @@ export default function Home() {
         <header className="grid min-h-[78vh] gap-12 py-20 md:grid-cols-[1fr_300px] md:items-center lg:py-28">
           <div>
             <p className={`text-xs font-semibold uppercase tracking-[0.26em] ${accent}`}>Robotics · Prediction · Perception · Planning</p>
-            <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-[0.98] tracking-[-0.06em] text-neutral-950 dark:text-neutral-50 md:text-7xl">Panagiota Grosdouli</h1>
-            <p className="mt-5 text-xl text-neutral-700 dark:text-neutral-300">Prospective Robotics PhD researcher</p>
-            <p className="mt-7 max-w-3xl text-2xl leading-10 tracking-[-0.02em] text-neutral-950 dark:text-neutral-100">I study how autonomous systems can perceive uncertain scenes, forecast human motion, and plan safely around people.</p>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-neutral-600 dark:text-neutral-400">MEng Electrical &amp; Computer Engineering student focused on human-aware robotics, trajectory prediction, robotic perception, uncertainty-aware navigation, and safe autonomous systems.</p>
+            <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-[0.98] tracking-[-0.06em] text-stone-950 dark:text-stone-50 md:text-7xl">Panagiota Grosdouli</h1>
+            <p className="mt-5 text-xl text-stone-700 dark:text-stone-300">Prospective Robotics PhD researcher</p>
+            <p className="mt-7 max-w-3xl text-2xl leading-10 tracking-[-0.02em] text-stone-950 dark:text-stone-100">I study how autonomous systems can perceive uncertain scenes, forecast human motion, and plan safely around people.</p>
+            <p className="mt-6 max-w-2xl text-base leading-8 text-stone-600 dark:text-stone-400">MEng Electrical &amp; Computer Engineering student focused on human-aware robotics, trajectory prediction, robotic perception, uncertainty-aware navigation, and safe autonomous systems.</p>
             <div className="mt-9 flex flex-wrap gap-3">
               {["Research", "Publications", "CV", "Contact"].map((item) => (
-                <Link key={item} href={item === "CV" ? "/cv" : `#${item.toLowerCase()}`} className="border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-900 transition hover:border-[#e0001b] hover:text-[#e0001b] dark:border-neutral-700 dark:text-neutral-100 dark:hover:border-[#ff5a66] dark:hover:text-[#ff5a66]">{item}</Link>
+                <Link key={item} href={item === "CV" ? "/cv" : `#${item.toLowerCase()}`} className="border border-stone-300 px-4 py-2 text-sm font-medium text-stone-900 transition hover:border-emerald-700 hover:text-emerald-800 dark:border-stone-700 dark:text-stone-100 dark:hover:border-emerald-300 dark:hover:text-emerald-300">{item}</Link>
               ))}
             </div>
           </div>
           <div>
             <img src="profile.png" alt="Portrait of Panagiota Grosdouli" className="aspect-[4/5] w-full object-cover grayscale transition duration-500 hover:grayscale-0" />
-            <p className="mt-4 border-l-2 border-[#e0001b] pl-4 text-sm leading-6 text-neutral-600 dark:text-neutral-400">Current thesis: trajectory prediction of vulnerable road users at smart intersections.</p>
+            <p className="mt-4 border-l-2 border-emerald-700 pl-4 text-sm leading-6 text-stone-600 dark:border-emerald-300 dark:text-stone-400">Current thesis: trajectory prediction of vulnerable road users at smart intersections.</p>
           </div>
         </header>
 
         <Section id="about" label="About" title="Scientific motivation">
-          <div className="max-w-3xl space-y-5 text-base leading-8 text-neutral-700 dark:text-neutral-300">
+          <div className="max-w-3xl space-y-5 text-base leading-8 text-stone-700 dark:text-stone-300">
             <p>My research motivation is to build autonomous systems that do not treat perception, prediction, and planning as separate engineering blocks, but as a coupled scientific problem. In human-centered environments, a robot must reason about what it sees, what may happen next, and how uncertainty should change its behavior.</p>
             <p>I am especially interested in robotics problems where geometric perception, learning-based prediction, and safety-aware decision making meet: smart intersections, dynamic navigation, human motion forecasting, and perception systems that expose their confidence and limitations.</p>
           </div>
@@ -184,13 +184,13 @@ export default function Home() {
         <Section id="research" label="Research" title="Research themes">
           <div className="grid gap-4 md:grid-cols-2">
             {researchThemes.map((theme) => (
-              <article key={theme.title} className="group border border-neutral-200 p-6 transition duration-300 hover:-translate-y-1 hover:border-[#e0001b] dark:border-neutral-800 dark:hover:border-[#ff5a66]">
-                <h3 className="text-lg font-semibold text-neutral-950 dark:text-neutral-50">{theme.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-neutral-700 dark:text-neutral-300">{theme.description}</p>
+              <article key={theme.title} className="group border border-stone-300 p-6 transition duration-300 hover:-translate-y-1 hover:border-emerald-700 dark:border-stone-800 dark:hover:border-emerald-300">
+                <h3 className="text-lg font-semibold text-stone-950 dark:text-stone-50">{theme.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-stone-700 dark:text-stone-300">{theme.description}</p>
                 <dl className="mt-5 space-y-3 text-sm leading-6">
-                  <div><dt className={accent}>Current interests</dt><dd className="text-neutral-600 dark:text-neutral-400">{theme.interests}</dd></div>
-                  <div><dt className={accent}>Methodologies</dt><dd className="text-neutral-600 dark:text-neutral-400">{theme.methods}</dd></div>
-                  <div><dt className={accent}>Technologies</dt><dd className="text-neutral-600 dark:text-neutral-400">{theme.technologies}</dd></div>
+                  <div><dt className={accent}>Current interests</dt><dd className="text-stone-600 dark:text-stone-400">{theme.interests}</dd></div>
+                  <div><dt className={accent}>Methodologies</dt><dd className="text-stone-600 dark:text-stone-400">{theme.methods}</dd></div>
+                  <div><dt className={accent}>Technologies</dt><dd className="text-stone-600 dark:text-stone-400">{theme.technologies}</dd></div>
                 </dl>
               </article>
             ))}
@@ -200,13 +200,13 @@ export default function Home() {
         <Section id="publications" label="Publications" title="Thesis & manuscripts">
           <div className="space-y-5">
             {publications.map((pub) => (
-              <article key={pub.title} className={`border p-6 ${pub.featured ? "border-[#e0001b]" : "border-neutral-200 dark:border-neutral-800"}`}>
+              <article key={pub.title} className={`border p-6 ${pub.featured ? "border-emerald-700 dark:border-emerald-300" : "border-stone-300 dark:border-stone-800"}`}>
                 {pub.featured && <p className={`mb-3 text-xs font-semibold uppercase tracking-[0.22em] ${accent}`}>Featured</p>}
-                <p className="text-sm text-neutral-500 dark:text-neutral-400">{pub.authors}</p>
-                <h3 className="mt-1 text-xl font-semibold tracking-[-0.02em] text-neutral-950 dark:text-neutral-50">{pub.title}</h3>
-                <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">{pub.venue} · {pub.year} · DOI: {pub.doi}</p>
+                <p className="text-sm text-stone-500 dark:text-stone-400">{pub.authors}</p>
+                <h3 className="mt-1 text-xl font-semibold tracking-[-0.02em] text-stone-950 dark:text-stone-50">{pub.title}</h3>
+                <p className="mt-2 text-sm text-stone-600 dark:text-stone-400">{pub.venue} · {pub.year} · DOI: {pub.doi}</p>
                 <div className="mt-4 flex flex-wrap gap-3 text-sm">
-                  {pub.links.map((link) => <span key={link} className="text-neutral-500 dark:text-neutral-500">{link}</span>)}
+                  {pub.links.map((link) => <span key={link} className="text-stone-500 dark:text-stone-500">{link}</span>)}
                 </div>
               </article>
             ))}
@@ -216,8 +216,8 @@ export default function Home() {
         <Section id="projects" label="Projects" title="Research contributions">
           <div className="space-y-6">
             {projects.map((project) => (
-              <article key={project.title} className="border-b border-neutral-200 pb-6 dark:border-neutral-800">
-                <h3 className="text-xl font-semibold tracking-[-0.02em] text-neutral-950 dark:text-neutral-50">{project.title}</h3>
+              <article key={project.title} className="border-b border-stone-300 pb-6 dark:border-stone-800">
+                <h3 className="text-xl font-semibold tracking-[-0.02em] text-stone-950 dark:text-stone-50">{project.title}</h3>
                 <div className="mt-4 grid gap-4 text-sm leading-7 md:grid-cols-2">
                   <p><span className={accent}>Problem.</span> {project.problem}</p>
                   <p><span className={accent}>Methodology.</span> {project.methodology}</p>
@@ -235,8 +235,8 @@ export default function Home() {
           <div className="space-y-6">
             {timeline.map(([date, title, detail]) => (
               <article key={`${date}-${title}`} className="grid gap-3 text-sm leading-7 md:grid-cols-[140px_1fr]">
-                <p className="text-neutral-500 dark:text-neutral-500">{date}</p>
-                <div><h3 className="font-semibold text-neutral-950 dark:text-neutral-50">{title}</h3><p className="text-neutral-700 dark:text-neutral-300">{detail}</p></div>
+                <p className="text-stone-500 dark:text-stone-500">{date}</p>
+                <div><h3 className="font-semibold text-stone-950 dark:text-stone-50">{title}</h3><p className="text-stone-700 dark:text-stone-300">{detail}</p></div>
               </article>
             ))}
           </div>
@@ -245,29 +245,29 @@ export default function Home() {
         <Section id="skills" label="Skills" title="Technical foundation">
           <div className="grid gap-4 md:grid-cols-2">
             {skills.map(([group, list]) => (
-              <div key={group} className="border-t border-neutral-200 pt-4 dark:border-neutral-800">
-                <h3 className="font-semibold text-neutral-950 dark:text-neutral-50">{group}</h3>
-                <p className="mt-1 text-sm leading-7 text-neutral-600 dark:text-neutral-400">{list}</p>
+              <div key={group} className="border-t border-stone-300 pt-4 dark:border-stone-800">
+                <h3 className="font-semibold text-stone-950 dark:text-stone-50">{group}</h3>
+                <p className="mt-1 text-sm leading-7 text-stone-600 dark:text-stone-400">{list}</p>
               </div>
             ))}
           </div>
         </Section>
 
         <Section id="contact" label="Contact" title="Academic contact">
-          <div className="max-w-3xl text-base leading-8 text-neutral-700 dark:text-neutral-300">
+          <div className="max-w-3xl text-base leading-8 text-stone-700 dark:text-stone-300">
             <p>I am interested in PhD opportunities and collaborations in robotic perception, human motion prediction, planning under uncertainty, and safe human-aware autonomy.</p>
             <div className="mt-6 grid gap-2 text-sm md:grid-cols-2">
-              <a href="mailto:panagros1@ee.duth.gr" className="text-[#e0001b] hover:underline dark:text-[#ff5a66]">panagros1@ee.duth.gr</a>
-              <a href="https://github.com/panagiotagrosdouli" target="_blank" rel="noreferrer" className="text-[#e0001b] hover:underline dark:text-[#ff5a66]">GitHub</a>
-              <span className="text-neutral-500">LinkedIn: add URL</span>
-              <span className="text-neutral-500">Google Scholar: add profile</span>
-              <span className="text-neutral-500">ORCID: add identifier</span>
-              <Link href="/cv" className="text-[#e0001b] hover:underline dark:text-[#ff5a66]">CV</Link>
+              <a href="mailto:panagros1@ee.duth.gr" className="text-emerald-700 hover:underline dark:text-emerald-300">panagros1@ee.duth.gr</a>
+              <a href="https://github.com/panagiotagrosdouli" target="_blank" rel="noreferrer" className="text-emerald-700 hover:underline dark:text-emerald-300">GitHub</a>
+              <span className="text-stone-500">LinkedIn: add URL</span>
+              <span className="text-stone-500">Google Scholar: add profile</span>
+              <span className="text-stone-500">ORCID: add identifier</span>
+              <Link href="/cv" className="text-emerald-700 hover:underline dark:text-emerald-300">CV</Link>
             </div>
           </div>
         </Section>
 
-        <footer className="border-t border-neutral-200 py-8 text-sm text-neutral-500 dark:border-neutral-800">© Panagiota Grosdouli</footer>
+        <footer className="border-t border-stone-300 py-8 text-sm text-stone-500 dark:border-stone-800">© Panagiota Grosdouli</footer>
       </div>
     </main>
   );
