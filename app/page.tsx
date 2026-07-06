@@ -13,7 +13,7 @@ import { HomeAbout } from "@/components/portfolio/HomeAbout";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-stone-950 text-stone-100">
+    <main className="min-h-screen bg-[#f7f3ea] text-stone-950">
       <Hero />
       <AcademicResearchFocus />
       <ResearchImpact />
