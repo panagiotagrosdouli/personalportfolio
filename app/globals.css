@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f3ea;
-  --foreground: #14120f;
+  --background: #ffffff;
+  --foreground: #111111;
 }
 
 @theme inline {
@@ -29,31 +29,14 @@ body {
 }
 
 ::selection {
-  background: #34d399;
-  color: #0c0a09;
+  background: #d1fae5;
+  color: #111111;
 }
 
 a {
   text-underline-position: from-font;
 }
 
-.section-kicker {
-  color: #047857;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-}
-
 .font-serif {
   font-family: var(--font-cormorant), Georgia, "Times New Roman", serif;
-}
-
-.academic-page {
-  background: #f7f3ea;
-  color: #14120f;
-}
-
-.academic-rule {
-  border-color: rgba(28, 25, 23, 0.16);
 }
