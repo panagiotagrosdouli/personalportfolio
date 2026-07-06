@@ -1,19 +1,19 @@
 const questions = [
   {
-    question: "How can autonomous systems anticipate human behavior before they act?",
-    text: "Trajectory prediction becomes safety-critical when robots and vehicles share space with pedestrians, cyclists, and other uncertain agents.",
+    question: "How can robots anticipate human motion before they move?",
+    text: "My central research interest is trajectory prediction for people in shared environments, especially where robotic or intelligent-transportation systems must act with incomplete information.",
   },
   {
-    question: "How should robots reason when perception is uncertain?",
-    text: "A reliable system should know when its observations are incomplete, noisy, or not enough to support confident decisions.",
+    question: "How should perception expose uncertainty?",
+    text: "SLAM, VIO, sensor fusion, and scene understanding are more useful for autonomy when they also communicate confidence, ambiguity, and failure modes.",
   },
   {
-    question: "Can prediction improve navigation safety?",
-    text: "Forecasting possible futures can help navigation policies avoid near misses, unsafe interactions, and brittle average-case behavior.",
+    question: "How can prediction inform navigation and planning?",
+    text: "Forecasting possible futures should not remain an isolated model output; it should shape how robots plan, reroute, and behave around dynamic agents.",
   },
   {
-    question: "What makes an intelligent system trustworthy?",
-    text: "Trust requires evaluation beyond accuracy: calibration, failure cases, transparency, robustness, and clear limitations.",
+    question: "What makes a robotics project ready for research?",
+    text: "A strong project needs a question, baseline, evaluation, limitations, and future work. This portfolio is being organized around that standard.",
   },
 ];
 
@@ -22,9 +22,9 @@ export function ResearchQuestions() {
     <section className="border-y border-white/10 bg-stone-950 px-6 py-24 md:px-10 lg:px-12">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">Current Research Questions</p>
+          <p className="mb-4 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">Research Questions</p>
           <h2 className="font-serif text-5xl leading-[0.92] tracking-[-0.055em] text-white md:text-7xl">
-            The questions behind the code.
+            The robotics questions behind the code.
           </h2>
         </div>
 
