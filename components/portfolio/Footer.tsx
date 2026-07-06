@@ -23,7 +23,7 @@ export function Footer({ theme = "light" }: { theme?: "light" | "dark" }) {
 
         <div className={`flex gap-8 text-base ${isDark ? "text-stone-400" : "text-stone-600"}`}>
           <a
-            href="https://github.com/PanagiotaGr"
+            href="https://github.com/panagiotagrosdouli"
             target="_blank"
             rel="noreferrer"
             className={`transition ${isDark ? "hover:text-white" : "hover:text-stone-950"}`}
