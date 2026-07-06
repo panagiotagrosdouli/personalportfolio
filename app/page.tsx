@@ -1,23 +1,23 @@
 import { Footer } from "@/components/portfolio/Footer";
 import { Hero } from "@/components/portfolio/Hero";
-import { ResearchSignal } from "@/components/portfolio/ResearchSignal";
-import { ResearchInterests } from "@/components/portfolio/ResearchInterests";
+import { ResearchQuestions } from "@/components/portfolio/ResearchQuestions";
 import { FeaturedProjects } from "@/components/portfolio/FeaturedProjects";
+import { ResearchPhilosophy } from "@/components/portfolio/ResearchPhilosophy";
+import { EditorialResearchTimeline } from "@/components/portfolio/EditorialResearchTimeline";
 import { LabFitStrip } from "@/components/portfolio/LabFitStrip";
 import { TechStack } from "@/components/portfolio/TechStack";
-import { Roadmap } from "@/components/portfolio/Roadmap";
 import { HomeAbout } from "@/components/portfolio/HomeAbout";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-stone-950 text-stone-100">
       <Hero />
-      <ResearchSignal />
-      <ResearchInterests />
+      <ResearchQuestions />
       <FeaturedProjects />
+      <ResearchPhilosophy />
+      <EditorialResearchTimeline />
       <LabFitStrip />
       <TechStack />
-      <Roadmap />
       <HomeAbout />
       <Footer theme="dark" />
     </main>
