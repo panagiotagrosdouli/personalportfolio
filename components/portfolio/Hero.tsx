@@ -1,82 +1,82 @@
 import Link from "next/link";
 import { SiteNav } from "@/components/portfolio/SiteNav";
 
-function StatusDot() {
-  return <span className="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-emerald-500" />;
-}
-
-const evidence = [
+const signals = [
   { label: "Research axis", value: "Prediction · Uncertainty · Safe Autonomy" },
   { label: "Current thesis", value: "VRU trajectory forecasting at smart intersections" },
-  { label: "PhD fit", value: "Robotics, autonomous systems, embodied AI, intelligent transportation" },
+  { label: "Target fit", value: "Robotics · Computer Vision · Intelligent Transportation" },
 ];
 
 const proofPoints = [
   "Diploma thesis on human motion forecasting in safety-critical traffic scenes",
-  "Independent robotics research spanning multi-modal SLAM, UAV navigation, and intersection perception",
-  "Research portfolio organized around questions, methods, experiments, limitations, and next steps",
+  "Independent research threads in SLAM, risk-aware navigation, UAV autonomy, and intersection perception",
+  "Projects documented as research cases: question, method, evaluation, limitations, next steps",
 ];
 
 export function Hero() {
   return (
-    <section id="top" className="bg-stone-950 text-stone-100">
+    <section id="top" className="relative overflow-hidden bg-stone-950 text-stone-100">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_25%_15%,rgba(52,211,153,0.12),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(148,163,184,0.10),transparent_28%)]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-emerald-400/40 to-transparent" />
+
       <SiteNav theme="dark" />
 
-      <div className="mx-auto grid max-w-7xl items-start gap-14 px-6 pb-20 pt-16 md:grid-cols-[1fr_310px] md:px-10 md:pb-28 md:pt-20 lg:px-12">
+      <div className="relative mx-auto grid max-w-7xl items-start gap-16 px-6 pb-24 pt-16 md:grid-cols-[1fr_360px] md:px-10 md:pb-32 md:pt-20 lg:px-12">
         <div>
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">
-            Research Homepage · Robotics · Autonomous Systems
-          </p>
-          <h1 className="max-w-5xl font-serif text-6xl font-bold leading-[0.92] tracking-[-0.065em] text-white md:text-8xl lg:text-9xl">
+          <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-emerald-300">
+            PhD Applicant · Robotics · Human-Aware Autonomy
+          </div>
+
+          <h1 className="max-w-5xl font-serif text-6xl font-semibold leading-[0.9] tracking-[-0.06em] text-white md:text-8xl lg:text-9xl">
             Panagiota Grosdouli
           </h1>
-          <p className="mt-7 max-w-4xl font-serif text-3xl leading-[1.12] tracking-[-0.035em] text-stone-300 md:text-5xl lg:text-6xl">
-            I study how robots can anticipate human motion before they act.
-          </p>
-          <p className="mt-7 max-w-3xl text-base leading-8 text-stone-400 md:text-lg md:leading-9">
-            My work connects vulnerable road-user trajectory prediction, uncertainty-aware perception, and risk-aware navigation. I am interested in autonomous systems that represent multiple possible futures, recognize their own uncertainty, and make safer decisions around people.
+
+          <p className="mt-7 max-w-4xl font-serif text-3xl leading-[1.12] tracking-[-0.035em] text-stone-200 md:text-5xl">
+            Building toward robots that forecast before they act.
           </p>
 
-          <div className="mt-9 grid max-w-4xl gap-3 md:grid-cols-3">
+          <p className="mt-7 max-w-3xl text-base leading-8 text-stone-400 md:text-lg md:leading-9">
+            My research direction connects trajectory prediction, uncertainty-aware perception, and risk-aware planning for autonomous systems operating around people.
+          </p>
+
+          <div className="mt-10 grid max-w-4xl gap-3 md:grid-cols-3">
             {proofPoints.map((point) => (
-              <div key={point} className="border-t border-stone-800 pt-4 text-sm leading-7 text-stone-300">
+              <div key={point} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm leading-7 text-stone-300">
                 {point}
               </div>
             ))}
           </div>
 
-          <div className="mt-9 flex flex-col gap-2 text-sm leading-7 text-stone-400 md:text-base">
-            <span className="flex items-start gap-3">
-              <StatusDot />
-              MEng Electrical & Computer Engineering — Democritus University of Thrace
-            </span>
-            <span className="flex items-start gap-3">
-              <StatusDot />
-              Diploma thesis: trajectory prediction of vulnerable road users at smart intersections
-            </span>
-            <span className="flex items-start gap-3">
-              <StatusDot />
-              Applying to PhD programs · Fall 2026 · open for research collaborations
-            </span>
-          </div>
-
           <div className="mt-11 flex flex-wrap gap-3">
-            <Link href="/projects" className="inline-flex items-center bg-emerald-500 px-5 py-3 text-sm font-semibold text-stone-950 transition hover:bg-emerald-400">
-              View Projects →
+            <Link href="/research" className="inline-flex items-center rounded-full bg-emerald-400 px-5 py-3 text-sm font-semibold text-stone-950 transition hover:bg-emerald-300">
+              Research Statement
             </Link>
-            <Link href="/contact" className="inline-flex items-center border border-stone-700 px-5 py-3 text-sm font-medium text-stone-100 transition hover:border-stone-400 hover:text-white">
-              Contact
+            <Link href="/projects" className="inline-flex items-center rounded-full border border-white/15 px-5 py-3 text-sm font-medium text-stone-100 transition hover:border-emerald-400 hover:text-emerald-300">
+              View Projects
+            </Link>
+            <Link href="/cv" className="inline-flex items-center rounded-full px-5 py-3 text-sm font-medium text-stone-400 transition hover:text-white">
+              Academic CV
             </Link>
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 md:pt-8">
+        <aside className="rounded-[2rem] border border-white/10 bg-white/[0.035] p-5 shadow-2xl shadow-black/20 backdrop-blur md:mt-4">
           <div
-            className="aspect-[3/4] w-40 bg-stone-900 bg-cover bg-center shadow-[0_30px_80px_rgba(0,0,0,0.5)] md:w-full"
+            className="aspect-[4/5] rounded-[1.5rem] bg-stone-900 bg-cover bg-center"
             style={{ backgroundImage: "url('/profile.png')" }}
             aria-label="Panagiota Grosdouli profile photo"
           />
-          <div className="space-y-1 text-xs leading-6 text-stone-500">
+
+          <div className="mt-5 divide-y divide-white/10 border-y border-white/10 text-xs leading-6 text-stone-400">
+            {signals.map((item) => (
+              <div key={item.label} className="py-4">
+                <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-stone-500">{item.label}</p>
+                <p className="mt-1 font-medium text-stone-200">{item.value}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-5 space-y-1 text-xs leading-6 text-stone-500">
             <a href="https://github.com/panagiotagrosdouli" target="_blank" rel="noreferrer" className="block transition hover:text-white">
               github.com/panagiotagrosdouli
             </a>
@@ -84,16 +84,7 @@ export function Hero() {
               panagros1@ee.duth.gr
             </a>
           </div>
-
-          <div className="mt-3 divide-y divide-stone-800 border-y border-stone-800 text-xs leading-6 text-stone-400">
-            {evidence.map((item) => (
-              <div key={item.label} className="py-3">
-                <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-stone-500">{item.label}</p>
-                <p className="mt-1 font-medium text-stone-200">{item.value}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+        </aside>
       </div>
     </section>
   );
