@@ -70,14 +70,14 @@ export default function ReadingNotesPage() {
   }, [search, venue]);
 
   return (
-    <main className="min-h-screen bg-[#fbfaf7] text-stone-950">
-      <SiteNav />
+    <main className="min-h-screen bg-stone-950 text-stone-100">
+      <SiteNav theme="dark" />
       <div className="mx-auto max-w-5xl px-6 py-16 md:px-10 lg:px-12">
-        <p className="section-kicker mb-4">Literature</p>
-        <h1 className="font-serif text-6xl font-semibold leading-[0.9] tracking-[-0.055em] md:text-7xl">
+        <p className="mb-4 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">Literature</p>
+        <h1 className="font-serif text-6xl font-semibold leading-[0.9] tracking-[-0.055em] text-white md:text-7xl">
           Reading Notes
         </h1>
-        <p className="mb-10 mt-6 max-w-2xl text-base leading-8 text-stone-650">
+        <p className="mb-10 mt-6 max-w-2xl text-base leading-8 text-stone-400">
           Structured notes on papers and research ideas shaping my thinking in trajectory prediction, autonomy, uncertainty, and risk-aware navigation.
         </p>
 
@@ -87,7 +87,7 @@ export default function ReadingNotesPage() {
             placeholder="Search papers..."
             value={search}
             onChange={(event) => setSearch(event.target.value)}
-            className="flex-1 border border-stone-200 bg-white px-4 py-2 text-sm text-stone-950 placeholder:text-stone-400 focus:border-stone-950 focus:outline-none"
+            className="flex-1 border border-stone-800 bg-stone-900 px-4 py-2 text-sm text-stone-100 placeholder:text-stone-600 focus:border-emerald-400 focus:outline-none"
           />
           <div className="flex flex-wrap gap-2">
             {allVenues.map((item) => (
@@ -95,7 +95,7 @@ export default function ReadingNotesPage() {
                 key={item}
                 onClick={() => setVenue(item)}
                 className={`border px-3 py-1.5 font-mono text-[11px] transition-colors ${
-                  venue === item ? "border-stone-950 bg-white text-stone-950" : "border-stone-200 text-stone-500 hover:border-stone-500"
+                  venue === item ? "border-emerald-400 bg-emerald-400 text-stone-950" : "border-stone-800 text-stone-400 hover:border-stone-500"
                 }`}
               >
                 {item === "All" ? "All venues" : item}
@@ -104,70 +104,69 @@ export default function ReadingNotesPage() {
           </div>
         </div>
 
-        <p className="section-kicker mb-5">{filtered.length} paper{filtered.length !== 1 ? "s" : ""}</p>
+        <p className="mb-5 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">
+          {filtered.length} paper{filtered.length !== 1 ? "s" : ""}
+        </p>
 
-        <div className="divide-y divide-stone-200 border-y border-stone-200">
+        <div className="divide-y divide-stone-800 border-y border-stone-800">
           {filtered.map((note) => (
             <div key={note.id}>
-              <button
-                onClick={() => setExpanded(expanded === note.id ? null : note.id)}
-                className="w-full px-0 py-6 text-left transition-colors hover:bg-white/60 md:px-6"
-              >
+              <button onClick={() => setExpanded(expanded === note.id ? null : note.id)} className="w-full px-0 py-6 text-left transition-colors hover:bg-stone-900/60 md:px-6">
                 <div className="flex items-start justify-between gap-6">
                   <div>
                     <div className="mb-2 flex flex-wrap items-center gap-2">
-                      <span className="border border-stone-200 px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.16em] text-stone-500">
+                      <span className="border border-stone-800 px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.16em] text-stone-400">
                         {note.venue} {note.year}
                       </span>
                       {note.tags.map((tag) => (
-                        <span key={tag} className="font-mono text-[10px] text-stone-400">{tag}</span>
+                        <span key={tag} className="font-mono text-[10px] text-stone-500">{tag}</span>
                       ))}
                     </div>
-                    <h3 className="text-sm font-semibold leading-snug text-stone-950">{note.title}</h3>
+                    <h3 className="text-sm font-semibold leading-snug text-white">{note.title}</h3>
                     <p className="mt-1 text-xs text-stone-500">{note.authors}</p>
                   </div>
-                  <span className="shrink-0 text-xl font-light text-stone-400">{expanded === note.id ? "−" : "+"}</span>
+                  <span className="shrink-0 text-xl font-light text-stone-500">{expanded === note.id ? "-" : "+"}</span>
                 </div>
               </button>
 
               {expanded === note.id && (
-                <div className="space-y-7 border-t border-stone-200 px-0 pb-8 pt-6 md:px-6">
+                <div className="space-y-7 border-t border-stone-800 px-0 pb-8 pt-6 md:px-6">
                   <div>
-                    <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-400">Summary</p>
-                    <p className="text-sm leading-7 text-stone-600">{note.summary}</p>
+                    <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">Summary</p>
+                    <p className="text-sm leading-7 text-stone-400">{note.summary}</p>
                   </div>
                   <div className="grid gap-8 sm:grid-cols-2">
                     <div>
-                      <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-400">Main Idea</p>
-                      <p className="text-sm leading-7 text-stone-600">{note.mainIdea}</p>
+                      <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-500">Main Idea</p>
+                      <p className="text-sm leading-7 text-stone-400">{note.mainIdea}</p>
                     </div>
                     <div>
-                      <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-400">Method</p>
-                      <p className="text-sm leading-7 text-stone-600">{note.method}</p>
+                      <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-500">Method</p>
+                      <p className="text-sm leading-7 text-stone-400">{note.method}</p>
                     </div>
                   </div>
                   <div className="grid gap-8 sm:grid-cols-2">
                     <div>
-                      <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-400">Strengths</p>
+                      <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-500">Strengths</p>
                       <ul className="space-y-1.5">
                         {note.strengths.map((strength) => (
-                          <li key={strength} className="flex items-start gap-2 text-sm leading-7 text-stone-600"><span className="text-emerald-600">+</span>{strength}</li>
+                          <li key={strength} className="flex items-start gap-2 text-sm leading-7 text-stone-400"><span className="text-emerald-400">+</span>{strength}</li>
                         ))}
                       </ul>
                     </div>
                     <div>
-                      <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-400">Weaknesses</p>
+                      <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-500">Weaknesses</p>
                       <ul className="space-y-1.5">
                         {note.weaknesses.map((weakness) => (
-                          <li key={weakness} className="flex items-start gap-2 text-sm leading-7 text-stone-600"><span className="text-stone-400">−</span>{weakness}</li>
+                          <li key={weakness} className="flex items-start gap-2 text-sm leading-7 text-stone-400"><span className="text-stone-600">-</span>{weakness}</li>
                         ))}
                       </ul>
                     </div>
                   </div>
-                  <div className="border border-stone-200 bg-white px-4 py-4">
-                    <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-900">Research Ideas Inspired</p>
+                  <div className="border border-stone-800 bg-stone-900 px-4 py-4">
+                    <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">Research Ideas Inspired</p>
                     {note.ideas.map((idea) => (
-                      <p key={idea} className="text-sm leading-7 text-stone-950">{idea}</p>
+                      <p key={idea} className="text-sm leading-7 text-stone-300">{idea}</p>
                     ))}
                   </div>
                 </div>
@@ -176,7 +175,7 @@ export default function ReadingNotesPage() {
           ))}
         </div>
       </div>
-      <Footer />
+      <Footer theme="dark" />
     </main>
   );
 }
