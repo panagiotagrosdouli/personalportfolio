@@ -1,81 +1,82 @@
+import Link from "next/link";
+
 type ProjectCard = {
   title: string;
   status: string;
   description: string;
   relevance: string;
   tags: string[];
-  githubUrl?: string;
+  href: string;
 };
 
 const projects: ProjectCard[] = [
   {
     title: "Trajectory Prediction of VRUs at Smart Intersections",
     status: "Diploma Thesis / Active",
-    description: "Forecasting the future motion of vulnerable road users in smart-intersection environments.",
-    relevance: "Directly addresses uncertainty-aware prediction for safety-critical autonomous decision making.",
-    tags: ["Trajectory Prediction", "Uncertainty", "Intelligent Transportation"],
+    description: "Forecasting vulnerable road-user motion in smart-intersection environments.",
+    relevance: "Core evidence for human-aware autonomous systems and safety-critical prediction.",
+    tags: ["Forecasting", "Uncertainty", "Smart Intersections"],
+    href: "/projects/trajectory-prediction-vrus",
   },
   {
-    title: "Adaptive Multi-Modal SLAM with Uncertainty-Aware Sensor Fusion",
+    title: "DynNav: Risk-Aware Navigation",
     status: "Independent Research",
-    description: "SLAM using vision foundation models and event cameras for high-speed UAV navigation.",
-    relevance: "Connects visual perception, sensor fusion, and state estimation for robotic autonomy.",
-    tags: ["SLAM", "Event Cameras", "Sensor Fusion", "UAV"],
-    githubUrl: "https://github.com/panagiotagrosdouli/Adaptive-Multi-Modal-SLAM-with-Uncertainty-Aware-Sensor-Fusion",
+    description: "Navigation and rerouting under uncertainty in dynamic environments.",
+    relevance: "Connects perception uncertainty to downstream planning and safer robot behavior.",
+    tags: ["ROS 2", "Risk", "Planning"],
+    href: "/projects/dynnav",
   },
   {
-    title: "DynNav - Dynamic Navigation and Rerouting",
+    title: "AEGIS-VIO",
     status: "Independent Research",
-    description: "Uncertainty-aware, risk-sensitive navigation and replanning in unknown environments with ROS 2.",
-    relevance: "Studies risk-sensitive planning and learning-augmented replanning for mobile robots.",
-    tags: ["ROS 2", "Risk-Aware Planning", "Navigation"],
-    githubUrl: "https://github.com/panagiotagrosdouli/DynNav-Dynamic-Navigation-Rerouting-in-Unknown-Environments",
+    description: "Uncertainty-aware visual-inertial odometry for robotic state estimation.",
+    relevance: "Strengthens the perception and estimation side of the robotics profile.",
+    tags: ["VIO", "SLAM", "Sensor Fusion"],
+    href: "/projects/aegis-vio",
   },
   {
-    title: "SafeCrossAI",
-    status: "Independent Research",
-    description: "An AI-driven intelligent intersection that perceives and predicts risk between vulnerable road users and vehicles.",
-    relevance: "Applies infrastructure-based perception and cooperative intelligence to intersection safety.",
-    tags: ["Perception", "Cooperative Intelligence", "Autonomous Vehicles"],
-    githubUrl: "https://github.com/panagiotagrosdouli/SafeCrossAI",
+    title: "Real-Time Driving Scene Segmentation",
+    status: "Computer Vision",
+    description: "Semantic perception for autonomous-driving scenes and intelligent transportation.",
+    relevance: "Connects computer vision to prediction and downstream autonomy.",
+    tags: ["Segmentation", "Perception", "Autonomous Driving"],
+    href: "/projects/real-time-driving-scene-segmentation",
   },
 ];
 
 export function FeaturedProjects() {
   return (
-    <section id="projects" className="border-t border-stone-800 bg-stone-950">
-      <div className="mx-auto max-w-7xl px-6 py-20 md:px-10 lg:px-12">
-        <p className="mb-4 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">Featured Projects</p>
-        <h2 className="max-w-2xl font-serif text-4xl leading-tight tracking-[-0.03em] text-white md:text-5xl">
-          Evidence, not claims.
-        </h2>
+    <section id="projects" className="border-t border-white/10 bg-stone-950 px-6 py-20 md:px-10 lg:px-12">
+      <div className="mx-auto max-w-7xl">
+        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div>
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">Featured Research</p>
+            <h2 className="max-w-2xl font-serif text-5xl leading-[0.94] tracking-[-0.05em] text-white md:text-6xl">
+              Evidence, not claims.
+            </h2>
+          </div>
+          <Link href="/projects" className="text-sm font-medium text-stone-400 underline decoration-stone-700 underline-offset-4 transition hover:text-emerald-300 hover:decoration-emerald-400">
+            View all research cases
+          </Link>
+        </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+        <div className="mt-12 grid gap-4 md:grid-cols-2">
           {projects.map((project) => (
-            <article key={project.title} className="flex flex-col justify-between rounded-2xl border border-stone-800 bg-stone-900/40 p-7 transition hover:border-stone-700 hover:bg-stone-900/70">
-              <div>
-                <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-emerald-400">{project.status}</p>
-                <h3 className="mt-3 font-serif text-2xl leading-snug tracking-[-0.02em] text-white">{project.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-stone-400">{project.description}</p>
-                <p className="mt-3 text-xs italic leading-5 text-stone-500">{project.relevance}</p>
-                <div className="mt-5 flex flex-wrap gap-1.5">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="border border-stone-800 bg-stone-950 px-2 py-0.5 font-mono text-[10px] text-stone-400">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+            <Link key={project.title} href={project.href} className="group rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 transition hover:border-emerald-400/50 hover:bg-white/[0.055]">
+              <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-emerald-400">{project.status}</p>
+              <h3 className="mt-4 font-serif text-2xl leading-snug tracking-[-0.02em] text-white transition group-hover:text-emerald-200">
+                {project.title}
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-stone-400">{project.description}</p>
+              <p className="mt-4 border-l border-white/10 pl-4 text-xs italic leading-6 text-stone-500">{project.relevance}</p>
+              <div className="mt-6 flex flex-wrap gap-1.5">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="rounded-full border border-white/10 bg-stone-950/70 px-2.5 py-1 font-mono text-[10px] text-stone-400">
+                    {tag}
+                  </span>
+                ))}
               </div>
-              <div className="mt-6 flex gap-5 text-sm font-medium">
-                {project.githubUrl ? (
-                  <a href={project.githubUrl} target="_blank" rel="noreferrer" className="text-stone-300 underline decoration-stone-600 underline-offset-4 transition hover:text-white hover:decoration-white">
-                    GitHub
-                  </a>
-                ) : (
-                  <span className="text-stone-600">Private thesis in progress</span>
-                )}
-              </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>
