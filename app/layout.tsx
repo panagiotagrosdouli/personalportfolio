@@ -22,21 +22,24 @@ export const metadata: Metadata = {
     template: "%s | Panagiota Grosdouli",
   },
   description:
-    "Academic homepage of Panagiota Grosdouli, an MEng Electrical & Computer Engineering student focused on human-aware robotics, trajectory prediction, robotic perception, uncertainty-aware navigation, and safe autonomous systems.",
+    "Academic robotics research profile of Panagiota Grosdouli, focused on human-aware robotics, trajectory prediction, robotic perception, robot learning, planning under uncertainty, and safe autonomous systems.",
   applicationName: "Panagiota Grosdouli Academic Homepage",
   authors: [{ name: "Panagiota Grosdouli" }],
   creator: "Panagiota Grosdouli",
   keywords: [
     "Panagiota Grosdouli",
     "robotics",
+    "robot learning",
     "human-aware robotics",
     "trajectory prediction",
     "human motion prediction",
     "robotic perception",
-    "uncertainty-aware navigation",
+    "motion planning",
+    "reinforcement learning",
+    "computer vision",
     "safe autonomous systems",
     "SLAM",
-    "visual-inertial odometry",
+    "ROS 2",
   ],
   alternates: {
     canonical: "/",
@@ -44,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Panagiota Grosdouli — Robotics Research Profile",
     description:
-      "Academic research profile focused on human-aware robotics, trajectory prediction, robotic perception, navigation under uncertainty, and safe autonomy.",
+      "Academic research profile focused on human-aware robotics, robot learning, trajectory prediction, robotic perception, planning under uncertainty, and safe autonomy.",
     url: "/",
     siteName: "Panagiota Grosdouli Academic Homepage",
     images: [
@@ -61,7 +64,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Panagiota Grosdouli — Robotics Research Profile",
     description:
-      "Human-aware robotics, trajectory prediction, robotic perception, uncertainty-aware navigation, and safe autonomy.",
+      "Human-aware robotics, robot learning, trajectory prediction, robotic perception, planning under uncertainty, and safe autonomy.",
     images: ["/opengraph-image"],
   },
   robots: {
