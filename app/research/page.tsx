@@ -1,149 +1,86 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Footer } from "@/components/portfolio/Footer";
-import { SiteNav } from "@/components/portfolio/SiteNav";
 
 export const metadata: Metadata = {
   title: "Research",
   description:
-    "Research direction, current work, and future interests of Panagiota Grosdouli in robotics, trajectory prediction, autonomous systems, and uncertainty-aware decision making.",
+    "Research direction of Panagiota Grosdouli in human-aware robotics, trajectory prediction, robotic perception, planning under uncertainty, and safe autonomous systems.",
 };
 
-const researchAreas = [
-  ["Trajectory Prediction", "Modeling vulnerable road-user motion with multi-modal futures, calibrated uncertainty, and safety-relevant evaluation."],
-  ["Autonomous Systems", "Studying how robots can perceive, forecast, and act reliably around people under incomplete information."],
-  ["Risk-Aware Navigation", "Connecting prediction and uncertainty to downstream planning decisions where average-case performance is not enough."],
-  ["Computer Vision and SLAM", "Building perception and state-estimation pipelines for mobile and aerial robotic systems."],
+const themes = [
+  ["Human motion prediction", "Forecasting pedestrian and vulnerable road-user motion in dynamic traffic scenes, with emphasis on uncertainty, multi-modal futures, and safety-relevant evaluation."],
+  ["Robotic perception", "Perception and localization pipelines for robots, including SLAM, visual-inertial odometry, and sensor fusion under noisy or incomplete sensing."],
+  ["Planning under uncertainty", "Prediction-aware navigation and rerouting in changing environments where average-case performance is not sufficient."],
+  ["Safe human-aware autonomy", "Autonomous systems that reason about people before acting, especially in smart intersections and shared human-robot environments."],
 ];
 
 const methods = [
-  ["Problem", "Start from a safety-relevant failure mode: missed pedestrian intention, overconfident prediction, or unsafe replanning."],
-  ["Pipeline", "Build minimal reproducible systems with inputs, assumptions, baselines, metrics, and limitations documented."],
-  ["Evaluation", "Inspect uncertainty, calibration, corner cases, near misses, and the gap between prediction quality and decision quality."],
-];
-
-const selected = [
-  ["Diploma Thesis", "Trajectory prediction of vulnerable road users at smart intersections.", "/projects/trajectory-prediction-vrus"],
-  ["DynNav", "Risk-aware navigation and rerouting in unknown dynamic environments.", "/projects/dynnav"],
-  ["SafeCrossAI", "Infrastructure-based perception and risk reasoning for intelligent intersections.", "/projects/safecrossai"],
+  ["Problem formulation", "Start from safety-relevant failure modes: missed intention, overconfident prediction, unsafe replanning, or brittle perception."],
+  ["Technical pipeline", "Connect perception, prediction, uncertainty representation, and downstream planning in a reproducible system."],
+  ["Evaluation", "Study calibration, corner cases, near misses, limitations, and the gap between prediction quality and decision quality."],
 ];
 
 export default function ResearchPage() {
   return (
-    <main className="min-h-screen bg-stone-950 text-stone-100">
-      <SiteNav theme="dark" />
-
-      <section className="px-6 py-24 md:px-10 lg:px-12">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">Research Statement</p>
-          <h1 className="max-w-6xl font-serif text-6xl leading-[0.88] tracking-[-0.06em] text-white md:text-8xl">
-            Prediction, uncertainty, and safe autonomy.
-          </h1>
-          <p className="mt-8 max-w-4xl text-xl leading-10 text-stone-300 md:text-2xl md:leading-[3rem]">
-            I want to build autonomous systems that do not only perceive the present, but reason about what could happen next before they act.
-          </p>
-        </div>
-      </section>
-
-      <section className="border-y border-stone-800 px-6 py-20 md:px-10 lg:px-12">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.34fr_0.66fr]">
-          <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">Research Vision</p>
-            <h2 className="font-serif text-5xl leading-[0.92] tracking-[-0.05em] text-white md:text-6xl">
-              Safer robots begin with better anticipation.
-            </h2>
-          </div>
-          <div className="space-y-7 text-lg leading-9 text-stone-300 md:text-xl md:leading-10">
-            <p>
-              Autonomous systems increasingly operate in environments shaped by people: intersections, campuses, laboratories, streets, and shared indoor spaces. In these settings, safety depends not only on perceiving the present, but on reasoning about what may happen next.
-            </p>
-            <p>
-              My research direction connects trajectory prediction, uncertainty-aware perception, and robot decision making. The goal is to represent multiple possible futures, understand the limits of prediction, and use that information to act more safely around humans.
-            </p>
+    <main className="min-h-screen bg-white text-neutral-900 dark:bg-[#090909] dark:text-neutral-100">
+      <nav className="border-b border-neutral-200 px-5 py-4 text-sm dark:border-neutral-800 md:px-8">
+        <div className="mx-auto flex max-w-6xl items-center justify-between">
+          <Link href="/" className="font-semibold text-neutral-950 transition hover:text-[#e0001b] dark:text-neutral-50">Panagiota Grosdouli</Link>
+          <div className="flex gap-5 text-neutral-600 dark:text-neutral-400">
+            <Link href="/projects" className="hover:text-[#e0001b]">Projects</Link>
+            <Link href="/publications" className="hover:text-[#e0001b]">Publications</Link>
+            <Link href="/cv" className="hover:text-[#e0001b]">CV</Link>
+            <Link href="/contact" className="hover:text-[#e0001b]">Contact</Link>
           </div>
         </div>
-      </section>
+      </nav>
 
-      <section className="px-6 py-20 md:px-10 lg:px-12">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">Research Method</p>
-          <h2 className="max-w-3xl font-serif text-5xl leading-[0.92] tracking-[-0.05em] text-white md:text-6xl">
-            How I turn projects into research.
-          </h2>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+      <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
+        <header className="max-w-4xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[#e0001b] dark:text-[#ff5a66]">Research statement</p>
+          <h1 className="mt-5 text-5xl font-semibold leading-[0.98] tracking-[-0.06em] text-neutral-950 dark:text-neutral-50 md:text-7xl">Prediction, perception, and safe autonomy.</h1>
+          <p className="mt-8 text-xl leading-9 text-neutral-700 dark:text-neutral-300">I want to build autonomous systems that do not only perceive the present, but reason about what could happen next before they act.</p>
+        </header>
+
+        <section className="mt-16 grid gap-8 border-t border-neutral-200 pt-12 dark:border-neutral-800 lg:grid-cols-[220px_1fr]">
+          <div><p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#e0001b] dark:text-[#ff5a66]">Vision</p><h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em]">Safer robots begin with better anticipation.</h2></div>
+          <div className="max-w-3xl space-y-5 text-base leading-8 text-neutral-700 dark:text-neutral-300">
+            <p>Autonomous systems increasingly operate in environments shaped by people: intersections, campuses, laboratories, streets, and shared indoor spaces. In these settings, safety depends not only on perceiving the present, but on reasoning about what may happen next.</p>
+            <p>My research direction connects trajectory prediction, uncertainty-aware perception, and robot decision making. The goal is to represent multiple possible futures, understand the limits of prediction, and use that information to act more safely around humans.</p>
+          </div>
+        </section>
+
+        <section className="mt-16 grid gap-8 border-t border-neutral-200 pt-12 dark:border-neutral-800 lg:grid-cols-[220px_1fr]">
+          <div><p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#e0001b] dark:text-[#ff5a66]">Themes</p><h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em]">Research areas</h2></div>
+          <div className="grid gap-5 md:grid-cols-2">
+            {themes.map(([title, text]) => (
+              <article key={title} className="border border-neutral-200 p-6 transition hover:-translate-y-1 hover:border-[#e0001b] dark:border-neutral-800 dark:hover:border-[#ff5a66]">
+                <h3 className="text-lg font-semibold text-neutral-950 dark:text-neutral-50">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-neutral-700 dark:text-neutral-300">{text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-16 grid gap-8 border-t border-neutral-200 pt-12 dark:border-neutral-800 lg:grid-cols-[220px_1fr]">
+          <div><p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#e0001b] dark:text-[#ff5a66]">Method</p><h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em]">How projects become research</h2></div>
+          <div className="space-y-6">
             {methods.map(([title, text]) => (
-              <article key={title} className="rounded-2xl border border-stone-800 bg-stone-900/40 p-7">
-                <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-400">{title}</h3>
-                <p className="mt-4 text-sm leading-7 text-stone-400">{text}</p>
+              <article key={title} className="grid gap-3 border-b border-neutral-200 pb-6 text-sm leading-7 dark:border-neutral-800 md:grid-cols-[220px_1fr]">
+                <h3 className="font-semibold text-neutral-950 dark:text-neutral-50">{title}</h3>
+                <p className="text-neutral-700 dark:text-neutral-300">{text}</p>
               </article>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="border-y border-stone-800 px-6 py-20 md:px-10 lg:px-12">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">Research Areas</p>
-          <h2 className="max-w-3xl font-serif text-5xl leading-[0.92] tracking-[-0.05em] text-white md:text-6xl">
-            Four connected directions.
-          </h2>
-          <div className="mt-12 grid gap-x-12 gap-y-10 md:grid-cols-2">
-            {researchAreas.map(([title, description]) => (
-              <article key={title} className="border-t border-stone-800 pt-6">
-                <h3 className="font-serif text-3xl leading-none tracking-[-0.03em] text-white md:text-4xl">{title}</h3>
-                <p className="mt-5 text-base leading-8 text-stone-400 md:text-lg md:leading-9">{description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 py-20 md:px-10 lg:px-12">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.36fr_0.64fr]">
-          <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">Current Research</p>
-            <h2 className="font-serif text-5xl leading-[0.92] tracking-[-0.05em] text-white md:text-6xl">
-              Trajectory prediction at smart intersections.
-            </h2>
-          </div>
-          <div>
-            <p className="text-lg leading-9 text-stone-300 md:text-xl md:leading-10">
-              My diploma thesis studies the prediction of vulnerable road-user motion at sensor-equipped intersections. The central question is how autonomous systems can reason about pedestrians, cyclists, and other agents before committing to an action.
-            </p>
-            <div className="mt-10 grid gap-6 md:grid-cols-3">
-              {["Problem", "Method", "Status"].map((label, index) => (
-                <div key={label} className="border-t border-stone-800 pt-5">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-400">{label}</p>
-                  <p className="mt-3 text-sm leading-7 text-stone-400">
-                    {index === 0 && "Multi-agent motion forecasting in dynamic traffic scenes."}
-                    {index === 1 && "Probabilistic prediction, uncertainty modeling, and trajectory evaluation."}
-                    {index === 2 && "Active diploma thesis research."}
-                  </p>
-                </div>
-              ))}
-            </div>
-            <Link href="/projects" className="mt-10 inline-block text-sm font-medium text-emerald-400 underline decoration-emerald-400/30 underline-offset-4 transition hover:text-emerald-300">
-              View research evidence
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-stone-800 px-6 py-20 md:px-10 lg:px-12">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">Selected Research</p>
-          <div className="divide-y divide-stone-800 border-y border-stone-800">
-            {selected.map(([title, text, href]) => (
-              <Link key={title} href={href} className="grid gap-4 py-7 transition hover:bg-stone-900/50 md:grid-cols-[260px_1fr] md:px-6">
-                <h3 className="font-serif text-3xl tracking-[-0.03em] text-white">{title}</h3>
-                <p className="text-sm leading-7 text-stone-400">{text}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Footer theme="dark" />
+        <section className="mt-16 border-t border-neutral-200 pt-12 dark:border-neutral-800">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#e0001b] dark:text-[#ff5a66]">Current research</p>
+          <h2 className="mt-3 max-w-3xl text-3xl font-semibold tracking-[-0.04em]">Trajectory prediction at smart intersections.</h2>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-neutral-700 dark:text-neutral-300">My diploma thesis studies the prediction of vulnerable road-user motion at sensor-equipped intersections. The central question is how autonomous systems can reason about pedestrians, cyclists, and other agents before committing to an action.</p>
+          <Link href="/projects" className="mt-6 inline-block text-sm font-medium text-[#e0001b] hover:underline dark:text-[#ff5a66]">View research evidence</Link>
+        </section>
+      </div>
     </main>
   );
 }
