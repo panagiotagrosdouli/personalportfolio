@@ -13,7 +13,7 @@ const primaryLinks = [
 
 const mobileLinks = [
   ...primaryLinks,
-  { label: "Zurich Fit", href: "/phd-fit" },
+  { label: "PhD", href: "/phd-fit" },
   { label: "Publications", href: "/publications" },
   { label: "Experiments", href: "/experiments" },
   { label: "Reading Notes", href: "/reading-notes" },
@@ -38,7 +38,7 @@ export function SiteNav({ theme = "light" }: { theme?: "light" | "dark" }) {
             </Link>
           ))}
           <Link href="/phd-fit" className="rounded-full border border-emerald-400/40 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-emerald-300 transition hover:border-emerald-300 hover:text-emerald-200">
-            Zurich Fit
+            PhD
           </Link>
         </div>
 
