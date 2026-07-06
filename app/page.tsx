@@ -1,56 +1,26 @@
 import Link from "next/link";
 
 const navLinks = [
+  { label: "About", href: "#about" },
   { label: "Research", href: "#research" },
-  { label: "Projects", href: "#selected-work" },
+  { label: "Work", href: "#work" },
+  { label: "Agenda", href: "#agenda" },
+  { label: "Publications", href: "#publications" },
   { label: "CV", href: "/cv" },
-  { label: "Contact", href: "#contact" },
 ];
 
 const researchThemes = [
-  {
-    title: "Human Motion Prediction",
-    text: "Trajectory forecasting for pedestrians, cyclists, and other vulnerable road users in traffic scenes, with emphasis on multi-modal futures and uncertainty-aware evaluation.",
-  },
-  {
-    title: "Robotic Perception",
-    text: "Perception and localization pipelines for robots, including SLAM, visual-inertial odometry, and sensor fusion under noisy or incomplete sensing.",
-  },
-  {
-    title: "Navigation under Uncertainty",
-    text: "Navigation and rerouting in dynamic environments where perception, prediction, and planning must remain connected rather than treated as isolated modules.",
-  },
-  {
-    title: "Safe Human-Aware Autonomy",
-    text: "Autonomous systems that reason about people before acting, especially in shared spaces such as smart intersections and human-robot environments.",
-  },
+  ["Human Motion Prediction", "Trajectory forecasting for pedestrians, cyclists, and vulnerable road users in dynamic traffic scenes, with attention to multiple possible futures and uncertainty-aware evaluation."],
+  ["Robotic Perception", "Perception and localization pipelines for robots, including SLAM, visual-inertial odometry, and sensor fusion under noisy or incomplete sensing."],
+  ["Navigation under Uncertainty", "Navigation and rerouting in changing environments where perception, prediction, and planning must remain connected rather than treated as isolated modules."],
+  ["Safe Human-Aware Autonomy", "Autonomous systems that reason about people before acting, especially in shared spaces such as smart intersections and human-robot environments."],
 ];
 
-const selectedWork = [
-  {
-    title: "Trajectory Prediction of Vulnerable Road Users",
-    meta: "Diploma thesis · smart intersections · motion forecasting",
-    text: "Current thesis work on forecasting vulnerable road-user motion so autonomous systems can anticipate human behavior before committing to an action.",
-    href: "/projects/trajectory-prediction-vrus",
-  },
-  {
-    title: "SafeCrossAI",
-    meta: "Human-aware autonomy · crossing behavior · intelligent intersections",
-    text: "Prototype work centered on human crossing behavior, perception, and safer autonomous interaction in traffic scenes.",
-    href: "/projects/safecrossai",
-  },
-  {
-    title: "DynNav",
-    meta: "ROS 2 · dynamic navigation · planning under uncertainty",
-    text: "Navigation and rerouting work in changing environments, connecting uncertainty in perception to downstream robot behavior.",
-    href: "/projects/dynnav",
-  },
-  {
-    title: "SLAM, VIO, and Sensor Fusion",
-    meta: "Robotic perception · state estimation · robustness",
-    text: "Independent robotics work on perception and localization pipelines for systems operating with noisy and incomplete sensing.",
-    href: "/projects",
-  },
+const work = [
+  ["Trajectory Prediction of Vulnerable Road Users", "Diploma thesis · smart intersections · motion forecasting", "Current thesis work on forecasting vulnerable road-user motion so autonomous systems can anticipate human behavior before committing to an action.", "/projects/trajectory-prediction-vrus"],
+  ["SafeCrossAI", "Human-aware autonomy · crossing behavior · intelligent intersections", "Prototype work centered on human crossing behavior, perception, and safer autonomous interaction in traffic scenes.", "/projects/safecrossai"],
+  ["DynNav", "ROS 2 · dynamic navigation · planning under uncertainty", "Navigation and rerouting work in changing environments, connecting uncertainty in perception to downstream robot behavior.", "/projects/dynnav"],
+  ["SLAM, VIO, and Sensor Fusion", "Robotic perception · state estimation · robustness", "Independent robotics work on perception and localization pipelines for systems operating with noisy and incomplete sensing.", "/projects"],
 ];
 
 const agenda = [
@@ -60,196 +30,88 @@ const agenda = [
   "How can early-stage robotics prototypes be evaluated rigorously enough to become publishable research?",
 ];
 
-const publications = [
-  {
-    title: "Trajectory Prediction of Vulnerable Road Users at Smart Intersections",
-    status: "Diploma thesis in preparation",
-    text: "Current research thread focused on motion forecasting, uncertainty, and safety-relevant evaluation for autonomous systems.",
-  },
-  {
-    title: "Selected robotics project write-ups",
-    status: "Manuscripts and technical notes in preparation",
-    text: "Ongoing effort to document SafeCrossAI, DynNav, and perception-related work as reproducible research evidence.",
-  },
-];
-
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-800">
-      {children}
-    </p>
-  );
+function SectionTitle({ id, children }: { id: string; children: React.ReactNode }) {
+  return <h2 id={id} className="scroll-mt-24 border-b border-neutral-200 pb-2 text-xl font-semibold tracking-tight text-neutral-950">{children}</h2>;
 }
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#fbfaf6] text-[#161411]">
-      <header className="border-b border-stone-200/80 px-6 md:px-10 lg:px-12">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between gap-6 py-5" aria-label="Main navigation">
-          <Link href="/" className="font-serif text-2xl font-semibold tracking-[-0.035em] text-stone-950">
-            Panagiota Grosdouli
-          </Link>
-          <div className="hidden items-center gap-7 text-sm text-stone-600 md:flex">
-            {navLinks.map((link) => (
-              <Link key={link.label} href={link.href} className="transition hover:text-emerald-900">
-                {link.label}
-              </Link>
-            ))}
+    <main className="min-h-screen bg-white text-neutral-900">
+      <nav className="border-b border-neutral-200 bg-white px-5 py-4 text-sm md:px-8" aria-label="Main navigation">
+        <div className="mx-auto flex max-w-5xl flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <Link href="/" className="text-base font-semibold text-neutral-950">Panagiota Grosdouli</Link>
+          <div className="flex flex-wrap gap-x-5 gap-y-2 text-neutral-600">
+            {navLinks.map((link) => <Link key={link.label} href={link.href} className="hover:text-neutral-950">{link.label}</Link>)}
+            <a href="mailto:panagros1@ee.duth.gr" className="hover:text-neutral-950">Contact</a>
           </div>
-        </nav>
-      </header>
+        </div>
+      </nav>
 
-      <section className="px-6 py-16 md:px-10 md:py-24 lg:px-12">
-        <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[1fr_280px] md:items-start">
+      <div className="mx-auto max-w-5xl px-5 py-10 md:px-8 md:py-14">
+        <section id="about" className="grid gap-8 md:grid-cols-[1fr_210px] md:items-start">
           <div>
-            <SectionLabel>Robotics · Prediction · Perception · Safe autonomy</SectionLabel>
-            <h1 className="mt-6 max-w-4xl font-serif text-5xl font-semibold leading-[0.98] tracking-[-0.055em] text-stone-950 md:text-7xl">
-              Human-aware robotics from perception to prediction.
-            </h1>
-            <p className="mt-8 max-w-3xl text-xl leading-9 text-stone-800">
-              I study how autonomous systems can perceive uncertain scenes, forecast human motion, and plan more safely around people.
-            </p>
-            <p className="mt-6 max-w-3xl text-base leading-8 text-stone-700">
-              I am an MEng Electrical &amp; Computer Engineering student building a research profile around human-aware robotics, trajectory prediction, robotic perception, uncertainty-aware navigation, and safe autonomous systems. My current work focuses on trajectory prediction of vulnerable road users at smart intersections.
-            </p>
-            <div className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm">
-              <Link href="/research" className="border-b border-emerald-800 pb-1 font-medium text-emerald-900 hover:text-stone-950">
-                Research statement
-              </Link>
-              <Link href="/projects" className="border-b border-stone-300 pb-1 text-stone-600 hover:text-stone-950">
-                Projects
-              </Link>
-              <Link href="/phd-fit" className="border-b border-stone-300 pb-1 text-stone-600 hover:text-stone-950">
-                PhD fit
-              </Link>
-              <a href="https://github.com/panagiotagrosdouli" target="_blank" rel="noreferrer" className="border-b border-stone-300 pb-1 text-stone-600 hover:text-stone-950">
-                GitHub
-              </a>
+            <h1 className="text-4xl font-semibold tracking-tight text-neutral-950 md:text-5xl">Panagiota Grosdouli</h1>
+            <p className="mt-2 text-lg text-neutral-700">MEng Electrical &amp; Computer Engineering · Human-aware robotics</p>
+            <div className="mt-6 space-y-4 text-[15px] leading-7 text-neutral-800">
+              <p>I am an MEng Electrical &amp; Computer Engineering student focused on human-aware robotics, trajectory prediction, robotic perception, uncertainty-aware navigation, and safe autonomous systems.</p>
+              <p>My current work studies trajectory prediction of vulnerable road users at smart intersections. I am interested in how autonomous systems can perceive uncertain scenes, forecast human motion, and plan more safely around people.</p>
+            </div>
+            <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+              <a href="mailto:panagros1@ee.duth.gr" className="text-emerald-700 hover:text-neutral-950">Email</a>
+              <a href="https://github.com/panagiotagrosdouli" target="_blank" rel="noreferrer" className="text-emerald-700 hover:text-neutral-950">GitHub</a>
+              <Link href="/projects" className="text-emerald-700 hover:text-neutral-950">Projects</Link>
+              <Link href="/research" className="text-emerald-700 hover:text-neutral-950">Research statement</Link>
             </div>
           </div>
-          <aside className="md:pt-2">
-            <img
-              src="profile.png"
-              alt="Portrait of Panagiota Grosdouli"
-              className="aspect-[4/5] w-full object-cover grayscale"
-            />
-            <p className="mt-4 border-t border-stone-200 pt-4 text-sm leading-7 text-stone-600">
-              Current thesis: trajectory prediction of vulnerable road users at smart intersections.
-            </p>
-          </aside>
-        </div>
-      </section>
+          <img src="profile.png" alt="Portrait of Panagiota Grosdouli" className="w-44 border border-neutral-200 object-cover md:w-full" />
+        </section>
 
-      <section id="research" className="px-6 py-12 md:px-10 lg:px-12">
-        <div className="mx-auto max-w-6xl border-t border-stone-200 pt-10">
-          <div className="grid gap-8 md:grid-cols-[220px_1fr]">
-            <div>
-              <SectionLabel>Research</SectionLabel>
-              <h2 className="mt-3 font-serif text-4xl tracking-[-0.04em] text-stone-950">Themes</h2>
-            </div>
-            <div className="divide-y divide-stone-200">
-              {researchThemes.map((item) => (
-                <article key={item.title} className="grid gap-3 py-7 first:pt-0 md:grid-cols-[260px_1fr]">
-                  <h3 className="font-serif text-3xl leading-tight tracking-[-0.035em] text-stone-950">{item.title}</h3>
-                  <p className="max-w-3xl text-base leading-8 text-stone-700">{item.text}</p>
-                </article>
-              ))}
-            </div>
+        <section className="mt-12">
+          <SectionTitle id="education">Education &amp; Current Work</SectionTitle>
+          <div className="mt-5 space-y-6 text-[15px] leading-7">
+            <article className="grid gap-2 md:grid-cols-[150px_1fr]"><p className="text-neutral-500">Current</p><div><h3 className="font-semibold text-neutral-950">MEng Electrical &amp; Computer Engineering</h3><p className="text-neutral-700">Research direction in human-aware robotics, trajectory prediction, robotic perception, uncertainty-aware navigation, and safe autonomous systems.</p></div></article>
+            <article className="grid gap-2 md:grid-cols-[150px_1fr]"><p className="text-neutral-500">Current thesis</p><div><h3 className="font-semibold text-neutral-950">Trajectory Prediction of Vulnerable Road Users at Smart Intersections</h3><p className="text-neutral-700">Diploma thesis work on forecasting pedestrian and vulnerable road-user motion for safer autonomous-system reasoning.</p></div></article>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="selected-work" className="px-6 py-12 md:px-10 lg:px-12">
-        <div className="mx-auto max-w-6xl border-t border-stone-200 pt-10">
-          <div className="grid gap-8 md:grid-cols-[220px_1fr]">
-            <div>
-              <SectionLabel>Selected work</SectionLabel>
-              <h2 className="mt-3 font-serif text-4xl tracking-[-0.04em] text-stone-950">Research evidence</h2>
-            </div>
-            <div className="divide-y divide-stone-200">
-              {selectedWork.map((item) => (
-                <article key={item.title} className="py-7 first:pt-0">
-                  <div className="grid gap-3 md:grid-cols-[260px_1fr]">
-                    <div>
-                      <h3 className="font-serif text-3xl leading-tight tracking-[-0.035em] text-stone-950">{item.title}</h3>
-                      <p className="mt-2 text-sm leading-6 text-stone-500">{item.meta}</p>
-                    </div>
-                    <div>
-                      <p className="max-w-3xl text-base leading-8 text-stone-700">{item.text}</p>
-                      <Link href={item.href} className="mt-4 inline-block text-sm text-emerald-900 underline decoration-emerald-900/30 underline-offset-4 hover:text-stone-950">
-                        Read more
-                      </Link>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
+        <section className="mt-12">
+          <SectionTitle id="research">Research Interests</SectionTitle>
+          <div className="mt-5 space-y-5">
+            {researchThemes.map(([title, text]) => <article key={title} className="text-[15px] leading-7"><h3 className="font-semibold text-neutral-950">{title}</h3><p className="mt-1 text-neutral-700">{text}</p></article>)}
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="agenda" className="px-6 py-12 md:px-10 lg:px-12">
-        <div className="mx-auto max-w-6xl border-t border-stone-200 pt-10">
-          <div className="grid gap-8 md:grid-cols-[220px_1fr]">
-            <div>
-              <SectionLabel>Research agenda</SectionLabel>
-              <h2 className="mt-3 font-serif text-4xl tracking-[-0.04em] text-stone-950">Open questions</h2>
-            </div>
-            <ol className="divide-y divide-stone-200 border-y border-stone-200 text-base leading-8 text-stone-700">
-              {agenda.map((item, index) => (
-                <li key={item} className="grid gap-4 py-5 md:grid-cols-[72px_1fr]">
-                  <span className="font-serif text-3xl text-emerald-900">{String(index + 1).padStart(2, "0")}</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ol>
+        <section className="mt-12">
+          <SectionTitle id="work">Selected Work</SectionTitle>
+          <div className="mt-5 space-y-7">
+            {work.map(([title, meta, text, href]) => <article key={title} className="text-[15px] leading-7"><h3 className="font-semibold text-neutral-950"><Link href={href} className="hover:text-emerald-700">{title}</Link></h3><p className="text-neutral-500">{meta}</p><p className="mt-1 text-neutral-700">{text}</p></article>)}
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="publications" className="px-6 py-12 md:px-10 lg:px-12">
-        <div className="mx-auto max-w-6xl border-t border-stone-200 pt-10">
-          <div className="grid gap-8 md:grid-cols-[220px_1fr]">
-            <div>
-              <SectionLabel>Publications / thesis</SectionLabel>
-              <h2 className="mt-3 font-serif text-4xl tracking-[-0.04em] text-stone-950">Current status</h2>
-            </div>
-            <div className="divide-y divide-stone-200">
-              {publications.map((item) => (
-                <article key={item.title} className="grid gap-3 py-7 first:pt-0 md:grid-cols-[260px_1fr]">
-                  <div>
-                    <h3 className="font-serif text-3xl leading-tight tracking-[-0.035em] text-stone-950">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-stone-500">{item.status}</p>
-                  </div>
-                  <p className="max-w-3xl text-base leading-8 text-stone-700">{item.text}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+        <section className="mt-12">
+          <SectionTitle id="agenda">Research Agenda</SectionTitle>
+          <ol className="mt-5 list-decimal space-y-2 pl-5 text-[15px] leading-7 text-neutral-700">
+            {agenda.map((item) => <li key={item}>{item}</li>)}
+          </ol>
+        </section>
 
-      <section id="contact" className="px-6 py-12 pb-20 md:px-10 lg:px-12">
-        <div className="mx-auto max-w-6xl border-t border-stone-200 pt-10">
-          <div className="grid gap-8 md:grid-cols-[220px_1fr]">
-            <div>
-              <SectionLabel>Contact</SectionLabel>
-              <h2 className="mt-3 font-serif text-4xl tracking-[-0.04em] text-stone-950">Academic contact</h2>
-            </div>
-            <div className="max-w-3xl text-base leading-8 text-stone-700">
-              <p>
-                I am interested in PhD opportunities at the intersection of robotic perception, human motion prediction, planning under uncertainty, and safe autonomy.
-              </p>
-              <p className="mt-5">
-                Email: <a href="mailto:panagros1@ee.duth.gr" className="text-emerald-900 underline decoration-emerald-900/30 underline-offset-4 hover:text-stone-950">panagros1@ee.duth.gr</a>
-              </p>
-              <p>
-                GitHub: <a href="https://github.com/panagiotagrosdouli" target="_blank" rel="noreferrer" className="text-emerald-900 underline decoration-emerald-900/30 underline-offset-4 hover:text-stone-950">panagiotagrosdouli</a>
-              </p>
-            </div>
+        <section className="mt-12">
+          <SectionTitle id="publications">Publications / Thesis</SectionTitle>
+          <p className="mt-4 text-sm text-neutral-600">No peer-reviewed publications are listed yet. Current thesis and manuscripts are presented transparently as work in preparation.</p>
+          <div className="mt-5 space-y-6 text-[15px] leading-7">
+            <article><h3 className="font-semibold text-neutral-950">Trajectory Prediction of Vulnerable Road Users at Smart Intersections</h3><p className="text-neutral-700">Diploma thesis in preparation</p><p className="mt-1 text-sm text-neutral-500">Thesis in preparation</p></article>
+            <article><h3 className="font-semibold text-neutral-950">SafeCrossAI, DynNav, and perception project write-ups</h3><p className="text-neutral-700">Technical notes and manuscripts in preparation</p><p className="mt-1 text-sm text-neutral-500">Project documentation in progress</p></article>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <section className="mt-12">
+          <SectionTitle id="contact">Contact</SectionTitle>
+          <p className="mt-4 text-[15px] leading-7 text-neutral-700">I am interested in PhD opportunities in robotic perception, human motion prediction, planning under uncertainty, and safe human-aware autonomy.</p>
+          <p className="mt-3 text-[15px] leading-7 text-neutral-700">Email: <a href="mailto:panagros1@ee.duth.gr" className="text-emerald-700 hover:text-neutral-950">panagros1@ee.duth.gr</a></p>
+        </section>
+
+        <footer className="mt-14 border-t border-neutral-200 pt-5 text-sm text-neutral-500">Panagiota Grosdouli</footer>
+      </div>
     </main>
   );
 }
