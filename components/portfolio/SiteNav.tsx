@@ -18,7 +18,6 @@ const mobileLinks = [
   { label: "Experiments", href: "/experiments" },
   { label: "Reading Notes", href: "/reading-notes" },
   { label: "Search", href: "/search" },
-  { label: "Beyond", href: "/beyond-the-lab" },
 ];
 
 export function SiteNav({ theme = "light" }: { theme?: "light" | "dark" }) {
@@ -40,9 +39,6 @@ export function SiteNav({ theme = "light" }: { theme?: "light" | "dark" }) {
           ))}
           <Link href="/phd-fit" className="rounded-full border border-emerald-400/40 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-emerald-300 transition hover:border-emerald-300 hover:text-emerald-200">
             PhD Fit
-          </Link>
-          <Link href="/beyond-the-lab" className={`whitespace-nowrap text-xs transition ${isDark ? "text-stone-500 hover:text-stone-300" : "text-stone-500 hover:text-stone-950"}`}>
-            Beyond
           </Link>
         </div>
 
