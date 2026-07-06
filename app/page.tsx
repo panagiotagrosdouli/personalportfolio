@@ -8,18 +8,42 @@ const selectedResearch = [
     question: "How can autonomous systems predict vulnerable road-user motion before making safety-critical decisions?",
     contribution: "Trajectory prediction and uncertainty-aware evaluation for smart-intersection scenarios.",
     status: "In progress",
-  },
-  {
-    title: "AEGIS-VIO",
-    question: "How can visual-inertial state estimation remain reliable when robot motion becomes less regular?",
-    contribution: "Learning-based representations for continuous state estimation from visual observations and IMU signals.",
-    status: "Research proposal",
+    href: null,
   },
   {
     title: "DynNav",
     question: "How should robots re-plan when the environment changes around moving humans?",
-    contribution: "Prediction-aware navigation and dynamic rerouting with safety-aware planning objectives.",
-    status: "Prototype notes",
+    contribution: "Dynamic navigation and rerouting in unknown environments with obstacle avoidance and planning under uncertainty.",
+    status: "Public repository",
+    href: "https://github.com/panagiotagrosdouli/DynNav-Dynamic-Navigation-Rerouting-in-Unknown-Environments",
+  },
+  {
+    title: "Self-Healing VIO",
+    question: "How can visual-inertial odometry recover from degraded state estimation during UAV navigation?",
+    contribution: "A robust UAV navigation direction focused on resilient visual-inertial estimation and failure-aware recovery.",
+    status: "Public repository",
+    href: "https://github.com/panagiotagrosdouli/Self-Healing-VIO-for-Robust-UAV-Navigation",
+  },
+  {
+    title: "PC-FMCW VRU Framework",
+    question: "How can sensing pipelines support vulnerable road-user analysis in traffic environments?",
+    contribution: "A framework direction for point-cloud/FMCW-style perception and vulnerable road-user scene analysis.",
+    status: "Repository work",
+    href: null,
+  },
+  {
+    title: "CASim",
+    question: "How can parametric cellular automata support controlled simulation experiments?",
+    contribution: "A simulator-oriented project for exploring rule-based dynamics, scenario generation, and computational modeling.",
+    status: "Repository work",
+    href: null,
+  },
+  {
+    title: "Probabilistic Search Simulations",
+    question: "How can uncertainty be represented when the target state or location is only partially observable?",
+    contribution: "Simulation work around probabilistic search, decision support, and uncertainty-aware exploration.",
+    status: "Repository work",
+    href: null,
   },
 ];
 
@@ -60,7 +84,7 @@ export default function Home() {
           <div className="hidden items-center gap-7 text-sm text-stone-600 md:flex">
             <Link href="#research" className="transition hover:text-stone-950">Research</Link>
             <Link href="#current" className="transition hover:text-stone-950">Current Work</Link>
-            <Link href="#selected" className="transition hover:text-stone-950">Selected Research</Link>
+            <Link href="#selected" className="transition hover:text-stone-950">Projects</Link>
             <Link href="/cv" className="transition hover:text-stone-950">CV</Link>
           </div>
         </div>
@@ -74,15 +98,15 @@ export default function Home() {
               Panagiota Grosdouli
             </h1>
             <p className="mt-8 max-w-3xl text-3xl leading-tight tracking-[-0.035em] text-stone-950 md:text-4xl">
-              Predicting human motion for safer autonomous systems.
+              Research software for safer autonomous systems.
             </p>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-stone-600">
-              Developing autonomous systems that anticipate vulnerable road-user motion, reason under uncertainty, and make safer decisions in human-centered environments.
+              Building and documenting projects in human-aware robotics, trajectory prediction, visual-inertial estimation, simulation, and uncertainty-aware decision making.
             </p>
             <div className="mt-10 flex flex-wrap gap-4 text-sm font-medium">
               <Link href="#research" className="border border-stone-950 px-5 py-3 text-stone-950 transition hover:bg-stone-950 hover:text-white">Research</Link>
               <Link href="#selected" className="border border-stone-300 px-5 py-3 text-stone-700 transition hover:border-stone-950 hover:text-stone-950">Projects</Link>
-              <Link href="/cv" className="border border-stone-300 px-5 py-3 text-stone-700 transition hover:border-stone-950 hover:text-stone-950">CV</Link>
+              <a href="https://github.com/panagiotagrosdouli" target="_blank" rel="noreferrer" className="border border-stone-300 px-5 py-3 text-stone-700 transition hover:border-stone-950 hover:text-stone-950">GitHub</a>
             </div>
           </div>
           <div>
@@ -93,43 +117,43 @@ export default function Home() {
           </div>
         </header>
 
-        <Section id="research" label="Research Direction" title="Autonomy should reason about people before acting around them.">
+        <Section id="research" label="Research Direction" title="Autonomy should reason about people, uncertainty, and failure before acting.">
           <div className="max-w-3xl space-y-6 text-lg leading-9 text-stone-700">
             <p>
-              My research motivation is to study autonomous systems as coupled perception, prediction, and planning problems. In human-centered environments, a robot cannot only detect what is visible now; it must estimate what may happen next, quantify uncertainty, and adapt its behavior before committing to an action.
+              My work is organized around autonomous systems as coupled perception, prediction, planning, and simulation problems. The goal is not only to build demos, but to produce research software that makes assumptions visible and supports systematic evaluation.
             </p>
             <p>
-              I am especially interested in trajectory prediction of vulnerable road users, robotic perception, risk-aware navigation, and decision making for dynamic environments such as smart intersections and shared human-robot spaces.
+              The projects below connect trajectory prediction, visual-inertial estimation, dynamic navigation, cellular automata simulation, and probabilistic search into a coherent technical direction: robust decision making under uncertainty.
             </p>
           </div>
         </Section>
 
-        <Section id="current" label="Current Research" title="Trajectory prediction of vulnerable road users at smart intersections.">
+        <Section id="current" label="Current Research" title="Trajectory prediction and uncertainty-aware autonomy for vulnerable road users.">
           <div className="grid gap-10 md:grid-cols-[1fr_260px]">
             <div className="space-y-6 text-base leading-8 text-stone-700">
               <p>
                 The current thesis work focuses on forecasting pedestrian and vulnerable road-user motion in traffic scenes where autonomous systems must make decisions before the future trajectory is fully observable.
               </p>
               <p>
-                The scientific focus is not only prediction accuracy, but also uncertainty-aware evaluation: when predictions are ambiguous, the downstream planner should understand that ambiguity instead of treating one forecast as certain.
+                This direction is supported by related GitHub work in dynamic navigation, sensing frameworks, simulation, and robust state estimation. The portfolio presents those repositories as research questions rather than as isolated software demos.
               </p>
-              <Link href="/projects" className="inline-flex text-sm font-semibold text-[#245c49] underline-offset-4 hover:underline">
-                Read more about the research
-              </Link>
+              <a href="https://github.com/panagiotagrosdouli" target="_blank" rel="noreferrer" className="inline-flex text-sm font-semibold text-[#245c49] underline-offset-4 hover:underline">
+                View GitHub profile
+              </a>
             </div>
             <div className="border-t border-stone-300 pt-5 text-sm leading-7 text-stone-600 md:border-l md:border-t-0 md:pl-6 md:pt-0">
               <p className="font-semibold text-stone-950">Focus</p>
-              <p className="mt-2">Trajectory prediction, uncertainty, smart intersections, human-aware autonomy.</p>
+              <p className="mt-2">Trajectory prediction, robust perception, smart intersections, dynamic navigation.</p>
               <p className="mt-6 font-semibold text-stone-950">Methods</p>
-              <p className="mt-2">Motion forecasting, calibrated evaluation, sequence modeling, perception-to-planning interfaces.</p>
+              <p className="mt-2">Simulation, motion forecasting, VIO, point-cloud sensing, planning under uncertainty.</p>
             </div>
           </div>
         </Section>
 
-        <Section id="selected" label="Selected Research" title="Work organized around research questions, not portfolio items.">
+        <Section id="selected" label="Selected Projects" title="GitHub projects presented as research contributions.">
           <div className="divide-y divide-stone-300">
             {selectedResearch.map((item) => (
-              <article key={item.title} className="grid gap-6 py-8 md:grid-cols-[170px_1fr]">
+              <article key={item.title} className="grid gap-6 py-8 md:grid-cols-[190px_1fr]">
                 <div>
                   <h3 className="font-serif text-2xl tracking-[-0.03em] text-stone-950">{item.title}</h3>
                   <p className={`mt-2 text-xs font-semibold uppercase tracking-[0.2em] ${accent}`}>{item.status}</p>
@@ -139,6 +163,11 @@ export default function Home() {
                   <p className="mt-2 text-lg leading-8 text-stone-800">{item.question}</p>
                   <p className="mt-5 text-sm font-semibold uppercase tracking-[0.18em] text-stone-500">Technical contribution</p>
                   <p className="mt-2 text-base leading-8 text-stone-700">{item.contribution}</p>
+                  {item.href && (
+                    <a href={item.href} target="_blank" rel="noreferrer" className="mt-5 inline-flex text-sm font-semibold text-[#245c49] underline-offset-4 hover:underline">
+                      Repository
+                    </a>
+                  )}
                 </div>
               </article>
             ))}
