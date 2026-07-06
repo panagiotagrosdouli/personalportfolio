@@ -2,22 +2,22 @@ const impact = [
   {
     label: "Current Thesis",
     title: "Trajectory Prediction of Vulnerable Road Users",
-    text: "A safety-critical forecasting problem at smart intersections, focused on how autonomous systems reason about people before acting.",
+    text: "A forecasting problem at smart intersections, focused on how autonomous systems reason about pedestrians and cyclists before acting.",
   },
   {
-    label: "Active Research Projects",
-    title: "Prediction, Perception, Navigation",
-    text: "Independent research threads connect trajectory forecasting, visual-inertial odometry, risk-aware navigation, UAV autonomy, and scene understanding.",
+    label: "Research Identity",
+    title: "Human-Aware Autonomy Under Uncertainty",
+    text: "The through-line is not only building models, but asking how uncertain predictions should influence perception, planning, and robot behavior.",
   },
   {
-    label: "Research Outputs",
-    title: "Reports, Repositories, Experiments",
-    text: "Projects are structured as research artifacts with questions, methodology, experiments, limitations, and future work.",
+    label: "Evidence Portfolio",
+    title: "From Question to Evaluation",
+    text: "Each case is framed as a compact research artifact: motivation, method, experiments, limitations, and next steps for stronger scientific work.",
   },
   {
     label: "Long-Term Direction",
-    title: "Safe Human-Centered Autonomy",
-    text: "The goal is to contribute to autonomous systems that understand uncertainty and make safer decisions around people.",
+    title: "Robots That Anticipate People",
+    text: "The goal is to contribute to autonomous systems that forecast motion, represent uncertainty, and make decisions more responsibly around people.",
   },
 ];
 
@@ -29,8 +29,11 @@ export function ResearchImpact() {
           <div>
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">Research Impact</p>
             <h2 className="font-serif text-5xl leading-[0.92] tracking-[-0.055em] text-white md:text-6xl">
-              A clear path from thesis to research contribution.
+              A clearer research story, not just a list of projects.
             </h2>
+            <p className="mt-6 max-w-sm text-sm leading-7 text-stone-500">
+              The homepage now reads like a compact academic dossier: direction first, then evidence.
+            </p>
           </div>
 
           <div className="divide-y divide-white/10 border-y border-white/10">
