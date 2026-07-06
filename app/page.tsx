@@ -109,7 +109,7 @@ export default function Home() {
             <p className="mt-8 max-w-3xl text-xl leading-9 text-stone-800">
               I study how autonomous systems can perceive uncertain scenes, forecast human motion, and plan more safely around people.
             </p>
-            <p className="mt-6 max-w-3xl text-base leading-8 text-stone-650 text-stone-700">
+            <p className="mt-6 max-w-3xl text-base leading-8 text-stone-700">
               I am an MEng Electrical &amp; Computer Engineering student building a research profile around human-aware robotics, trajectory prediction, robotic perception, uncertainty-aware navigation, and safe autonomous systems. My current work focuses on trajectory prediction of vulnerable road users at smart intersections.
             </p>
             <div className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm">
