@@ -26,7 +26,7 @@ export default function ProjectsPage() {
         <header className="max-w-4xl">
           <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[#e0001b] dark:text-[#ff5a66]">Projects</p>
           <h1 className="mt-5 text-5xl font-semibold leading-[0.98] tracking-[-0.06em] text-neutral-950 dark:text-neutral-50 md:text-7xl">Research contributions, not portfolio cards.</h1>
-          <p className="mt-8 text-xl leading-9 text-neutral-700 dark:text-neutral-300">Each project is framed as a research case: problem, method, implementation, evidence, limitations, and next steps.</p>
+          <p className="mt-8 text-xl leading-9 text-neutral-700 dark:text-neutral-300">Each project is framed as a research case: question, method, experiment, limitations, and next steps.</p>
         </header>
 
         <section className="mt-14 grid gap-0 border-y border-neutral-200 dark:border-neutral-800 md:grid-cols-3">
@@ -53,10 +53,10 @@ export default function ProjectsPage() {
                   </h2>
                   <p className="mt-4 max-w-3xl text-base leading-8 text-neutral-700 dark:text-neutral-300">{project.objective}</p>
                   <div className="mt-6 grid gap-4 text-sm leading-7 md:grid-cols-2">
-                    <p><span className="font-semibold text-[#e0001b] dark:text-[#ff5a66]">Problem.</span> {project.problem}</p>
-                    <p><span className="font-semibold text-[#e0001b] dark:text-[#ff5a66]">Method.</span> {project.methodology}</p>
-                    <p><span className="font-semibold text-[#e0001b] dark:text-[#ff5a66]">Implementation.</span> {project.implementation}</p>
-                    <p><span className="font-semibold text-[#e0001b] dark:text-[#ff5a66]">Evidence.</span> {project.results}</p>
+                    <p><span className="font-semibold text-[#e0001b] dark:text-[#ff5a66]">Problem.</span> {project.questions[0]}</p>
+                    <p><span className="font-semibold text-[#e0001b] dark:text-[#ff5a66]">Method.</span> {project.methodology.join(" · ")}</p>
+                    <p><span className="font-semibold text-[#e0001b] dark:text-[#ff5a66]">Evidence.</span> {project.experiments.join(" · ")}</p>
+                    <p><span className="font-semibold text-[#e0001b] dark:text-[#ff5a66]">Next steps.</span> {project.future.join(" · ")}</p>
                   </div>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
