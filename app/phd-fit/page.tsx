@@ -4,15 +4,30 @@ import { Footer } from "@/components/portfolio/Footer";
 import { SiteNav } from "@/components/portfolio/SiteNav";
 
 export const metadata: Metadata = {
-  title: "PhD Fit",
+  title: "Zurich PhD Fit",
   description:
-    "PhD research fit statement for Panagiota Grosdouli, focused on robotics, trajectory prediction, uncertainty-aware autonomy, and human-aware intelligent systems.",
+    "Zurich-focused PhD research fit statement for Panagiota Grosdouli, focused on robotics, trajectory prediction, uncertainty-aware autonomy, and human-aware intelligent systems.",
 };
 
 const fitArguments = [
-  ["Coherent axis", "Prediction, uncertainty, and safe autonomy form one connected research direction rather than separate demos."],
+  ["Zurich-aligned axis", "Prediction, uncertainty, perception, and planning are presented as one research direction for robotics and intelligent transportation."],
   ["Technical base", "Trajectory forecasting, SLAM, UAV autonomy, risk-aware navigation, and robotics-oriented software systems."],
-  ["Research mindset", "Projects are framed through questions, methods, evaluation, limitations, and next steps."],
+  ["Research maturity", "Projects are framed through questions, methods, evaluation, limitations, and next steps instead of only implementation details."],
+];
+
+const zurichLabs = [
+  {
+    name: "ETH Zurich robotics and autonomous systems",
+    fit: "Strong match for mobile robotics, perception, mapping, planning, and autonomy in dynamic environments.",
+  },
+  {
+    name: "Vision-for-robotics research directions",
+    fit: "Natural fit for visual perception, SLAM/VIO, UAV autonomy, and real-time robotic intelligence.",
+  },
+  {
+    name: "UZH Robotics and Perception Group ecosystem",
+    fit: "Strong overlap with vision-based autonomy, agile robotic navigation, drones, and perception-driven control.",
+  },
 ];
 
 const topics = [
@@ -20,7 +35,7 @@ const topics = [
   "Uncertainty representation in prediction and perception pipelines",
   "Risk-aware planning when average-case performance is not enough",
   "How perception failures propagate into downstream robot decisions",
-  "Evaluation of rare but safety-critical failure cases",
+  "Evaluation of rare but safety-relevant failure cases",
   "Turning independent projects into publishable research artifacts",
 ];
 
@@ -31,12 +46,12 @@ export default function PhDFitPage() {
 
       <section className="px-6 py-24 md:px-10 lg:px-12">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">PhD Fit</p>
+          <p className="mb-5 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">Zurich PhD Fit</p>
           <h1 className="max-w-6xl font-serif text-6xl leading-[0.88] tracking-[-0.06em] text-white md:text-8xl">
-            Why this profile belongs in a robotics PhD conversation.
+            A focused case for robotics research in Zurich.
           </h1>
           <p className="mt-8 max-w-4xl text-xl leading-10 text-stone-300 md:text-2xl md:leading-[3rem]">
-            I am looking for PhD environments where prediction, perception, uncertainty, and decision making are studied as one connected problem in autonomous systems.
+            I am targeting PhD environments where perception, prediction, uncertainty, and decision making are studied together for autonomous systems that operate around people.
           </p>
         </div>
       </section>
@@ -55,6 +70,25 @@ export default function PhDFitPage() {
       <section className="border-y border-stone-800 bg-stone-900/40 px-6 py-20 md:px-10 lg:px-12">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.34fr_0.66fr]">
           <div>
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">Zurich Lab Fit</p>
+            <h2 className="font-serif text-5xl leading-[0.92] tracking-[-0.05em] text-white">
+              The match is specific, not generic.
+            </h2>
+          </div>
+          <div className="grid gap-4">
+            {zurichLabs.map((lab) => (
+              <article key={lab.name} className="rounded-3xl border border-stone-800 bg-stone-950/50 p-6">
+                <h3 className="font-serif text-3xl leading-none tracking-[-0.04em] text-white">{lab.name}</h3>
+                <p className="mt-4 text-sm leading-7 text-stone-400">{lab.fit}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-20 md:px-10 lg:px-12">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.34fr_0.66fr]">
+          <div>
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">Interview Topics</p>
             <h2 className="font-serif text-5xl leading-[0.92] tracking-[-0.05em] text-white">
               Concrete things a professor can ask me about.
@@ -71,7 +105,7 @@ export default function PhDFitPage() {
       <section className="px-6 py-20 md:px-10 lg:px-12">
         <div className="mx-auto max-w-7xl border-t border-stone-800 pt-12">
           <p className="max-w-3xl font-serif text-4xl leading-tight tracking-[-0.04em] text-white">
-            The strongest next step is to turn the active thesis and independent robotics projects into publishable research artifacts with baselines, metrics, ablations, and documented limitations.
+            The strongest next step is to turn the active thesis and independent robotics projects into Zurich-ready research evidence: baselines, metrics, ablations, documented limitations, and a concise statement of fit for each target lab.
           </p>
           <div className="mt-10 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.16em]">
             <Link href="/research" className="rounded-full border border-emerald-400 bg-emerald-400 px-5 py-3 text-stone-950 transition hover:bg-emerald-300">
