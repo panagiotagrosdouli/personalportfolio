@@ -1,5 +1,6 @@
 import { Footer } from "@/components/portfolio/Footer";
 import { Hero } from "@/components/portfolio/Hero";
+import { AcademicResearchFocus } from "@/components/portfolio/AcademicResearchFocus";
 import { ResearchImpact } from "@/components/portfolio/ResearchImpact";
 import { ResearchPipeline } from "@/components/portfolio/ResearchPipeline";
 import { ResearchQuestions } from "@/components/portfolio/ResearchQuestions";
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-stone-950 text-stone-100">
       <Hero />
+      <AcademicResearchFocus />
       <ResearchImpact />
       <ResearchPipeline />
       <ResearchQuestions />
