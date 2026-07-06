@@ -4,29 +4,29 @@ import { Footer } from "@/components/portfolio/Footer";
 import { SiteNav } from "@/components/portfolio/SiteNav";
 
 export const metadata: Metadata = {
-  title: "Zurich PhD Fit",
+  title: "PhD Fit",
   description:
-    "Zurich-focused PhD research fit statement for Panagiota Grosdouli, focused on robotics, trajectory prediction, uncertainty-aware autonomy, and human-aware intelligent systems.",
+    "PhD research fit statement for Panagiota Grosdouli, focused on robotics, trajectory prediction, uncertainty-aware autonomy, and human-aware intelligent systems.",
 };
 
 const fitArguments = [
-  ["Zurich-aligned axis", "Prediction, uncertainty, perception, and planning are presented as one research direction for robotics and intelligent transportation."],
-  ["Technical base", "Trajectory forecasting, SLAM, UAV autonomy, risk-aware navigation, and robotics-oriented software systems."],
+  ["Research direction", "Prediction, uncertainty, perception, and planning are presented as one connected research direction for robotics and intelligent transportation."],
+  ["Technical base", "Trajectory forecasting, SLAM, UAV autonomy, risk-aware navigation, computer vision, and robotics-oriented software systems."],
   ["Research maturity", "Projects are framed through questions, methods, evaluation, limitations, and next steps instead of only implementation details."],
 ];
 
-const zurichLabs = [
+const phdSignals = [
   {
-    name: "ETH Zurich robotics and autonomous systems",
-    fit: "Strong match for mobile robotics, perception, mapping, planning, and autonomy in dynamic environments.",
+    name: "Clear scientific question",
+    fit: "The portfolio makes the central question visible: how can autonomous systems forecast human motion and act under uncertainty?",
   },
   {
-    name: "Vision-for-robotics research directions",
-    fit: "Natural fit for visual perception, SLAM/VIO, UAV autonomy, and real-time robotic intelligence.",
+    name: "Evidence of independent work",
+    fit: "The projects show initiative across prediction, perception, navigation, and robotic state estimation, with each case written as research evidence.",
   },
   {
-    name: "UZH Robotics and Perception Group ecosystem",
-    fit: "Strong overlap with vision-based autonomy, agile robotic navigation, drones, and perception-driven control.",
+    name: "Room for supervision",
+    fit: "The profile is ambitious but not overclaimed: it shows direction, current limitations, and concrete next steps for PhD-level development.",
   },
 ];
 
@@ -46,12 +46,12 @@ export default function PhDFitPage() {
 
       <section className="px-6 py-24 md:px-10 lg:px-12">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">Zurich PhD Fit</p>
+          <p className="mb-5 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">PhD Fit</p>
           <h1 className="max-w-6xl font-serif text-6xl leading-[0.88] tracking-[-0.06em] text-white md:text-8xl">
-            A focused case for robotics research in Zurich.
+            A focused case for a robotics PhD.
           </h1>
           <p className="mt-8 max-w-4xl text-xl leading-10 text-stone-300 md:text-2xl md:leading-[3rem]">
-            I am targeting PhD environments where perception, prediction, uncertainty, and decision making are studied together for autonomous systems that operate around people.
+            I am preparing for PhD environments where perception, prediction, uncertainty, and decision making are studied together for autonomous systems that operate around people.
           </p>
         </div>
       </section>
@@ -70,16 +70,16 @@ export default function PhDFitPage() {
       <section className="border-y border-stone-800 bg-stone-900/40 px-6 py-20 md:px-10 lg:px-12">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.34fr_0.66fr]">
           <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">Zurich Lab Fit</p>
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">What a supervisor sees</p>
             <h2 className="font-serif text-5xl leading-[0.92] tracking-[-0.05em] text-white">
-              The match is specific, not generic.
+              A candidate with direction, evidence, and room to grow.
             </h2>
           </div>
           <div className="grid gap-4">
-            {zurichLabs.map((lab) => (
-              <article key={lab.name} className="rounded-3xl border border-stone-800 bg-stone-950/50 p-6">
-                <h3 className="font-serif text-3xl leading-none tracking-[-0.04em] text-white">{lab.name}</h3>
-                <p className="mt-4 text-sm leading-7 text-stone-400">{lab.fit}</p>
+            {phdSignals.map((signal) => (
+              <article key={signal.name} className="rounded-3xl border border-stone-800 bg-stone-950/50 p-6">
+                <h3 className="font-serif text-3xl leading-none tracking-[-0.04em] text-white">{signal.name}</h3>
+                <p className="mt-4 text-sm leading-7 text-stone-400">{signal.fit}</p>
               </article>
             ))}
           </div>
@@ -105,7 +105,7 @@ export default function PhDFitPage() {
       <section className="px-6 py-20 md:px-10 lg:px-12">
         <div className="mx-auto max-w-7xl border-t border-stone-800 pt-12">
           <p className="max-w-3xl font-serif text-4xl leading-tight tracking-[-0.04em] text-white">
-            The strongest next step is to turn the active thesis and independent robotics projects into Zurich-ready research evidence: baselines, metrics, ablations, documented limitations, and a concise statement of fit for each target lab.
+            The strongest next step is to turn the active thesis and independent robotics projects into PhD-ready research evidence: baselines, metrics, ablations, documented limitations, and a concise statement of fit for each target lab.
           </p>
           <div className="mt-10 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.16em]">
             <Link href="/research" className="rounded-full border border-emerald-400 bg-emerald-400 px-5 py-3 text-stone-950 transition hover:bg-emerald-300">
