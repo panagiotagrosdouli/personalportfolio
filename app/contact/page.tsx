@@ -1,98 +1,49 @@
 import Link from "next/link";
-import { Footer } from "@/components/portfolio/Footer";
-import { SiteNav } from "@/components/portfolio/SiteNav";
-
-const links = [
-  { label: "Academic Email", value: "panagros1@ee.duth.gr", href: "mailto:panagros1@ee.duth.gr" },
-  { label: "Personal Email", value: "panagiotagrosdouli@gmail.com", href: "mailto:panagiotagrosdouli@gmail.com" },
-  { label: "GitHub", value: "github.com/panagiotagrosdouli", href: "https://github.com/panagiotagrosdouli" },
-  { label: "LinkedIn", value: "linkedin.com/in/panagiota-grosdouli-b468b0201", href: "https://www.linkedin.com/in/panagiota-grosdouli-b468b0201/" },
-];
-
-const interests = [
-  ["Trajectory Prediction", "forecasting human motion in dynamic environments"],
-  ["Autonomous Systems", "safer decision making around people"],
-  ["Risk-Aware Navigation", "planning under uncertainty and unsafe outcomes"],
-  ["Intelligent Transportation", "smart intersections and vulnerable road users"],
-  ["Robot Learning", "learning-based autonomy with interpretable behaviour"],
-];
-
-const professorLinks = [
-  ["Research statement", "/research"],
-  ["PhD fit", "/phd-fit"],
-  ["Research evidence", "/projects"],
-  ["CV", "/cv"],
-];
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-stone-950 text-stone-100">
-      <SiteNav theme="dark" />
-      <section className="px-6 py-24 md:px-10 lg:px-12">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">Contact</p>
-          <h1 className="max-w-5xl font-serif text-6xl leading-[0.88] tracking-[-0.06em] text-white md:text-8xl">
-            Let&apos;s talk about research.
-          </h1>
-
-          <div className="mt-14 grid gap-16 lg:grid-cols-2">
-            <div>
-              <p className="text-lg leading-9 text-stone-300 md:text-xl md:leading-10">
-                I am an Electrical & Computer Engineering student building a focused research path around trajectory prediction, uncertainty-aware autonomy, and safer robotic decision making.
-              </p>
-              <p className="mt-6 text-lg leading-9 text-stone-400">
-                I welcome conversations about PhD opportunities, thesis work, research internships, and collaborations in robotics and intelligent transportation.
-              </p>
-
-              <div className="mt-10 space-y-5">
-                {links.map((link) => (
-                  <div key={link.label} className="grid gap-2 text-sm md:grid-cols-[150px_1fr]">
-                    <span className="pt-0.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-500">{link.label}</span>
-                    <a href={link.href} target={link.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="text-stone-200 transition hover:text-emerald-400">
-                      {link.value}
-                    </a>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-12 border-y border-stone-800 py-7">
-                <p className="mb-5 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">For professors</p>
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {professorLinks.map(([label, href]) => (
-                    <Link key={label} href={href} className="border border-stone-800 bg-stone-900/60 px-4 py-3 text-sm font-medium text-stone-300 transition hover:border-emerald-400 hover:text-emerald-400">
-                      {label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <p className="mb-5 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">Research Interests</p>
-              <p className="mb-6 text-base leading-8 text-stone-400">I am particularly interested in conversations touching on:</p>
-              <ul className="space-y-4">
-                {interests.map(([title, desc]) => (
-                  <li key={title} className="flex items-start gap-3 text-sm leading-7">
-                    <span className="mt-0.5 shrink-0 text-stone-600">-</span>
-                    <div>
-                      <span className="font-semibold text-stone-200">{title}</span>
-                      <span className="text-stone-500"> · {desc}</span>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-10 border-t border-stone-800 pt-8">
-                <p className="mb-4 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">Academic Direction</p>
-                <p className="text-base leading-8 text-stone-400">
-                  My current focus is building a coherent research path around human motion prediction, uncertainty-aware modelling, and safer autonomous systems.
-                </p>
-              </div>
-            </div>
+    <main className="min-h-screen bg-white text-neutral-900 dark:bg-[#090909] dark:text-neutral-100">
+      <nav className="border-b border-neutral-200 px-5 py-4 text-sm dark:border-neutral-800 md:px-8">
+        <div className="mx-auto flex max-w-6xl items-center justify-between">
+          <Link href="/" className="font-semibold text-neutral-950 transition hover:text-[#e0001b] dark:text-neutral-50">Panagiota Grosdouli</Link>
+          <div className="flex gap-5 text-neutral-600 dark:text-neutral-400">
+            <Link href="/research" className="hover:text-[#e0001b]">Research</Link>
+            <Link href="/projects" className="hover:text-[#e0001b]">Projects</Link>
+            <Link href="/publications" className="hover:text-[#e0001b]">Publications</Link>
+            <Link href="/cv" className="hover:text-[#e0001b]">CV</Link>
           </div>
         </div>
-      </section>
-      <Footer theme="dark" />
+      </nav>
+      <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
+        <header className="max-w-4xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[#e0001b] dark:text-[#ff5a66]">Contact</p>
+          <h1 className="mt-5 text-5xl font-semibold leading-[0.98] tracking-[-0.06em] text-neutral-950 dark:text-neutral-50 md:text-7xl">Academic contact.</h1>
+          <p className="mt-8 text-xl leading-9 text-neutral-700 dark:text-neutral-300">I welcome conversations about PhD opportunities, thesis work, research internships, and collaborations in robotics and autonomous systems.</p>
+        </header>
+        <section className="mt-16 grid gap-12 border-t border-neutral-200 pt-12 dark:border-neutral-800 lg:grid-cols-2">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-[-0.03em] text-neutral-950 dark:text-neutral-50">Links</h2>
+            <div className="mt-6 space-y-5 text-sm">
+              <p><span className="mr-4 text-xs font-semibold uppercase tracking-[0.18em] text-neutral-500">Email</span><a href="mailto:panagros1@ee.duth.gr" className="text-[#e0001b] hover:underline dark:text-[#ff5a66]">panagros1@ee.duth.gr</a></p>
+              <p><span className="mr-4 text-xs font-semibold uppercase tracking-[0.18em] text-neutral-500">GitHub</span><a href="https://github.com/panagiotagrosdouli" target="_blank" rel="noreferrer" className="text-[#e0001b] hover:underline dark:text-[#ff5a66]">panagiotagrosdouli</a></p>
+              <p><span className="mr-4 text-xs font-semibold uppercase tracking-[0.18em] text-neutral-500">LinkedIn</span><span className="text-neutral-500">Add profile link</span></p>
+              <p><span className="mr-4 text-xs font-semibold uppercase tracking-[0.18em] text-neutral-500">Scholar</span><span className="text-neutral-500">Add Google Scholar profile</span></p>
+              <p><span className="mr-4 text-xs font-semibold uppercase tracking-[0.18em] text-neutral-500">ORCID</span><span className="text-neutral-500">Add ORCID identifier</span></p>
+              <p><span className="mr-4 text-xs font-semibold uppercase tracking-[0.18em] text-neutral-500">CV</span><Link href="/cv" className="text-[#e0001b] hover:underline dark:text-[#ff5a66]">View CV</Link></p>
+            </div>
+          </div>
+          <div>
+            <h2 className="text-2xl font-semibold tracking-[-0.03em] text-neutral-950 dark:text-neutral-50">Research conversations</h2>
+            <p className="mt-5 text-base leading-8 text-neutral-700 dark:text-neutral-300">My current focus is building a coherent research path around human motion prediction, uncertainty-aware modelling, and safer autonomous systems.</p>
+            <ul className="mt-6 space-y-3 text-sm leading-7 text-neutral-700 dark:text-neutral-300">
+              <li className="border-l border-[#e0001b] pl-4 dark:border-[#ff5a66]">Trajectory prediction and human motion forecasting</li>
+              <li className="border-l border-[#e0001b] pl-4 dark:border-[#ff5a66]">Robotic perception, SLAM, VIO, and sensor fusion</li>
+              <li className="border-l border-[#e0001b] pl-4 dark:border-[#ff5a66]">Planning and navigation under uncertainty</li>
+              <li className="border-l border-[#e0001b] pl-4 dark:border-[#ff5a66]">Safe human-aware autonomy and intelligent intersections</li>
+            </ul>
+          </div>
+        </section>
+      </div>
     </main>
   );
 }
