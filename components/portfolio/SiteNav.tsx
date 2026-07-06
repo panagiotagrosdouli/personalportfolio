@@ -25,10 +25,10 @@ export function SiteNav({ theme = "light" }: { theme?: "light" | "dark" }) {
   const isDark = theme === "dark";
 
   return (
-    <nav className={isDark ? "sticky top-0 z-30 border-b border-white/10 bg-stone-950/75 px-6 py-4 text-sm font-medium text-stone-400 backdrop-blur-xl md:px-10 lg:px-12" : "sticky top-0 z-30 border-b border-stone-200 bg-[#fbfaf7]/95 px-6 py-4 text-sm font-medium text-stone-500 backdrop-blur-xl md:px-10 lg:px-12"}>
+    <nav className={isDark ? "sticky top-0 z-30 border-b border-white/10 bg-[#0b0f0d]/85 px-6 py-4 text-sm font-medium text-stone-400 backdrop-blur-xl md:px-10 lg:px-12" : "sticky top-0 z-30 border-b border-stone-300 bg-[#f7f3ea]/95 px-6 py-4 text-sm font-medium text-stone-600 backdrop-blur-xl md:px-10 lg:px-12"}>
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-8">
         <Link href="/" className={`shrink-0 font-serif text-[1.35rem] font-semibold tracking-tight ${isDark ? "text-stone-50" : "text-stone-950"}`}>
-          P. Grosdouli
+          Panagiota Grosdouli
         </Link>
 
         <div className="hidden items-center gap-7 lg:flex">
@@ -37,7 +37,7 @@ export function SiteNav({ theme = "light" }: { theme?: "light" | "dark" }) {
               {link.label}
             </Link>
           ))}
-          <Link href="/phd-fit" className="rounded-full border border-emerald-400/40 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-emerald-300 transition hover:border-emerald-300 hover:text-emerald-200">
+          <Link href="/phd-fit" className={isDark ? "rounded-full border border-emerald-400/40 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-emerald-300 transition hover:border-emerald-300 hover:text-emerald-200" : "rounded-full border border-emerald-700/30 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-emerald-800 transition hover:border-emerald-800 hover:text-emerald-950"}>
             PhD
           </Link>
         </div>
@@ -48,9 +48,9 @@ export function SiteNav({ theme = "light" }: { theme?: "light" | "dark" }) {
       </div>
 
       {isOpen && (
-        <div id="mobile-navigation" className={`mx-auto mt-5 grid max-w-7xl gap-3 border-t pt-5 lg:hidden ${isDark ? "border-white/10" : "border-stone-200"}`}>
+        <div id="mobile-navigation" className={`mx-auto mt-5 grid max-w-7xl gap-3 border-t pt-5 lg:hidden ${isDark ? "border-white/10" : "border-stone-300"}`}>
           {mobileLinks.map((link) => (
-            <Link key={link.label} href={link.href} className={isDark ? "rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-stone-300 transition hover:border-emerald-400 hover:text-white" : "rounded-2xl border border-stone-200 bg-white/70 px-4 py-3 text-stone-800 transition hover:border-stone-950 hover:text-stone-950"} onClick={() => setIsOpen(false)}>
+            <Link key={link.label} href={link.href} className={isDark ? "rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-stone-300 transition hover:border-emerald-400 hover:text-white" : "rounded-2xl border border-stone-300 bg-white/50 px-4 py-3 text-stone-800 transition hover:border-stone-950 hover:text-stone-950"} onClick={() => setIsOpen(false)}>
               {link.label}
             </Link>
           ))}
