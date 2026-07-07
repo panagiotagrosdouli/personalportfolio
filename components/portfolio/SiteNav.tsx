@@ -6,19 +6,11 @@ import Link from "next/link";
 const primaryLinks = [
   { label: "Research", href: "/research" },
   { label: "Projects", href: "/projects" },
-  { label: "Agenda", href: "/research-agenda" },
   { label: "CV", href: "/cv" },
   { label: "Contact", href: "/contact" },
 ];
 
-const mobileLinks = [
-  ...primaryLinks,
-  { label: "PhD", href: "/phd-fit" },
-  { label: "Publications", href: "/publications" },
-  { label: "Experiments", href: "/experiments" },
-  { label: "Reading Notes", href: "/reading-notes" },
-  { label: "Search", href: "/search" },
-];
+const mobileLinks = primaryLinks;
 
 export function SiteNav({ theme = "light" }: { theme?: "light" | "dark" }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,9 +29,6 @@ export function SiteNav({ theme = "light" }: { theme?: "light" | "dark" }) {
               {link.label}
             </Link>
           ))}
-          <Link href="/phd-fit" className={isDark ? "rounded-full border border-emerald-400/40 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-emerald-300 transition hover:border-emerald-300 hover:text-emerald-200" : "rounded-full border border-emerald-700/30 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-emerald-800 transition hover:border-emerald-800 hover:text-emerald-950"}>
-            PhD
-          </Link>
         </div>
 
         <button type="button" aria-expanded={isOpen} aria-controls="mobile-navigation" className={isDark ? "inline-flex items-center rounded-full border border-white/15 px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone-300 transition hover:border-emerald-400 hover:text-white lg:hidden" : "inline-flex items-center rounded-full border border-stone-300 px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone-800 transition hover:border-stone-950 hover:text-stone-950 lg:hidden"} onClick={() => setIsOpen((current) => !current)}>
