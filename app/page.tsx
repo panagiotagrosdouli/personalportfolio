@@ -4,46 +4,25 @@ const accent = "text-[#245c49]";
 
 const selectedResearch = [
   {
-    title: "Diploma Thesis",
-    question: "How can autonomous systems predict vulnerable road-user motion before making safety-critical decisions?",
-    contribution: "Trajectory prediction and uncertainty-aware evaluation for smart-intersection scenarios.",
-    status: "In progress",
-    href: null,
+    title: "SafeCrossAI",
+    question: "How can intelligent intersections model interactions between vulnerable road users and connected or autonomous vehicles?",
+    contribution: "AI-driven intersection intelligence for infrastructure-level perception, motion prediction, and safety-aware reasoning around vulnerable road users.",
+    status: "Public repository · Python · MIT License",
+    href: "https://github.com/panagiotagrosdouli/SafeCrossAI",
   },
   {
-    title: "DynNav",
-    question: "How should robots re-plan when the environment changes around moving humans?",
-    contribution: "Dynamic navigation and rerouting in unknown environments with obstacle avoidance and planning under uncertainty.",
-    status: "Public repository",
-    href: "https://github.com/panagiotagrosdouli/DynNav-Dynamic-Navigation-Rerouting-in-Unknown-Environments",
-  },
-  {
-    title: "Self-Healing VIO",
-    question: "How can visual-inertial odometry recover from degraded state estimation during UAV navigation?",
-    contribution: "A robust UAV navigation direction focused on resilient visual-inertial estimation and failure-aware recovery.",
-    status: "Public repository",
+    title: "Self-Healing VIO for Robust UAV Navigation",
+    question: "How can visual-inertial SLAM remain reliable when tracking quality degrades under blur, low light, noise, or frame dropout?",
+    contribution: "A self-healing VIO direction that predicts tracking degradation and proactively adapts sensing or recovery strategy for robust UAV navigation.",
+    status: "Public repository · Python",
     href: "https://github.com/panagiotagrosdouli/Self-Healing-VIO-for-Robust-UAV-Navigation",
   },
   {
-    title: "PC-FMCW VRU Framework",
-    question: "How can sensing pipelines support vulnerable road-user analysis in traffic environments?",
-    contribution: "A framework direction for point-cloud/FMCW-style perception and vulnerable road-user scene analysis.",
-    status: "Repository work",
-    href: null,
-  },
-  {
-    title: "CASim",
-    question: "How can parametric cellular automata support controlled simulation experiments?",
-    contribution: "A simulator-oriented project for exploring rule-based dynamics, scenario generation, and computational modeling.",
-    status: "Repository work",
-    href: null,
-  },
-  {
-    title: "Probabilistic Search Simulations",
-    question: "How can uncertainty be represented when the target state or location is only partially observable?",
-    contribution: "Simulation work around probabilistic search, decision support, and uncertainty-aware exploration.",
-    status: "Repository work",
-    href: null,
+    title: "Adaptive Multi-Modal SLAM",
+    question: "How can high-speed UAV navigation adaptively fuse visual foundation models, event cameras, and uncertainty-aware sensing?",
+    contribution: "Adaptive multi-modal SLAM with uncertainty-aware sensor fusion for high-speed UAV navigation in visually challenging conditions.",
+    status: "Public repository · Python",
+    href: "https://github.com/panagiotagrosdouli/Adaptive-Multi-Modal-SLAM-with-Uncertainty-Aware-Sensor-Fusion",
   },
 ];
 
@@ -101,7 +80,7 @@ export default function Home() {
               Research software for safer autonomous systems.
             </p>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-stone-600">
-              Building and documenting projects in human-aware robotics, trajectory prediction, visual-inertial estimation, simulation, and uncertainty-aware decision making.
+              Building and documenting public research projects in intelligent intersections, robust visual-inertial SLAM, adaptive multi-modal perception, and uncertainty-aware autonomous navigation.
             </p>
             <div className="mt-10 flex flex-wrap gap-4 text-sm font-medium">
               <Link href="#research" className="border border-stone-950 px-5 py-3 text-stone-950 transition hover:bg-stone-950 hover:text-white">Research</Link>
@@ -120,10 +99,10 @@ export default function Home() {
         <Section id="research" label="Research Direction" title="Autonomy should reason about people, uncertainty, and failure before acting.">
           <div className="max-w-3xl space-y-6 text-lg leading-9 text-stone-700">
             <p>
-              My work is organized around autonomous systems as coupled perception, prediction, planning, and simulation problems. The goal is not only to build demos, but to produce research software that makes assumptions visible and supports systematic evaluation.
+              My work is organized around autonomous systems as coupled perception, prediction, planning, and safety problems. The goal is to build research software that makes uncertainty, degradation, and interaction risk visible before an autonomous system commits to an action.
             </p>
             <p>
-              The projects below connect trajectory prediction, visual-inertial estimation, dynamic navigation, cellular automata simulation, and probabilistic search into a coherent technical direction: robust decision making under uncertainty.
+              The selected projects focus on intelligent intersections, vulnerable road-user safety, visual-inertial SLAM degradation, event-camera perception, foundation-model-assisted sensing, and uncertainty-aware sensor fusion for UAV navigation.
             </p>
           </div>
         </Section>
@@ -135,7 +114,7 @@ export default function Home() {
                 The current thesis work focuses on forecasting pedestrian and vulnerable road-user motion in traffic scenes where autonomous systems must make decisions before the future trajectory is fully observable.
               </p>
               <p>
-                This direction is supported by related GitHub work in dynamic navigation, sensing frameworks, simulation, and robust state estimation. The portfolio presents those repositories as research questions rather than as isolated software demos.
+                SafeCrossAI connects this research direction to intelligent intersections, while the SLAM projects extend the same robustness perspective to degraded perception and high-speed UAV navigation.
               </p>
               <a href="https://github.com/panagiotagrosdouli" target="_blank" rel="noreferrer" className="inline-flex text-sm font-semibold text-[#245c49] underline-offset-4 hover:underline">
                 View GitHub profile
@@ -143,17 +122,17 @@ export default function Home() {
             </div>
             <div className="border-t border-stone-300 pt-5 text-sm leading-7 text-stone-600 md:border-l md:border-t-0 md:pl-6 md:pt-0">
               <p className="font-semibold text-stone-950">Focus</p>
-              <p className="mt-2">Trajectory prediction, robust perception, smart intersections, dynamic navigation.</p>
+              <p className="mt-2">VRU safety, intelligent intersections, robust SLAM, adaptive perception.</p>
               <p className="mt-6 font-semibold text-stone-950">Methods</p>
-              <p className="mt-2">Simulation, motion forecasting, VIO, point-cloud sensing, planning under uncertainty.</p>
+              <p className="mt-2">Motion prediction, VIO, multi-modal SLAM, event cameras, uncertainty-aware sensor fusion.</p>
             </div>
           </div>
         </Section>
 
-        <Section id="selected" label="Selected Projects" title="GitHub projects presented as research contributions.">
+        <Section id="selected" label="Selected Projects" title="Three public projects, presented as research contributions.">
           <div className="divide-y divide-stone-300">
             {selectedResearch.map((item) => (
-              <article key={item.title} className="grid gap-6 py-8 md:grid-cols-[190px_1fr]">
+              <article key={item.title} className="grid gap-6 py-8 md:grid-cols-[220px_1fr]">
                 <div>
                   <h3 className="font-serif text-2xl tracking-[-0.03em] text-stone-950">{item.title}</h3>
                   <p className={`mt-2 text-xs font-semibold uppercase tracking-[0.2em] ${accent}`}>{item.status}</p>
@@ -163,11 +142,9 @@ export default function Home() {
                   <p className="mt-2 text-lg leading-8 text-stone-800">{item.question}</p>
                   <p className="mt-5 text-sm font-semibold uppercase tracking-[0.18em] text-stone-500">Technical contribution</p>
                   <p className="mt-2 text-base leading-8 text-stone-700">{item.contribution}</p>
-                  {item.href && (
-                    <a href={item.href} target="_blank" rel="noreferrer" className="mt-5 inline-flex text-sm font-semibold text-[#245c49] underline-offset-4 hover:underline">
-                      Repository
-                    </a>
-                  )}
+                  <a href={item.href} target="_blank" rel="noreferrer" className="mt-5 inline-flex text-sm font-semibold text-[#245c49] underline-offset-4 hover:underline">
+                    Repository
+                  </a>
                 </div>
               </article>
             ))}
