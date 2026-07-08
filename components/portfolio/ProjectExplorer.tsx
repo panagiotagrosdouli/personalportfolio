@@ -24,6 +24,7 @@ export function ProjectExplorer({ projects }: { projects: Project[] }) {
 
   return (
     <section className="mt-14" aria-labelledby="project-explorer-title">
+      <h2 id="project-explorer-title" className="sr-only">Filterable research project list</h2>
       <div className="flex flex-wrap gap-2" role="list" aria-label="Project filters">
         {filters.map((filter) => (
           <button
@@ -52,11 +53,11 @@ export function ProjectExplorer({ projects }: { projects: Project[] }) {
               <span>·</span>
               <span>{project.year}</span>
             </div>
-            <h2 id="project-explorer-title" className="mt-3 font-serif text-3xl leading-tight tracking-[-0.04em] text-[var(--foreground)]">
+            <h3 className="mt-3 font-serif text-3xl leading-tight tracking-[-0.04em] text-[var(--foreground)]">
               <Link href={`/projects/${project.slug}`} className="focus-ring transition group-hover:text-[var(--accent)]">
                 {project.title}
               </Link>
-            </h2>
+            </h3>
             <p className="mt-4 text-sm leading-7 text-[var(--muted)]">{project.objective}</p>
             <dl className="mt-5 grid gap-4 text-sm md:grid-cols-2">
               <div><dt className="font-semibold text-[var(--foreground)]">Contribution</dt><dd className="mt-1 text-[var(--muted)]">{project.methodology.join(" · ")}</dd></div>
