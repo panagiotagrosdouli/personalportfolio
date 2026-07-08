@@ -15,7 +15,15 @@ const primaryLinks = [
   { label: "CV", href: "/cv" },
 ];
 
-function getInitialThemePreference() {
+type SiteNavProps = {
+  theme?: "light" | "dark";
+};
+
+function getInitialThemePreference(theme?: SiteNavProps["theme"]) {
+  if (theme) {
+    return theme === "dark";
+  }
+
   if (typeof window === "undefined") {
     return false;
   }
@@ -28,9 +36,9 @@ function getInitialThemePreference() {
   return window.matchMedia("(prefers-color-scheme: dark)").matches;
 }
 
-export function SiteNav() {
+export function SiteNav({ theme }: SiteNavProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDark, setIsDark] = useState(getInitialThemePreference);
+  const [isDark, setIsDark] = useState(() => getInitialThemePreference(theme));
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDark);
