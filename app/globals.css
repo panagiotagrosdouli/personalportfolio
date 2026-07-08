@@ -3,6 +3,21 @@
 :root {
   --background: #fbfaf7;
   --foreground: #171412;
+  --muted: #5e5e5a;
+  --line: #ddd9d0;
+  --accent: #1f5a44;
+  --accent-soft: #d7ede4;
+  color-scheme: light;
+}
+
+.dark {
+  --background: #090f0d;
+  --foreground: #f4f1ea;
+  --muted: #b8b2a7;
+  --line: rgba(255, 255, 255, 0.13);
+  --accent: #78d6af;
+  --accent-soft: rgba(120, 214, 175, 0.14);
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -29,8 +44,8 @@ body {
 }
 
 ::selection {
-  background: #d7ede4;
-  color: #12372a;
+  background: var(--accent-soft);
+  color: var(--foreground);
 }
 
 a {
@@ -39,4 +54,37 @@ a {
 
 .font-serif {
   font-family: var(--font-cormorant), Georgia, "Times New Roman", serif;
+}
+
+.focus-ring {
+  outline: none;
+}
+
+.focus-ring:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.research-grid {
+  background-image:
+    linear-gradient(rgba(31, 90, 68, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 90, 68, 0.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.dark .research-grid {
+  background-image:
+    linear-gradient(rgba(120, 214, 175, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 214, 175, 0.08) 1px, transparent 1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
