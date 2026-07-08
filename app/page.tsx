@@ -37,10 +37,14 @@ export default function Home() {
             <div className="grid gap-5">
               <div className="rounded-[2rem] border border-[var(--line)] bg-[var(--background)]/80 p-4 shadow-sm backdrop-blur">
                 <div className="mb-4 flex items-center gap-4 rounded-[1.5rem] border border-dashed border-[var(--line)] p-5">
-                  <div className="h-24 w-24 rounded-full border border-[var(--accent)] bg-[var(--accent-soft)]" aria-label="Profile image placeholder" />
+                  <img
+                    src="https://avatars.githubusercontent.com/u/75089541?v=4"
+                    alt="Panagiota Grosdouli profile portrait"
+                    className="h-24 w-24 rounded-full border border-[var(--accent)] object-cover shadow-sm"
+                  />
                   <div>
-                    <p className="font-serif text-2xl leading-tight">Profile image placeholder</p>
-                    <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Replace with a professional academic portrait when available.</p>
+                    <p className="font-serif text-2xl leading-tight">Panagiota Grosdouli</p>
+                    <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Electrical and Computer Engineering student focused on robotics, SLAM, and safe autonomy.</p>
                   </div>
                 </div>
                 <ResearchVisual />
