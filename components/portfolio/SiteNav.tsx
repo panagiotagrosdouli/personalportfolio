@@ -15,23 +15,33 @@ const primaryLinks = [
   { label: "CV", href: "/cv" },
 ];
 
+function getInitialThemePreference() {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  const stored = window.localStorage.getItem("theme");
+  if (stored) {
+    return stored === "dark";
+  }
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches;
+}
+
 export function SiteNav() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(getInitialThemePreference);
 
   useEffect(() => {
-    const stored = window.localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const active = stored ? stored === "dark" : prefersDark;
-    setIsDark(active);
-    document.documentElement.classList.toggle("dark", active);
-  }, []);
+    document.documentElement.classList.toggle("dark", isDark);
+  }, [isDark]);
 
   function toggleTheme() {
-    const next = !isDark;
-    setIsDark(next);
-    document.documentElement.classList.toggle("dark", next);
-    window.localStorage.setItem("theme", next ? "dark" : "light");
+    setIsDark((current) => {
+      const next = !current;
+      window.localStorage.setItem("theme", next ? "dark" : "light");
+      return next;
+    });
   }
 
   return (
