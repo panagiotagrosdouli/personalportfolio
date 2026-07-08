@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SiteNav } from "@/components/portfolio/SiteNav";
+import { PointCloudPreview } from "@/components/portfolio/PointCloudPreview";
 
 export const metadata: Metadata = { title: "Interactive Demos", description: "Placeholder demos for trajectory visualization, SLAM, sensor fusion, risk, segmentation, UAV simulation and point clouds." };
 
@@ -13,7 +14,8 @@ export default function DemosPage() {
         <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[var(--accent)]">Interactive demos</p>
         <h1 className="mt-5 max-w-5xl font-serif text-5xl leading-[0.95] tracking-[-0.06em] md:text-7xl">Demonstrations for robotics concepts and research communication.</h1>
         <p className="mt-8 max-w-3xl text-lg leading-8 text-[var(--muted)]">These modules currently use placeholder/demo data and must not be interpreted as final experimental results.</p>
-        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <section className="mt-12 rounded-[2rem] border border-[var(--line)] p-6"><p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">Three.js demo · placeholder data</p><PointCloudPreview /></section>
+        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {demos.map((demo) => <article key={demo} className="rounded-[1.5rem] border border-[var(--line)] p-6"><div className="mb-5 h-36 rounded-xl border border-dashed border-[var(--line)] bg-[var(--accent-soft)]/25 research-grid" /><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">Demonstration placeholder</p><h2 className="mt-3 font-serif text-2xl tracking-[-0.04em]">{demo}</h2><p className="mt-3 text-sm leading-7 text-[var(--muted)]">Coming Soon. This section is prepared for verified interactive visualizations using project data when available.</p></article>)}
         </div>
       </div>
