@@ -1,240 +1,112 @@
 import Link from "next/link";
+import { FiGithub, FiLinkedin, FiMail, FiBookOpen, FiDownload } from "react-icons/fi";
+import { SiteNav } from "@/components/portfolio/SiteNav";
+import { ResearchVisual } from "@/components/portfolio/ResearchVisual";
+import { Reveal } from "@/components/portfolio/Reveal";
+import { projects } from "@/data/projects";
 
-const accent = "text-[#1f5a44]";
-const link = "text-[#1f5a44] underline-offset-4 transition hover:underline";
+const interests = ["Robust SLAM", "Visual-Inertial Odometry", "Sensor Fusion", "Risk-Aware Robotics", "UAV Autonomy", "Computer Vision", "AI for Robotics", "Intelligent Mobility"];
 
-const researchThemes = [
-  "Robust visual-inertial odometry and SLAM under perceptual degradation",
-  "Uncertainty-aware sensor fusion for mobile robots and UAVs",
-  "Risk-sensitive navigation and replanning in unknown environments",
-  "Trajectory prediction and safety analysis for vulnerable road users",
-  "Interpretable autonomy signals for failure diagnosis and recovery",
+const links = [
+  { label: "GitHub", href: "https://github.com/panagiotagrosdouli", icon: FiGithub },
+  { label: "LinkedIn", href: "https://www.linkedin.com/", icon: FiLinkedin },
+  { label: "Google Scholar", href: "/publications", icon: FiBookOpen },
+  { label: "ORCID", href: "/publications", icon: FiBookOpen },
+  { label: "Email", href: "mailto:p.g2a15@gmail.com", icon: FiMail },
 ];
-
-const selectedResearch = [
-  {
-    title: "SHIELD-VIO",
-    role: "Flagship PhD-level robotics direction",
-    question:
-      "Can a visual-inertial odometry system detect degradation, diagnose likely causes, and select recovery actions before localization failure?",
-    contribution:
-      "Python research prototype for degradation-aware VIO with health monitoring, Bayesian failure diagnosis, recovery policies, and a Navigation Health Index.",
-    methods: "VIO · degradation monitoring · uncertainty · diagnosis · recovery",
-    href: "https://github.com/panagiotagrosdouli/SHIELD-VIO",
-  },
-  {
-    title: "Adaptive Multi-Modal SLAM",
-    role: "Robust perception and sensor-fusion research",
-    question:
-      "Can a SLAM system estimate sensor reliability online and adapt its fusion strategy under blur, low light, texture scarcity, or sensor dropout?",
-    contribution:
-      "Research framework for uncertainty-aware fusion of visual, inertial, and event-based sensing with EuRoC-style evaluation and ORB-SLAM3 baseline integration.",
-    methods: "SLAM · sensor fusion · EuRoC · ATE/RPE · event cameras",
-    href: "https://github.com/panagiotagrosdouli/Adaptive-Multi-Modal-SLAM-with-Uncertainty-Aware-Sensor-Fusion",
-  },
-  {
-    title: "DynNav",
-    role: "Risk-aware navigation research",
-    question:
-      "How should robots plan and replan when they move through unknown environments with uncertain maps and dynamic obstacles?",
-    contribution:
-      "Navigation research repository focused on risk-sensitive planning, belief-aware route selection, returnability constraints, and safety monitoring.",
-    methods: "mobile robots · CVaR-style risk · replanning · ROS 2",
-    href: "https://github.com/panagiotagrosdouli/DynNav-Dynamic-Navigation-Rerouting-in-Unknown-Environments",
-  },
-  {
-    title: "Uncertainty-Aware Navigation",
-    role: "Focused planning benchmark",
-    question:
-      "Can uncertainty-weighted planning reduce unsafe navigation behaviour compared with classical shortest-path planning?",
-    contribution:
-      "A focused research scaffold for comparing classical planners with uncertainty-aware navigation in controlled map scenarios.",
-    methods: "A* · Dijkstra · uncertainty maps · safety metrics",
-    href: "https://github.com/panagiotagrosdouli/uncertainty-aware-navigation",
-  },
-  {
-    title: "SafeCrossAI",
-    role: "Intelligent mobility and VRU safety",
-    question:
-      "How can intelligent intersections predict vulnerable road-user motion and support safer connected or autonomous mobility?",
-    contribution:
-      "AI research platform for trajectory prediction, interaction modelling, time-to-collision reasoning, and safety-aware smart-intersection research.",
-    methods: "trajectory prediction · VRU safety · social graphs · TTC",
-    href: "https://github.com/panagiotagrosdouli/SafeCrossAI",
-  },
-];
-
-function Section({
-  id,
-  label,
-  title,
-  children,
-}: {
-  id: string;
-  label: string;
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <section id={id} className="scroll-mt-24 py-20 md:py-28">
-      <div className="grid gap-10 border-t border-[#ddd9d0] pt-10 md:grid-cols-[230px_1fr]">
-        <div>
-          <p className={`text-[11px] font-semibold uppercase tracking-[0.28em] ${accent}`}>{label}</p>
-        </div>
-        <div>
-          <h2 className="font-serif text-4xl leading-tight tracking-[-0.04em] text-[#1c1c1a] md:text-5xl">{title}</h2>
-          <div className="mt-8">{children}</div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#faf8f4] text-[#1c1c1a] selection:bg-[#d7ede4] selection:text-[#12372a]">
-      <nav className="sticky top-0 z-40 border-b border-[#ddd9d0] bg-[#faf8f4]/92 px-5 py-4 backdrop-blur-md md:px-8" aria-label="Main navigation">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-8">
-          <Link href="/" className="font-serif text-lg font-semibold tracking-tight text-[#1c1c1a] transition hover:text-[#1f5a44]">
-            Panagiota Grosdouli
-          </Link>
-          <div className="hidden items-center gap-7 text-sm text-[#5e5e5a] md:flex">
-            <Link href="#about" className="transition hover:text-[#1f5a44]">About</Link>
-            <Link href="#agenda" className="transition hover:text-[#1f5a44]">Research Agenda</Link>
-            <Link href="#projects" className="transition hover:text-[#1f5a44]">Projects</Link>
-            <Link href="#phd" className="transition hover:text-[#1f5a44]">PhD Fit</Link>
-            <Link href="/cv" className="transition hover:text-[#1f5a44]">CV</Link>
-          </div>
-        </div>
-      </nav>
-
-      <div className="mx-auto max-w-6xl px-5 md:px-8">
-        <header className="grid min-h-[82vh] gap-14 py-20 md:grid-cols-[1fr_340px] md:items-center lg:py-28">
-          <div>
-            <p className={`text-[11px] font-semibold uppercase tracking-[0.3em] ${accent}`}>Robotics · SLAM · Safe Autonomy</p>
-            <h1 className="mt-8 max-w-4xl font-serif text-6xl leading-[0.95] tracking-[-0.06em] text-[#1c1c1a] md:text-8xl">
-              Panagiota Grosdouli
-            </h1>
-            <p className="mt-8 max-w-3xl text-3xl leading-tight tracking-[-0.035em] text-[#1c1c1a] md:text-4xl">
-              Research portfolio for robust, uncertainty-aware autonomy.
-            </p>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-[#5e5e5a]">
-              Electrical and Computer Engineering student preparing for graduate research in robotics, visual-inertial localization, adaptive SLAM, risk-aware navigation, and safety-aware intelligent mobility.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4 text-sm font-medium">
-              <Link href="#projects" className="border border-[#1f5a44] px-5 py-3 text-[#1f5a44] transition hover:bg-[#1f5a44] hover:text-[#faf8f4]">Selected Research</Link>
-              <Link href="/cv" className="border border-[#ddd9d0] px-5 py-3 text-[#5e5e5a] transition hover:border-[#1f5a44] hover:text-[#1f5a44]">Academic CV</Link>
-              <a href="https://github.com/panagiotagrosdouli" target="_blank" rel="noreferrer" className="border border-[#ddd9d0] px-5 py-3 text-[#5e5e5a] transition hover:border-[#1f5a44] hover:text-[#1f5a44]">GitHub</a>
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] selection:bg-[var(--accent-soft)]">
+      <SiteNav />
+      <section className="relative overflow-hidden border-b border-[var(--line)]">
+        <div className="absolute inset-0 research-grid opacity-70" aria-hidden="true" />
+        <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-20 md:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-28">
+          <Reveal>
+            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.32em] text-[var(--accent)]">Robotics · SLAM · Safe Autonomy</p>
+            <h1 className="mt-7 max-w-4xl font-serif text-6xl leading-[0.9] tracking-[-0.065em] md:text-8xl">Panagiota Grosdouli</h1>
+            <p className="mt-7 max-w-3xl text-2xl leading-tight tracking-[-0.035em] text-[var(--foreground)] md:text-4xl">Research portfolio for robust, uncertainty-aware autonomous systems.</p>
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-[var(--muted)]">Electrical and Computer Engineering student preparing for graduate research in robotics, visual-inertial localization, adaptive SLAM, sensor fusion, risk-aware navigation, and intelligent mobility safety.</p>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <Link href="/cv" className="focus-ring inline-flex items-center gap-2 rounded-full border border-[var(--accent)] bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-[var(--background)]"><FiDownload aria-hidden="true" /> Download CV</Link>
+              <Link href="/projects" className="focus-ring rounded-full border border-[var(--line)] px-5 py-3 text-sm font-semibold text-[var(--foreground)] transition hover:border-[var(--accent)]">View projects</Link>
+              <Link href="/research" className="focus-ring rounded-full border border-[var(--line)] px-5 py-3 text-sm font-semibold text-[var(--foreground)] transition hover:border-[var(--accent)]">Research agenda</Link>
             </div>
-          </div>
-          <aside>
-            <div className="border border-[#ddd9d0] bg-[#f4f0e8] p-6">
-              <p className="font-serif text-3xl leading-tight tracking-[-0.035em] text-[#1c1c1a]">Research focus</p>
-              <p className="mt-5 text-sm leading-7 text-[#5e5e5a]">
-                Making autonomous robots more reliable when perception is degraded, localization is uncertain, maps are incomplete, and planning must account for risk.
-              </p>
-              <dl className="mt-8 space-y-5 text-sm">
-                <div>
-                  <dt className="font-semibold text-[#1c1c1a]">Current direction</dt>
-                  <dd className="mt-1 text-[#5e5e5a]">Robust autonomy under uncertainty</dd>
+          </Reveal>
+          <Reveal delay={0.12}>
+            <div className="grid gap-5">
+              <div className="rounded-[2rem] border border-[var(--line)] bg-[var(--background)]/80 p-4 shadow-sm backdrop-blur">
+                <div className="mb-4 flex items-center gap-4 rounded-[1.5rem] border border-dashed border-[var(--line)] p-5">
+                  <div className="h-24 w-24 rounded-full border border-[var(--accent)] bg-[var(--accent-soft)]" aria-label="Profile image placeholder" />
+                  <div>
+                    <p className="font-serif text-2xl leading-tight">Profile image placeholder</p>
+                    <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Replace with a professional academic portrait when available.</p>
+                  </div>
                 </div>
-                <div>
-                  <dt className="font-semibold text-[#1c1c1a]">Target labs</dt>
-                  <dd className="mt-1 text-[#5e5e5a]">Robotics, SLAM, autonomous systems, intelligent mobility</dd>
-                </div>
-                <div>
-                  <dt className="font-semibold text-[#1c1c1a]">Looking for</dt>
-                  <dd className="mt-1 text-[#5e5e5a]">PhD opportunities and research collaborations</dd>
-                </div>
-              </dl>
-            </div>
-          </aside>
-        </header>
-
-        <Section id="about" label="Profile" title="I study autonomy as a coupled problem of perception, estimation, planning, and safety.">
-          <div className="max-w-3xl space-y-6 text-lg leading-9 text-[#5e5e5a]">
-            <p>
-              My work is organized around the question of how robots can remain useful and safe when real-world assumptions fail: visual features disappear, inertial estimates drift, maps are incomplete, pedestrians behave unpredictably, and shortest paths are not necessarily safe paths.
-            </p>
-            <p>
-              The portfolio is intentionally structured like a graduate research profile: each project states a research question, a technical contribution, evaluation metrics, and its relationship to a broader research agenda in robust autonomous systems.
-            </p>
-          </div>
-        </Section>
-
-        <Section id="agenda" label="Research Agenda" title="Robust autonomy under uncertainty.">
-          <div className="grid gap-10 md:grid-cols-[1fr_280px]">
-            <div className="space-y-5 text-base leading-8 text-[#5e5e5a]">
-              <p>
-                The central research direction is to connect uncertainty-aware perception with downstream decision making. Rather than treating perception, localization, and planning as isolated modules, I am interested in autonomy stacks that expose reliability signals and use them before failure becomes safety-critical.
-              </p>
-              <ul className="space-y-3">
-                {researchThemes.map((theme) => (
-                  <li key={theme} className="flex gap-3">
-                    <span className="mt-3 h-px w-5 shrink-0 bg-[#1f5a44]" />
-                    <span>{theme}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="border-t border-[#ddd9d0] pt-5 text-sm leading-7 text-[#5e5e5a] md:border-l md:border-t-0 md:pl-6 md:pt-0">
-              <p className="font-semibold text-[#1c1c1a]">Keywords</p>
-              <p className="mt-2">VIO, SLAM, sensor fusion, ROS 2, risk-aware planning, CVaR-style reasoning, trajectory prediction, VRU safety.</p>
-              <p className="mt-6 font-semibold text-[#1c1c1a]">Evaluation mindset</p>
-              <p className="mt-2">Baselines, uncertainty calibration, failure cases, repeatable experiments, and clear separation between implemented work and future plans.</p>
-            </div>
-          </div>
-        </Section>
-
-        <Section id="projects" label="Selected Research" title="Repositories organized as a PhD research portfolio.">
-          <div className="divide-y divide-[#ddd9d0]">
-            {selectedResearch.map((item) => (
-              <article key={item.title} className="grid gap-6 py-8 md:grid-cols-[240px_1fr]">
-                <div>
-                  <h3 className="font-serif text-2xl tracking-[-0.03em] text-[#1c1c1a]">{item.title}</h3>
-                  <p className={`mt-2 text-xs font-semibold uppercase tracking-[0.2em] ${accent}`}>{item.role}</p>
-                </div>
-                <div className="max-w-3xl">
-                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#5e5e5a]">Research question</p>
-                  <p className="mt-2 text-lg leading-8 text-[#1c1c1a]">{item.question}</p>
-                  <p className="mt-5 text-sm font-semibold uppercase tracking-[0.18em] text-[#5e5e5a]">Technical contribution</p>
-                  <p className="mt-2 text-base leading-8 text-[#5e5e5a]">{item.contribution}</p>
-                  <p className="mt-4 font-mono text-xs uppercase tracking-[0.14em] text-[#5e5e5a]">{item.methods}</p>
-                  <a href={item.href} target="_blank" rel="noreferrer" className={`mt-5 inline-flex text-sm font-semibold ${link}`}>
-                    Repository
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
-        </Section>
-
-        <Section id="phd" label="PhD Fit" title="Research groups I would fit best.">
-          <div className="grid gap-8 md:grid-cols-3">
-            {[
-              ["Robotics & SLAM", "Visual-inertial localization, adaptive SLAM, robust perception, sensor fusion, and field robotics."],
-              ["Safe Autonomy", "Risk-aware planning, uncertainty-aware decision making, monitoring, diagnosis, and recovery before unsafe outcomes."],
-              ["Intelligent Mobility", "Trajectory prediction, vulnerable road-user safety, smart intersections, and cooperative perception."],
-            ].map(([title, text]) => (
-              <div key={title} className="border-t border-[#ddd9d0] pt-5">
-                <h3 className="font-serif text-2xl tracking-[-0.03em] text-[#1c1c1a]">{title}</h3>
-                <p className="mt-4 text-sm leading-7 text-[#5e5e5a]">{text}</p>
+                <ResearchVisual />
               </div>
-            ))}
-          </div>
-        </Section>
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
-        <footer className="border-t border-[#ddd9d0] py-10 text-sm text-[#5e5e5a]">
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <p>© Panagiota Grosdouli</p>
-            <div className="flex flex-wrap gap-5">
-              <a href="mailto:p.g2a15@gmail.com" className="transition hover:text-[#1f5a44]">Email</a>
-              <a href="https://github.com/panagiotagrosdouli" target="_blank" rel="noreferrer" className="transition hover:text-[#1f5a44]">GitHub</a>
-              <Link href="/cv" className="transition hover:text-[#1f5a44]">CV</Link>
+      <section className="mx-auto max-w-7xl px-5 py-16 md:px-8" aria-labelledby="research-interests">
+        <Reveal>
+          <div className="grid gap-8 md:grid-cols-[260px_1fr]">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">Current focus</p>
+              <h2 id="research-interests" className="mt-3 font-serif text-4xl leading-tight tracking-[-0.04em]">Robust autonomy under uncertainty.</h2>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              <p className="text-base leading-8 text-[var(--muted)]">The portfolio is organized around a scientific question: how can robots remain useful and safe when perception degrades, localization drifts, maps are incomplete, and planning must reason about risk?</p>
+              <div className="flex flex-wrap gap-2">
+                {interests.map((interest) => <span key={interest} className="rounded-full border border-[var(--line)] px-3 py-2 text-sm text-[var(--muted)]">{interest}</span>)}
+              </div>
             </div>
           </div>
-        </footer>
-      </div>
+        </Reveal>
+      </section>
+
+      <section className="border-y border-[var(--line)] bg-[var(--accent-soft)]/20">
+        <div className="mx-auto grid max-w-7xl gap-0 px-5 md:grid-cols-3 md:px-8">
+          {["Scientific maturity", "Engineering quality", "Research impact"].map((title, index) => (
+            <Reveal key={title} delay={index * 0.06}>
+              <article className="border-b border-[var(--line)] py-10 md:border-b-0 md:border-r md:pr-8">
+                <h3 className="font-serif text-3xl tracking-[-0.035em]">{title}</h3>
+                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">{index === 0 ? "Each project separates implemented work from future work and states research questions, methods, limitations, and evaluation intent." : index === 1 ? "The site uses reusable TypeScript data models, accessible components, responsive layouts, metadata, and planned CI/testing workflows." : "Projects are framed as research trajectories toward reproducible autonomy experiments rather than isolated portfolio demos."}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+          <div><p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">Selected projects</p><h2 className="mt-3 font-serif text-4xl tracking-[-0.04em]">Research repositories</h2></div>
+          <Link href="/projects" className="focus-ring text-sm font-semibold text-[var(--accent)] underline-offset-4 hover:underline">All projects</Link>
+        </div>
+        <div className="grid gap-5 md:grid-cols-3">
+          {projects.slice(0, 3).map((project) => (
+            <Reveal key={project.slug}>
+              <article className="h-full rounded-[1.5rem] border border-[var(--line)] p-6 transition hover:border-[var(--accent)]">
+                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">{project.badge}</p>
+                <h3 className="mt-4 font-serif text-2xl leading-tight tracking-[-0.035em]"><Link href={`/projects/${project.slug}`} className="focus-ring hover:text-[var(--accent)]">{project.title}</Link></h3>
+                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">{project.objective}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 pb-20 md:px-8">
+        <div className="rounded-[2rem] border border-[var(--line)] p-6 md:p-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">Academic links</p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            {links.map(({ label, href, icon: Icon }) => <a key={label} href={href} className="focus-ring inline-flex items-center gap-2 rounded-full border border-[var(--line)] px-4 py-2 text-sm text-[var(--foreground)] transition hover:border-[var(--accent)]" target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined}><Icon aria-hidden="true" />{label}</a>)}
+          </div>
+          <p className="mt-4 text-sm text-[var(--muted)]">Google Scholar and ORCID are placeholders until verified public profiles are available.</p>
+        </div>
+      </section>
     </main>
   );
 }
