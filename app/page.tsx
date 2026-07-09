@@ -1,14 +1,15 @@
 import Link from "next/link";
+import type { IconType } from "react-icons";
 import { FiActivity, FiCpu, FiDatabase, FiGitBranch, FiShield } from "react-icons/fi";
 import { SiteNav } from "@/components/portfolio/SiteNav";
 import { projects } from "@/data/projects";
 
 const pillars = ["Perception", "State Estimation", "Uncertainty", "Risk", "Planning", "Navigation", "Safety", "Simulation"];
-const statusCards = [
-  ["Research theme", "Robust Autonomy Under Uncertainty", FiShield],
-  ["Open modules", `${projects.filter((project) => project.github).length} repositories`, FiGitBranch],
-  ["Evaluation stance", "Pending results are marked honestly", FiDatabase],
-  ["Interface mode", "Research command center", FiCpu],
+const statusCards: { label: string; value: string; Icon: IconType }[] = [
+  { label: "Research theme", value: "Robust Autonomy Under Uncertainty", Icon: FiShield },
+  { label: "Open modules", value: `${projects.filter((project) => project.github).length} repositories`, Icon: FiGitBranch },
+  { label: "Evaluation stance", value: "Pending results are marked honestly", Icon: FiDatabase },
+  { label: "Interface mode", value: "Research command center", Icon: FiCpu },
 ];
 const routes = ["SLAM", "VIO", "Navigation", "Perception", "UAV", "Safe Mobility"];
 
@@ -36,11 +37,11 @@ export default function Home() {
               <span>Mission Control</span><span className="text-[var(--accent)]">Online</span>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
-              {statusCards.map(([label, value, Icon]) => (
-                <article key={label as string} className="rounded-2xl border border-[var(--line)] bg-[var(--background)]/40 p-4">
+              {statusCards.map(({ label, value, Icon }) => (
+                <article key={label} className="rounded-2xl border border-[var(--line)] bg-[var(--background)]/40 p-4">
                   <Icon className="text-[var(--accent)]" aria-hidden="true" />
-                  <p className="mt-4 font-mono text-[0.66rem] uppercase tracking-[0.18em] text-[var(--muted)]">{label as string}</p>
-                  <p className="mt-2 text-sm font-semibold leading-6">{value as string}</p>
+                  <p className="mt-4 font-mono text-[0.66rem] uppercase tracking-[0.18em] text-[var(--muted)]">{label}</p>
+                  <p className="mt-2 text-sm font-semibold leading-6">{value}</p>
                 </article>
               ))}
             </div>
