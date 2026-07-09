@@ -8,8 +8,8 @@ const pillars = ["Perception", "State Estimation", "Uncertainty", "Risk", "Plann
 const statusCards: { label: string; value: string; Icon: IconType }[] = [
   { label: "Research theme", value: "Robust Autonomy Under Uncertainty", Icon: FiShield },
   { label: "Open modules", value: `${projects.filter((project) => project.github).length} repositories`, Icon: FiGitBranch },
-  { label: "Evaluation stance", value: "Pending results are marked honestly", Icon: FiDatabase },
-  { label: "Interface mode", value: "Research command center", Icon: FiCpu },
+  { label: "Research standard", value: "Implemented, prototype, and planned work are separated", Icon: FiDatabase },
+  { label: "System view", value: "A connected autonomy research program", Icon: FiCpu },
 ];
 const routes = ["SLAM", "VIO", "Navigation", "Perception", "UAV", "Safe Mobility"];
 
@@ -21,20 +21,20 @@ export default function Home() {
         <div className="absolute inset-0 research-grid opacity-80" aria-hidden="true" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-12 md:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-20">
           <div>
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.32em] text-[var(--accent)]">Personal robotics research operating system</p>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.32em] text-[var(--accent)]">Robotics research presence</p>
             <h1 className="mt-6 max-w-5xl font-serif text-6xl leading-[0.88] tracking-[-0.07em] md:text-8xl">Robust Autonomy Under Uncertainty</h1>
-            <p className="mt-7 max-w-3xl text-xl leading-9 text-[var(--muted)] md:text-2xl">Robotics, AI, perception, and decision-making systems for safety-critical autonomous agents.</p>
-            <p className="mt-5 max-w-3xl text-base leading-8 text-[var(--muted)]">This site is structured as a research command center: projects are not isolated cards, but connected modules in one agenda around perception degradation, estimator confidence, risk-aware planning, safe navigation, and simulation.</p>
+            <p className="mt-7 max-w-3xl text-xl leading-9 text-[var(--muted)] md:text-2xl">Research-oriented robotics, perception, estimation, and decision-making systems for safety-critical autonomous agents.</p>
+            <p className="mt-5 max-w-3xl text-base leading-8 text-[var(--muted)]">This site is organized as a coherent research program. Each repository is framed through a scientific question, current implementation status, limitations, and next experiments, with no inflated claims about publications, affiliations, or validated benchmarks.</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/research-map" className="focus-ring rounded-full border border-[var(--accent)] bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-[var(--background)]">Open research map</Link>
-              <Link href="/projects" className="focus-ring rounded-full border border-[var(--line)] px-5 py-3 text-sm font-semibold transition hover:border-[var(--accent)]">Inspect modules</Link>
-              <Link href="/demos" className="focus-ring rounded-full border border-[var(--line)] px-5 py-3 text-sm font-semibold transition hover:border-[var(--accent)]">Demo gallery</Link>
+              <Link href="/system-architecture" className="focus-ring rounded-full border border-[var(--line)] px-5 py-3 text-sm font-semibold transition hover:border-[var(--accent)]">System architecture</Link>
+              <Link href="/projects" className="focus-ring rounded-full border border-[var(--line)] px-5 py-3 text-sm font-semibold transition hover:border-[var(--accent)]">Research modules</Link>
             </div>
           </div>
 
           <div className="command-panel rounded-[2rem] p-5">
             <div className="mb-5 flex items-center justify-between border-b border-[var(--line)] pb-4 font-mono text-xs uppercase tracking-[0.2em] text-[var(--muted)]">
-              <span>Mission Control</span><span className="text-[var(--accent)]">Online</span>
+              <span>Research Console</span><span className="text-[var(--accent)]">Active</span>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               {statusCards.map(({ label, value, Icon }) => (
@@ -66,7 +66,7 @@ export default function Home() {
 
       <section className="mx-auto max-w-7xl px-5 pb-20 md:px-8">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-          <div><p className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">Featured simulations and repositories</p><h2 className="mt-3 font-serif text-4xl tracking-[-0.05em]">Research modules.</h2></div>
+          <div><p className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">Current research modules</p><h2 className="mt-3 font-serif text-4xl tracking-[-0.05em]">Projects as components of a research agenda.</h2></div>
           <Link href="/mission-logs" className="text-sm font-semibold text-[var(--accent)] underline-offset-4 hover:underline">Read mission logs</Link>
         </div>
         <div className="grid gap-5 md:grid-cols-3">
