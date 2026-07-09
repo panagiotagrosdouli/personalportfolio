@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FiActivity, FiCpu, FiDatabase, FiGitBranch, FiShield, FiZap } from "react-icons/fi";
+import { FiActivity, FiCpu, FiDatabase, FiGitBranch, FiShield } from "react-icons/fi";
 import { SiteNav } from "@/components/portfolio/SiteNav";
 import { projects } from "@/data/projects";
 
@@ -74,7 +74,7 @@ export default function Home() {
               <p className="font-mono text-[0.66rem] uppercase tracking-[0.18em] text-[var(--muted)]">{project.domain}</p>
               <h3 className="mt-4 font-serif text-2xl leading-tight tracking-[-0.04em]"><Link href={`/projects/${project.slug}`} className="focus-ring group-hover:text-[var(--accent)]">{project.shortTitle}</Link></h3>
               <p className="mt-4 text-sm leading-7 text-[var(--muted)]">{project.scientificQuestion}</p>
-              <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">{project.status} · {project.maturity}</p>
+              <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">{project.status} · research module</p>
             </article>
           ))}
         </div>
