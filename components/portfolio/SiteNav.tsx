@@ -5,14 +5,14 @@ import Link from "next/link";
 import { FiMoon, FiSun } from "react-icons/fi";
 
 const primaryLinks = [
-  { label: "About", href: "/about" },
-  { label: "Research", href: "/research" },
+  { label: "Overview", href: "/" },
   { label: "Research Map", href: "/research-map" },
   { label: "Projects", href: "/projects" },
-  { label: "Publications", href: "/publications" },
-  { label: "Blog", href: "/blog" },
   { label: "Demos", href: "/demos" },
+  { label: "Mission Logs", href: "/mission-logs" },
   { label: "CV", href: "/cv" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 type SiteNavProps = {
@@ -20,20 +20,11 @@ type SiteNavProps = {
 };
 
 function getInitialThemePreference(theme?: SiteNavProps["theme"]) {
-  if (theme) {
-    return theme === "dark";
-  }
-
-  if (typeof window === "undefined") {
-    return false;
-  }
-
+  if (theme) return theme === "dark";
+  if (typeof window === "undefined") return true;
   const stored = window.localStorage.getItem("theme");
-  if (stored) {
-    return stored === "dark";
-  }
-
-  return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  if (stored) return stored === "dark";
+  return true;
 }
 
 export function SiteNav({ theme }: SiteNavProps) {
@@ -53,10 +44,10 @@ export function SiteNav({ theme }: SiteNavProps) {
   }
 
   return (
-    <nav className="sticky top-0 z-40 border-b border-[var(--line)] bg-[var(--background)]/90 px-5 py-4 text-sm font-medium text-[var(--muted)] backdrop-blur-xl md:px-8" aria-label="Main navigation">
+    <nav className="sticky top-0 z-40 border-b border-[var(--line)] bg-[var(--background)]/92 px-5 py-3 text-sm font-medium text-[var(--muted)] backdrop-blur-xl md:px-8" aria-label="Research command navigation">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6">
-        <Link href="/" className="focus-ring shrink-0 font-serif text-xl font-semibold tracking-tight text-[var(--foreground)] transition hover:text-[var(--accent)]">
-          Panagiota Grosdouli
+        <Link href="/" className="focus-ring shrink-0 font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--foreground)] transition hover:text-[var(--accent)]">
+          Research OS
         </Link>
 
         <div className="hidden items-center gap-5 xl:flex">
@@ -78,9 +69,9 @@ export function SiteNav({ theme }: SiteNavProps) {
       </div>
 
       {isOpen && (
-        <div id="mobile-navigation" className="mx-auto mt-5 grid max-w-7xl gap-2 border-t border-[var(--line)] pt-5 xl:hidden">
+        <div id="mobile-navigation" className="mx-auto mt-4 grid max-w-7xl gap-2 border-t border-[var(--line)] pt-4 xl:hidden">
           {primaryLinks.map((link) => (
-            <Link key={link.label} href={link.href} className="focus-ring rounded-2xl border border-[var(--line)] bg-[var(--accent-soft)]/35 px-4 py-3 text-[var(--foreground)] transition hover:border-[var(--accent)]" onClick={() => setIsOpen(false)}>
+            <Link key={link.label} href={link.href} className="focus-ring rounded-2xl border border-[var(--line)] bg-[var(--panel)] px-4 py-3 text-[var(--foreground)] transition hover:border-[var(--accent)]" onClick={() => setIsOpen(false)}>
               {link.label}
             </Link>
           ))}
