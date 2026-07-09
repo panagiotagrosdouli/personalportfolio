@@ -186,7 +186,7 @@ export const researchNodes: ResearchNode[] = [
     summary: "Return-to-home decision-making under uncertainty for UAV autonomy.",
     question: "How should UAVs decide when to return home under risk and energy uncertainty?",
     contribution: "Planned safety-critical UAV decision module.",
-    projectSlug: "risk-aware-uav-rth",
+    projectSlug: "risk-aware-uav-return-to-home",
     tags: ["UAV", "Risk", "Planning"],
     futureWork: ["Create reproducible simulation scenarios.", "Define safety and energy metrics."],
   },
