@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { IconType } from "react-icons";
 import { FiActivity, FiCpu, FiDatabase, FiGitBranch, FiShield } from "react-icons/fi";
@@ -61,16 +62,25 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-18 md:px-8 md:py-20">
-        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+        <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+          <div className="space-y-5">
+            <div className="command-panel overflow-hidden rounded-[2rem] p-3">
+              <Image src="/profile.jpg" alt="Panagiota Grosdouli" width={720} height={900} className="aspect-[4/5] w-full rounded-[1.55rem] object-cover grayscale-[20%] saturate-[0.85]" priority />
+            </div>
+            <div className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-5">
+              <p className="font-mono text-[0.68rem] uppercase tracking-[0.2em] text-[var(--accent)]">Research focus</p>
+              <p className="mt-3 text-sm leading-7 text-[var(--muted)]">Robust autonomy, visual-inertial localization, uncertainty-aware perception, risk-aware navigation, and intelligent mobility safety.</p>
+            </div>
+          </div>
           <div>
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">Research statement</p>
             <h2 className="mt-3 font-serif text-5xl leading-[0.95] tracking-[-0.06em]">Autonomy should expose uncertainty before it fails.</h2>
-          </div>
-          <div className="space-y-6 text-base leading-8 text-[var(--muted)]">
-            <p>My work is organized around a practical research problem: robotic systems often fail not because every module is wrong, but because perception, localization, and planning continue operating as if degraded estimates were reliable.</p>
-            <p>The portfolio therefore treats uncertainty as a system variable. VIO health, sensor reliability, semantic perception, communication quality, and path risk are connected as parts of one autonomy stack.</p>
-            <div className="grid gap-4 md:grid-cols-3">
-              {standards.map(([title, text]) => <article key={title} className="rounded-2xl border border-[var(--line)] bg-[var(--panel)] p-5"><h3 className="font-semibold text-[var(--foreground)]">{title}</h3><p className="mt-3 text-sm leading-7 text-[var(--muted)]">{text}</p></article>)}
+            <div className="mt-8 space-y-6 text-base leading-8 text-[var(--muted)]">
+              <p>My work is organized around a practical research problem: robotic systems often fail not because every module is wrong, but because perception, localization, and planning continue operating as if degraded estimates were reliable.</p>
+              <p>The portfolio therefore treats uncertainty as a system variable. VIO health, sensor reliability, semantic perception, communication quality, and path risk are connected as parts of one autonomy stack.</p>
+              <div className="grid gap-4 md:grid-cols-3">
+                {standards.map(([title, text]) => <article key={title} className="rounded-2xl border border-[var(--line)] bg-[var(--panel)] p-5"><h3 className="font-semibold text-[var(--foreground)]">{title}</h3><p className="mt-3 text-sm leading-7 text-[var(--muted)]">{text}</p></article>)}
+              </div>
             </div>
           </div>
         </div>
