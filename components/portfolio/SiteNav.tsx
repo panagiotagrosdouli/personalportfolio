@@ -7,6 +7,7 @@ import { FiMoon, FiSun } from "react-icons/fi";
 const primaryLinks = [
   { label: "Overview", href: "/" },
   { label: "Research Map", href: "/research-map" },
+  { label: "Architecture", href: "/system-architecture" },
   { label: "Projects", href: "/projects" },
   { label: "Demos", href: "/demos" },
   { label: "Mission Logs", href: "/mission-logs" },
@@ -50,7 +51,7 @@ export function SiteNav({ theme }: SiteNavProps) {
           Research OS
         </Link>
 
-        <div className="hidden items-center gap-5 xl:flex">
+        <div className="hidden items-center gap-4 xl:flex">
           {primaryLinks.map((link) => (
             <Link key={link.label} href={link.href} className="focus-ring whitespace-nowrap transition hover:text-[var(--foreground)]">
               {link.label}
