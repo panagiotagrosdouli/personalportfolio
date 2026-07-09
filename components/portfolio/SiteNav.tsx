@@ -47,8 +47,9 @@ export function SiteNav({ theme }: SiteNavProps) {
   return (
     <nav className="sticky top-0 z-40 border-b border-[var(--line)] bg-[var(--background)]/92 px-5 py-3 text-sm font-medium text-[var(--muted)] backdrop-blur-xl md:px-8" aria-label="Research command navigation">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6">
-        <Link href="/" className="focus-ring shrink-0 font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--foreground)] transition hover:text-[var(--accent)]">
-          Research OS
+        <Link href="/" className="focus-ring shrink-0 transition hover:text-[var(--accent)]" aria-label="Panagiota Grosdouli research homepage">
+          <span className="block font-serif text-base font-semibold leading-none tracking-[-0.02em] text-[var(--foreground)]">Panagiota Grosdouli</span>
+          <span className="mt-1 block font-mono text-[0.58rem] font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">Robotics Research Command Center</span>
         </Link>
 
         <div className="hidden items-center gap-4 xl:flex">
