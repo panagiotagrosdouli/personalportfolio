@@ -10,6 +10,7 @@ const primaryLinks = [
   { label: "Architecture", href: "/system-architecture" },
   { label: "Modules", href: "/projects" },
   { label: "Notes", href: "/mission-logs" },
+  { label: "Writing", href: "/writing" },
   { label: "CV", href: "/cv" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
