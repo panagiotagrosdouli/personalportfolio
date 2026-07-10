@@ -65,7 +65,7 @@ export default function Home() {
         <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
           <div className="space-y-5">
             <div className="command-panel overflow-hidden rounded-[2rem] p-3">
-              <Image src="/profile.jpg" alt="Panagiota Grosdouli" width={720} height={900} className="aspect-[4/5] w-full rounded-[1.55rem] object-cover grayscale-[20%] saturate-[0.85]" priority />
+              <Image src="/profile.svg" alt="Panagiota Grosdouli" width={480} height={360} className="aspect-[4/5] w-full rounded-[1.55rem] object-cover grayscale-[20%] saturate-[0.85]" priority />
             </div>
             <div className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-5">
               <p className="font-mono text-[0.68rem] uppercase tracking-[0.2em] text-[var(--accent)]">Research focus</p>
