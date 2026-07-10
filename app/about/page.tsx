@@ -36,7 +36,7 @@ export default function AboutPage() {
         <header className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <Reveal>
             <div className="command-panel overflow-hidden rounded-[2rem] p-3">
-              <Image src="/profile.jpg" alt="Panagiota Grosdouli" width={720} height={900} className="aspect-[4/5] w-full rounded-[1.55rem] object-cover grayscale-[15%] saturate-[0.88]" />
+              <Image src="/profile.svg" alt="Panagiota Grosdouli" width={480} height={360} className="aspect-[4/5] w-full rounded-[1.55rem] object-cover grayscale-[15%] saturate-[0.88]" />
             </div>
           </Reveal>
           <Reveal>
