@@ -1,116 +1,179 @@
-import Image from "next/image";
 import Link from "next/link";
-import type { IconType } from "react-icons";
-import { FiActivity, FiCpu, FiDatabase, FiGitBranch, FiShield } from "react-icons/fi";
+import { FiArrowUpRight, FiGithub, FiLayers, FiMapPin, FiShield, FiZap } from "react-icons/fi";
 import { SiteNav } from "@/components/portfolio/SiteNav";
 import { projects } from "@/data/projects";
 
-const pillars = ["Perception", "State Estimation", "Uncertainty", "Risk", "Planning", "Navigation", "Safety", "Simulation"];
-const standards = [
-  ["Scientific framing", "Every module begins from a research question, not from a visual demo."],
-  ["Transparent maturity", "Implemented, prototype, planned, and pending results are deliberately separated."],
-  ["Reproducibility first", "Experiments are expected to expose assumptions, metrics, limitations, and failure cases."],
+const focusAreas = [
+  "Autonomous Navigation",
+  "Visual-Inertial Odometry",
+  "Uncertainty Estimation",
+  "Computer Vision",
+  "Sensor Fusion",
+  "Safety-Critical AI",
 ];
-const statusCards: { label: string; value: string; Icon: IconType }[] = [
-  { label: "Research theme", value: "Robust Autonomy Under Uncertainty", Icon: FiShield },
-  { label: "Open modules", value: `${projects.filter((project) => project.github).length} repositories`, Icon: FiGitBranch },
-  { label: "Research standard", value: "Implemented, prototype, and planned work are separated", Icon: FiDatabase },
-  { label: "System view", value: "A connected autonomy research program", Icon: FiCpu },
+
+const metrics = [
+  ["Focus", "Robust autonomy"],
+  ["Domains", "Robotics + AI"],
+  ["Approach", "Research-first"],
+  ["Status", "Building & experimenting"],
 ];
-const routes = ["SLAM", "VIO", "Navigation", "Perception", "UAV", "Safe Mobility"];
 
 export default function Home() {
+  const featuredProjects = projects.slice(0, 6);
+
   return (
-    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] selection:bg-[var(--accent-soft)]">
+    <main className="min-h-screen overflow-hidden bg-[var(--background)] text-[var(--foreground)]">
       <SiteNav />
-      <section className="relative min-h-[calc(100vh-68px)] overflow-hidden border-b border-[var(--line)]">
-        <div className="absolute inset-0 research-grid opacity-70" aria-hidden="true" />
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-14 md:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-24">
-          <div>
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.32em] text-[var(--accent)]">Robotics research presence</p>
-            <h1 className="mt-6 max-w-5xl font-serif text-6xl leading-[0.88] tracking-[-0.07em] md:text-8xl">Robust Autonomy Under Uncertainty</h1>
-            <p className="mt-7 max-w-3xl text-xl leading-9 text-[var(--muted)] md:text-2xl">Research-oriented robotics, perception, estimation, and decision-making systems for safety-critical autonomous agents.</p>
-            <p className="mt-5 max-w-3xl text-base leading-8 text-[var(--muted)]">This site is organized as a coherent research program. Each repository is framed through a scientific question, current implementation status, limitations, and next experiments, with no inflated claims about publications, affiliations, or validated benchmarks.</p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/research-map" className="focus-ring rounded-full border border-[var(--accent)] bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-[var(--background)]">Open research map</Link>
-              <Link href="/system-architecture" className="focus-ring rounded-full border border-[var(--line)] px-5 py-3 text-sm font-semibold transition hover:border-[var(--accent)]">System architecture</Link>
-              <Link href="/projects" className="focus-ring rounded-full border border-[var(--line)] px-5 py-3 text-sm font-semibold transition hover:border-[var(--accent)]">Research modules</Link>
-            </div>
-          </div>
 
-          <div className="command-panel rounded-[2rem] p-5">
-            <div className="mb-5 flex items-center justify-between border-b border-[var(--line)] pb-4 font-mono text-xs uppercase tracking-[0.2em] text-[var(--muted)]">
-              <span>Research Console</span><span className="text-[var(--accent)]">Active</span>
+      <section className="relative isolate min-h-[calc(100vh-72px)] overflow-hidden border-b border-[var(--line)]">
+        <div className="portfolio-grid absolute inset-0 opacity-70" aria-hidden="true" />
+        <div className="hero-orb hero-orb-one" aria-hidden="true" />
+        <div className="hero-orb hero-orb-two" aria-hidden="true" />
+
+        <div className="relative mx-auto grid min-h-[calc(100vh-72px)] max-w-[1440px] items-center gap-14 px-5 py-14 md:px-9 lg:grid-cols-[1.15fr_0.85fr] lg:px-12 lg:py-20">
+          <div className="max-w-5xl">
+            <div className="mb-8 flex flex-wrap items-center gap-3 font-mono text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">
+              <span className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--panel)]/70 px-3 py-2 backdrop-blur-xl">
+                <span className="status-dot" /> Available for research collaboration
+              </span>
+              <span className="inline-flex items-center gap-2 px-1"><FiMapPin /> Greece · Europe</span>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {statusCards.map(({ label, value, Icon }) => (
-                <article key={label} className="rounded-2xl border border-[var(--line)] bg-[var(--background)]/40 p-4">
-                  <Icon className="text-[var(--accent)]" aria-hidden="true" />
-                  <p className="mt-4 font-mono text-[0.66rem] uppercase tracking-[0.18em] text-[var(--muted)]">{label}</p>
-                  <p className="mt-2 text-sm font-semibold leading-6">{value}</p>
-                </article>
-              ))}
-            </div>
-            <div className="mt-5 rounded-2xl border border-[var(--line)] p-5 research-grid">
-              <div className="signal-line h-1 rounded-full bg-[var(--accent-soft)]" />
-              <div className="mt-6 grid grid-cols-3 gap-3 text-center text-xs text-[var(--muted)]">
-                {routes.map((route) => <Link href={`/projects?filter=${encodeURIComponent(route)}`} key={route} className="rounded-xl border border-[var(--line)] bg-[var(--background)]/60 px-2 py-3 transition hover:border-[var(--accent)] hover:text-[var(--foreground)]">{route}</Link>)}
+
+            <p className="eyebrow">AI · Robotics · Intelligent Systems</p>
+            <h1 className="mt-5 max-w-6xl text-[clamp(4rem,10vw,9.4rem)] font-semibold leading-[0.78] tracking-[-0.075em]">
+              Panagiota
+              <span className="block text-outline">Grosdouli.</span>
+            </h1>
+
+            <div className="mt-9 grid max-w-4xl gap-7 md:grid-cols-[1fr_auto] md:items-end">
+              <p className="max-w-2xl text-lg leading-8 text-[var(--muted)] md:text-xl md:leading-9">
+                I build research-driven autonomous systems that reason about uncertainty, perception, localization and risk before making decisions in the real world.
+              </p>
+              <div className="flex flex-wrap gap-3 md:justify-end">
+                <Link href="/projects" className="button-primary">
+                  Explore work <FiArrowUpRight />
+                </Link>
+                <a href="https://github.com/panagiotagrosdouli" target="_blank" rel="noreferrer" className="button-secondary">
+                  GitHub <FiGithub />
+                </a>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-18 md:px-8 md:py-20">
-        <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
-          <div className="space-y-5">
-            <div className="command-panel overflow-hidden rounded-[2rem] p-3">
-              <Image src="/profile.svg" alt="Panagiota Grosdouli" width={480} height={360} className="aspect-[4/5] w-full rounded-[1.55rem] object-cover grayscale-[20%] saturate-[0.85]" priority />
-            </div>
-            <div className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-5">
-              <p className="font-mono text-[0.68rem] uppercase tracking-[0.2em] text-[var(--accent)]">Research focus</p>
-              <p className="mt-3 text-sm leading-7 text-[var(--muted)]">Robust autonomy, visual-inertial localization, uncertainty-aware perception, risk-aware navigation, and intelligent mobility safety.</p>
-            </div>
-          </div>
-          <div>
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">Research statement</p>
-            <h2 className="mt-3 font-serif text-5xl leading-[0.95] tracking-[-0.06em]">Autonomy should expose uncertainty before it fails.</h2>
-            <div className="mt-8 space-y-6 text-base leading-8 text-[var(--muted)]">
-              <p>My work is organized around a practical research problem: robotic systems often fail not because every module is wrong, but because perception, localization, and planning continue operating as if degraded estimates were reliable.</p>
-              <p>The portfolio therefore treats uncertainty as a system variable. VIO health, sensor reliability, semantic perception, communication quality, and path risk are connected as parts of one autonomy stack.</p>
-              <div className="grid gap-4 md:grid-cols-3">
-                {standards.map(([title, text]) => <article key={title} className="rounded-2xl border border-[var(--line)] bg-[var(--panel)] p-5"><h3 className="font-semibold text-[var(--foreground)]">{title}</h3><p className="mt-3 text-sm leading-7 text-[var(--muted)]">{text}</p></article>)}
+          <div className="relative lg:justify-self-end">
+            <div className="monogram-shell">
+              <div className="monogram-card">
+                <span className="monogram-noise" aria-hidden="true" />
+                <span className="monogram">PG</span>
+                <div className="absolute inset-x-6 bottom-6 flex items-end justify-between gap-4 border-t border-white/15 pt-4 text-white/70">
+                  <div>
+                    <p className="font-mono text-[0.58rem] uppercase tracking-[0.22em]">Research portfolio</p>
+                    <p className="mt-1 text-sm font-medium text-white">Robust autonomy under uncertainty</p>
+                  </div>
+                  <FiZap className="shrink-0 text-xl" />
+                </div>
               </div>
+              <div className="floating-tag floating-tag-a">Perception</div>
+              <div className="floating-tag floating-tag-b">Planning</div>
+              <div className="floating-tag floating-tag-c">Safety</div>
             </div>
           </div>
         </div>
-      </section>
 
-      <section className="border-y border-[var(--line)] bg-[var(--accent-soft)]/20">
-        <div className="mx-auto grid max-w-7xl gap-8 px-5 py-16 md:px-8 lg:grid-cols-[280px_1fr]">
-          <div><p className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">Research pillars</p><h2 className="mt-3 font-serif text-4xl tracking-[-0.05em]">One coherent autonomy stack.</h2></div>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {pillars.map((pillar) => <article key={pillar} className="rounded-2xl border border-[var(--line)] bg-[var(--panel)] p-5"><FiActivity className="text-[var(--accent)]" aria-hidden="true" /><h3 className="mt-4 font-semibold">{pillar}</h3></article>)}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">
-        <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-          <div><p className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">Current research modules</p><h2 className="mt-3 font-serif text-4xl tracking-[-0.05em]">Projects as components of a research agenda.</h2></div>
-          <Link href="/mission-logs" className="text-sm font-semibold text-[var(--accent)] underline-offset-4 hover:underline">Read mission logs</Link>
-        </div>
-        <div className="grid gap-5 md:grid-cols-3">
-          {projects.slice(0, 6).map((project) => (
-            <article key={project.slug} className="group command-panel rounded-[1.5rem] p-6 transition hover:-translate-y-1 hover:border-[var(--accent)]">
-              <p className="font-mono text-[0.66rem] uppercase tracking-[0.18em] text-[var(--muted)]">{project.domain}</p>
-              <h3 className="mt-4 font-serif text-2xl leading-tight tracking-[-0.04em]"><Link href={`/projects/${project.slug}`} className="focus-ring group-hover:text-[var(--accent)]">{project.shortTitle}</Link></h3>
-              <p className="mt-4 text-sm leading-7 text-[var(--muted)]">{project.scientificQuestion}</p>
-              <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">{project.status} · research module</p>
-            </article>
+        <div className="relative mx-auto grid max-w-[1440px] grid-cols-2 border-t border-[var(--line)] md:grid-cols-4">
+          {metrics.map(([label, value], index) => (
+            <div key={label} className={`px-5 py-5 md:px-9 ${index > 0 ? "border-l border-[var(--line)]" : ""}`}>
+              <p className="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-[var(--muted)]">{label}</p>
+              <p className="mt-2 text-sm font-semibold md:text-base">{value}</p>
+            </div>
           ))}
         </div>
       </section>
+
+      <section className="mx-auto max-w-[1440px] px-5 py-24 md:px-9 lg:px-12 lg:py-32">
+        <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+          <div className="lg:sticky lg:top-28 lg:self-start">
+            <p className="eyebrow">01 / Research direction</p>
+            <h2 className="section-title mt-5">Engineering autonomy that knows when not to trust itself.</h2>
+          </div>
+
+          <div>
+            <p className="max-w-3xl text-2xl leading-[1.45] tracking-[-0.03em] text-[var(--foreground)] md:text-3xl">
+              My work connects perception, state estimation and planning into one safety-aware research agenda rather than treating them as isolated software modules.
+            </p>
+            <p className="mt-7 max-w-3xl text-base leading-8 text-[var(--muted)] md:text-lg">
+              The central question is simple: how should an autonomous system behave when its observations become incomplete, noisy or unreliable? I explore this through VIO, SLAM, uncertainty-aware sensor fusion, semantic perception, trajectory prediction and risk-sensitive navigation.
+            </p>
+
+            <div className="mt-12 grid gap-px overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--line)] sm:grid-cols-2">
+              {focusAreas.map((area, index) => (
+                <div key={area} className="group flex min-h-32 items-end justify-between bg-[var(--panel)] p-6 transition hover:bg-[var(--panel-strong)]">
+                  <span className="font-mono text-[0.62rem] text-[var(--muted)]">0{index + 1}</span>
+                  <h3 className="max-w-[12rem] text-right text-xl font-semibold tracking-[-0.035em] transition group-hover:text-[var(--accent)]">{area}</h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-[var(--line)] bg-[var(--panel)]/45">
+        <div className="mx-auto max-w-[1440px] px-5 py-24 md:px-9 lg:px-12 lg:py-32">
+          <div className="mb-14 flex flex-col gap-7 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="eyebrow">02 / Selected work</p>
+              <h2 className="section-title mt-5 max-w-3xl">Projects framed as research questions.</h2>
+            </div>
+            <Link href="/projects" className="arrow-link">View all projects <FiArrowUpRight /></Link>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {featuredProjects.map((project, index) => (
+              <article key={project.slug} className="project-card group">
+                <div className="flex items-center justify-between gap-4">
+                  <span className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-[var(--accent)]">{project.domain}</span>
+                  <span className="font-mono text-xs text-[var(--muted)]">0{index + 1}</span>
+                </div>
+                <div className="mt-16">
+                  <h3 className="text-3xl font-semibold leading-none tracking-[-0.055em] md:text-4xl">{project.shortTitle}</h3>
+                  <p className="mt-5 line-clamp-4 text-sm leading-7 text-[var(--muted)]">{project.scientificQuestion}</p>
+                </div>
+                <div className="mt-10 flex items-end justify-between border-t border-[var(--line)] pt-5">
+                  <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">{project.status}</span>
+                  <Link href={`/projects/${project.slug}`} aria-label={`Open ${project.shortTitle}`} className="project-arrow"><FiArrowUpRight /></Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-[1440px] px-5 py-24 md:px-9 lg:px-12 lg:py-32">
+        <div className="rounded-[2.2rem] border border-[var(--line)] bg-[var(--foreground)] px-6 py-10 text-[var(--background)] md:px-10 md:py-14 lg:px-14">
+          <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
+            <div>
+              <p className="font-mono text-[0.66rem] font-semibold uppercase tracking-[0.22em] opacity-60">03 / Current thesis</p>
+              <h2 className="mt-6 max-w-5xl text-4xl font-semibold leading-[0.95] tracking-[-0.055em] md:text-6xl lg:text-7xl">Reliable autonomy is not only about better predictions. It is about better calibrated decisions.</h2>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+              <Link href="/research-map" className="inverted-link"><FiLayers /> Research map</Link>
+              <Link href="/system-architecture" className="inverted-link"><FiShield /> System architecture</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-[var(--line)]">
+        <div className="mx-auto flex max-w-[1440px] flex-col gap-6 px-5 py-10 text-sm text-[var(--muted)] md:flex-row md:items-center md:justify-between md:px-9 lg:px-12">
+          <p>© 2026 Panagiota Grosdouli. Research, engineering & intelligent systems.</p>
+          <div className="flex gap-5">
+            <Link href="/cv" className="hover:text-[var(--foreground)]">CV</Link>
+            <Link href="/contact" className="hover:text-[var(--foreground)]">Contact</Link>
+            <a href="https://github.com/panagiotagrosdouli" target="_blank" rel="noreferrer" className="hover:text-[var(--foreground)]">GitHub</a>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
