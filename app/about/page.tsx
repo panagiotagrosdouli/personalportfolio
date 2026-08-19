@@ -83,25 +83,52 @@ export default function AboutPage() {
         <section className="mt-20 grid gap-10 border-t border-[var(--line)] pt-12 lg:grid-cols-[300px_1fr]">
           <div>
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Beyond the lab</p>
-            <h2 className="mt-3 font-serif text-3xl tracking-[-0.04em]">Books and creative writing.</h2>
+            <h2 className="mt-3 font-serif text-3xl tracking-[-0.04em]">The interests behind the researcher.</h2>
           </div>
-          <Reveal>
-            <a
-              href="https://ta-vivlia-mou.p-g2a15.chatgpt.site/"
-              target="_blank"
-              rel="noreferrer"
-              className="focus-ring group block rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-6 transition hover:border-[var(--accent)]"
-            >
-              <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Personal interest</p>
-              <h3 className="mt-4 font-serif text-3xl tracking-[-0.04em]">My books</h3>
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--muted)]">
-                A personal space for books, ideas, and creative writing—kept distinct from my research work, but part of how I explore and communicate ideas.
-              </p>
-              <span className="mt-6 inline-flex text-sm font-semibold transition group-hover:text-[var(--accent)]">Visit the bookshelf ↗</span>
-            </a>
-          </Reveal>
-        </section>
-     </div>
+          <div className="grid gap-5 md:grid-cols-2">
+            <Reveal>
+              <a
+                href="https://ta-vivlia-mou.p-g2a15.chatgpt.site/"
+                target="_blank"
+                rel="noreferrer"
+                className="focus-ring group block h-full rounded-[1.5rem] border border-[var(--accent)] bg-[var(--accent-soft)] p-6 transition hover:bg-[var(--panel)]"
+              >
+                <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Books & writing</p>
+                <h3 className="mt-4 font-serif text-3xl tracking-[-0.04em]">Stories, ideas, and words.</h3>
+                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">I write books and use creative writing as another way to explore and communicate ideas.</p>
+                <span className="mt-6 inline-flex text-sm font-semibold transition group-hover:text-[var(--accent)]">Visit my books ↗</span>
+              </a>
+            </Reveal>
+            <Reveal>
+              <article className="h-full rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-6">
+                <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Music & lyrics</p>
+                <h3 className="mt-4 font-serif text-3xl tracking-[-0.04em]">Writing with rhythm.</h3>
+                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">I write music and lyrics—an intuitive counterpoint to the precision of engineering and research.</p>
+              </article>
+            </Reveal>
+            <Reveal>
+              <article className="h-full rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-6">
+                <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Movement & observation</p>
+                <h3 className="mt-4 font-serif text-3xl tracking-[-0.04em]">Running and photography.</h3>
+                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">Running creates space to think; photography trains me to notice structure, light, motion, and small details.</p>
+              </article>
+            </Reveal>
+            <Reveal>
+              <article className="h-full rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-6">
+                <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Stories & making</p>
+                <h3 className="mt-4 font-serif text-3xl tracking-[-0.04em]">Film, series, and side projects.</h3>
+                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">I enjoy ambitious films and series, and I am usually building a personal project that lets a new idea become tangible.</p>
+              </article>
+            </Reveal>
+            <Reveal>
+              <article className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--background)] p-6 md:col-span-2">
+                <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Someday</p>
+                <h3 className="mt-4 font-serif text-3xl tracking-[-0.04em]">Aspiring pilot.</h3>
+                <p className="mt-4 max-w-3xl text-sm leading-7 text-[var(--muted)]">Aviation brings together systems thinking, responsibility, navigation, and freedom. Becoming a pilot is a long-term personal goal.</p>
+              </article>
+            </Reveal>
+          </div>
+        </section>     </div>
     </main>
   );
 }
