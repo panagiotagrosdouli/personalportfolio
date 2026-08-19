@@ -100,11 +100,20 @@ export default function AboutPage() {
               </a>
             </Reveal>
             <Reveal>
-              <article className="h-full rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-6">
-                <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Music & lyrics</p>
-                <h3 className="mt-4 font-serif text-3xl tracking-[-0.04em]">Writing with rhythm.</h3>
-                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">I write music and lyrics—an intuitive counterpoint to the precision of engineering and research.</p>
-              </article>
+              <a
+                href="https://suno.com/@panagiotagrosdouli"
+                target="_blank"
+                rel="noreferrer"
+                className="focus-ring group block h-full rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-6 transition hover:border-[var(--accent)]"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Music & lyrics</p>
+                  <span className="rounded-full border border-[var(--line)] px-3 py-1 font-mono text-[0.65rem] text-[var(--muted)]">2.8K+ plays</span>
+                </div>
+                <h3 className="mt-4 font-serif text-3xl tracking-[-0.04em]">Songs for imagined lives.</h3>
+                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">I write songs and lyrics inspired by the characters and stories in my books, giving their inner worlds another form.</p>
+                <span className="mt-6 inline-flex text-sm font-semibold transition group-hover:text-[var(--accent)]">Listen on Suno ↗</span>
+              </a>
             </Reveal>
             <Reveal>
               <article className="h-full rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-6">
