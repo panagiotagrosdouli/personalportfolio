@@ -263,6 +263,13 @@ export const projects: Project[] = [
     demoLabel: "Measured VRU forecasting results",
     architectureLabel: "Multimodal forecasting architecture",
     pipelineLabel: "Observe · encode context · predict · quantify uncertainty",
+    evidence: [
+      {
+        src: "/evidence/thesis/prediction-error-vs-horizon.png",
+        title: "Prediction error across the forecasting horizon",
+        caption: "Measured GRU and MDN error growth across Pedestrian, Cycle+Scooter, and Motorcycle trajectories. The figure is generated from the thesis experiment archive.",
+      },
+    ],
   },
   {
     slug: "openuwoc-ai",
