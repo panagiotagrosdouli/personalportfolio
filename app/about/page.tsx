@@ -74,6 +74,28 @@ export default function AboutPage() {
         </section>
 
         <section className="mt-20 grid gap-10 border-t border-[var(--line)] pt-12 lg:grid-cols-[300px_1fr]">
+          <div>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Beyond the lab</p>
+            <h2 className="mt-3 font-serif text-3xl tracking-[-0.04em]">Books and creative writing.</h2>
+          </div>
+          <Reveal>
+            <a
+              href="https://ta-vivlia-mou.p-g2a15.chatgpt.site/"
+              target="_blank"
+              rel="noreferrer"
+              className="focus-ring group block rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-6 transition hover:border-[var(--accent)]"
+            >
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Personal interest</p>
+              <h3 className="mt-4 font-serif text-3xl tracking-[-0.04em]">My books</h3>
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--muted)]">
+                A personal space for books, ideas, and creative writing—kept distinct from my research work, but part of how I explore and communicate ideas.
+              </p>
+              <span className="mt-6 inline-flex text-sm font-semibold transition group-hover:text-[var(--accent)]">Visit the bookshelf ↗</span>
+            </a>
+          </Reveal>
+        </section>
+
+        <section className="mt-20 grid gap-10 border-t border-[var(--line)] pt-12 lg:grid-cols-[300px_1fr]">
           <div><p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Research principles</p><h2 className="mt-3 font-serif text-3xl tracking-[-0.04em]">How the site presents work.</h2></div>
           <Reveal><div className="command-panel rounded-[1.5rem] p-6"><ul className="space-y-4 text-sm leading-7 text-[var(--muted)]">{principles.map((item) => <li key={item} className="border-l border-[var(--accent)] pl-4">{item}</li>)}</ul></div></Reveal>
         </section>
