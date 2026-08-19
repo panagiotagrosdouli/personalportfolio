@@ -60,7 +60,7 @@ export default function Home() {
           <div className="relative mx-auto w-full max-w-md lg:mx-0 lg:justify-self-end">
             <div className="command-panel relative overflow-hidden rounded-[2.5rem] p-3">
               <Image
-                src="/profile.jpg"
+                src="/profile.png"
                 alt="Panagiota Grosdouli"
                 width={720}
                 height={900}
