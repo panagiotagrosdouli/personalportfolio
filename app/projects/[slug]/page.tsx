@@ -103,7 +103,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   <FiCode aria-hidden="true" /> View repository
                 </a>
               ) : (
-                <span className="rounded-full border border-[var(--line)] px-5 py-3 text-sm text-[var(--muted)]">Repository not public yet</span>
+                <span className="rounded-full border border-[var(--line)] px-5 py-3 text-sm text-[var(--muted)]">{isThesis ? "Private thesis repository" : "Repository not public yet"}</span>
               )}
               <Link href="/contact" className="focus-ring rounded-full border border-[var(--line)] px-5 py-3 text-sm font-semibold transition hover:border-[var(--accent)]">
                 Discuss this work
@@ -125,7 +125,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             </div>
             <dl className="mt-5 divide-y divide-[var(--line)] text-sm">
               <div className="flex justify-between gap-4 py-3"><dt className="text-[var(--muted)]">Period</dt><dd>{project.year}</dd></div>
-              <div className="flex justify-between gap-4 py-3"><dt className="text-[var(--muted)]">Repository</dt><dd>{project.repositoryUrl ? "Public" : "Pending"}</dd></div>
+              <div className="flex justify-between gap-4 py-3"><dt className="text-[var(--muted)]">Repository</dt><dd>{project.repositoryUrl ? "Public" : isThesis ? "Private" : "Pending"}</dd></div>
               <div className="flex justify-between gap-4 py-3"><dt className="text-[var(--muted)]">Maturity</dt><dd>{project.status}</dd></div>
             </dl>
           </aside>
