@@ -102,15 +102,23 @@ export default function AboutPage() {
               </article>
             </Reveal>
             <Reveal>
-              <article className="h-full rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-6">
-                <div className="flex items-center justify-between gap-4">
-                  <Image src="/brands/suno.png" alt="Suno" width={52} height={52} className="rounded-2xl" />
-                  <span className="rounded-full border border-[var(--line)] px-3 py-1 font-mono text-[0.65rem] text-[var(--muted)]">2.8K+ plays</span>
+              <article className="h-full overflow-hidden rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)]">
+                <div className="relative aspect-[16/9] overflow-hidden bg-[#ff552f]">
+                  <Image
+                    src="/brands/suno.png"
+                    alt="Suno"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                  <span className="absolute right-4 top-4 rounded-full border border-white/40 bg-black/55 px-3 py-1.5 font-mono text-[0.65rem] font-semibold text-white backdrop-blur-md">2.8K+ plays</span>
                 </div>
-                <p className="mt-6 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Suno · Songwriter & producer</p>
-                <h3 className="mt-3 font-serif text-3xl tracking-[-0.04em]">Songs for imagined lives.</h3>
-                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">I write lyrics and produce original songs inspired by the characters and emotional worlds of my books.</p>
-                <a href="https://suno.com/@panagiotagrosdouli" target="_blank" rel="noreferrer" className="focus-ring mt-6 inline-flex rounded-full border border-[var(--accent)] px-4 py-2 text-sm font-semibold transition hover:bg-[var(--accent)] hover:text-[var(--background)]">Listen on Suno ↗</a>
+                <div className="p-6">
+                  <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Suno · Songwriter & producer</p>
+                  <h3 className="mt-3 font-serif text-3xl tracking-[-0.04em]">Songs for imagined lives.</h3>
+                  <p className="mt-4 text-sm leading-7 text-[var(--muted)]">I write lyrics and produce original songs inspired by the characters and emotional worlds of my books.</p>
+                  <a href="https://suno.com/@panagiotagrosdouli" target="_blank" rel="noreferrer" className="focus-ring mt-6 inline-flex rounded-full bg-[var(--foreground)] px-5 py-2.5 text-sm font-semibold text-[var(--background)] transition hover:bg-[var(--accent)]">Listen on Suno ↗</a>
+                </div>
               </article>
             </Reveal>
             <Reveal>
