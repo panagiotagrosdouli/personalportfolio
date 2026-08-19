@@ -100,20 +100,18 @@ export default function AboutPage() {
               </a>
             </Reveal>
             <Reveal>
-              <a
-                href="https://suno.com/@panagiotagrosdouli"
-                target="_blank"
-                rel="noreferrer"
-                className="focus-ring group block h-full rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-6 transition hover:border-[var(--accent)]"
-              >
+              <article className="h-full rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-6">
                 <div className="flex flex-wrap items-center justify-between gap-3">
-                  <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Music & lyrics</p>
-                  <span className="rounded-full border border-[var(--line)] px-3 py-1 font-mono text-[0.65rem] text-[var(--muted)]">2.8K+ plays</span>
+                  <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">DJ · Music producer · Podcaster</p>
+                  <span className="rounded-full border border-[var(--line)] px-3 py-1 font-mono text-[0.65rem] text-[var(--muted)]">2019–Present</span>
                 </div>
                 <h3 className="mt-4 font-serif text-3xl tracking-[-0.04em]">Songs for imagined lives.</h3>
-                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">I write songs and lyrics inspired by the characters and stories in my books, giving their inner worlds another form.</p>
-                <span className="mt-6 inline-flex text-sm font-semibold transition group-hover:text-[var(--accent)]">Listen on Suno ↗</span>
-              </a>
+                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">I create music, write lyrics inspired by characters from my books, DJ, and produce audio stories and podcasts. My original work has reached 2.8K+ plays on Suno.</p>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <a href="https://suno.com/@panagiotagrosdouli" target="_blank" rel="noreferrer" className="focus-ring rounded-full border border-[var(--accent)] px-4 py-2 text-sm font-semibold transition hover:bg-[var(--accent)] hover:text-[var(--background)]">Original music ↗</a>
+                  <a href="https://stream.zeno.fm/0eptqs75m5zuv" target="_blank" rel="noreferrer" className="focus-ring rounded-full border border-[var(--line)] px-4 py-2 text-sm font-semibold transition hover:border-[var(--accent)]">Live radio ↗</a>
+                </div>
+              </article>
             </Reveal>
             <Reveal>
               <article className="h-full rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-6">
