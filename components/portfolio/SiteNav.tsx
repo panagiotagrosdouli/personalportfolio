@@ -7,6 +7,7 @@ import { FiMoon, FiSun } from "react-icons/fi";
 const primaryLinks = [
   { label: "Research", href: "/research-map" },
   { label: "Projects", href: "/projects" },
+  { label: "Publications", href: "/publications" },
   { label: "CV", href: "/cv" },
   { label: "About", href: "/about" },
 ];
