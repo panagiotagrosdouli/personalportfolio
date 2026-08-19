@@ -87,33 +87,42 @@ export default function AboutPage() {
           </div>
           <div className="grid gap-5 md:grid-cols-2">
             <Reveal>
-              <a
-                href="https://ta-vivlia-mou.p-g2a15.chatgpt.site/"
-                target="_blank"
-                rel="noreferrer"
-                className="focus-ring group block h-full rounded-[1.5rem] border border-[var(--accent)] bg-[var(--accent-soft)] p-6 transition hover:bg-[var(--panel)]"
-              >
-                <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Books & writing</p>
-                <h3 className="mt-4 font-serif text-3xl tracking-[-0.04em]">Stories, ideas, and words.</h3>
-                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">I write books and use creative writing as another way to explore and communicate ideas.</p>
-                <span className="mt-6 inline-flex text-sm font-semibold transition group-hover:text-[var(--accent)]">Visit my books ↗</span>
-              </a>
+              <article className="h-full rounded-[1.5rem] border border-[var(--accent)] bg-[var(--accent-soft)] p-6">
+                <div className="flex items-center justify-between gap-4">
+                  <Image src="/brands/wattpad.png" alt="Wattpad" width={52} height={52} className="rounded-2xl" />
+                  <span className="rounded-full border border-[var(--line)] px-3 py-1 font-mono text-[0.65rem] text-[var(--muted)]">Since 2023</span>
+                </div>
+                <p className="mt-6 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Books & Wattpad</p>
+                <h3 className="mt-3 font-serif text-3xl tracking-[-0.04em]">Stories, characters, and worlds.</h3>
+                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">I write books and develop fictional worlds that also inspire my music and lyrics.</p>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <a href="https://ta-vivlia-mou.p-g2a15.chatgpt.site/" target="_blank" rel="noreferrer" className="focus-ring rounded-full border border-[var(--accent)] px-4 py-2 text-sm font-semibold">My books ↗</a>
+                  <a href="https://play.google.com/store/apps/dev?id=5726714232238156247" target="_blank" rel="noreferrer" className="focus-ring rounded-full border border-[var(--line)] px-4 py-2 text-sm font-semibold transition hover:border-[var(--accent)]">Wattpad & publications ↗</a>
+                </div>
+              </article>
             </Reveal>
             <Reveal>
               <article className="h-full rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-6">
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                  <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">DJ · Music producer · Podcaster</p>
+                <div className="flex items-center justify-between gap-4">
+                  <Image src="/brands/suno.png" alt="Suno" width={52} height={52} className="rounded-2xl" />
+                  <span className="rounded-full border border-[var(--line)] px-3 py-1 font-mono text-[0.65rem] text-[var(--muted)]">2.8K+ plays</span>
+                </div>
+                <p className="mt-6 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Suno · Songwriter & producer</p>
+                <h3 className="mt-3 font-serif text-3xl tracking-[-0.04em]">Songs for imagined lives.</h3>
+                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">I write lyrics and produce original songs inspired by the characters and emotional worlds of my books.</p>
+                <a href="https://suno.com/@panagiotagrosdouli" target="_blank" rel="noreferrer" className="focus-ring mt-6 inline-flex rounded-full border border-[var(--accent)] px-4 py-2 text-sm font-semibold transition hover:bg-[var(--accent)] hover:text-[var(--background)]">Listen on Suno ↗</a>
+              </article>
+            </Reveal>
+            <Reveal>
+              <article className="h-full rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-6">
+                <div className="flex items-center justify-between gap-4">
+                  <Image src="/brands/zeno-media.png" alt="Zeno Media" width={52} height={52} className="rounded-2xl" />
                   <span className="rounded-full border border-[var(--line)] px-3 py-1 font-mono text-[0.65rem] text-[var(--muted)]">2019–Present</span>
                 </div>
-                <h3 className="mt-4 font-serif text-3xl tracking-[-0.04em]">Songs for imagined lives.</h3>
-                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">I create music, write lyrics inspired by characters from my books, DJ, and produce audio stories and podcasts. My original work has reached 2.8K+ plays on Suno.</p>
-                <div className="mt-6 flex flex-wrap items-center gap-3">
-                  <a href="https://suno.com/@panagiotagrosdouli" target="_blank" rel="noreferrer" className="focus-ring rounded-full border border-[var(--accent)] px-4 py-2 text-sm font-semibold transition hover:bg-[var(--accent)] hover:text-[var(--background)]">Original music ↗</a>
-                  <a href="https://stream.zeno.fm/0eptqs75m5zuv" target="_blank" rel="noreferrer" className="focus-ring inline-flex items-center gap-2 rounded-full border border-[var(--line)] py-1.5 pl-1.5 pr-4 text-sm font-semibold transition hover:border-[var(--accent)]">
-                    <Image src="/brands/zeno-media.png" alt="" width={32} height={32} className="rounded-full" aria-hidden="true" />
-                    Listen on Zeno Media ↗
-                  </a>
-                </div>
+                <p className="mt-6 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Zeno Media</p>
+                <h3 className="mt-3 font-serif text-3xl tracking-[-0.04em]">DJ, radio producer & podcaster.</h3>
+                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">I curate music, produce radio programming, and create spoken-audio and podcast content.</p>
+                <a href="https://stream.zeno.fm/0eptqs75m5zuv" target="_blank" rel="noreferrer" className="focus-ring mt-6 inline-flex rounded-full border border-[var(--accent)] px-4 py-2 text-sm font-semibold transition hover:bg-[var(--accent)] hover:text-[var(--background)]">Listen live ↗</a>
               </article>
             </Reveal>
             <Reveal>
@@ -131,14 +140,14 @@ export default function AboutPage() {
               </article>
             </Reveal>
             <Reveal>
-              <article className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--background)] p-6 md:col-span-2">
+              <article className="h-full rounded-[1.5rem] border border-[var(--line)] bg-[var(--background)] p-6">
                 <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Someday</p>
                 <h3 className="mt-4 font-serif text-3xl tracking-[-0.04em]">Aspiring pilot.</h3>
-                <p className="mt-4 max-w-3xl text-sm leading-7 text-[var(--muted)]">Aviation brings together systems thinking, responsibility, navigation, and freedom. Becoming a pilot is a long-term personal goal.</p>
+                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">Aviation brings together systems thinking, responsibility, navigation, and freedom. Becoming a pilot is a long-term personal goal.</p>
               </article>
             </Reveal>
           </div>
-        </section>     </div>
+        </section>    </div>
     </main>
   );
 }
