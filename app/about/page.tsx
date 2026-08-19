@@ -107,9 +107,12 @@ export default function AboutPage() {
                 </div>
                 <h3 className="mt-4 font-serif text-3xl tracking-[-0.04em]">Songs for imagined lives.</h3>
                 <p className="mt-4 text-sm leading-7 text-[var(--muted)]">I create music, write lyrics inspired by characters from my books, DJ, and produce audio stories and podcasts. My original work has reached 2.8K+ plays on Suno.</p>
-                <div className="mt-6 flex flex-wrap gap-3">
+                <div className="mt-6 flex flex-wrap items-center gap-3">
                   <a href="https://suno.com/@panagiotagrosdouli" target="_blank" rel="noreferrer" className="focus-ring rounded-full border border-[var(--accent)] px-4 py-2 text-sm font-semibold transition hover:bg-[var(--accent)] hover:text-[var(--background)]">Original music ↗</a>
-                  <a href="https://stream.zeno.fm/0eptqs75m5zuv" target="_blank" rel="noreferrer" className="focus-ring rounded-full border border-[var(--line)] px-4 py-2 text-sm font-semibold transition hover:border-[var(--accent)]">Live radio ↗</a>
+                  <a href="https://stream.zeno.fm/0eptqs75m5zuv" target="_blank" rel="noreferrer" className="focus-ring inline-flex items-center gap-2 rounded-full border border-[var(--line)] py-1.5 pl-1.5 pr-4 text-sm font-semibold transition hover:border-[var(--accent)]">
+                    <Image src="/brands/zeno-media.png" alt="" width={32} height={32} className="rounded-full" aria-hidden="true" />
+                    Listen on Zeno Media ↗
+                  </a>
                 </div>
               </article>
             </Reveal>
