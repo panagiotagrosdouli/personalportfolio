@@ -73,6 +73,13 @@ export default function AboutPage() {
           </div>
         </section>
 
+
+        <section className="mt-20 grid gap-10 border-t border-[var(--line)] pt-12 lg:grid-cols-[300px_1fr]">
+          <div><p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Research principles</p><h2 className="mt-3 font-serif text-3xl tracking-[-0.04em]">How the site presents work.</h2></div>
+          <Reveal><div className="command-panel rounded-[1.5rem] p-6"><ul className="space-y-4 text-sm leading-7 text-[var(--muted)]">{principles.map((item) => <li key={item} className="border-l border-[var(--accent)] pl-4">{item}</li>)}</ul></div></Reveal>
+        </section>
+ 
+
         <section className="mt-20 grid gap-10 border-t border-[var(--line)] pt-12 lg:grid-cols-[300px_1fr]">
           <div>
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Beyond the lab</p>
@@ -94,12 +101,7 @@ export default function AboutPage() {
             </a>
           </Reveal>
         </section>
-
-        <section className="mt-20 grid gap-10 border-t border-[var(--line)] pt-12 lg:grid-cols-[300px_1fr]">
-          <div><p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Research principles</p><h2 className="mt-3 font-serif text-3xl tracking-[-0.04em]">How the site presents work.</h2></div>
-          <Reveal><div className="command-panel rounded-[1.5rem] p-6"><ul className="space-y-4 text-sm leading-7 text-[var(--muted)]">{principles.map((item) => <li key={item} className="border-l border-[var(--accent)] pl-4">{item}</li>)}</ul></div></Reveal>
-        </section>
-      </div>
+     </div>
     </main>
   );
 }
