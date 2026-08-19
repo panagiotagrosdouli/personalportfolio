@@ -104,7 +104,7 @@ export default function AboutPage() {
             <Reveal>
               <article className="h-full overflow-hidden rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)]">
                 <Image
-                  src="/brands/suno.png"
+                  src="/brands/suno.jpeg"
                   alt="Suno"
                   width={400}
                   height={400}
