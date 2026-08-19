@@ -160,6 +160,38 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
+        <div className="mb-10">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">Independent venture</p>
+          <h2 className="mt-4 font-serif text-5xl tracking-[-0.06em] md:text-6xl">Research technology, built as a product.</h2>
+        </div>
+        <article className="overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--panel)]">
+          <div className="grid lg:grid-cols-[0.72fr_1.28fr]">
+            <div className="flex min-h-72 items-center justify-center border-b border-[var(--line)] bg-white p-10 lg:border-b-0 lg:border-r">
+              <Image src="/brands/eylo.png" alt="EYLO" width={720} height={420} sizes="(max-width: 1024px) 80vw, 420px" className="h-auto max-h-56 w-full object-contain" />
+            </div>
+            <div className="p-7 md:p-10">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="rounded-full border border-[var(--accent)] bg-[var(--accent-soft)] px-3 py-1.5 font-mono text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">Startup · Live product</span>
+                <span className="font-mono text-xs text-[var(--muted)]">Research discovery & execution</span>
+              </div>
+              <h3 className="mt-6 font-serif text-4xl tracking-[-0.05em] md:text-5xl">EYLO AI</h3>
+              <p className="mt-5 max-w-3xl text-lg leading-8 text-[var(--muted)]">A research workspace that turns a question into a source-backed next step—combining scholarly discovery, AI-assisted reasoning, researchers, funding records, and project execution while keeping evidence, inference, and uncertainty distinct.</p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {["OpenAlex · arXiv · Crossref", "EYRA research assistant", "Supabase workspace", "Grants.gov funding"].map((item) => (
+                  <span key={item} className="rounded-full border border-[var(--line)] px-3 py-1.5 text-xs text-[var(--muted)]">{item}</span>
+                ))}
+              </div>
+              <p className="mt-6 max-w-3xl text-sm leading-7 text-[var(--muted)]">EYLO supports research judgment; it does not present model inference as verified evidence or replace review of original sources.</p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <a href="https://eyloai.vercel.app/" target="_blank" rel="noreferrer" className="focus-ring inline-flex items-center gap-2 rounded-full bg-[var(--foreground)] px-5 py-2.5 text-sm font-semibold text-[var(--background)] transition hover:bg-[var(--accent)]">Open EYLO <FiArrowUpRight aria-hidden="true" /></a>
+                <a href="https://github.com/panagiotagrosdouli/eyloai" target="_blank" rel="noreferrer" className="focus-ring inline-flex items-center gap-2 rounded-full border border-[var(--line)] px-5 py-2.5 text-sm font-semibold transition hover:border-[var(--accent)]"><FiGithub aria-hidden="true" /> View source</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
         <div className="research-grid overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--accent-soft)] p-8 md:flex md:items-center md:justify-between md:p-12">
           <div>
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">Research fit</p>
