@@ -97,7 +97,7 @@ export default function AboutPage() {
                 <p className="mt-4 text-sm leading-7 text-[var(--muted)]">I write books and develop fictional worlds that also inspire my music and lyrics.</p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <a href="https://ta-vivlia-mou.p-g2a15.chatgpt.site/" target="_blank" rel="noreferrer" className="focus-ring rounded-full border border-[var(--accent)] px-4 py-2 text-sm font-semibold">My books ↗</a>
-                  <a href="https://play.google.com/store/apps/dev?id=5726714232238156247" target="_blank" rel="noreferrer" className="focus-ring rounded-full border border-[var(--line)] px-4 py-2 text-sm font-semibold transition hover:border-[var(--accent)]">Wattpad & publications ↗</a>
+                  <a href="https://www.wattpad.com/user/user34912981" target="_blank" rel="noreferrer" className="focus-ring rounded-full border border-[var(--line)] px-4 py-2 text-sm font-semibold transition hover:border-[var(--accent)]">My stories on Wattpad ↗</a>
                 </div>
               </article>
             </Reveal>
