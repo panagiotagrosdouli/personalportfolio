@@ -17,10 +17,8 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - name: Use stable npm
-        run: npm install --global npm@11.6.2
       - name: Install dependencies
-        run: npm install --package-lock=false --legacy-peer-deps
+        run: npm install
       - name: Lint
         run: npm run lint
       - name: Typecheck
