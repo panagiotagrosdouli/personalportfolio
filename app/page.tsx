@@ -73,7 +73,7 @@ export default function Home() {
           <aside className="relative mx-auto w-full max-w-md lg:mx-0 lg:justify-self-end" aria-label="Researcher profile">
             <div className="command-panel relative overflow-hidden rounded-[2.5rem] p-3">
               <Image
-                src="/profile.png"
+                src={`${process.env.GITHUB_ACTIONS === "true" ? "/personalportfolio" : ""}/profile.png`}
                 alt="Panagiota Grosdouli"
                 width={720}
                 height={900}
@@ -167,7 +167,7 @@ export default function Home() {
         <article className="overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--panel)]">
           <div className="grid lg:grid-cols-[0.72fr_1.28fr]">
             <div className="flex min-h-72 items-center justify-center border-b border-[var(--line)] bg-white p-10 lg:border-b-0 lg:border-r">
-              <Image src="/brands/eylo.png" alt="EYLO" width={720} height={420} sizes="(max-width: 1024px) 80vw, 420px" className="h-auto max-h-56 w-full object-contain" />
+              <Image src={`${process.env.GITHUB_ACTIONS === "true" ? "/personalportfolio" : ""}/brands/eylo.png`} alt="EYLO" width={720} height={420} sizes="(max-width: 1024px) 80vw, 420px" className="h-auto max-h-56 w-full object-contain" />
             </div>
             <div className="p-7 md:p-10">
               <div className="flex flex-wrap items-center gap-3">
