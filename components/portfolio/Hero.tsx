@@ -60,7 +60,7 @@ export function Hero() {
         <aside className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-5 shadow-2xl shadow-black/20 backdrop-blur">
           <div
             className="aspect-[4/5] rounded-[1.5rem] bg-stone-900 bg-cover bg-center ring-1 ring-white/10"
-            style={{ backgroundImage: "url('/profile.png')" }}
+            style={{ backgroundImage: `url('${process.env.GITHUB_ACTIONS === "true" ? "/personalportfolio" : ""}/profile.png')` }}
             aria-label="Panagiota Grosdouli profile photo"
           />
 
