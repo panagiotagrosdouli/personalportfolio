@@ -36,7 +36,7 @@ export default function AboutPage() {
         <header className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <Reveal>
             <div className="command-panel overflow-hidden rounded-[2rem] p-3">
-              <Image src="/profile.png" alt="Panagiota Grosdouli" width={720} height={900} sizes="(max-width: 1024px) 100vw, 500px" className="aspect-[4/5] w-full rounded-[1.55rem] object-cover grayscale-[15%] saturate-[0.88]" />
+              <Image src={`${process.env.GITHUB_ACTIONS === "true" ? "/personalportfolio" : ""}/profile.png`} alt="Panagiota Grosdouli" width={720} height={900} sizes="(max-width: 1024px) 100vw, 500px" className="aspect-[4/5] w-full rounded-[1.55rem] object-cover grayscale-[15%] saturate-[0.88]" />
             </div>
           </Reveal>
           <Reveal>
@@ -89,7 +89,7 @@ export default function AboutPage() {
             <Reveal>
               <article className="h-full rounded-[1.5rem] border border-[var(--accent)] bg-[var(--accent-soft)] p-6">
                 <div className="flex items-center justify-between gap-4">
-                  <Image src="/brands/wattpad.png" alt="Wattpad" width={52} height={52} className="rounded-2xl" />
+                  <Image src={`${process.env.GITHUB_ACTIONS === "true" ? "/personalportfolio" : ""}/brands/wattpad.png`} alt="Wattpad" width={52} height={52} className="rounded-2xl" />
                   <span className="rounded-full border border-[var(--line)] px-3 py-1 font-mono text-[0.65rem] text-[var(--muted)]">Since 2023</span>
                 </div>
                 <p className="mt-6 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Books & Wattpad</p>
@@ -104,7 +104,7 @@ export default function AboutPage() {
             <Reveal>
               <article className="h-full rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-6">
                 <div className="flex items-center justify-between gap-4">
-                  <Image src="/brands/suno.jpeg" alt="Suno" width={52} height={52} className="rounded-2xl" />
+                  <Image src={`${process.env.GITHUB_ACTIONS === "true" ? "/personalportfolio" : ""}/brands/suno.jpeg`} alt="Suno" width={52} height={52} className="rounded-2xl" />
                   <span className="rounded-full border border-[var(--line)] px-3 py-1 font-mono text-[0.65rem] text-[var(--muted)]">2.8K+ plays</span>
                 </div>
                 <p className="mt-6 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Suno · Songwriter & producer</p>
@@ -116,7 +116,7 @@ export default function AboutPage() {
             <Reveal>
               <article className="h-full rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-6">
                 <div className="flex items-center justify-between gap-4">
-                  <Image src="/brands/zeno-media.png" alt="Zeno Media" width={52} height={52} className="rounded-2xl" />
+                  <Image src={`${process.env.GITHUB_ACTIONS === "true" ? "/personalportfolio" : ""}/brands/zeno-media.png`} alt="Zeno Media" width={52} height={52} className="rounded-2xl" />
                   <span className="rounded-full border border-[var(--line)] px-3 py-1 font-mono text-[0.65rem] text-[var(--muted)]">2019–Present</span>
                 </div>
                 <p className="mt-6 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Zeno Media</p>
