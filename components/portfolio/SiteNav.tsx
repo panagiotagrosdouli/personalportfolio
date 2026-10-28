@@ -5,11 +5,9 @@ import Link from "next/link";
 import { FiMoon, FiSun } from "react-icons/fi";
 
 const primaryLinks = [
-  { label: "Research", href: "/research-map" },
   { label: "Projects", href: "/projects" },
-  { label: "Publications", href: "/publications" },
-  { label: "CV", href: "/cv" },
   { label: "About", href: "/about" },
+  { label: "CV", href: "/cv" },
 ];
 
 type SiteNavProps = {
@@ -45,7 +43,7 @@ export function SiteNav({ theme }: SiteNavProps) {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6">
         <Link href="/" className="focus-ring shrink-0 transition hover:text-[var(--accent)]" aria-label="Panagiota Grosdouli research homepage">
           <span className="block font-serif text-base font-semibold leading-none tracking-[-0.02em] text-[var(--foreground)]">Panagiota Grosdouli</span>
-          <span className="mt-1 block font-mono text-[0.58rem] font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">Robotics · Autonomy · Uncertainty</span>
+          
         </Link>
 
         <div className="hidden items-center gap-6 md:flex">
