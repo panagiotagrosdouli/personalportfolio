@@ -1,91 +1,209 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FiArrowUpRight, FiGithub, FiArrowDown, FiMail } from "react-icons/fi";
+import { FiArrowUpRight, FiCheck, FiGithub } from "react-icons/fi";
 import { SiteNav } from "@/components/portfolio/SiteNav";
 import { projects } from "@/data/projects";
 
 const featuredSlugs = ["shield-vio", "safecrossai", "dynnav"];
-const featuredProjects = featuredSlugs.map((slug) => projects.find((project) => project.slug === slug)).filter((project): project is (typeof projects)[number] => Boolean(project));
-const photo = `${process.env.GITHUB_ACTIONS === "true" ? "/personalportfolio" : ""}/profile.png`;
-const eyloLogo = `${process.env.GITHUB_ACTIONS === "true" ? "/personalportfolio" : ""}/brands/eylo.png`;
+const featuredProjects = featuredSlugs
+  .map((slug) => projects.find((project) => project.slug === slug))
+  .filter((project): project is (typeof projects)[number] => Boolean(project));
+
+const researchLoop = [
+  ["01", "Estimate", "Perception and localization health"],
+  ["02", "Reason", "Uncertainty, degradation, and risk"],
+  ["03", "Act", "Safe planning and recovery"],
+];
+
+const practice = [
+  "Reproducible evaluation",
+  "Failure-case analysis",
+  "Transparent maturity",
+];
 
 export default function Home() {
   return (
-    <main className="editorial-portfolio min-h-screen">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] selection:bg-[var(--accent-soft)]">
       <SiteNav />
-      <section className="editorial-hero relative isolate overflow-hidden" aria-labelledby="hero-heading">
-        <div className="editorial-orb editorial-orb-one" aria-hidden="true" />
-        <div className="editorial-orb editorial-orb-two" aria-hidden="true" />
-        <div className="editorial-stars" aria-hidden="true" />
-        <div className="relative mx-auto grid max-w-7xl gap-14 px-6 pb-20 pt-20 md:px-10 lg:min-h-[840px] lg:grid-cols-[1.13fr_0.87fr] lg:items-center lg:gap-16 lg:pb-28 lg:pt-24">
-          <div className="relative z-10">
-            <div className="eyebrow flex flex-wrap items-center gap-3"><span className="editorial-dot" /> ROBOTICS RESEARCHER <span className="text-white/30">/</span> AI & AUTONOMOUS SYSTEMS</div>
-            <p className="mt-10 text-sm font-medium tracking-[0.06em] text-[#b8bed7]">Hello, I&apos;m Panagiota Grosdouli.</p>
-            <h1 id="hero-heading" className="editorial-display mt-5 max-w-3xl text-[clamp(4rem,8.5vw,8.5rem)] leading-[0.88] tracking-[-0.065em]">
-              Building<br /><span className="editorial-gradient-text italic">intelligent</span><br />autonomy<span className="text-[#b5a5ff]">.</span>
-            </h1>
-            <p className="mt-9 max-w-xl text-base leading-8 text-[#b8bed7] md:text-lg">I explore how robots perceive uncertain environments, make safer decisions, and adapt when real-world sensing is imperfect.</p>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Link className="editorial-button-primary" href="/projects">Explore my work <FiArrowUpRight aria-hidden="true" /></Link>
-              <Link className="editorial-button-secondary" href="/cv">View academic CV <FiArrowUpRight aria-hidden="true" /></Link>
+
+      <section className="relative overflow-hidden border-b border-[var(--line)]">
+        <div className="absolute inset-0 research-grid opacity-55" aria-hidden="true" />
+        <div className="absolute -right-20 top-20 h-[34rem] w-[34rem] rounded-full bg-[var(--accent-soft)] blur-3xl" aria-hidden="true" />
+
+        <div className="relative mx-auto grid min-h-[calc(100vh-68px)] max-w-7xl items-center gap-14 px-5 py-16 md:px-8 lg:grid-cols-[1.18fr_0.82fr] lg:py-20">
+          <div>
+            <div className="flex flex-wrap items-center gap-3 font-mono text-[0.65rem] font-semibold uppercase tracking-[0.2em]">
+              <span className="rounded-full border border-[var(--accent)] bg-[var(--accent-soft)] px-4 py-2 text-[var(--accent)]">
+                Seeking research opportunities · 2026
+              </span>
+              <span className="text-[var(--muted)]">Robotics · AI · Autonomous Systems</span>
             </div>
-            <div className="mt-16 flex items-center gap-8 border-t border-white/10 pt-6 text-xs uppercase tracking-[0.16em] text-[#929ab5]">
-              <a href="#selected-work" className="inline-flex items-center gap-2 transition hover:text-white">Scroll to discover <FiArrowDown /></a>
-              <span className="hidden sm:inline">Research · Engineering · Innovation</span>
+
+            <h1 className="mt-8 max-w-5xl font-serif text-6xl leading-[0.88] tracking-[-0.075em] md:text-8xl lg:text-[7.2rem]">
+              Robust autonomy
+              <span className="block text-[var(--accent)]">when sensing fails.</span>
+            </h1>
+
+            <p className="mt-8 max-w-2xl text-xl leading-8 text-[var(--muted)] md:text-2xl md:leading-9">
+              I study how robots can detect uncertainty, adapt estimation, and recover before failure becomes unsafe.
+            </p>
+
+            <div className="mt-9 flex flex-wrap gap-3">
+              <Link href="/projects" className="focus-ring inline-flex items-center gap-2 rounded-full bg-[var(--foreground)] px-6 py-3 text-sm font-semibold text-[var(--background)] transition hover:bg-[var(--accent)]">
+                Explore research <FiArrowUpRight aria-hidden="true" />
+              </Link>
+              <Link href="/cv" className="focus-ring rounded-full border border-[var(--line)] bg-[var(--panel)] px-6 py-3 text-sm font-semibold transition hover:border-[var(--accent)]">
+                Academic CV
+              </Link>
+              <a href="https://github.com/panagiotagrosdouli" target="_blank" rel="noreferrer" className="focus-ring inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--panel)] px-6 py-3 text-sm font-semibold transition hover:border-[var(--accent)]">
+                <FiGithub aria-hidden="true" /> GitHub
+              </a>
+            </div>
+
+            <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 border-t border-[var(--line)] pt-6 text-sm text-[var(--muted)]">
+              {practice.map((item) => (
+                <span key={item} className="inline-flex items-center gap-2">
+                  <FiCheck className="text-[var(--accent)]" aria-hidden="true" />
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
-          <div className="editorial-portrait-wrap relative mx-auto w-full max-w-[480px]">
-            <div className="editorial-portrait-halo" aria-hidden="true" />
-            <div className="editorial-portrait relative overflow-hidden rounded-[2rem]">
-              <Image src={photo} alt="Portrait of Panagiota Grosdouli" width={720} height={900} priority sizes="(max-width: 1024px) 90vw, 480px" className="aspect-[4/5] h-full w-full object-cover" />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0c1023]/95 via-[#0c1023]/35 to-transparent px-7 pb-7 pt-24">
-                <div className="eyebrow text-[#d2c8ff]">PANAGIOTA GROSDOULI</div>
-                <p className="mt-2 text-sm text-white/80">Electrical & Computer Engineering</p>
+
+          <aside className="relative mx-auto w-full max-w-md lg:mx-0 lg:justify-self-end" aria-label="Researcher profile">
+            <div className="command-panel relative overflow-hidden rounded-[2.5rem] p-3">
+              <Image
+                src={`${process.env.GITHUB_ACTIONS === "true" ? "/personalportfolio" : ""}/profile.png`}
+                alt="Panagiota Grosdouli"
+                width={720}
+                height={900}
+                sizes="(max-width: 1024px) 100vw, 420px"
+                className="aspect-[4/5] w-full rounded-[2rem] object-cover saturate-[0.9]"
+                priority
+              />
+              <div className="absolute inset-x-6 bottom-6 rounded-[1.4rem] border border-white/15 bg-black/72 p-5 text-white backdrop-blur-xl">
+                <p className="font-mono text-[0.62rem] uppercase tracking-[0.22em] text-[#9be7cf]">Panagiota Grosdouli</p>
+                <p className="mt-2 text-sm font-medium">Electrical & Computer Engineering</p>
               </div>
             </div>
-            <div className="editorial-float editorial-float-top">✦ &nbsp; Perception & SLAM</div>
-            <div className="editorial-float editorial-float-bottom">↗ &nbsp; Safe autonomy</div>
+            <div className="absolute -left-5 top-10 rounded-full border border-[var(--line)] bg-[var(--panel)] px-4 py-2 text-xs font-semibold shadow-xl backdrop-blur-xl">
+              VIO · SLAM
+            </div>
+            <div className="absolute -right-4 bottom-24 rounded-full border border-[var(--line)] bg-[var(--panel)] px-4 py-2 text-xs font-semibold shadow-xl backdrop-blur-xl">
+              Risk-aware planning
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
+        <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+          <div>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">Research thesis</p>
+            <h2 className="mt-4 max-w-lg font-serif text-5xl leading-[0.95] tracking-[-0.06em] md:text-6xl">
+              Uncertainty should change behavior.
+            </h2>
+            <p className="mt-6 max-w-md text-base leading-7 text-[var(--muted)]">
+              My work connects estimator health to decisions a robot can take: reweight sensing, replan, or recover.
+            </p>
+          </div>
+
+          <div className="overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--panel)]">
+            {researchLoop.map(([number, title, text], index) => (
+              <article key={number} className={`grid gap-4 p-6 md:grid-cols-[64px_160px_1fr] md:items-center md:p-8 ${index ? "border-t border-[var(--line)]" : ""}`}>
+                <span className="font-mono text-xs text-[var(--accent)]">{number}</span>
+                <h3 className="font-serif text-3xl tracking-[-0.04em]">{title}</h3>
+                <p className="text-sm leading-6 text-[var(--muted)]">{text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="editorial-section relative mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32" aria-labelledby="approach-heading">
-        <div className="grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
-          <div><p className="eyebrow">01 / RESEARCH PHILOSOPHY</p><h2 id="approach-heading" className="editorial-heading mt-6">Curiosity meets <em>precision.</em></h2></div>
-          <div className="lg:pt-12"><p className="max-w-2xl text-xl leading-relaxed text-[#c5c9dd] md:text-2xl">I am interested in the space where <span className="text-white">machine intelligence, robotic perception, and real-world safety</span> come together.</p>
-            <div className="mt-10 grid gap-4 sm:grid-cols-3">
-              {[["01","Perceive","Understand the world through sensing and estimation."],["02","Reason","Represent uncertainty and evaluate risk."],["03","Adapt","Plan, recover, and act with resilience."]].map(([n,title,body]) => <div key={n} className="editorial-mini-card"><span className="eyebrow">{n}</span><h3 className="mt-7 text-xl font-semibold text-white">{title}</h3><p className="mt-3 text-sm leading-6 text-[#aeb5cd]">{body}</p></div>)}
+      <section className="border-y border-[var(--line)] bg-[var(--panel)]/45">
+        <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
+          <div className="mb-10 flex flex-wrap items-end justify-between gap-5">
+            <div>
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">Selected research</p>
+              <h2 className="mt-4 font-serif text-5xl tracking-[-0.06em] md:text-6xl">Three research directions.</h2>
+            </div>
+            <Link href="/projects" className="focus-ring inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)] hover:underline">
+              View all work <FiArrowUpRight aria-hidden="true" />
+            </Link>
+          </div>
+
+          <div className="grid gap-5 lg:grid-cols-3">
+            {featuredProjects.map((project, index) => (
+              <Link
+                key={project.slug}
+                href={`/projects/${project.slug}`}
+                className="focus-ring group flex min-h-[22rem] flex-col rounded-[1.75rem] border border-[var(--line)] bg-[var(--background)] p-6 transition hover:-translate-y-1 hover:border-[var(--accent)]"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <span className="font-mono text-xs text-[var(--muted)]">0{index + 1}</span>
+                  <span className="rounded-full border border-[var(--line)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.16em] text-[var(--accent)]">
+                    {project.status}
+                  </span>
+                </div>
+                <div className="mt-auto">
+                  <p className="font-mono text-[0.62rem] uppercase tracking-[0.18em] text-[var(--accent)]">{project.domain}</p>
+                  <h3 className="mt-4 font-serif text-3xl leading-tight tracking-[-0.05em]">{project.shortTitle}</h3>
+                  <p className="mt-4 text-sm leading-6 text-[var(--muted)]">{project.technicalContribution}</p>
+                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold group-hover:text-[var(--accent)]">
+                    Research page <FiArrowUpRight aria-hidden="true" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
+        <div className="mb-10">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">Independent venture</p>
+          <h2 className="mt-4 font-serif text-5xl tracking-[-0.06em] md:text-6xl">Research technology, built as a product.</h2>
+        </div>
+        <article className="overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--panel)]">
+          <div className="grid lg:grid-cols-[0.72fr_1.28fr]">
+            <div className="flex min-h-72 items-center justify-center border-b border-[var(--line)] bg-white p-10 lg:border-b-0 lg:border-r">
+              <Image src={`${process.env.GITHUB_ACTIONS === "true" ? "/personalportfolio" : ""}/brands/eylo.png`} alt="EYLO" width={720} height={420} sizes="(max-width: 1024px) 80vw, 420px" className="h-auto max-h-56 w-full object-contain" />
+            </div>
+            <div className="p-7 md:p-10">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="rounded-full border border-[var(--accent)] bg-[var(--accent-soft)] px-3 py-1.5 font-mono text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">Startup · Live product</span>
+                <span className="font-mono text-xs text-[var(--muted)]">Research discovery & execution</span>
+              </div>
+              <h3 className="mt-6 font-serif text-4xl tracking-[-0.05em] md:text-5xl">EYLO AI</h3>
+              <p className="mt-5 max-w-3xl text-lg leading-8 text-[var(--muted)]">A research workspace that turns a question into a source-backed next step—combining scholarly discovery, AI-assisted reasoning, researchers, funding records, and project execution while keeping evidence, inference, and uncertainty distinct.</p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {["OpenAlex · arXiv · Crossref", "EYRA research assistant", "Supabase workspace", "Grants.gov funding"].map((item) => (
+                  <span key={item} className="rounded-full border border-[var(--line)] px-3 py-1.5 text-xs text-[var(--muted)]">{item}</span>
+                ))}
+              </div>
+              <p className="mt-6 max-w-3xl text-sm leading-7 text-[var(--muted)]">EYLO supports research judgment; it does not present model inference as verified evidence or replace review of original sources.</p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <a href="https://eyloai.vercel.app/" target="_blank" rel="noreferrer" className="focus-ring inline-flex items-center gap-2 rounded-full bg-[var(--foreground)] px-5 py-2.5 text-sm font-semibold text-[var(--background)] transition hover:bg-[var(--accent)]">Open EYLO <FiArrowUpRight aria-hidden="true" /></a>
+                <a href="https://github.com/panagiotagrosdouli/eyloai" target="_blank" rel="noreferrer" className="focus-ring inline-flex items-center gap-2 rounded-full border border-[var(--line)] px-5 py-2.5 text-sm font-semibold transition hover:border-[var(--accent)]"><FiGithub aria-hidden="true" /> View source</a>
+              </div>
             </div>
           </div>
-        </div>
+        </article>
       </section>
 
-      <section id="selected-work" className="border-y border-white/10 bg-[#11162c]/60 py-24 md:py-32" aria-labelledby="work-heading">
-        <div className="mx-auto max-w-7xl px-6 md:px-10">
-          <div className="mb-12 flex flex-wrap items-end justify-between gap-6"><div><p className="eyebrow">02 / SELECTED WORK</p><h2 id="work-heading" className="editorial-heading mt-5">Ideas in <em>motion.</em></h2></div><Link href="/projects" className="editorial-text-link">All projects <FiArrowUpRight /></Link></div>
-          <div className="grid gap-5 lg:grid-cols-3">
-            {featuredProjects.map((project,index) => <Link href={`/projects/${project.slug}`} key={project.slug} className="editorial-project group">
-              <div className="flex items-center justify-between"><span className="eyebrow">PROJECT 0{index+1}</span><FiArrowUpRight className="text-2xl text-[#c6bcff] transition group-hover:-translate-y-1 group-hover:translate-x-1" /></div>
-              <div className="editorial-project-art" aria-hidden="true"><span>{index===0?"◎":index===1?"✧":"⌁"}</span><div className="editorial-project-ring" /></div>
-              <div><p className="eyebrow">{project.domain}</p><h3 className="mt-3 text-3xl font-semibold tracking-[-0.05em] text-white">{project.shortTitle}</h3><p className="mt-4 line-clamp-3 text-sm leading-7 text-[#acb3cb]">{project.technicalContribution}</p><span className="mt-7 inline-block text-xs uppercase tracking-[0.12em] text-[#bcaeff]">Discover project ↗</span></div>
-            </Link>)}
+      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
+        <div className="research-grid overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--accent-soft)] p-8 md:flex md:items-center md:justify-between md:p-12">
+          <div>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">Research fit</p>
+            <h2 className="mt-4 max-w-3xl font-serif text-4xl leading-tight tracking-[-0.05em] md:text-5xl">
+              Interested in robust perception, state estimation, and safe navigation.
+            </h2>
+          </div>
+          <div className="mt-8 flex shrink-0 flex-wrap gap-3 md:ml-10 md:mt-0">
+            <Link href="/about" className="focus-ring rounded-full bg-[var(--foreground)] px-6 py-3 text-sm font-semibold text-[var(--background)]">Research profile</Link>
+            <Link href="/contact" className="focus-ring rounded-full border border-[var(--line)] bg-[var(--panel)] px-6 py-3 text-sm font-semibold">Contact</Link>
           </div>
         </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32" aria-labelledby="venture-heading">
-        <p className="eyebrow">03 / FROM RESEARCH TO REALITY</p>
-        <div className="mt-8 grid overflow-hidden rounded-[2rem] border border-white/10 bg-[#191f39] lg:grid-cols-[0.85fr_1.15fr]">
-          <div className="editorial-eylo-art flex min-h-[320px] items-center justify-center p-12"><div className="w-full max-w-xs rounded-[1.5rem] bg-white p-10 shadow-2xl"><Image src={eyloLogo} alt="EYLO AI logo" width={720} height={420} className="h-auto w-full object-contain" /></div></div>
-          <div className="flex flex-col justify-center p-8 md:p-14"><span className="eyebrow">INDEPENDENT VENTURE</span><h2 id="venture-heading" className="editorial-heading mt-5">Meet <em>EYLO AI.</em></h2><p className="mt-6 max-w-xl text-base leading-8 text-[#c4c9dc]">An AI-assisted research workspace connecting scholarly discovery, source-backed reasoning, funding information, and project execution. Designed to keep evidence, inference, and uncertainty distinct.</p>
-            <div className="mt-9 flex flex-wrap gap-3"><a className="editorial-button-primary" href="https://eyloai.vercel.app/" target="_blank" rel="noreferrer">Explore EYLO <FiArrowUpRight /></a><a className="editorial-button-secondary" href="https://github.com/panagiotagrosdouli/eyloai" target="_blank" rel="noreferrer"><FiGithub /> Source code</a></div>
-          </div>
-        </div>
-      </section>
-
-      <section className="editorial-contact border-t border-white/10 px-6 py-24 text-center md:px-10 md:py-32">
-        <p className="eyebrow">04 / LET'S CONNECT</p><h2 className="editorial-heading mx-auto mt-6 max-w-4xl">Let's explore what's <em>possible.</em></h2><p className="mx-auto mt-6 max-w-xl text-base leading-8 text-[#b8bed7]">Open to conversations about research, collaboration, and meaningful work in intelligent autonomous systems.</p>
-        <div className="mt-9 flex flex-wrap justify-center gap-3"><Link href="/contact" className="editorial-button-primary"><FiMail /> Get in touch</Link><Link href="/about" className="editorial-button-secondary">More about me <FiArrowUpRight /></Link></div>
       </section>
     </main>
   );
