@@ -31,6 +31,7 @@ export default function Home() {
               <Link className="hover:underline" href="/cv">CV</Link>
               <Link className="hover:underline" href="/projects">Projects</Link>
               <a className="hover:underline" href="https://github.com/panagiotagrosdouli" target="_blank" rel="noreferrer">GitHub</a>
+              <a className="hover:underline" href="https://github.com/PanagiotaGr" target="_blank" rel="noreferrer">More GitHub projects</a>
               <a className="hover:underline" href="mailto:p.g2a15@gmail.com">Email</a>
             </div>
           </div>
