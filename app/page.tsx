@@ -6,8 +6,8 @@ import { Footer } from "@/components/portfolio/Footer";
 import { projects } from "@/data/projects";
 
 export const metadata: Metadata = {
-  title: "Panagiota Grosdouli | Robotics and Computer Vision",
-  description: "Academic homepage of Panagiota Grosdouli. Research interests in robotic perception, visual-inertial odometry, SLAM, uncertainty and autonomous navigation.",
+  title: "Panagiota Grosdouli | AI, Software Engineering & Robotics",
+  description: "Portfolio of Panagiota Grosdouli, Electrical and Computer Engineer building AI, software and robotics systems, with interests in research and development.",
 };
 
 const selected = ["shield-vio", "dynnav", "safecrossai", "adaptive-multimodal-slam"]
@@ -23,13 +23,13 @@ export default function Home() {
           <div>
             <p className="text-sm font-medium text-[var(--muted)]">Electrical & Computer Engineering Graduate · Democritus University of Thrace</p>
             <h1 className="mt-5 font-serif text-5xl font-semibold leading-tight tracking-[-0.045em] md:text-6xl">Panagiota Grosdouli</h1>
-            <p className="mt-3 text-lg font-medium text-[var(--accent)]">Robotic Perception · Computer Vision · Reliable Autonomy</p>
+            <p className="mt-3 text-lg font-medium text-[var(--accent)]">AI & Machine Learning · Software Engineering · Robotics</p>
             <p className="mt-7 max-w-2xl text-base leading-8 text-[var(--muted)]">
-              I am an Electrical and Computer Engineering graduate interested in how autonomous systems can recognize unreliable perception and localization, reason about uncertainty, and adapt their behavior. My work spans visual-inertial estimation, sensor fusion, navigation, and prediction in dynamic environments.
+              I am an Electrical and Computer Engineer who enjoys building intelligent software and exploring how machine learning can solve challenging real-world problems. My work combines AI applications, research software, computer vision, and autonomous systems—from working tools to experimental robotics.
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm font-semibold text-[var(--accent)]">
-              <Link className="hover:underline" href="/cv">Academic CV</Link>
-              <Link className="hover:underline" href="/projects">Research projects</Link>
+              <Link className="hover:underline" href="/cv">CV</Link>
+              <Link className="hover:underline" href="/projects">Projects</Link>
               <a className="hover:underline" href="https://github.com/panagiotagrosdouli" target="_blank" rel="noreferrer">GitHub</a>
               <a className="hover:underline" href="mailto:p.g2a15@gmail.com">Email</a>
             </div>
@@ -41,16 +41,16 @@ export default function Home() {
           <h2 className="text-sm font-bold uppercase tracking-[0.12em] text-[var(--foreground)]">Research interests</h2>
           <div>
             <p className="max-w-2xl text-base leading-8 text-[var(--muted)]">
-              A question connecting my work is: <span className="font-semibold text-[var(--foreground)]">when should a robot stop trusting its estimates?</span> I am interested in perception reliability, uncertainty-aware fusion and the ways estimation quality should influence downstream robotic decisions.
+              A question connecting my work is: <span className="font-semibold text-[var(--foreground)]">how can we build intelligent systems that work reliably outside ideal conditions?</span> I work across applied machine learning, research engineering and robotics, with particular interests in reliable perception, uncertainty, and practical implementation.
             </p>
-            <p className="mt-4 text-sm text-[var(--muted)]">Visual-inertial odometry · SLAM · Sensor fusion · Robust navigation · Machine learning</p>
+            <p className="mt-4 text-sm text-[var(--muted)]">Python · Machine learning · Research software · Computer vision · Robotics</p>
           </div>
         </section>
 
         <section className="py-12" aria-labelledby="selected-work">
           <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-            <h2 id="selected-work" className="text-sm font-bold uppercase tracking-[0.12em]">Selected work</h2>
-            <Link href="/projects" className="text-sm font-medium text-[var(--accent)] hover:underline">All projects</Link>
+            <h2 id="selected-work" className="text-sm font-bold uppercase tracking-[0.12em]">Selected projects</h2>
+            <Link href="/projects" className="text-sm font-medium text-[var(--accent)] hover:underline">View all projects</Link>
           </div>
           <div className="divide-y divide-[var(--line)] border-y border-[var(--line)]">
             {selected.map((project) => (
@@ -72,7 +72,7 @@ export default function Home() {
           <h2 className="text-sm font-bold uppercase tracking-[0.12em]">Research software</h2>
           <div>
             <h3 className="text-lg font-semibold"><Link href="/eylo" className="hover:text-[var(--accent)] hover:underline">EYLO — AI-assisted research discovery</Link></h3>
-            <p className="mt-2 text-sm leading-7 text-[var(--muted)]">An independent software project exploring evidence-aware scholarly search, saved research workspaces and AI-assisted planning. Presented separately from peer-reviewed research.</p>
+            <p className="mt-2 text-sm leading-7 text-[var(--muted)]">An AI-powered research workspace combining scholarly search, evidence organization and project workflows. A practical software engineering project, distinct from peer-reviewed research.</p>
             <Link href="/eylo" className="mt-3 inline-block text-sm text-[var(--accent)] hover:underline">Technical case study</Link>
           </div>
         </section>
