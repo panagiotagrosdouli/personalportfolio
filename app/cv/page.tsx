@@ -38,9 +38,9 @@ export default function CVPage() {
         <div className="command-panel rounded-[2rem] p-6 md:p-8">
           <div className="flex flex-wrap items-start justify-between gap-6 pb-10">
             <div>
-              <p className={`mb-4 font-mono text-xs font-bold uppercase tracking-[0.26em] ${accent}`}>Academic CV · PhD Applications</p>
+              <p className={`mb-4 font-mono text-xs font-bold uppercase tracking-[0.26em] ${accent}`}>CV · Engineering, R&D & Research</p>
               <h1 className="font-serif text-6xl leading-[0.9] tracking-[-0.055em] text-[var(--foreground)] md:text-7xl">Panagiota Grosdouli</h1>
-              <p className="mt-3 text-[var(--muted)]">Robotics · Robust Autonomy · Uncertainty-Aware AI</p>
+              <p className="mt-3 text-[var(--muted)]">AI & Machine Learning · Software Engineering · Robotics</p>
             </div>
             <a href="/cv.pdf" target="_blank" rel="noreferrer" className="focus-ring mt-2 inline-flex items-center rounded-full border border-[var(--accent)] px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--accent)] transition hover:bg-[var(--accent)] hover:text-[var(--background)]">
               Download PDF CV
@@ -53,13 +53,13 @@ export default function CVPage() {
             </p>
           </Section>
 
-          <Section label="Research Direction">
+          <Section label="Areas of Interest">
             <div className="max-w-3xl space-y-4 text-base leading-8 text-[var(--muted)]">
               <p>
                 My central research interest is how autonomous systems can remain reliable when perception, localization, mapping, and planning become uncertain.
               </p>
               <p>
-                I am particularly interested in graduate research groups working on SLAM, field robotics, UAV autonomy, safe robot navigation, uncertainty-aware perception, and intelligent transportation systems.
+                I am interested in AI and machine learning engineering, software development, robotics, applied R&D and academic research, particularly roles that connect mathematical ideas with well-tested implementations.
               </p>
             </div>
           </Section>
@@ -143,7 +143,7 @@ export default function CVPage() {
             </ul>
           </Section>
 
-          <Section label="Research Questions">
+          <Section label="Research & Development Interests">
             <p className="max-w-3xl text-sm leading-7 text-[var(--muted)]">
               How can an autonomous robot detect the onset of perceptual or state-estimation failure? When should it adapt sensor weighting, replan, or seek recovery? How can uncertainty be communicated in collaborative perception among resource-constrained robots? I am seeking doctoral research opportunities in which these questions can be evaluated experimentally.
             </p>
