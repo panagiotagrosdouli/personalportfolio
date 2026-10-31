@@ -97,60 +97,6 @@ export default function Home() {
       </section>
 
 
-      {/* Authentic measured trajectories from the published IMPTC dataset. */}
-      <section id="imptc-trajectories" className="border-b border-[var(--line)] bg-[var(--panel)]/45">
-        <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <div className="grid items-end gap-7 lg:grid-cols-[.8fr_1.2fr]">
-            <div>
-              <p className="font-mono text-[11px] font-semibold uppercase tracking-[.23em] text-[var(--accent)]">
-                Real-world motion / IMPTC dataset
-              </p>
-              <h2 className="mt-4 max-w-xl font-serif text-5xl leading-[.94] tracking-[-.055em] md:text-6xl">
-                Real trajectories.
-                <span className="block italic text-[var(--accent)]">Real intersections.</span>
-              </h2>
-            </div>
-            <div>
-              <p className="max-w-2xl text-base leading-8 text-[var(--muted)]">
-                These are authentic visualizations of observed vulnerable road-user tracks from the
-                <span className="font-semibold text-[var(--foreground)]"> Infrastructural Multi-Person Trajectory and Context (IMPTC)</span> dataset.
-                The tracks were recorded at a real urban intersection and illustrate the complexity
-                of motion that prediction models seek to anticipate.
-              </p>
-              <a href="https://github.com/mh-kav-institute/imptc-dataset" target="_blank" rel="noopener noreferrer" className="focus-ring mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)] hover:underline">
-                View the official IMPTC dataset <FiArrowUpRight aria-hidden="true" />
-              </a>
-            </div>
-          </div>
-          <div className="mt-10 grid gap-5 sm:grid-cols-3">
-            {[
-              { src: "/datasets/imptc/sample_01_vru_tracks.jpg", label: "Observed trajectories / 01", alt: "Actual recorded vulnerable road-user trajectories crossing an urban intersection, IMPTC sample 01" },
-              { src: "/datasets/imptc/sample_02_vru_tracks.jpg", label: "Observed trajectories / 02", alt: "Actual recorded road-user movement paths at an urban intersection, IMPTC sample 02" },
-              { src: "/datasets/imptc/sample_04_vru_tracks.jpg", label: "Observed trajectories / 04", alt: "Actual observed vulnerable road-user motion at a signalized intersection, IMPTC sample 04" },
-            ].map((sample) => (
-              <figure key={sample.src} className="overflow-hidden rounded-[1.75rem] border border-[var(--line)] bg-[var(--background)] p-3">
-                <div className="relative overflow-hidden rounded-[1.25rem] bg-[#e5eeea]">
-                  <Image src={sample.src} alt={sample.alt} width={320} height={320} sizes="(max-width: 640px) 90vw, 29vw" className="aspect-square w-full object-contain" />
-                </div>
-                <figcaption className="flex items-center justify-between gap-2 px-2 pb-1 pt-4">
-                  <span className="font-mono text-[10px] font-semibold uppercase tracking-[.15em] text-[var(--muted)]">{sample.label}</span>
-                  <span className="rounded-full border border-[var(--line)] px-2.5 py-1 font-mono text-[10px] font-semibold text-[var(--accent)]">MEASURED</span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-          <p className="mt-6 max-w-5xl text-xs leading-6 text-[var(--muted)]">
-            <strong className="text-[var(--foreground)]">Scientific note:</strong> These figures show observed
-            IMPTC trajectories, not model-generated predictions, and are not presented as experimental
-            results from this diploma thesis. Source: Hetzel et al., <em>The IMPTC Dataset</em>,
-            IEEE Intelligent Vehicles Symposium (2023).
-            {" "}
-            <a href="https://doi.org/10.1109/IV55152.2023.10186776" target="_blank" rel="noopener noreferrer" className="focus-ring underline underline-offset-4 hover:text-[var(--accent)]">Research paper</a>
-            {" · "}
-            <a href="https://github.com/mh-kav-institute/imptc-dataset/tree/main/images" target="_blank" rel="noopener noreferrer" className="focus-ring underline underline-offset-4 hover:text-[var(--accent)]">Original figures / attribution</a>.
-          </p>
-        </div>
-      </section>
 
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
         <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
