@@ -42,8 +42,8 @@ export default function CVPage() {
               <h1 className="font-serif text-6xl leading-[0.9] tracking-[-0.055em] text-[var(--foreground)] md:text-7xl">Panagiota Grosdouli</h1>
               <p className="mt-3 text-[var(--muted)]">Robotics · Robust Autonomy · Uncertainty-Aware AI</p>
             </div>
-            <a href="/cv.pdf" target="_blank" rel="noreferrer" className="focus-ring mt-2 inline-flex items-center rounded-full border border-[var(--accent)] px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--accent)] transition hover:bg-[var(--accent)] hover:text-[var(--background)]">
-              Download PDF CV
+            <a href="https://www.linkedin.com/in/panagiota-g-b468b0201" target="_blank" rel="noopener noreferrer" className="focus-ring mt-2 inline-flex items-center rounded-full border border-[var(--accent)] px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--accent)] transition hover:bg-[var(--accent)] hover:text-[var(--background)]">
+              LinkedIn profile
             </a>
           </div>
 
@@ -67,11 +67,19 @@ export default function CVPage() {
           <Section label="Education">
             <div className="rounded-2xl border border-[var(--line)] bg-[var(--background)]/40 p-5">
               <div className="flex flex-wrap items-start justify-between gap-4">
-                <h2 className="text-lg font-semibold tracking-tight text-[var(--foreground)]">Five-year Diploma in Electrical & Computer Engineering (Integrated Master's level)</h2>
+                <h2 className="text-lg font-semibold tracking-tight text-[var(--foreground)]">Five-year Diploma in Electrical & Computer Engineering (Integrated Master&apos;s level)</h2>
                 <span className="mt-1.5 shrink-0 font-mono text-xs text-[var(--muted)]">2020–2026</span>
               </div>
               <p className="mt-1 text-sm text-[var(--muted)]">Democritus University of Thrace, Xanthi, Greece</p>
-              <p className="mt-2 text-sm italic text-[var(--muted)]">Diploma thesis: Trajectory Prediction of Vulnerable Road Users at Smart Intersections</p>
+              <p className="mt-2 text-sm italic text-[var(--muted)]">Diploma thesis (10/10): Trajectory Prediction of Vulnerable Road Users at Smart Intersections for Road Safety and Autonomous Driving Applications · Degree GPA: 7.58/10</p>
+            </div>
+          </Section>
+
+          <Section label="Industry Experience">
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--background)]/40 p-5">
+              <h2 className="text-lg font-semibold">OZZIE Robotics — Internship</h2>
+              <p className="mt-1 text-sm text-[var(--muted)]">July–August 2025 · Thessaloniki, Greece</p>
+              <p className="mt-3 text-sm leading-7 text-[var(--muted)]">Curated and annotated a task-specific dataset, and trained and evaluated a YOLO-based semantic segmentation model for autonomous delivery robot scene understanding.</p>
             </div>
           </Section>
 

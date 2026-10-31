@@ -85,3 +85,18 @@ a { text-underline-position: from-font; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
 }
+
+/* Conceptual research illustrations; motion is decorative and reduced-motion-safe. */
+@keyframes trajectory-ink {
+  from { stroke-dashoffset: 640; }
+  to { stroke-dashoffset: 0; }
+}
+.trajectory-draw {
+  stroke-dasharray: 640;
+  stroke-dashoffset: 640;
+  animation: trajectory-ink 2.6s cubic-bezier(.22,.72,.22,1) forwards;
+}
+html { scroll-padding-top: 5.5rem; }
+@media (prefers-reduced-motion: reduce) {
+  .trajectory-draw { animation: none !important; stroke-dashoffset: 0; }
+}
