@@ -19,10 +19,10 @@ type SiteNavProps = {
 
 function getInitialThemePreference(theme?: SiteNavProps["theme"]) {
   if (theme) return theme === "dark";
-  if (typeof window === "undefined") return true;
+  if (typeof window === "undefined") return false;
   const stored = window.localStorage.getItem("theme");
   if (stored) return stored === "dark";
-  return true;
+  return false;
 }
 
 export function SiteNav({ theme }: SiteNavProps) {
