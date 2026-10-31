@@ -76,12 +76,20 @@ export default function Home() {
             <Link href="/eylo" className="mt-3 inline-block text-sm text-[var(--accent)] hover:underline">Technical case study</Link>
           </div>
         </section>
+        <section className="grid gap-5 border-b border-[var(--line)] py-10 md:grid-cols-[170px_1fr]">
+          <h2 className="text-sm font-bold uppercase tracking-[0.12em]">Industry experience</h2>
+          <div>
+            <h3 className="text-lg font-semibold">Computer Vision Intern · OZZIE Robotics</h3>
+            <p className="mt-1 text-xs text-[var(--muted)]">July–August 2025 · Thessaloniki, Greece</p>
+            <p className="mt-3 text-sm leading-7 text-[var(--muted)]">Developed a YOLO-based semantic segmentation pipeline for an autonomous delivery robot. Curated and annotated a task-specific dataset, then trained and evaluated the model for robotic scene understanding.</p>
+          </div>
+        </section>
         <section className="grid gap-5 py-10 md:grid-cols-[170px_1fr]">
           <h2 className="text-sm font-bold uppercase tracking-[0.12em]">Background</h2>
           <div>
             <p className="font-medium">Five-year Diploma in Electrical & Computer Engineering, 2026</p>
             <p className="mt-1 text-sm text-[var(--muted)]">Democritus University of Thrace, Greece</p>
-            <p className="mt-3 text-sm leading-7 text-[var(--muted)]">Diploma thesis: Trajectory Prediction of Vulnerable Road Users at Smart Intersections.</p>
+            <p className="mt-3 text-sm leading-7 text-[var(--muted)]">Diploma thesis (10/10): Trajectory Prediction of Vulnerable Road Users at Smart Intersections. Overall degree grade: 7.58/10.</p>
             <Link href="/about" className="mt-3 inline-block text-sm text-[var(--accent)] hover:underline">More about me</Link>
           </div>
         </section>
