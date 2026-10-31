@@ -76,7 +76,7 @@ export function IMPTCReference({ projectSlug, variant = "default" }: { projectSl
   const surface = stone ? "bg-white" : "bg-[var(--panel)]";
 
   return (
-    <section aria-labelledby={"imptc-reference-" + projectSlug} className={stone ? "px-6 py-16 md:px-10 lg:px-12" : ""}>
+    <section aria-labelledby={"imptc-reference-" + projectSlug} className={stone ? "px-6 py-16 md:px-10 lg:px-12" : "border-t border-[var(--line)] py-12 md:py-16"}>
       <div className={stone ? "mx-auto max-w-7xl border-y border-stone-200 py-14 md:py-20" : ""}>
         <div className="grid gap-7 lg:grid-cols-[220px_1fr]">
           <div>
