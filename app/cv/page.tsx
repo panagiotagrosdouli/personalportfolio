@@ -67,7 +67,7 @@ export default function CVPage() {
           <Section label="Education">
             <div className="rounded-2xl border border-[var(--line)] bg-[var(--background)]/40 p-5">
               <div className="flex flex-wrap items-start justify-between gap-4">
-                <h2 className="text-lg font-semibold tracking-tight text-[var(--foreground)]">Five-year Diploma in Electrical & Computer Engineering (Integrated Master's level)</h2>
+                <h2 className="text-lg font-semibold tracking-tight text-[var(--foreground)]">Five-year Diploma in Electrical & Computer Engineering (Integrated Master&apos;s level)</h2>
                 <span className="mt-1.5 shrink-0 font-mono text-xs text-[var(--muted)]">2020–2026</span>
               </div>
               <p className="mt-1 text-sm text-[var(--muted)]">Democritus University of Thrace, Xanthi, Greece</p>
