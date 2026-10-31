@@ -120,6 +120,33 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-5 pb-20 md:px-8 md:pb-24" aria-labelledby="research-standards-title">
+        <div className="grid gap-10 rounded-[2rem] border border-[var(--line)] bg-[var(--panel)] p-7 md:grid-cols-[0.9fr_1.1fr] md:p-10">
+          <div>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">Research practice</p>
+            <h2 id="research-standards-title" className="mt-4 font-serif text-4xl tracking-[-0.06em] md:text-5xl">Evidence before claims.</h2>
+            <p className="mt-5 text-sm leading-7 text-[var(--muted)]">
+              A compelling robotics result should withstand difficult test cases, transparent baselines, and careful scrutiny.
+              I distinguish working implementations, controlled prototypes, and proposed experiments, rather than treating them as equivalent.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              ["01", "A falsifiable question", "Define what a method should improve and when it could fail."],
+              ["02", "Comparable baselines", "Evaluate against meaningful alternatives, not just attractive demonstrations."],
+              ["03", "Failure-case analysis", "Report degradation, uncertainty, and known limitations explicitly."],
+              ["04", "Reproducible evidence", "Link implementations, experiment protocols, and retained results where available."],
+            ].map(([number, title, description]) => (
+              <article key={number} className="rounded-2xl border border-[var(--line)] bg-[var(--background)]/60 p-5">
+                <span className="font-mono text-xs text-[var(--accent)]">{number}</span>
+                <h3 className="mt-3 text-base font-semibold">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="border-y border-[var(--line)] bg-[var(--panel)]/45">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
           <div className="mb-10 flex flex-wrap items-end justify-between gap-5">
