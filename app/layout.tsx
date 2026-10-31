@@ -9,8 +9,8 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://panagiota-research-
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: "Panagiota Grosdouli — Robotics Research Portfolio", template: "%s | Panagiota Grosdouli" },
-  description: "Academic research portfolio focused on robust autonomy, visual-inertial odometry, adaptive SLAM, uncertainty-aware sensor fusion, risk-aware navigation, UAV autonomy, computer vision, and AI for robotics.",
+  title: { default: "Panagiota Grosdouli — AI, Software & Robotics", template: "%s | Panagiota Grosdouli" },
+  description: "Engineering portfolio focused on AI, machine learning, software engineering, robotics, computer vision and research and development.",
   applicationName: "Panagiota Grosdouli Academic Homepage",
   authors: [{ name: "Panagiota Grosdouli" }],
   creator: "Panagiota Grosdouli",
