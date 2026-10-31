@@ -10,14 +10,14 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://panagiota-research-
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "Panagiota Grosdouli — Robotics Research Portfolio", template: "%s | Panagiota Grosdouli" },
-  description: "Academic research portfolio of Panagiota Grosdouli (MEng) in machine learning, trajectory prediction, computer vision, robotics, safe autonomous systems, visual-inertial odometry, and SLAM.",
+  description: "Academic research portfolio focused on robust autonomy, visual-inertial odometry, adaptive SLAM, uncertainty-aware sensor fusion, risk-aware navigation, UAV autonomy, computer vision, and AI for robotics.",
   applicationName: "Panagiota Grosdouli Academic Homepage",
   authors: [{ name: "Panagiota Grosdouli" }],
   creator: "Panagiota Grosdouli",
-  keywords: ["Panagiota Grosdouli", "robotics", "SLAM", "visual-inertial odometry", "sensor fusion", "risk-aware robotics", "trajectory prediction", "vulnerable road users", "machine learning", "computer vision", "AI for robotics", "autonomous systems"],
+  keywords: ["Panagiota Grosdouli", "robotics", "SLAM", "visual-inertial odometry", "sensor fusion", "risk-aware robotics", "UAV autonomy", "computer vision", "AI for robotics", "autonomous systems"],
   alternates: { canonical: "/" },
-  openGraph: { title: "Panagiota Grosdouli — Robotics Research Portfolio", description: "Research portfolio in AI, trajectory prediction, computer vision, robotic perception, VIO, SLAM, and safe autonomy.", url: "/", siteName: "Panagiota Grosdouli Academic Homepage", images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Panagiota Grosdouli robotics research portfolio" }], type: "website" },
-  twitter: { card: "summary_large_image", title: "Panagiota Grosdouli — Robotics Research Portfolio", description: "AI, trajectory prediction, computer vision, robotic perception, VIO, SLAM, and safe autonomy.", images: ["/opengraph-image"] },
+  openGraph: { title: "Panagiota Grosdouli — Robotics Research Portfolio", description: "Research portfolio focused on robust autonomy, VIO, adaptive SLAM, uncertainty-aware sensor fusion, risk-aware navigation, and AI for robotics.", url: "/", siteName: "Panagiota Grosdouli Academic Homepage", images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Panagiota Grosdouli robotics research portfolio" }], type: "website" },
+  twitter: { card: "summary_large_image", title: "Panagiota Grosdouli — Robotics Research Portfolio", description: "Robust autonomy, VIO, SLAM, sensor fusion, risk-aware navigation, and AI for robotics.", images: ["/opengraph-image"] },
   robots: { index: true, follow: true },
 };
 
@@ -28,7 +28,7 @@ const jsonLd = {
   email: "mailto:p.g2a15@gmail.com",
   url: siteUrl,
   sameAs: ["https://github.com/panagiotagrosdouli"],
-  knowsAbout: ["Robotics", "Trajectory Prediction", "Machine Learning", "Computer Vision", "Autonomous Systems", "SLAM", "Robot Perception"],
+  knowsAbout: ["Robotics", "SLAM", "Visual-Inertial Odometry", "Sensor Fusion", "Risk-Aware Navigation", "Computer Vision", "AI for Robotics"],
   affiliation: { "@type": "CollegeOrUniversity", name: "Democritus University of Thrace" },
 };
 
