@@ -43,7 +43,7 @@ export default function AboutPage() {
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.26em] text-[var(--accent)]">About</p>
             <h1 className="mt-5 max-w-4xl font-serif text-5xl leading-[0.95] tracking-[-0.06em] md:text-7xl">Building a research path in robust autonomous systems.</h1>
             <div className="mt-8 max-w-3xl space-y-5 text-lg leading-8 text-[var(--muted)]">
-              <p>I am an Electrical and Computer Engineering student working toward a focused research profile in robotics, perception, localization, planning, and uncertainty-aware autonomy.</p>
+              <p>I am an Electrical and Computer Engineering graduate (Integrated MEng, 2026) developing a research profile in robotics, computer vision, trajectory prediction and uncertainty-aware autonomous systems.</p>
               <p>My portfolio is structured as a research environment rather than a project showcase. Each module is framed through a scientific question, current implementation status, limitations, and next experiments.</p>
               <p>The central theme is robust autonomy under uncertainty: how autonomous systems can perceive, estimate, plan, and recover when their inputs are incomplete, degraded, or unreliable.</p>
             </div>
@@ -56,7 +56,7 @@ export default function AboutPage() {
 
         <section className="mt-20 grid gap-10 border-t border-[var(--line)] pt-12 lg:grid-cols-[300px_1fr]">
           <div><p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Education</p><h2 className="mt-3 font-serif text-3xl tracking-[-0.04em]">Academic background</h2></div>
-          <Reveal><article className="command-panel rounded-[1.5rem] p-6"><div className="flex flex-wrap justify-between gap-4"><h3 className="text-lg font-semibold">MEng Electrical & Computer Engineering</h3><span className="font-mono text-xs text-[var(--muted)]">2020–2026</span></div><p className="mt-2 text-sm text-[var(--muted)]">Democritus University of Thrace, Xanthi, Greece</p><p className="mt-4 text-sm leading-7 text-[var(--muted)]">Thesis direction: trajectory prediction of vulnerable road users at smart intersections, with emphasis on intelligent mobility, uncertainty, and safety-critical decision support.</p></article></Reveal>
+          <Reveal><article className="command-panel rounded-[1.5rem] p-6"><div className="flex flex-wrap justify-between gap-4"><h3 className="text-lg font-semibold">MEng Electrical & Computer Engineering</h3><span className="font-mono text-xs text-[var(--muted)]">2020–2026</span></div><p className="mt-2 text-sm text-[var(--muted)]">Democritus University of Thrace, Xanthi, Greece</p><p className="mt-4 text-sm leading-7 text-[var(--muted)]">Diploma thesis (10/10): trajectory prediction of vulnerable road users at smart intersections, studying deterministic and probabilistic deep-learning models for intelligent mobility and road safety.</p></article></Reveal>
         </section>
 
         <section className="mt-20 grid gap-10 border-t border-[var(--line)] pt-12 lg:grid-cols-[300px_1fr]">
