@@ -43,7 +43,7 @@ export default function AboutPage() {
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.26em] text-[var(--accent)]">About</p>
             <h1 className="mt-5 max-w-4xl font-serif text-5xl leading-[0.95] tracking-[-0.06em] md:text-7xl">Building a research path in robust autonomous systems.</h1>
             <div className="mt-8 max-w-3xl space-y-5 text-lg leading-8 text-[var(--muted)]">
-              <p>I am an Electrical and Computer Engineering student working toward a focused research profile in robotics, perception, localization, planning, and uncertainty-aware autonomy.</p>
+              <p>I am an Electrical and Computer Engineering graduate working toward a focused research profile in robotics, perception, localization, planning, and uncertainty-aware autonomy.</p>
               <p>My portfolio is structured as a research environment rather than a project showcase. Each module is framed through a scientific question, current implementation status, limitations, and next experiments.</p>
               <p>The central theme is robust autonomy under uncertainty: how autonomous systems can perceive, estimate, plan, and recover when their inputs are incomplete, degraded, or unreliable.</p>
             </div>
