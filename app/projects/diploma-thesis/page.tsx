@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Footer } from "@/components/portfolio/Footer";
 import { SiteNav } from "@/components/portfolio/SiteNav";
+import { IMPTCReference } from "@/components/portfolio/IMPTCReference";
 
 export const metadata: Metadata = {
   title: "Diploma Thesis",
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const thesisFacts = [
-  { label: "Status", value: "Active diploma thesis" },
+  { label: "Status", value: "Completed and defended · 2026" },
   { label: "Degree", value: "MEng Electrical & Computer Engineering" },
   { label: "Institution", value: "Democritus University of Thrace" },
   { label: "Research Area", value: "Trajectory Prediction" },
@@ -192,6 +193,8 @@ export default function DiplomaThesisPage() {
           </div>
         </div>
       </section>
+
+      <IMPTCReference projectSlug="diploma-thesis" variant="stone" />
 
       <Footer />
     </main>

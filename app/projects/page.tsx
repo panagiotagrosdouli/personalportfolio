@@ -24,6 +24,9 @@ export default function ProjectsPage() {
         <p className="mt-7 max-w-3xl text-lg leading-8 text-[var(--muted)]">
           Each case study separates what exists now from prototypes and planned experiments.
         </p>
+        <p className="mt-4 max-w-3xl text-sm leading-7 text-[var(--muted)]">
+          Each project page also includes a clearly labeled IMPTC external-dataset reference showing real recorded road-user tracks. Those figures are research context, not project-specific experimental results.
+        </p>
 
         {thesis ? (
           <section className="research-grid mt-12 grid gap-7 rounded-[2rem] border border-[var(--accent)] bg-[var(--accent-soft)] p-7 md:grid-cols-[1fr_auto] md:items-end md:p-10">
