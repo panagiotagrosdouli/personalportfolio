@@ -49,7 +49,7 @@ export default function CVPage() {
 
           <Section label="Profile">
             <p className="max-w-3xl text-base leading-8 text-[var(--muted)]">
-              Electrical and Computer Engineering student building a PhD-oriented research portfolio in robust autonomy, visual-inertial localization, adaptive SLAM, uncertainty-aware sensor fusion, risk-aware navigation, and intelligent mobility safety.
+              Electrical and Computer Engineering graduate (five-year Diploma, awarded October 2026) pursuing research in robust robotic perception, visual-inertial localization, adaptive SLAM, uncertainty-aware sensor fusion, and risk-aware autonomous navigation. My work centers on recognizing degradation in perception and estimation, then translating uncertainty into safer robotic decisions.
             </p>
           </Section>
 
@@ -67,11 +67,11 @@ export default function CVPage() {
           <Section label="Education">
             <div className="rounded-2xl border border-[var(--line)] bg-[var(--background)]/40 p-5">
               <div className="flex flex-wrap items-start justify-between gap-4">
-                <h2 className="text-lg font-semibold tracking-tight text-[var(--foreground)]">MEng Electrical & Computer Engineering</h2>
+                <h2 className="text-lg font-semibold tracking-tight text-[var(--foreground)]">Five-year Diploma in Electrical & Computer Engineering (Integrated Master's level)</h2>
                 <span className="mt-1.5 shrink-0 font-mono text-xs text-[var(--muted)]">2020–2026</span>
               </div>
               <p className="mt-1 text-sm text-[var(--muted)]">Democritus University of Thrace, Xanthi, Greece</p>
-              <p className="mt-2 text-sm italic text-[var(--muted)]">Thesis direction: Trajectory Prediction of Vulnerable Road Users at Smart Intersections</p>
+              <p className="mt-2 text-sm italic text-[var(--muted)]">Diploma thesis: Trajectory Prediction of Vulnerable Road Users at Smart Intersections</p>
             </div>
           </Section>
 
@@ -86,9 +86,9 @@ export default function CVPage() {
             </ul>
           </Section>
 
-          <Section label="Research Projects">
+          <Section label="Selected Research Projects">
             <div className="divide-y divide-[var(--line)] overflow-hidden rounded-2xl border border-[var(--line)]">
-              {projects.map((project) => (
+              {["shield-vio", "safecrossai", "dynnav", "adaptive-multimodal-slam"].map((slug) => projects.find((project) => project.slug === slug)).filter((project): project is (typeof projects)[number] => Boolean(project)).map((project) => (
                 <div key={project.slug} className="flex items-start gap-6 p-5">
                   <span className="mt-0.5 w-28 shrink-0 font-mono text-xs text-[var(--muted)]">{project.year}</span>
                   <div>
@@ -129,9 +129,9 @@ export default function CVPage() {
             </ul>
           </Section>
 
-          <Section label="PhD Fit">
+          <Section label="Research Questions">
             <p className="max-w-3xl text-sm leading-7 text-[var(--muted)]">
-              Interested in PhD opportunities and research collaborations related to robust robotic perception, visual-inertial localization, adaptive SLAM, risk-aware navigation, uncertainty-aware autonomy, UAV systems, and intelligent mobility safety.
+              How can an autonomous robot detect the onset of perceptual or state-estimation failure? When should it adapt sensor weighting, replan, or seek recovery? How can uncertainty be communicated in collaborative perception among resource-constrained robots? I am seeking doctoral research opportunities in which these questions can be evaluated experimentally.
             </p>
           </Section>
 

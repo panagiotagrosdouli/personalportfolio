@@ -34,7 +34,7 @@ export default function Home() {
           <div>
             <div className="flex flex-wrap items-center gap-3 font-mono text-[0.65rem] font-semibold uppercase tracking-[0.2em]">
               <span className="rounded-full border border-[var(--accent)] bg-[var(--accent-soft)] px-4 py-2 text-[var(--accent)]">
-                Seeking research opportunities · 2026
+                ECE graduate · Seeking PhD research · 2026
               </span>
               <span className="text-[var(--muted)]">Robotics · AI · Autonomous Systems</span>
             </div>
@@ -45,7 +45,7 @@ export default function Home() {
             </h1>
 
             <p className="mt-8 max-w-2xl text-xl leading-8 text-[var(--muted)] md:text-2xl md:leading-9">
-              I study how robots can detect uncertainty, adapt estimation, and recover before failure becomes unsafe.
+              I investigate how robots can recognize unreliable sensing and state estimation, adapt to uncertainty, and recover before degradation becomes unsafe.
             </p>
 
             <div className="mt-9 flex flex-wrap gap-3">
@@ -83,7 +83,7 @@ export default function Home() {
               />
               <div className="absolute inset-x-6 bottom-6 rounded-[1.4rem] border border-white/15 bg-black/72 p-5 text-white backdrop-blur-xl">
                 <p className="font-mono text-[0.62rem] uppercase tracking-[0.22em] text-[#9be7cf]">Panagiota Grosdouli</p>
-                <p className="mt-2 text-sm font-medium">Electrical & Computer Engineering</p>
+                <p className="mt-2 text-sm font-medium">ECE Diploma · Democritus University of Thrace · 2026</p>
               </div>
             </div>
             <div className="absolute -left-5 top-10 rounded-full border border-[var(--line)] bg-[var(--panel)] px-4 py-2 text-xs font-semibold shadow-xl backdrop-blur-xl">
@@ -104,7 +104,7 @@ export default function Home() {
               Uncertainty should change behavior.
             </h2>
             <p className="mt-6 max-w-md text-base leading-7 text-[var(--muted)]">
-              My work connects estimator health to decisions a robot can take: reweight sensing, replan, or recover.
+              My research direction connects uncertainty estimation with decisions robots can act on: adapt sensing, replan, or recover. I emphasize explicit assumptions, reproducible comparisons, and failure-case analysis.
             </p>
           </div>
 
@@ -125,7 +125,7 @@ export default function Home() {
           <div className="mb-10 flex flex-wrap items-end justify-between gap-5">
             <div>
               <p className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">Selected research</p>
-              <h2 className="mt-4 font-serif text-5xl tracking-[-0.06em] md:text-6xl">Three research directions.</h2>
+              <h2 className="mt-4 font-serif text-5xl tracking-[-0.06em] md:text-6xl">Selected research, grounded in evidence.</h2>
             </div>
             <Link href="/projects" className="focus-ring inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)] hover:underline">
               View all work <FiArrowUpRight aria-hidden="true" />
