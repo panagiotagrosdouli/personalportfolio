@@ -101,6 +101,20 @@ export default function CVPage() {
             </div>
           </Section>
 
+          <Section label="Research & Product Engineering">
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--background)]/40 p-5">
+              <h2 className="text-lg font-semibold">EYLO — AI-Assisted Research Discovery Platform</h2>
+              <p className="mt-2 text-sm leading-7 text-[var(--muted)]">
+                Independently developed research software bringing together scholarly metadata discovery,
+                evidence organization, AI-assisted synthesis and project workflows. The platform integrates
+                academic search sources, authenticated user workspaces and an AI reasoning layer; AI
+                outputs are distinguished from source-backed evidence. This is software engineering
+                work, not a peer-reviewed publication.
+              </p>
+              <a href="/eylo" className="mt-3 inline-block text-sm font-semibold text-[var(--accent)] hover:underline">Technical case study: EYLO</a>
+            </div>
+          </Section>
+
           <Section label="Technical Toolkit">
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {skills.map(([category, items]) => (
