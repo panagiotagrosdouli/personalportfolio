@@ -27,10 +27,10 @@ export default function Home() {
       <SiteNav />
 
       <section className="relative overflow-hidden border-b border-[var(--line)]">
-        <div className="absolute inset-0 research-grid opacity-55" aria-hidden="true" />
-        <div className="absolute -right-20 top-20 h-[34rem] w-[34rem] rounded-full bg-[var(--accent-soft)] blur-3xl" aria-hidden="true" />
+        <div className="absolute inset-0 research-grid opacity-25" aria-hidden="true" />
+        
 
-        <div className="relative mx-auto grid min-h-[calc(100vh-68px)] max-w-7xl items-center gap-14 px-5 py-16 md:px-8 lg:grid-cols-[1.18fr_0.82fr] lg:py-20">
+        <div className="relative mx-auto grid min-h-[640px] max-w-7xl items-center gap-14 px-5 py-16 md:px-8 lg:grid-cols-[1.18fr_0.82fr] lg:py-20">
           <div>
             <div className="flex flex-wrap items-center gap-3 font-mono text-[0.65rem] font-semibold uppercase tracking-[0.2em]">
               <span className="rounded-full border border-[var(--accent)] bg-[var(--accent-soft)] px-4 py-2 text-[var(--accent)]">
@@ -39,7 +39,7 @@ export default function Home() {
               <span className="text-[var(--muted)]">Robotics · AI · Autonomous Systems</span>
             </div>
 
-            <h1 className="mt-8 max-w-5xl font-serif text-6xl leading-[0.88] tracking-[-0.075em] md:text-8xl lg:text-[7.2rem]">
+            <h1 className="mt-8 max-w-5xl font-serif text-5xl leading-[1.02] tracking-[-0.055em] md:text-6xl lg:text-[5.5rem]">
               Robust autonomy
               <span className="block text-[var(--accent)]">when sensing fails.</span>
             </h1>
@@ -72,14 +72,14 @@ export default function Home() {
           </div>
 
           <aside className="relative mx-auto w-full max-w-md lg:mx-0 lg:justify-self-end" aria-label="Researcher profile">
-            <div className="command-panel relative overflow-hidden rounded-[2.5rem] p-3">
+            <div className="command-panel relative overflow-hidden rounded-[1.2rem] p-2">
               <Image
                 src={`${process.env.GITHUB_ACTIONS === "true" ? "/personalportfolio" : ""}/profile.png`}
                 alt="Panagiota Grosdouli"
                 width={720}
                 height={900}
                 sizes="(max-width: 1024px) 100vw, 420px"
-                className="aspect-[4/5] w-full rounded-[2rem] object-cover saturate-[0.9]"
+                className="aspect-[4/5] w-full rounded-[1rem] object-cover saturate-[0.9]"
                 priority
               />
               <div className="absolute inset-x-6 bottom-6 rounded-[1.4rem] border border-white/15 bg-black/72 p-5 text-white backdrop-blur-xl">
