@@ -41,11 +41,11 @@ export default function AboutPage() {
           </Reveal>
           <Reveal>
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.26em] text-[var(--accent)]">About</p>
-            <h1 className="mt-5 max-w-4xl font-serif text-5xl leading-[0.95] tracking-[-0.06em] md:text-7xl">Research interests and academic background.</h1>
+            <h1 className="mt-5 max-w-4xl font-serif text-5xl leading-[0.95] tracking-[-0.06em] md:text-7xl">Engineering, research and building useful things.</h1>
             <div className="mt-8 max-w-3xl space-y-5 text-lg leading-8 text-[var(--muted)]">
-              <p>I am an Electrical and Computer Engineering graduate working toward a focused research profile in robotics, perception, localization, planning, and uncertainty-aware autonomy.</p>
-              <p>My portfolio is structured as a research environment rather than a project showcase. Each module is framed through a scientific question, current implementation status, limitations, and next experiments.</p>
-              <p>The central theme is robust autonomy under uncertainty: how autonomous systems can perceive, estimate, plan, and recover when their inputs are incomplete, degraded, or unreliable.</p>
+              <p>I am an Electrical and Computer Engineering graduate interested in building AI-powered applications, reliable software and autonomous systems. My projects range from scholarly research tools to robotics and machine learning.</p>
+              <p>I like working across the full problem-solving process: understanding a need, building a working prototype, testing its limitations, and improving it through evidence.</p>
+              <p>I am open to engineering roles, applied research and development, and future doctoral research where curiosity, analytical thinking and implementation skills meet.</p>
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/research-map" className="focus-ring rounded-full border border-[var(--accent)] bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-[var(--background)]">Research map</Link>
