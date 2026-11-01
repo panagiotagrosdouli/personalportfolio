@@ -24,12 +24,6 @@ export const projectCovers: Record<string, ProjectCover> = {
     label: "DynNav simulated paths",
     provenance: "Simulation output",
   },
-  "safecrossai": {
-    src: "/evidence/thesis/prediction-error-vs-horizon.png",
-    alt: "Diploma thesis plot of trajectory prediction error as a function of the forecasting horizon",
-    label: "Thesis experimental plot",
-    provenance: "Original research figure",
-  },
   "openuwoc-ai": {
     src: "/project-media/openuwoc-pipeline.svg",
     alt: "Original OpenUWOC-AI underwater optical channel and AI receiver pipeline",
