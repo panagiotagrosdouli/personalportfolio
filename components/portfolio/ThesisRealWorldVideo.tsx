@@ -105,7 +105,7 @@ export function IMPTCOriginalSequenceVideo() {
           <h3 className="mt-3 font-serif text-3xl leading-tight">Inside the dataset.</h3>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-[var(--muted)]">
             A real sample-sequence overview shared by the creators of the IMPTC dataset.
-            This is dataset demonstration footage, not the thesis model's predictions or an experimental result.
+            This is dataset demonstration footage, not the thesis model&apos;s predictions or an experimental result.
           </p>
         </div>
         <a href={IMPTC_REPO} target="_blank" rel="noopener noreferrer"
