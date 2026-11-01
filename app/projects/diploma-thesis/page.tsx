@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Footer } from "@/components/portfolio/Footer";
 import { SiteNav } from "@/components/portfolio/SiteNav";
 import { ProjectSpecificVisual } from "@/components/portfolio/ProjectSpecificVisual";
-import { ThesisConceptArt } from "@/components/portfolio/ThesisConceptArt";
+import { ThesisRealWorldVideo } from "@/components/portfolio/ThesisRealWorldVideo";
 
 export const metadata: Metadata = {
   title: "Diploma Thesis",
@@ -89,7 +89,7 @@ export default function DiplomaThesisPage() {
 
       <section className="px-6 pb-12 md:px-10 lg:px-12">
         <div className="mx-auto max-w-7xl">
-          <ThesisConceptArt />
+          <ThesisRealWorldVideo />
         </div>
       </section>
 
