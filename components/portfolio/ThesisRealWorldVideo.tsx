@@ -47,7 +47,7 @@ function VideoDemo({ item, featured = false }: { item: ClipInfo; featured?: bool
   const [attempt, setAttempt] = useState<"local" | "source" | "unavailable">("local");
   const externalVideo = `https://media.githubusercontent.com/media/${sourceRepoPath}/main/${item.path}`;
   const githubFile = `${SOURCE_REPO}/blob/main/${item.path}`;
-  const currentVideo = attempt === "local" ? `/api/thesis-clips/${item.key}` : externalVideo;
+  const currentVideo = attempt === "local" ? `/thesis-media/${item.key}.mp4` : externalVideo;
 
   return (
     <article className="overflow-hidden rounded-[1.3rem] border border-[var(--line)] bg-[var(--panel)]">
