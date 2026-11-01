@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { IMPTCOriginalSequenceVideo, ThesisRealWorldVideo } from "@/components/portfolio/ThesisRealWorldVideo";
+import { ThesisRealWorldVideo } from "@/components/portfolio/ThesisRealWorldVideo";
 import { FiArrowUpRight, FiCheckCircle, FiLayers } from "react-icons/fi";
 
 type Figure = {
@@ -67,7 +67,7 @@ const registry: Record<string, ProjectVisual> = {
     narrative:"The diploma thesis compares recurrent, attention-based, graph-based and probabilistic sequence models for predicting vulnerable road-user motion at smart intersections.",
     stages:["Observed trajectories + context", "LSTM / GRU / Transformer / GNN", "Deterministic + MDN forecasts", "ADE / FDE / uncertainty"],
     question:"How does contextual information change prediction accuracy and uncertainty?",
-    scope:"The street footage is an actual recording from Tokyo and is not from the IMPTC dataset. The IMPTC sample sequence is displayed separately. Neither video is a trained-model output or a thesis performance result.",
+    scope:"The video is an original, real-world sample sequence published by the IMPTC dataset authors. The thesis uses IMPTC data; this footage is contextual source material, not a model prediction or an experimental result.",
   },
   "openuwoc-ai": {
     eyebrow:"Underwater optical communication",
@@ -148,7 +148,7 @@ export function ProjectSpecificVisual({ slug }: { slug: string }) {
         <div>
           <p className="font-mono text-xs font-semibold uppercase tracking-[.22em] text-[var(--accent)]">Project-specific research</p>
           <p className="mt-3 text-xs leading-6 text-[var(--muted)]">
-            {slug === "safecrossai" ? "Real recorded footage · not model results" : figureCount > 0 ? "Documented workflow and selected original artefacts" : "Documented workflow · no fabricated plots"}
+            {slug === "safecrossai" ? "Official IMPTC dataset footage · not model results" : figureCount > 0 ? "Documented workflow and selected original artefacts" : "Documented workflow · no fabricated plots"}
           </p>
         </div>
         <div>
@@ -173,7 +173,7 @@ export function ProjectSpecificVisual({ slug }: { slug: string }) {
             </div>
           ) : null}
 
-          {slug === "safecrossai" ? <div className="mt-8"><ThesisRealWorldVideo /><IMPTCOriginalSequenceVideo /></div> : null}
+          {slug === "safecrossai" ? <div className="mt-8"><ThesisRealWorldVideo /></div> : null}
 
           <div className="mt-8 rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-5 md:p-7">
             <div className="flex items-center gap-2">
