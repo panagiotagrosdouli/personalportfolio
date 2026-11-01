@@ -4,7 +4,6 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { projectCovers } from "@/data/project-covers";
-import { ThesisRealWorldVideo } from "@/components/portfolio/ThesisRealWorldVideo";
 import { FiArrowUpRight, FiCheck, FiCode } from "react-icons/fi";
 import type { Project } from "@/data/projects";
 
@@ -71,10 +70,22 @@ export function ProjectExplorer({ projects }: { projects: Project[] }) {
               </div>
 
               <div className="min-w-0 border-t border-[var(--line)] pt-5 md:border-l md:border-t-0 md:pl-6 md:pt-0">
-                <Link href={`/projects/${project.slug}`} aria-label={`Open ${project.shortTitle} research visuals`} className="focus-ring block overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--background)] transition hover:border-[var(--accent)]">
+                <Link href={`/projects/${project.slug}`} aria-label={`Open ${project.shortTitle} research details`} className="focus-ring block overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--background)] transition hover:border-[var(--accent)]">
                   {isThesis ? (
-                    <div className="bg-[#eaf0ec] p-1">
-                      <ThesisRealWorldVideo compact />
+                    <div className="relative flex min-h-44 flex-col justify-between overflow-hidden bg-[var(--accent-soft)] p-5">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <span className="font-mono text-[10px] font-semibold uppercase tracking-[.18em] text-[var(--accent)]">Diploma thesis · 2026</span>
+                        <span className="font-mono text-[10px] tracking-[.12em] text-[var(--muted)]">MEng</span>
+                      </div>
+                      <div className="py-5">
+                        <p className="font-serif text-2xl leading-tight tracking-[-.04em] text-[var(--foreground)]">From motion to foresight.</p>
+                        <p className="mt-2 text-xs leading-6 text-[var(--muted)]">Trajectory forecasting at smart intersections</p>
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {["Motion context", "Deep learning", "Uncertainty"].map((topic) => (
+                          <span key={topic} className="rounded-full border border-[var(--line)] px-2.5 py-1 font-mono text-[9px] text-[var(--accent)]">{topic}</span>
+                        ))}
+                      </div>
                     </div>
                   ) : cover ? (
                     <div className="flex h-40 items-center justify-center bg-[#eaf0ec] p-2">
@@ -101,12 +112,12 @@ export function ProjectExplorer({ projects }: { projects: Project[] }) {
                     </div>
                   )}
                   <div className="flex flex-wrap items-center justify-between gap-2 p-3">
-                    <span className="text-xs font-medium text-[var(--foreground)]">{isThesis ? "Own thesis animation gallery" : cover?.label ?? "View research workflow"}</span>
+                    <span className="text-xs font-medium text-[var(--foreground)]">{isThesis ? "Explore thesis methodology" : cover?.label ?? "View research workflow"}</span>
                     <FiArrowUpRight className="shrink-0 text-[var(--accent)]" aria-hidden="true" />
                   </div>
                 </Link>
                 <p className="mt-3 text-[11px] leading-5 text-[var(--muted)]">
-                  {isThesis ? "Research-generated qualitative visualizations" : cover?.provenance ?? "No verified image published yet"} · {evidenceCount} documented items
+                  {isThesis ? "Research overview · no videos or results" : cover?.provenance ?? "No verified image published yet"} · {evidenceCount} documented items
                 </p>
               </div>
             </article>
