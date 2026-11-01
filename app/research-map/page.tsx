@@ -21,7 +21,7 @@ export default function ResearchMapPage() {
         <section className="mt-10 grid gap-4 border-y border-[var(--line)] py-6 md:grid-cols-3">
           <div><p className="font-serif text-4xl tracking-[-0.05em]">{researchNodes.length}</p><p className="mt-1 font-mono text-xs uppercase tracking-[0.18em] text-[var(--muted)]">Research nodes</p></div>
           <div><p className="font-serif text-4xl tracking-[-0.05em]">{researchEdges.length}</p><p className="mt-1 font-mono text-xs uppercase tracking-[0.18em] text-[var(--muted)]">Conceptual links</p></div>
-          <div><p className="font-serif text-4xl tracking-[-0.05em]">Honest</p><p className="mt-1 font-mono text-xs uppercase tracking-[0.18em] text-[var(--muted)]">Pending work is marked</p></div>
+          <div><p className="font-serif text-4xl tracking-[-0.05em]">Connected</p><p className="mt-1 font-mono text-xs uppercase tracking-[0.18em] text-[var(--muted)]">Research themes</p></div>
         </section>
 
         <div className="mt-10">
@@ -29,9 +29,9 @@ export default function ResearchMapPage() {
         </div>
 
         <section className="mt-10 rounded-[2rem] border border-[var(--line)] bg-[var(--panel)] p-6">
-          <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Scientific honesty rule</p>
-          <p className="mt-4 max-w-3xl text-sm leading-7 text-[var(--muted)]">The map intentionally separates active, prototype, planned, and draft work. It does not invent affiliations, publications, benchmarks, or real-world experiments. Synthetic demos and pending results remain explicitly labelled until replaced by verified artifacts.</p>
-          <Link href="/mission-logs" className="mt-5 inline-flex text-sm font-semibold text-[var(--accent)] underline-offset-4 hover:underline">Open connected mission logs</Link>
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Explore the research map</p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-[var(--muted)]">Follow the connections between perception, estimation, uncertainty and planning. Open a node to explore the methods and projects behind each research direction.</p>
+          <Link href="/mission-logs" className="mt-5 inline-flex text-sm font-semibold text-[var(--accent)] underline-offset-4 hover:underline">Explore research updates</Link>
         </section>
       </div>
     </main>

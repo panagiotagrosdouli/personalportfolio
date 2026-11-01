@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const fitArguments = [
   ["Research direction", "Prediction, uncertainty, perception, and planning are presented as one connected research direction for robotics and intelligent transportation."],
   ["Technical base", "Trajectory forecasting, SLAM, UAV autonomy, risk-aware navigation, computer vision, and robotics-oriented software systems."],
-  ["Research maturity", "Projects are framed through questions, methods, evaluation, limitations, and next steps instead of only implementation details."],
+  ["Research maturity", "Independent projects bring together clear research questions, implementation, reproducible evaluation and future directions."],
 ];
 
 const phdSignals = [
@@ -25,8 +25,8 @@ const phdSignals = [
     fit: "The projects show initiative across prediction, perception, navigation, and robotic state estimation, with each case written as research evidence.",
   },
   {
-    name: "Room for supervision",
-    fit: "The profile is ambitious but not overclaimed: it shows direction, current limitations, and concrete next steps for PhD-level development.",
+    name: "Research potential",
+    fit: "A coherent research agenda linking forecasting, uncertainty-aware perception, localization and safe autonomous decision making.",
   },
 ];
 
@@ -72,7 +72,7 @@ export default function PhDFitPage() {
           <div>
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.26em] text-emerald-400">What a supervisor sees</p>
             <h2 className="font-serif text-5xl leading-[0.92] tracking-[-0.05em] text-white">
-              A candidate with direction, evidence, and room to grow.
+              Research direction, technical experience, and motivation.
             </h2>
           </div>
           <div className="grid gap-4">
@@ -105,7 +105,7 @@ export default function PhDFitPage() {
       <section className="px-6 py-20 md:px-10 lg:px-12">
         <div className="mx-auto max-w-7xl border-t border-stone-800 pt-12">
           <p className="max-w-3xl font-serif text-4xl leading-tight tracking-[-0.04em] text-white">
-            The strongest next step is to turn the active thesis and independent robotics projects into PhD-ready research evidence: baselines, metrics, ablations, documented limitations, and a concise statement of fit for each target lab.
+            I aim to develop my work in trajectory prediction, robotic perception and autonomous planning through rigorous experiments, interdisciplinary collaboration and doctoral research.
           </p>
           <div className="mt-10 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.16em]">
             <Link href="/research" className="rounded-full border border-emerald-400 bg-emerald-400 px-5 py-3 text-stone-950 transition hover:bg-emerald-300">
