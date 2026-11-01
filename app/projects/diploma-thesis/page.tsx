@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Footer } from "@/components/portfolio/Footer";
 import { SiteNav } from "@/components/portfolio/SiteNav";
 import { ProjectSpecificVisual } from "@/components/portfolio/ProjectSpecificVisual";
-import { ThesisRealWorldVideo } from "@/components/portfolio/ThesisRealWorldVideo";
 
 export const metadata: Metadata = {
   title: "Diploma Thesis",
@@ -84,12 +83,6 @@ export default function DiplomaThesisPage() {
           <p className="mt-8 max-w-4xl text-xl leading-10 text-stone-700 md:text-2xl md:leading-[3rem]">
             A research study on forecasting human motion in dynamic traffic scenes so autonomous systems can reason more safely under uncertainty.
           </p>
-        </div>
-      </section>
-
-      <section className="px-6 pb-12 md:px-10 lg:px-12">
-        <div className="mx-auto max-w-7xl">
-          <ThesisRealWorldVideo />
         </div>
       </section>
 

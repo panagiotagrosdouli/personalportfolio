@@ -289,7 +289,7 @@ export const projects: Project[] = [
     ],
     literature: ["VRU trajectory forecasting", "Multimodal context fusion", "State-space sequence models", "Probabilistic prediction"],
     future: ["Create a fully portable reproduction protocol", "Evaluate cross-dataset generalization", "Calibrate probabilistic forecasts"],
-    demoLabel: "Conceptual smart-intersection illustration",
+    demoLabel: "Research methodology overview",
     architectureLabel: "Multimodal forecasting architecture",
     pipelineLabel: "Observe · encode context · predict · quantify uncertainty",
   },
