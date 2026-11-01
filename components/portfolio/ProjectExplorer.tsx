@@ -59,6 +59,11 @@ export function ProjectExplorer({ projects }: { projects: Project[] }) {
                   <Link href={`/projects/${project.slug}`} className="focus-ring transition group-hover:text-[var(--accent)]">{project.shortTitle}</Link>
                 </h3>
                 <p className="mt-4 max-w-3xl text-sm leading-7 text-[var(--muted)]">{project.scientificQuestion}</p>
+                <div className="mt-4 flex flex-wrap gap-2" aria-label="Project-specific methods">
+                  {project.methodology.slice(0, 2).map((method) => (
+                    <span key={method} className="rounded-full border border-[var(--line)] px-3 py-1 font-mono text-[10px] text-[var(--muted)]">{method}</span>
+                  ))}
+                </div>
               </div>
 
               <div className="border-t border-[var(--line)] pt-5 md:border-l md:border-t-0 md:pl-7 md:pt-0">

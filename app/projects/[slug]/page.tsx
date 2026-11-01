@@ -5,6 +5,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FiArrowLeft, FiArrowUpRight, FiCheck, FiCode, FiTarget } from "react-icons/fi";
 import { SiteNav } from "@/components/portfolio/SiteNav";
+import { ProjectSpecificVisual } from "@/components/portfolio/ProjectSpecificVisual";
 import { projectMap, projects } from "@/data/projects";
 
 export function generateStaticParams() {
@@ -156,7 +157,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         </Section>
 
         {project.evidence?.length ? (
-          <Section label="Measured evidence">
+          <Section label="Project evidence artefacts">
             <div className="grid gap-5 lg:grid-cols-3">
               {project.evidence.map((artifact) => (
                 <figure key={artifact.src} className="overflow-hidden rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)]">
@@ -181,6 +182,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             </p>
           </Section>
         ) : null}
+
+        <ProjectSpecificVisual slug={project.slug} />
 
         <Section label="Technical approach">
           <div className="flex flex-wrap gap-2">

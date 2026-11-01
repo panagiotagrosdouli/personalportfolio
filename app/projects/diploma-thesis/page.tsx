@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Footer } from "@/components/portfolio/Footer";
 import { SiteNav } from "@/components/portfolio/SiteNav";
+import { ProjectSpecificVisual } from "@/components/portfolio/ProjectSpecificVisual";
 
 export const metadata: Metadata = {
   title: "Diploma Thesis",
@@ -174,12 +175,12 @@ export default function DiplomaThesisPage() {
           <div>
             <p className="section-kicker">Next Step</p>
             <h2 className="mt-4 font-serif text-5xl leading-[0.92] tracking-[-0.05em] text-stone-950 md:text-6xl">
-              This page will grow with the thesis.
+              Extending the completed thesis.
             </h2>
           </div>
           <div>
             <p className="max-w-3xl text-lg leading-9 text-stone-700">
-              As experiments mature, this page can include dataset details, diagrams, qualitative trajectory visualizations, ablation studies, and a thesis PDF. The structure is ready for real research artifacts without changing the design.
+              The completed thesis provides a foundation for further work on context-aware prediction, multimodal uncertainty, failure analysis and more robust evaluation. Additional verified experimental plots and a thesis PDF can be published here when available.
             </p>
             <div className="mt-8 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.16em]">
               <Link href="/research" className="rounded-full border border-emerald-950 bg-emerald-950 px-5 py-3 text-white transition hover:bg-stone-950">
@@ -192,6 +193,8 @@ export default function DiplomaThesisPage() {
           </div>
         </div>
       </section>
+
+      <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-12"><ProjectSpecificVisual slug="safecrossai" /></div>
 
       <Footer />
     </main>
