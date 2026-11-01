@@ -13,7 +13,7 @@ const groups = [
   ["Robotics systems", ["Visual-inertial localization", "SLAM", "sensor fusion", "motion planning", "ROS 2", "simulation"]],
   ["Learning and perception", ["computer vision", "trajectory prediction", "uncertainty-aware evaluation", "PyTorch", "OpenCV", "data analysis"]],
   ["Research engineering", ["Python", "C/C++", "TypeScript", "Linux", "Git", "Docker", "technical writing"]],
-  ["Scientific practice", ["failure-case analysis", "reproducible experiments", "metric design", "ablation planning", "limitations reporting"]],
+  ["Scientific practice", ["reproducible experiments", "evaluation design", "ablation studies", "technical communication", "research reporting"]],
 ];
 
 const directions = [
@@ -25,7 +25,7 @@ const directions = [
 const principles = [
   "Claims should be traceable to implementation status, data, or clearly marked future work.",
   "A robotics system should report uncertainty in a form that a planner or safety layer can actually use.",
-  "Research software is strongest when assumptions, limitations, and failure modes are visible to the reader.",
+  "Strong research software combines clear methods, reproducible evaluation, and thoughtful engineering.",
 ];
 
 export default function AboutPage() {
@@ -44,7 +44,7 @@ export default function AboutPage() {
             <h1 className="mt-5 max-w-4xl font-serif text-5xl leading-[0.95] tracking-[-0.06em] md:text-7xl">Building a research path in robust autonomous systems.</h1>
             <div className="mt-8 max-w-3xl space-y-5 text-lg leading-8 text-[var(--muted)]">
               <p>I am an Electrical and Computer Engineering graduate (Integrated MEng, 2026) building a research profile in machine learning, computer vision, robotic perception, localization and uncertainty-aware autonomous systems.</p>
-              <p>My portfolio is structured as a research environment rather than a project showcase. Each module is framed through a scientific question, current implementation status, limitations, and next experiments.</p>
+              <p>My work connects deep learning, computer vision, and robotics through research questions, implemented systems, and carefully designed experiments.</p>
               <p>The central theme is robust autonomy under uncertainty: how autonomous systems can perceive, estimate, plan, and recover when their inputs are incomplete, degraded, or unreliable.</p>
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -75,7 +75,7 @@ export default function AboutPage() {
 
 
         <section className="mt-20 grid gap-10 border-t border-[var(--line)] pt-12 lg:grid-cols-[300px_1fr]">
-          <div><p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Research principles</p><h2 className="mt-3 font-serif text-3xl tracking-[-0.04em]">How the site presents work.</h2></div>
+          <div><p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Research principles</p><h2 className="mt-3 font-serif text-3xl tracking-[-0.04em]">How I approach research.</h2></div>
           <Reveal><div className="command-panel rounded-[1.5rem] p-6"><ul className="space-y-4 text-sm leading-7 text-[var(--muted)]">{principles.map((item) => <li key={item} className="border-l border-[var(--accent)] pl-4">{item}</li>)}</ul></div></Reveal>
         </section>
  

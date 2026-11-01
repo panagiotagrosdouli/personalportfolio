@@ -256,7 +256,7 @@ export default function ResearchAgendaPage() {
         <Section id="publications" label="Publications" title="Publications">
           <div className="border border-dashed border-[#c8c2b2] p-6">
             <p className="text-[15px] leading-7 text-[#54524d]">
-              No publications yet. This section will list peer-reviewed papers, preprints, and technical reports as they become available, organized chronologically with links to PDFs and code.
+              Research manuscripts, technical reports and publications will be shared here as they become available, with links to the corresponding papers and code.
             </p>
           </div>
         </Section>

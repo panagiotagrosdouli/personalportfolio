@@ -17,7 +17,7 @@ const researchLoop = [
 
 const practice = [
   "Reproducible evaluation",
-  "Failure-case analysis",
+  "Reliability evaluation",
   "Transparent maturity",
 ];
 
@@ -106,7 +106,7 @@ export default function Home() {
               Uncertainty should change behavior.
             </h2>
             <p className="mt-6 max-w-md text-base leading-7 text-[var(--muted)]">
-              My research direction connects uncertainty estimation with decisions robots can act on: adapt sensing, replan, or recover. I emphasize explicit assumptions, reproducible comparisons, and failure-case analysis.
+              My research connects uncertainty estimation with actionable robotic decisions: adapting perception, improving localization, planning safely and recovering when conditions change. I develop reproducible methods at the intersection of AI and autonomy.
             </p>
           </div>
 
@@ -183,7 +183,7 @@ export default function Home() {
                   <span key={item} className="rounded-full border border-[var(--line)] px-3 py-1.5 text-xs text-[var(--muted)]">{item}</span>
                 ))}
               </div>
-              <p className="mt-6 max-w-3xl text-sm leading-7 text-[var(--muted)]">EYLO supports research judgment; it does not present model inference as verified evidence or replace review of original sources.</p>
+              <p className="mt-6 max-w-3xl text-sm leading-7 text-[var(--muted)]">EYLO brings research discovery, source traceability and project workflows together in a single workspace.</p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <a href="https://eyloai.vercel.app/" target="_blank" rel="noreferrer" className="focus-ring inline-flex items-center gap-2 rounded-full bg-[var(--foreground)] px-5 py-2.5 text-sm font-semibold text-[var(--background)] transition hover:bg-[var(--accent)]">Open EYLO <FiArrowUpRight aria-hidden="true" /></a>
                 <a href="https://github.com/panagiotagrosdouli/eyloai" target="_blank" rel="noreferrer" className="focus-ring inline-flex items-center gap-2 rounded-full border border-[var(--line)] px-5 py-2.5 text-sm font-semibold transition hover:border-[var(--accent)]"><FiGithub aria-hidden="true" /> View source</a>

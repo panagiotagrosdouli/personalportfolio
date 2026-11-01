@@ -26,7 +26,7 @@ export function ProjectExplorer({ projects }: { projects: Project[] }) {
 
   return (
     <section className="mt-14" aria-labelledby="project-explorer-title">
-      <h2 id="project-explorer-title" className="sr-only">Research project evidence</h2>
+      <h2 id="project-explorer-title" className="sr-only">Research projects</h2>
       <div className="flex flex-wrap gap-2" role="list" aria-label="Project filters">
         {filters.map((filter) => (
           <button
@@ -108,7 +108,7 @@ export function ProjectExplorer({ projects }: { projects: Project[] }) {
                           </div>
                         ))}
                       </div>
-                      <span className="text-[10px] italic text-[var(--muted)]">Methodology overview · not an experimental image</span>
+                      <span className="text-[10px] italic text-[var(--muted)]">Research approach</span>
                     </div>
                   )}
                   <div className="flex flex-wrap items-center justify-between gap-2 p-3">
@@ -117,7 +117,7 @@ export function ProjectExplorer({ projects }: { projects: Project[] }) {
                   </div>
                 </Link>
                 <p className="mt-3 text-[11px] leading-5 text-[var(--muted)]">
-                  {isThesis ? "Research overview · no videos or results" : cover?.provenance ?? "No verified image published yet"} · {evidenceCount} documented items
+                  {isThesis ? "Completed thesis · research methodology" : cover?.provenance ?? "Research workflow"} · {evidenceCount} technical elements
                 </p>
               </div>
             </article>

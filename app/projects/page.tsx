@@ -7,7 +7,7 @@ import { projects } from "@/data/projects";
 
 export const metadata: Metadata = {
   title: "Research Projects",
-  description: "Evidence-led research projects in robust robotics, perception, localization, planning, and intelligent mobility.",
+  description: "Research projects in robotics, deep learning, computer vision, localization, planning and intelligent mobility.",
 };
 
 const thesis = projects.find((project) => project.slug === "safecrossai");
@@ -19,10 +19,10 @@ export default function ProjectsPage() {
       <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-24">
         <p className="font-mono text-xs font-semibold uppercase tracking-[0.26em] text-[var(--accent)]">Research portfolio</p>
         <h1 className="mt-5 max-w-5xl font-serif text-5xl leading-[0.95] tracking-[-0.06em] md:text-7xl">
-          Questions, systems, and inspectable evidence.
+          Research projects, methods and discoveries.
         </h1>
         <p className="mt-7 max-w-3xl text-lg leading-8 text-[var(--muted)]">
-          Each case study separates what exists now from prototypes and planned experiments. Every project now has its own research workflow, and original figures appear only where the evidence belongs.
+          Explore my research in trajectory forecasting, perception, robot localization and autonomous navigation. Each project highlights its core contribution, methods and next directions.
         </p>
 
         {thesis ? (
@@ -33,7 +33,7 @@ export default function ProjectsPage() {
               <p className="mt-5 max-w-3xl text-sm leading-7 text-[var(--muted)]">{thesis.scientificQuestion}</p>
             </div>
             <Link href={`/projects/${thesis.slug}`} className="focus-ring inline-flex shrink-0 items-center gap-2 rounded-full bg-[var(--foreground)] px-6 py-3 text-sm font-semibold text-[var(--background)]">
-              View thesis evidence <FiArrowUpRight aria-hidden="true" />
+              Explore diploma thesis <FiArrowUpRight aria-hidden="true" />
             </Link>
           </section>
         ) : null}

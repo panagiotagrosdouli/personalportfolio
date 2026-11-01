@@ -104,7 +104,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   <FiCode aria-hidden="true" /> View repository
                 </a>
               ) : (
-                <span className="rounded-full border border-[var(--line)] px-5 py-3 text-sm text-[var(--muted)]">{isThesis ? "Private thesis repository" : "Repository not public yet"}</span>
+                <span className="rounded-full border border-[var(--line)] px-5 py-3 text-sm text-[var(--muted)]">{isThesis ? "Private thesis repository" : "Project overview"}</span>
               )}
               <Link href="/contact" className="focus-ring rounded-full border border-[var(--line)] px-5 py-3 text-sm font-semibold transition hover:border-[var(--accent)]">
                 Discuss this work
@@ -112,21 +112,21 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             </div>
           </div>
 
-          <aside className="command-panel rounded-[2rem] p-6" aria-label="Evidence snapshot">
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Evidence snapshot</p>
+          <aside className="command-panel rounded-[2rem] p-6" aria-label="Project summary">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Project at a glance</p>
             <div className="mt-6 grid grid-cols-2 gap-3">
               <div className="rounded-2xl border border-[var(--line)] bg-[var(--background)]/45 p-4">
                 <p className="font-serif text-4xl tracking-[-0.05em]">{evidenceTotal}</p>
-                <p className="mt-2 text-xs text-[var(--muted)]">implemented or prototyped items</p>
+                <p className="mt-2 text-xs text-[var(--muted)]">technical components</p>
               </div>
               <div className="rounded-2xl border border-[var(--line)] bg-[var(--background)]/45 p-4">
                 <p className="font-serif text-4xl tracking-[-0.05em]">{project.metrics.length}</p>
-                <p className="mt-2 text-xs text-[var(--muted)]">evaluation metrics</p>
+                <p className="mt-2 text-xs text-[var(--muted)]">evaluation dimensions</p>
               </div>
             </div>
             <dl className="mt-5 divide-y divide-[var(--line)] text-sm">
               <div className="flex justify-between gap-4 py-3"><dt className="text-[var(--muted)]">Period</dt><dd>{project.year}</dd></div>
-              <div className="flex justify-between gap-4 py-3"><dt className="text-[var(--muted)]">Repository</dt><dd>{project.repositoryUrl ? "Public" : isThesis ? "Private" : "Pending"}</dd></div>
+              {project.repositoryUrl ? <div className="flex justify-between gap-4 py-3"><dt className="text-[var(--muted)]">Repository</dt><dd>Open source</dd></div> : null}
               <div className="flex justify-between gap-4 py-3"><dt className="text-[var(--muted)]">Maturity</dt><dd>{project.status}</dd></div>
             </dl>
           </aside>
@@ -147,19 +147,16 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </article>
         </section>
 
-        <Section label="Evidence ledger">
-          <p className="mb-7 max-w-3xl text-sm leading-7 text-[var(--muted)]">
-            Maturity is reported explicitly. Planned work is not presented as experimental evidence.
-          </p>
+        <Section label="Research highlights">
           <div className="grid gap-5 lg:grid-cols-3">
-            <EvidenceColumn label="Implemented" items={project.implemented} tone="verified" />
-            <EvidenceColumn label="Prototype" items={project.prototype} tone="prototype" />
-            <EvidenceColumn label="Planned" items={project.planned} tone="planned" />
+            <EvidenceColumn label="Implemented" items={project.implemented.slice(0, 6)} tone="verified" />
+            <EvidenceColumn label="Research prototypes" items={project.prototype.slice(0, 3)} tone="prototype" />
+            <EvidenceColumn label="Next steps" items={project.planned.slice(0, 3)} tone="planned" />
           </div>
         </Section>
 
         {project.evidence?.length ? (
-          <Section label="Project evidence artefacts">
+          <Section label="Project figures">
             <div className="grid gap-5 lg:grid-cols-3">
               {project.evidence.map((artifact) => (
                 <figure key={artifact.src} className="overflow-hidden rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)]">
@@ -180,9 +177,6 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 </figure>
               ))}
             </div>
-            <p className="mt-5 max-w-4xl text-xs leading-6 text-[var(--muted)]">
-              Figure provenance and validation scope are stated in each caption. Synthetic diagrams are not real-world measurements or proof of deployment, and are not to be confused with measured project results.
-            </p>
           </Section>
         ) : null}
 
@@ -202,7 +196,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </div>
         </Section>
 
-        <Section label="Evaluation protocol">
+        <Section label="Research evaluation">
           <div className="grid gap-5 md:grid-cols-2">
             <article className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-6">
               <h2 className="font-serif text-3xl tracking-[-0.04em]">Experiments</h2>
@@ -215,18 +209,11 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </div>
         </Section>
 
-        <Section label="Scientific honesty">
-          <div className="grid gap-5 md:grid-cols-[1.2fr_0.8fr]">
-            <article className="rounded-[1.5rem] border border-[var(--line)] p-6">
-              <h2 className="font-serif text-3xl tracking-[-0.04em]">Current limitations</h2>
-              <div className="mt-5"><CompactList items={project.limitations} /></div>
-            </article>
-            <article className="rounded-[1.5rem] border border-[var(--accent)] bg-[var(--accent-soft)] p-6">
-              <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Next falsifiable step</p>
-              <p className="mt-5 text-lg leading-8">{project.future[0]}</p>
-              <p className="mt-5 text-sm leading-7 text-[var(--muted)]">The project advances only when this step produces inspectable evidence.</p>
-            </article>
-          </div>
+        <Section label="Next research direction">
+          <article className="rounded-[1.5rem] border border-[var(--accent)] bg-[var(--accent-soft)] p-7">
+            <h2 className="font-serif text-3xl tracking-[-0.04em]">Where this research goes next</h2>
+            <p className="mt-4 max-w-3xl text-base leading-8 text-[var(--muted)]">{project.future[0]}</p>
+          </article>
         </Section>
 
         <Section label="Research context">
@@ -239,8 +226,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
         <div className="research-grid rounded-[2rem] border border-[var(--line)] bg-[var(--accent-soft)] p-8 md:flex md:items-center md:justify-between md:p-10">
           <div>
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Research conversation</p>
-            <h2 className="mt-3 font-serif text-4xl tracking-[-0.05em]">Questions, critique, and collaboration are welcome.</h2>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Collaboration</p>
+            <h2 className="mt-3 font-serif text-4xl tracking-[-0.05em]">Interested in this research? Let’s connect.</h2>
           </div>
           <Link href="/contact" className="focus-ring mt-6 inline-flex shrink-0 items-center gap-2 rounded-full bg-[var(--foreground)] px-6 py-3 text-sm font-semibold text-[var(--background)] md:ml-8 md:mt-0">
             Contact me <FiArrowUpRight aria-hidden="true" />
