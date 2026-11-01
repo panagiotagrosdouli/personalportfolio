@@ -101,12 +101,12 @@ export function ProjectExplorer({ projects }: { projects: Project[] }) {
                     </div>
                   )}
                   <div className="flex flex-wrap items-center justify-between gap-2 p-3">
-                    <span className="text-xs font-medium text-[var(--foreground)]">{isThesis ? "Real-world motion video" : cover?.label ?? "View research workflow"}</span>
+                    <span className="text-xs font-medium text-[var(--foreground)]">{isThesis ? "Official IMPTC sample video" : cover?.label ?? "View research workflow"}</span>
                     <FiArrowUpRight className="shrink-0 text-[var(--accent)]" aria-hidden="true" />
                   </div>
                 </Link>
                 <p className="mt-3 text-[11px] leading-5 text-[var(--muted)]">
-                  {isThesis ? "Real footage · not IMPTC data or model results" : cover?.provenance ?? "No verified image published yet"} · {evidenceCount} documented items
+                  {isThesis ? "Actual IMPTC dataset footage · not model results" : cover?.provenance ?? "No verified image published yet"} · {evidenceCount} documented items
                 </p>
               </div>
             </article>
