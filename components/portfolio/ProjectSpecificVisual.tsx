@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ThesisConceptArt } from "@/components/portfolio/ThesisConceptArt";
 import { FiArrowUpRight, FiCheckCircle, FiLayers } from "react-icons/fi";
 
 type Figure = {
@@ -66,7 +67,7 @@ const registry: Record<string, ProjectVisual> = {
     narrative:"The diploma thesis compares recurrent, attention-based, graph-based and probabilistic sequence models for predicting vulnerable road-user motion at smart intersections.",
     stages:["Observed trajectories + context", "LSTM / GRU / Transformer / GNN", "Deterministic + MDN forecasts", "ADE / FDE / uncertainty"],
     question:"How does contextual information change prediction accuracy and uncertainty?",
-    scope:"The project-specific thesis result figure is displayed in the evidence section above. This methodology map summarizes the research and is not another measured result.",
+    scope:"The intersection illustration is an original explanatory design. It does not depict real IMPTC tracks, learned model outputs, or experimental performance.",
   },
   "openuwoc-ai": {
     eyebrow:"Underwater optical communication",
@@ -147,7 +148,7 @@ export function ProjectSpecificVisual({ slug }: { slug: string }) {
         <div>
           <p className="font-mono text-xs font-semibold uppercase tracking-[.22em] text-[var(--accent)]">Project-specific research</p>
           <p className="mt-3 text-xs leading-6 text-[var(--muted)]">
-            {figureCount > 0 ? "Documented workflow and selected original artefacts" : "Documented workflow · no fabricated plots"}
+            {slug === "safecrossai" ? "Original conceptual illustration · not model results" : figureCount > 0 ? "Documented workflow and selected original artefacts" : "Documented workflow · no fabricated plots"}
           </p>
         </div>
         <div>
@@ -171,6 +172,8 @@ export function ProjectSpecificVisual({ slug }: { slug: string }) {
               ))}
             </div>
           ) : null}
+
+          {slug === "safecrossai" ? <div className="mt-8"><ThesisConceptArt /></div> : null}
 
           <div className="mt-8 rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-5 md:p-7">
             <div className="flex items-center gap-2">

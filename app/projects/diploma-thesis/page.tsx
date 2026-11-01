@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Footer } from "@/components/portfolio/Footer";
 import { SiteNav } from "@/components/portfolio/SiteNav";
 import { ProjectSpecificVisual } from "@/components/portfolio/ProjectSpecificVisual";
+import { ThesisConceptArt } from "@/components/portfolio/ThesisConceptArt";
 
 export const metadata: Metadata = {
   title: "Diploma Thesis",
@@ -86,6 +87,12 @@ export default function DiplomaThesisPage() {
         </div>
       </section>
 
+      <section className="px-6 pb-12 md:px-10 lg:px-12">
+        <div className="mx-auto max-w-7xl">
+          <ThesisConceptArt />
+        </div>
+      </section>
+
       <section className="px-6 py-16 md:px-10 lg:px-12">
         <div className="mx-auto grid max-w-7xl gap-12 border-y border-stone-200 py-16 lg:grid-cols-[0.34fr_0.66fr]">
           <aside className="lg:sticky lg:top-28 lg:self-start">
@@ -107,7 +114,7 @@ export default function DiplomaThesisPage() {
                 Predicting the motion of vulnerable road users is a central problem for autonomous systems that operate in human environments. At smart intersections, pedestrians and cyclists interact with vehicles, infrastructure, and each other, creating multiple plausible future trajectories. This thesis investigates trajectory prediction as a safety-relevant component of autonomous decision making.
               </p>
               <p>
-                The work aims to build a reproducible forecasting pipeline for dynamic intersection scenes, evaluate baseline and learning-based approaches, and examine how prediction uncertainty can support safer planning. Rather than treating trajectory prediction as a purely numerical benchmark, the thesis emphasizes failure cases, uncertainty representation, and the connection between forecasting and autonomous-system behavior.
+                The work developed a forecasting pipeline for dynamic intersection scenes, compared deterministic and probabilistic approaches, and examined how motion context and prediction uncertainty relate to safer planning. Rather than treating trajectory prediction as a purely numerical benchmark, the thesis emphasizes failure cases, uncertainty representation, and the connection between forecasting and autonomous-system behavior.
               </p>
             </div>
           </article>

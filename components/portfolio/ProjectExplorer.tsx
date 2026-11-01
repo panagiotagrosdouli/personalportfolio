@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { projectCovers } from "@/data/project-covers";
+import { ThesisConceptArt } from "@/components/portfolio/ThesisConceptArt";
 import { FiArrowUpRight, FiCheck, FiCode } from "react-icons/fi";
 import type { Project } from "@/data/projects";
 
@@ -71,7 +72,11 @@ export function ProjectExplorer({ projects }: { projects: Project[] }) {
 
               <div className="min-w-0 border-t border-[var(--line)] pt-5 md:border-l md:border-t-0 md:pl-6 md:pt-0">
                 <Link href={`/projects/${project.slug}`} aria-label={`Open ${project.shortTitle} research visuals`} className="focus-ring block overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--background)] transition hover:border-[var(--accent)]">
-                  {cover ? (
+                  {isThesis ? (
+                    <div className="bg-[#eaf0ec] p-1">
+                      <ThesisConceptArt compact />
+                    </div>
+                  ) : cover ? (
                     <div className="flex h-40 items-center justify-center bg-[#eaf0ec] p-2">
                       <Image
                         src={cover.src}
@@ -96,12 +101,12 @@ export function ProjectExplorer({ projects }: { projects: Project[] }) {
                     </div>
                   )}
                   <div className="flex flex-wrap items-center justify-between gap-2 p-3">
-                    <span className="text-xs font-medium text-[var(--foreground)]">{cover?.label ?? "View research workflow"}</span>
+                    <span className="text-xs font-medium text-[var(--foreground)]">{isThesis ? "Trajectory forecasting concept" : cover?.label ?? "View research workflow"}</span>
                     <FiArrowUpRight className="shrink-0 text-[var(--accent)]" aria-hidden="true" />
                   </div>
                 </Link>
                 <p className="mt-3 text-[11px] leading-5 text-[var(--muted)]">
-                  {cover?.provenance ?? "No verified image published yet"} · {evidenceCount} documented items
+                  {isThesis ? "Concept illustration · not model results" : cover?.provenance ?? "No verified image published yet"} · {evidenceCount} documented items
                 </p>
               </div>
             </article>
