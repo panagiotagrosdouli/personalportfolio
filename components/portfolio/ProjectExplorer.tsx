@@ -2,6 +2,8 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { projectCovers } from "@/data/project-covers";
 import { FiArrowUpRight, FiCheck, FiCode } from "react-icons/fi";
 import type { Project } from "@/data/projects";
 
@@ -43,9 +45,10 @@ export function ProjectExplorer({ projects }: { projects: Project[] }) {
         {visible.map((project, index) => {
           const isThesis = project.slug === "safecrossai";
           const evidenceCount = project.implemented.length + project.prototype.length;
+          const cover = projectCovers[project.slug];
 
           return (
-            <article key={project.slug} className={`group grid gap-7 rounded-[1.75rem] border p-6 transition hover:-translate-y-0.5 hover:border-[var(--accent)] md:grid-cols-[90px_1fr_250px] md:items-center md:p-8 ${isThesis ? "border-[var(--accent)] bg-[var(--accent-soft)]" : "border-[var(--line)] bg-[var(--panel)]"}`}>
+            <article key={project.slug} className={`group grid gap-7 rounded-[1.75rem] border p-6 transition hover:-translate-y-0.5 hover:border-[var(--accent)] md:grid-cols-[64px_minmax(0,1fr)_270px] md:items-center md:p-8 ${isThesis ? "border-[var(--accent)] bg-[var(--accent-soft)]" : "border-[var(--line)] bg-[var(--panel)]"}`}>
               <div>
                 <span className="font-serif text-5xl tracking-[-0.06em] text-[var(--muted)]">{(index + 1).toString().padStart(2, "0")}</span>
               </div>
@@ -66,13 +69,40 @@ export function ProjectExplorer({ projects }: { projects: Project[] }) {
                 </div>
               </div>
 
-              <div className="border-t border-[var(--line)] pt-5 md:border-l md:border-t-0 md:pl-7 md:pt-0">
-                <p className="font-mono text-[0.62rem] uppercase tracking-[0.18em] text-[var(--muted)]">Evidence now</p>
-                <p className="mt-2 font-serif text-4xl tracking-[-0.05em]">{evidenceCount}</p>
-                <p className="mt-1 text-xs text-[var(--muted)]">implemented + prototype items</p>
-                <Link href={`/projects/${project.slug}`} className="focus-ring mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)]">
-                  Inspect evidence <FiArrowUpRight aria-hidden="true" />
+              <div className="min-w-0 border-t border-[var(--line)] pt-5 md:border-l md:border-t-0 md:pl-6 md:pt-0">
+                <Link href={`/projects/${project.slug}`} aria-label={`Open ${project.shortTitle} research visuals`} className="focus-ring block overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--background)] transition hover:border-[var(--accent)]">
+                  {cover ? (
+                    <div className="flex h-40 items-center justify-center bg-[#eaf0ec] p-2">
+                      <Image
+                        src={cover.src}
+                        alt={cover.alt}
+                        width={900}
+                        height={550}
+                        unoptimized
+                        className="block h-auto max-h-full w-full object-contain"
+                      />
+                    </div>
+                  ) : (
+                    <div className="flex h-40 flex-col justify-between overflow-hidden bg-[var(--accent-soft)] p-5">
+                      <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.15em] text-[var(--accent)]">Project methodology</span>
+                      <div className="space-y-2">
+                        {project.methodology.slice(0, 2).map((step, i) => (
+                          <div key={step} className="flex items-center gap-2 border-b border-[var(--line)] pb-1.5 text-xs text-[var(--foreground)]">
+                            <span className="font-mono text-[10px] text-[var(--accent)]">{String(i+1).padStart(2,"0")}</span><span className="line-clamp-1">{step}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <span className="text-[10px] italic text-[var(--muted)]">Methodology overview · not an experimental image</span>
+                    </div>
+                  )}
+                  <div className="flex flex-wrap items-center justify-between gap-2 p-3">
+                    <span className="text-xs font-medium text-[var(--foreground)]">{cover?.label ?? "View research workflow"}</span>
+                    <FiArrowUpRight className="shrink-0 text-[var(--accent)]" aria-hidden="true" />
+                  </div>
                 </Link>
+                <p className="mt-3 text-[11px] leading-5 text-[var(--muted)]">
+                  {cover?.provenance ?? "No verified image published yet"} · {evidenceCount} documented items
+                </p>
               </div>
             </article>
           );

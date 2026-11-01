@@ -154,6 +154,24 @@ export function ProjectSpecificVisual({ slug }: { slug: string }) {
           <h2 className="max-w-3xl font-serif text-3xl leading-tight tracking-[-.045em] md:text-5xl">{item.heading}</h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-[var(--muted)]">{item.narrative}</p>
 
+          {item.figures?.length ? (
+            <div className={"mt-8 grid gap-5 " + (item.figures.length > 1 ? "md:grid-cols-2" : "")}>
+              {item.figures.map((fig) => (
+                <figure key={fig.src} className="overflow-hidden rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)]">
+                  <div className="flex min-h-56 items-center justify-center bg-[#eaf0ec] p-3 md:min-h-80">
+                    <Image src={fig.src} alt={fig.alt} width={1600} height={1000} unoptimized className="block h-auto max-h-[32rem] w-full object-contain" />
+                  </div>
+                  <figcaption className="border-t border-[var(--line)] p-5">
+                    <p className="font-mono text-[10px] font-semibold uppercase tracking-[.14em] text-[var(--accent)]">{fig.type}</p>
+                    <h3 className="mt-2 font-serif text-2xl tracking-[-.035em]">{fig.title}</h3>
+                    <p className="mt-2 text-sm leading-7 text-[var(--muted)]">{fig.caption}</p>
+                    {fig.source && <a href={fig.source} target="_blank" rel="noopener noreferrer" className="focus-ring mt-3 inline-flex items-center gap-1 text-xs font-semibold text-[var(--accent)] hover:underline">Source repository <FiArrowUpRight aria-hidden="true" /></a>}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          ) : null}
+
           <div className="mt-8 rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-5 md:p-7">
             <div className="flex items-center gap-2">
               <FiLayers className="text-[var(--accent)]" aria-hidden="true" />
@@ -173,23 +191,7 @@ export function ProjectSpecificVisual({ slug }: { slug: string }) {
             </div>
           </div>
 
-          {item.figures?.length ? (
-            <div className={"mt-7 grid gap-5 " + (item.figures.length > 1 ? "md:grid-cols-2" : "")}>
-              {item.figures.map((fig) => (
-                <figure key={fig.src} className="overflow-hidden rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)]">
-                  <div className="relative aspect-[16/10] bg-[#eaf0ec]">
-                    <Image src={fig.src} alt={fig.alt} fill sizes={item.figures!.length > 1 ? "(max-width: 768px) 100vw, 40vw" : "(max-width: 1024px) 100vw, 70vw"} className="object-contain" />
-                  </div>
-                  <figcaption className="border-t border-[var(--line)] p-5">
-                    <p className="font-mono text-[10px] font-semibold uppercase tracking-[.14em] text-[var(--accent)]">{fig.type}</p>
-                    <h3 className="mt-2 font-serif text-2xl tracking-[-.035em]">{fig.title}</h3>
-                    <p className="mt-2 text-sm leading-7 text-[var(--muted)]">{fig.caption}</p>
-                    {fig.source && <a href={fig.source} target="_blank" rel="noopener noreferrer" className="focus-ring mt-3 inline-flex items-center gap-1 text-xs font-semibold text-[var(--accent)] hover:underline">Source repository <FiArrowUpRight aria-hidden="true" /></a>}
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
-          ) : null}
+
 
           <p className="mt-6 max-w-4xl border-l-2 border-[var(--accent)] pl-4 text-xs leading-6 text-[var(--muted)]">
             <strong className="text-[var(--foreground)]">Evidence boundary.</strong> {item.scope}

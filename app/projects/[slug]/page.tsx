@@ -132,6 +132,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </aside>
         </header>
 
+        <ProjectSpecificVisual slug={project.slug} />
+
         <section className="mt-16 grid gap-5 md:grid-cols-2">
           <article className="rounded-[1.75rem] border border-[var(--line)] bg-[var(--panel)] p-7">
             <FiTarget className="text-xl text-[var(--accent)]" aria-hidden="true" />
@@ -161,13 +163,14 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             <div className="grid gap-5 lg:grid-cols-3">
               {project.evidence.map((artifact) => (
                 <figure key={artifact.src} className="overflow-hidden rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)]">
-                  <div className="relative aspect-[4/3] bg-white">
+                  <div className="flex min-h-48 items-center justify-center bg-white p-3">
                     <Image
                       src={artifact.src}
                       alt={artifact.title}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 33vw"
-                      className="object-contain"
+                      width={900}
+                      height={650}
+                      unoptimized
+                      className="block h-auto max-h-72 w-full object-contain"
                     />
                   </div>
                   <figcaption className="border-t border-[var(--line)] p-5">
@@ -182,8 +185,6 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             </p>
           </Section>
         ) : null}
-
-        <ProjectSpecificVisual slug={project.slug} />
 
         <Section label="Technical approach">
           <div className="flex flex-wrap gap-2">
