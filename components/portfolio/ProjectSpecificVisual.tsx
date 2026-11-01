@@ -126,6 +126,7 @@ const registry: Record<string, ProjectVisual> = {
 export function ProjectSpecificVisual({ slug }: { slug: string }) {
   const item = registry[slug];
   if (!item) return null;
+  const figureCount = item.figures?.length ?? 0;
   return (
     <section aria-label={"Project-specific research materials for " + slug} className="border-t border-[var(--line)] py-12 md:py-16">
       <div className="grid gap-7 lg:grid-cols-[220px_1fr]">
