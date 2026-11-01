@@ -41,6 +41,12 @@ async function loadVerifiedVideo(clip: string): Promise<Uint8Array | null> {
   return null;
 }
 
+function asBody(bytes: Uint8Array): ArrayBuffer {
+  const buffer = new ArrayBuffer(bytes.byteLength);
+  new Uint8Array(buffer).set(bytes);
+  return buffer;
+}
+
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ clip: string }> },
@@ -72,7 +78,7 @@ export async function GET(
         headers: { ...baseHeaders, "Content-Range": `bytes */${size}` },
       });
     }
-    return new Response(bytes.slice(start, end + 1), {
+    return new Response(asBody(bytes.slice(start, end + 1)), {
       status: 206,
       headers: {
         ...baseHeaders,
@@ -81,7 +87,7 @@ export async function GET(
       },
     });
   }
-  return new Response(bytes, {
+  return new Response(asBody(bytes), {
     status: 200,
     headers: { ...baseHeaders, "Content-Length": String(size) },
   });
