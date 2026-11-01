@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Footer } from "@/components/portfolio/Footer";
 import { SiteNav } from "@/components/portfolio/SiteNav";
+import { ProjectSpecificVisual } from "@/components/portfolio/ProjectSpecificVisual";
 
 export const metadata: Metadata = {
   title: "AEGIS-VIO",
@@ -188,6 +189,8 @@ export default function AegisVioPage() {
           </div>
         </div>
       </section>
+
+      <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-12"><ProjectSpecificVisual slug="aegis-vio" /></div>
 
       <Footer />
     </main>

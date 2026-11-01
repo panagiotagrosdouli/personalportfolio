@@ -22,7 +22,7 @@ export default function ProjectsPage() {
           Questions, systems, and inspectable evidence.
         </h1>
         <p className="mt-7 max-w-3xl text-lg leading-8 text-[var(--muted)]">
-          Each case study separates what exists now from prototypes and planned experiments.
+          Each case study separates what exists now from prototypes and planned experiments. Every project now has its own research workflow, and original figures appear only where the evidence belongs.
         </p>
 
         {thesis ? (

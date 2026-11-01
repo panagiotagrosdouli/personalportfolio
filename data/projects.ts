@@ -1,4 +1,4 @@
-export type ProjectStatus = "Active" | "Research Prototype" | "In Progress" | "Planned" | "Coming Soon";
+export type ProjectStatus = "Active" | "Completed" | "Research Prototype" | "In Progress" | "Planned" | "Coming Soon";
 
 export type Project = {
   slug: string;
@@ -237,9 +237,9 @@ export const projects: Project[] = [
   },
   {
     slug: "safecrossai",
-    status: "Active",
+    status: "Completed",
     badge: "Diploma Thesis · VRU Forecasting",
-    year: "2025–Present",
+    year: "2025–2026",
     title: "Diploma Thesis: Trajectory Prediction of Vulnerable Road Users at Smart Intersections for Road Safety and Autonomous Driving Applications",
     shortTitle: "VRU Trajectory Prediction",
     domain: "VRU Trajectory Prediction · Smart Intersections · Road Safety · Autonomous Driving",
@@ -248,9 +248,9 @@ export const projects: Project[] = [
     technicalContribution: "A large experimental comparison of recurrent, attention-based, graph-based, state-space, and probabilistic predictors, with context ablations, temporal analysis, and uncertainty evaluation.",
     tags: ["Trajectory Prediction", "Autonomous Driving", "Deep Learning", "Uncertainty", "Multimodal AI"],
     latestUpdate: "354 experiment directories; 313 experiments with ADE/FDE results across recurrent, Transformer, Mamba, GCN, and MDN model families.",
-    progress: 88,
+    progress: 100,
     github: false,
-    subtitle: "Diploma thesis · Deep learning and probabilistic VRU forecasting · 2025–Present",
+    subtitle: "Completed diploma thesis · Deep learning and probabilistic VRU forecasting · 2026",
     overview: "This diploma thesis studies future-trajectory prediction for vulnerable road users at smart intersections. It compares deterministic and probabilistic deep-learning architectures across pedestrian, cyclist, scooter, and motorcycle trajectories, and tests whether traffic-light state, velocity, distance, and structured spatial context improve forecasting accuracy.",
     questions: [
       "Which neural architecture generalizes best across different VRU groups?",
