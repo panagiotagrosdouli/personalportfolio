@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Footer } from "@/components/portfolio/Footer";
 import { SiteNav } from "@/components/portfolio/SiteNav";
-import { IMPTCReference } from "@/components/portfolio/IMPTCReference";
 
 export const metadata: Metadata = {
   title: "AEGIS-VIO",
@@ -189,8 +188,6 @@ export default function AegisVioPage() {
           </div>
         </div>
       </section>
-
-      <IMPTCReference projectSlug="aegis-vio" variant="stone" />
 
       <Footer />
     </main>
