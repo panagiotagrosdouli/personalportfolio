@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { projectCovers } from "@/data/project-covers";
-import { ThesisConceptArt } from "@/components/portfolio/ThesisConceptArt";
+import { ThesisRealWorldVideo } from "@/components/portfolio/ThesisRealWorldVideo";
 import { FiArrowUpRight, FiCheck, FiCode } from "react-icons/fi";
 import type { Project } from "@/data/projects";
 
@@ -74,7 +74,7 @@ export function ProjectExplorer({ projects }: { projects: Project[] }) {
                 <Link href={`/projects/${project.slug}`} aria-label={`Open ${project.shortTitle} research visuals`} className="focus-ring block overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--background)] transition hover:border-[var(--accent)]">
                   {isThesis ? (
                     <div className="bg-[#eaf0ec] p-1">
-                      <ThesisConceptArt compact />
+                      <ThesisRealWorldVideo compact />
                     </div>
                   ) : cover ? (
                     <div className="flex h-40 items-center justify-center bg-[#eaf0ec] p-2">
@@ -101,12 +101,12 @@ export function ProjectExplorer({ projects }: { projects: Project[] }) {
                     </div>
                   )}
                   <div className="flex flex-wrap items-center justify-between gap-2 p-3">
-                    <span className="text-xs font-medium text-[var(--foreground)]">{isThesis ? "Trajectory forecasting concept" : cover?.label ?? "View research workflow"}</span>
+                    <span className="text-xs font-medium text-[var(--foreground)]">{isThesis ? "Real-world motion video" : cover?.label ?? "View research workflow"}</span>
                     <FiArrowUpRight className="shrink-0 text-[var(--accent)]" aria-hidden="true" />
                   </div>
                 </Link>
                 <p className="mt-3 text-[11px] leading-5 text-[var(--muted)]">
-                  {isThesis ? "Concept illustration · not model results" : cover?.provenance ?? "No verified image published yet"} · {evidenceCount} documented items
+                  {isThesis ? "Real footage · not IMPTC data or model results" : cover?.provenance ?? "No verified image published yet"} · {evidenceCount} documented items
                 </p>
               </div>
             </article>
