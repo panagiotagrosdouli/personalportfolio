@@ -157,7 +157,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         </Section>
 
         {project.evidence?.length ? (
-          <Section label="Measured evidence">
+          <Section label="Project evidence artefacts">
             <div className="grid gap-5 lg:grid-cols-3">
               {project.evidence.map((artifact) => (
                 <figure key={artifact.src} className="overflow-hidden rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)]">
