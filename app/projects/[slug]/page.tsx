@@ -5,7 +5,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FiArrowLeft, FiArrowUpRight, FiCheck, FiCode, FiTarget } from "react-icons/fi";
 import { SiteNav } from "@/components/portfolio/SiteNav";
-import { IMPTCReference } from "@/components/portfolio/IMPTCReference";
 import { projectMap, projects } from "@/data/projects";
 
 export function generateStaticParams() {
@@ -178,12 +177,10 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               ))}
             </div>
             <p className="mt-5 max-w-4xl text-xs leading-6 text-[var(--muted)]">
-              Figure provenance and validation scope are stated in each caption. Synthetic diagrams are not real-world measurements or proof of deployment. The separate IMPTC reference gallery below contains independently published observed tracks, not results produced by this project.
+              Figure provenance and validation scope are stated in each caption. Synthetic diagrams are not real-world measurements or proof of deployment, and are not to be confused with measured project results.
             </p>
           </Section>
         ) : null}
-
-        <IMPTCReference projectSlug={project.slug} />
 
         <Section label="Technical approach">
           <div className="flex flex-wrap gap-2">

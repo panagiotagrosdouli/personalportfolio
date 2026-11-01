@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Footer } from "@/components/portfolio/Footer";
 import { SiteNav } from "@/components/portfolio/SiteNav";
-import { IMPTCReference } from "@/components/portfolio/IMPTCReference";
 
 export const metadata: Metadata = {
   title: "Diploma Thesis",
@@ -193,8 +192,6 @@ export default function DiplomaThesisPage() {
           </div>
         </div>
       </section>
-
-      <IMPTCReference projectSlug="diploma-thesis" variant="stone" />
 
       <Footer />
     </main>
