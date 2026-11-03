@@ -2,149 +2,31 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { SiteNav } from "@/components/portfolio/SiteNav";
-import { Reveal } from "@/components/portfolio/Reveal";
-
-export const metadata: Metadata = {
-  title: "About",
-  description: "Research profile, academic background, technical interests, and research direction of Panagiota Grosdouli.",
-};
-
-const groups = [
-  ["Robotics & autonomy", ["ROS 2", "Gazebo", "autonomous systems", "robotic perception", "motion forecasting"]],
-  ["Machine learning & vision", ["deep learning", "computer vision", "YOLO", "semantic segmentation", "trajectory prediction", "PyTorch", "OpenCV"]],
-  ["Programming & tools", ["Python", "C++", "PyTorch", "OpenCV", "ROS 2", "Gazebo", "LaTeX"]],
-  ["Scientific practice", ["reproducible experiments", "evaluation design", "ablation studies", "technical communication", "research reporting"]],
+import { Footer } from "@/components/portfolio/Footer";
+export const metadata:Metadata={title:"About",description:"Background and interests of Panagiota Grosdouli."};
+const interests=[
+ {title:"Writing & books",detail:"Fiction, characters and imagined worlds.",href:"https://www.wattpad.com/user/user34912981",action:"Read stories ↗"},
+ {title:"Music & radio",detail:"Songwriting, DJing and radio production.",href:"https://suno.com/@panagiotagrosdouli",action:"Listen ↗"},
+ {title:"Photography & running",detail:"Finding perspective through movement and observation."},
+ {title:"Film & making",detail:"Film, series and creative side projects."},
+ {title:"Aviation",detail:"A long-term ambition to become a pilot."}
 ];
-
-const directions = [
-  ["Robust localization", "How can VIO and SLAM systems expose degradation early enough for downstream safety decisions?"],
-  ["Uncertainty-aware navigation", "How should robots adapt plans when localization, perception, or map information becomes unreliable?"],
-  ["Intelligent mobility", "How can trajectory prediction and interaction reasoning improve safety for vulnerable road users?"],
-];
-
-const principles = [
-  "Claims should be traceable to implementation status, data, or clearly marked future work.",
-  "A robotics system should report uncertainty in a form that a planner or safety layer can actually use.",
-  "Strong research software combines clear methods, reproducible evaluation, and thoughtful engineering.",
-];
-
-export default function AboutPage() {
-  return (
-    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
-      <SiteNav />
-      <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-24">
-        <header className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
-          <Reveal>
-            <div className="command-panel overflow-hidden rounded-[2rem] p-3">
-              <Image src={`${process.env.GITHUB_ACTIONS === "true" ? "/personalportfolio" : ""}/profile.png`} alt="Panagiota Grosdouli" width={720} height={900} sizes="(max-width: 1024px) 100vw, 500px" className="aspect-[4/5] w-full rounded-[1.55rem] object-cover grayscale-[15%] saturate-[0.88]" />
-            </div>
-          </Reveal>
-          <Reveal>
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.26em] text-[var(--accent)]">About</p>
-            <h1 className="mt-5 max-w-4xl font-serif text-5xl leading-[0.95] tracking-[-0.06em] md:text-7xl">Machine Learning, Computer Vision & Robotics.</h1>
-            <div className="mt-8 max-w-3xl space-y-5 text-lg leading-8 text-[var(--muted)]">
-              <p>I am an Electrical and Computer Engineer (Integrated MEng, 2026), interested in AI, Computer Vision and Robotics.</p>
-              <p>My diploma thesis (10/10) focused on road-user trajectory prediction for autonomous driving.</p>
-              <p>At OZZIE Robotics, I trained a YOLO segmentation model for an autonomous delivery robot. Open to junior engineering, research and PhD opportunities.</p>
-            </div>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/research-map" className="focus-ring rounded-full border border-[var(--accent)] bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-[var(--background)]">Research map</Link>
-              <Link href="/cv" className="focus-ring rounded-full border border-[var(--line)] px-5 py-3 text-sm font-semibold transition hover:border-[var(--accent)]">Academic CV</Link>
-            </div>
-          </Reveal>
-        </header>
-
-        <section className="mt-20 grid gap-10 border-t border-[var(--line)] pt-12 lg:grid-cols-[300px_1fr]">
-          <div><p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Education</p><h2 className="mt-3 font-serif text-3xl tracking-[-0.04em]">Academic background</h2></div>
-          <Reveal><article className="command-panel rounded-[1.5rem] p-6"><div className="flex flex-wrap justify-between gap-4"><h3 className="text-lg font-semibold">MEng Electrical & Computer Engineering</h3><span className="font-mono text-xs text-[var(--muted)]">2020–2026</span></div><p className="mt-2 text-sm text-[var(--muted)]">Democritus University of Thrace, Xanthi, Greece</p><p className="mt-4 text-sm leading-7 text-[var(--muted)]">Completed diploma thesis (10/10): trajectory prediction of vulnerable road users at smart intersections, with deterministic and probabilistic deep-learning models, contextual information, and uncertainty evaluation.</p></article></Reveal>
-        </section>
-
-        <section className="mt-20 grid gap-10 border-t border-[var(--line)] pt-12 lg:grid-cols-[300px_1fr]">
-          <div><p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Areas of interest</p><h2 className="mt-3 font-serif text-3xl tracking-[-0.04em]">Questions guiding the work.</h2></div>
-          <div className="grid gap-5 md:grid-cols-3">
-            {directions.map(([title, text]) => <Reveal key={title}><article className="command-panel h-full rounded-[1.5rem] p-6"><h3 className="font-serif text-2xl tracking-[-0.035em]">{title}</h3><p className="mt-4 text-sm leading-7 text-[var(--muted)]">{text}</p></article></Reveal>)}
-          </div>
-        </section>
-
-        <section className="mt-20 grid gap-10 border-t border-[var(--line)] pt-12 lg:grid-cols-[300px_1fr]">
-          <div><p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Technical profile</p><h2 className="mt-3 font-serif text-3xl tracking-[-0.04em]">Tools & skills.</h2></div>
-          <div className="grid gap-5 md:grid-cols-2">
-            {groups.map(([title, items]) => <Reveal key={title as string}><article className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-6"><h3 className="font-semibold">{title as string}</h3><div className="mt-4 flex flex-wrap gap-2">{(items as string[]).map((item) => <span key={item} className="rounded-full border border-[var(--line)] px-3 py-1 text-xs text-[var(--muted)]">{item}</span>)}</div></article></Reveal>)}
-          </div>
-        </section>
-
-
-
- 
-
-        <section className="mt-20 grid gap-10 border-t border-[var(--line)] pt-12 lg:grid-cols-[300px_1fr]">
-          <div>
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Beyond the lab</p>
-            <h2 className="mt-3 font-serif text-3xl tracking-[-0.04em]">Outside engineering.</h2>
-          </div>
-          <div className="grid gap-5 md:grid-cols-2">
-            <Reveal>
-              <article className="h-full rounded-[1.5rem] border border-[var(--accent)] bg-[var(--accent-soft)] p-6">
-                <div className="flex items-center justify-between gap-4">
-                  <Image src={`${process.env.GITHUB_ACTIONS === "true" ? "/personalportfolio" : ""}/brands/wattpad.png`} alt="Wattpad" width={52} height={52} className="rounded-2xl" />
-                  <span className="rounded-full border border-[var(--line)] px-3 py-1 font-mono text-[0.65rem] text-[var(--muted)]">Since 2023</span>
-                </div>
-                <p className="mt-6 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Books & Wattpad</p>
-                <h3 className="mt-3 font-serif text-3xl tracking-[-0.04em]">Stories, characters, and worlds.</h3>
-                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">I write books and develop fictional worlds that also inspire my music and lyrics.</p>
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <a href="https://ta-vivlia-mou.p-g2a15.chatgpt.site/" target="_blank" rel="noreferrer" className="focus-ring rounded-full border border-[var(--accent)] px-4 py-2 text-sm font-semibold">My books ↗</a>
-                  <a href="https://www.wattpad.com/user/user34912981" target="_blank" rel="noreferrer" className="focus-ring rounded-full border border-[var(--line)] px-4 py-2 text-sm font-semibold transition hover:border-[var(--accent)]">My stories on Wattpad ↗</a>
-                </div>
-              </article>
-            </Reveal>
-            <Reveal>
-              <article className="h-full rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-6">
-                <div className="flex items-center justify-between gap-4">
-                  <Image src={`${process.env.GITHUB_ACTIONS === "true" ? "/personalportfolio" : ""}/brands/suno.jpeg`} alt="Suno" width={52} height={52} className="rounded-2xl" />
-                  <span className="rounded-full border border-[var(--line)] px-3 py-1 font-mono text-[0.65rem] text-[var(--muted)]">2.8K+ plays</span>
-                </div>
-                <p className="mt-6 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Suno · Songwriter & producer</p>
-                <h3 className="mt-3 font-serif text-3xl tracking-[-0.04em]">Songs for imagined lives.</h3>
-                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">Original songs and lyrics inspired by the characters, relationships, and emotional worlds of my books.</p>
-                <a href="https://suno.com/@panagiotagrosdouli" target="_blank" rel="noreferrer" className="focus-ring mt-6 inline-flex rounded-full border border-[var(--accent)] px-4 py-2 text-sm font-semibold transition hover:bg-[var(--accent)] hover:text-[var(--background)]">Listen on Suno ↗</a>
-              </article>
-            </Reveal>
-            <Reveal>
-              <article className="h-full rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-6">
-                <div className="flex items-center justify-between gap-4">
-                  <Image src={`${process.env.GITHUB_ACTIONS === "true" ? "/personalportfolio" : ""}/brands/zeno-media.png`} alt="Zeno Media" width={52} height={52} className="rounded-2xl" />
-                  <span className="rounded-full border border-[var(--line)] px-3 py-1 font-mono text-[0.65rem] text-[var(--muted)]">2019–Present</span>
-                </div>
-                <p className="mt-6 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Zeno Media</p>
-                <h3 className="mt-3 font-serif text-3xl tracking-[-0.04em]">DJ, radio producer & podcaster.</h3>
-                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">I curate music, produce radio programming, and create spoken-audio and podcast content.</p>
-                <a href="https://stream.zeno.fm/0eptqs75m5zuv" target="_blank" rel="noreferrer" className="focus-ring mt-6 inline-flex rounded-full border border-[var(--accent)] px-4 py-2 text-sm font-semibold transition hover:bg-[var(--accent)] hover:text-[var(--background)]">Listen live ↗</a>
-              </article>
-            </Reveal>
-            <Reveal>
-              <article className="h-full rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-6">
-                <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Movement & observation</p>
-                <h3 className="mt-4 font-serif text-3xl tracking-[-0.04em]">Running and photography.</h3>
-                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">Running creates space to think; photography trains me to notice structure, light, motion, and small details.</p>
-              </article>
-            </Reveal>
-            <Reveal>
-              <article className="h-full rounded-[1.5rem] border border-[var(--line)] bg-[var(--panel)] p-6">
-                <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Stories & making</p>
-                <h3 className="mt-4 font-serif text-3xl tracking-[-0.04em]">Film, series, and side projects.</h3>
-                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">I enjoy ambitious films and series, and I am usually building a personal project that lets a new idea become tangible.</p>
-              </article>
-            </Reveal>
-            <Reveal>
-              <article className="h-full rounded-[1.5rem] border border-[var(--line)] bg-[var(--background)] p-6">
-                <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">Someday</p>
-                <h3 className="mt-4 font-serif text-3xl tracking-[-0.04em]">Aspiring pilot.</h3>
-                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">Aviation brings together systems thinking, responsibility, navigation, and freedom. Becoming a pilot is a long-term personal goal.</p>
-              </article>
-            </Reveal>
-          </div>
-        </section>    </div>
-    </main>
-  );
+export default function About(){
+ return <main className="min-h-screen"><SiteNav/>
+ <div className="academic-page">
+  <p className="academic-kicker">Profile</p><h1 className="mt-5 font-serif text-6xl font-semibold md:text-7xl">About me.</h1>
+  <div className="mt-12 grid gap-12 md:grid-cols-[.6fr_1.4fr] md:items-start">
+   <Image src={`${process.env.GITHUB_ACTIONS==="true"?"/personalportfolio":""}/profile.png`} alt="Panagiota Grosdouli" width={720} height={900} sizes="(max-width: 768px) 80vw, 300px" className="w-full max-w-[300px] object-cover"/>
+   <div className="space-y-5 text-lg leading-8 text-[var(--muted)]">
+    <p className="font-semibold text-[var(--foreground)]">Electrical & Computer Engineer (Integrated MEng), Democritus University of Thrace.</p>
+    <p>My diploma thesis (10/10) focused on predicting vulnerable road-user trajectories. At OZZIE Robotics, I trained a YOLO segmentation model for an autonomous delivery robot.</p>
+    <p>I am interested in Machine Learning, Computer Vision, Robotics and research opportunities.</p>
+    <div className="flex gap-3 pt-3 text-sm font-semibold"><Link href="/cv" className="border border-[var(--foreground)] px-5 py-3 text-[var(--foreground)]">CV</Link><Link href="/contact" className="bg-[var(--foreground)] px-5 py-3 text-white">Contact ↗</Link></div>
+   </div>
+  </div>
+  <section className="mt-20 border-t border-[var(--line)] pt-14"><p className="academic-kicker">Expertise</p><h2 className="mt-4 font-serif text-4xl font-semibold">Technical interests</h2><div className="mt-7 flex flex-wrap gap-2">{["Deep Learning","Computer Vision","PyTorch","Python","YOLO","Trajectory Prediction","ROS 2","Autonomous Systems"].map(x=><span key={x} className="border border-[var(--line)] bg-white px-4 py-2 text-sm">{x}</span>)}</div></section>
+  <section className="mt-20 border-t border-[var(--line)] pt-14"><p className="academic-kicker">Beyond engineering</p><h2 className="mt-4 font-serif text-4xl font-semibold">Personal interests</h2>
+   <div className="mt-9 grid gap-4 md:grid-cols-2">{interests.map(i=><div key={i.title} className="academic-card p-6"><h3 className="font-serif text-3xl font-semibold">{i.title}</h3><p className="mt-2 text-sm leading-7 text-[var(--muted)]">{i.detail}</p>{"href" in i&&i.href?<a className="mt-4 inline-block text-xs font-semibold text-[var(--accent)]" href={i.href} target="_blank" rel="noreferrer">{i.action}</a>:null}</div>)}</div>
+  </section>
+ </div><Footer/></main>;
 }
