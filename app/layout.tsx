@@ -9,15 +9,15 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://panagiota-research-
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: "Panagiota Grosdouli — Robotics Research Portfolio", template: "%s | Panagiota Grosdouli" },
-  description: "Academic research portfolio of Panagiota Grosdouli (MEng): trajectory prediction, computer vision, deep learning, robot perception, robust localization, SLAM and safe autonomous systems.",
-  applicationName: "Panagiota Grosdouli Academic Homepage",
+  title: { default: "Panagiota Grosdouli — AI, Computer Vision & Robotics Portfolio", template: "%s | Panagiota Grosdouli" },
+  description: "Engineering and research portfolio of Panagiota Grosdouli (Integrated MEng): machine learning, computer vision, YOLO semantic segmentation, trajectory prediction, robotics and autonomous systems.",
+  applicationName: "Panagiota Grosdouli Engineering Portfolio",
   authors: [{ name: "Panagiota Grosdouli" }],
   creator: "Panagiota Grosdouli",
   keywords: ["Panagiota Grosdouli", "robotics", "SLAM", "visual-inertial odometry", "sensor fusion", "risk-aware robotics", "UAV autonomy", "computer vision", "AI for robotics", "autonomous systems"],
   alternates: { canonical: "/" },
-  openGraph: { title: "Panagiota Grosdouli — Robotics Research Portfolio", description: "Research portfolio in trajectory prediction, machine learning, computer vision, robotics, VIO, SLAM and uncertainty-aware autonomous systems.", url: "/", siteName: "Panagiota Grosdouli Academic Homepage", images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Panagiota Grosdouli robotics research portfolio" }], type: "website" },
-  twitter: { card: "summary_large_image", title: "Panagiota Grosdouli — Robotics Research Portfolio", description: "Robust autonomy, VIO, SLAM, sensor fusion, risk-aware navigation, and AI for robotics.", images: ["/opengraph-image"] },
+  openGraph: { title: "Panagiota Grosdouli — Robotics Research Portfolio", description: "Portfolio in machine learning, computer vision, robotic perception, trajectory prediction and autonomous systems.", url: "/", siteName: "Panagiota Grosdouli Academic Homepage", images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Panagiota Grosdouli robotics research portfolio" }], type: "website" },
+  twitter: { card: "summary_large_image", title: "Panagiota Grosdouli — Robotics Research Portfolio", description: "Machine learning, computer vision, YOLO semantic segmentation, trajectory forecasting, robotics and autonomous systems.", images: ["/opengraph-image"] },
   robots: { index: true, follow: true },
 };
 
