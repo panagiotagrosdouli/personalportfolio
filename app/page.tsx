@@ -4,7 +4,7 @@ import { FiArrowUpRight, FiCheck, FiGithub } from "react-icons/fi";
 import { SiteNav } from "@/components/portfolio/SiteNav";
 import { projects } from "@/data/projects";
 
-const featuredSlugs = ["shield-vio", "safecrossai", "dynnav"];
+const featuredSlugs = ["safecrossai", "shield-vio"];
 const featuredProjects = featuredSlugs
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is (typeof projects)[number] => Boolean(project));
@@ -99,14 +99,14 @@ export default function Home() {
           <div className="mb-10 flex flex-wrap items-end justify-between gap-5">
             <div>
               <p className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">Selected research</p>
-              <h2 className="mt-4 font-serif text-5xl tracking-[-0.06em] md:text-6xl">Selected research, grounded in evidence.</h2>
+              <h2 className="mt-4 font-serif text-5xl tracking-[-0.06em] md:text-6xl">Two selected projects.</h2>
             </div>
             <Link href="/projects" className="focus-ring inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)] hover:underline">
               View all work <FiArrowUpRight aria-hidden="true" />
             </Link>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-2">
             {featuredProjects.map((project, index) => (
               <Link
                 key={project.slug}
