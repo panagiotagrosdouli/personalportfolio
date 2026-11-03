@@ -34,26 +34,26 @@ export default function Home() {
           <div>
             <div className="flex flex-wrap items-center gap-3 font-mono text-[0.65rem] font-semibold uppercase tracking-[0.2em]">
               <span className="rounded-full border border-[var(--accent)] bg-[var(--accent-soft)] px-4 py-2 text-[var(--accent)]">
-                ECE graduate · Seeking PhD research · 2026
+                ECE graduate · Open to engineering & research roles · 2026
               </span>
               <span className="text-[var(--muted)]">Robotics · AI · Autonomous Systems</span>
             </div>
 
             <h1 className="mt-8 max-w-5xl font-serif text-6xl leading-[0.88] tracking-[-0.075em] md:text-8xl lg:text-[7.2rem]">
-              Robust autonomy
-              <span className="block text-[var(--accent)]">when sensing fails.</span>
+              Machine learning
+              <span className="block text-[var(--accent)]">for intelligent systems.</span>
             </h1>
 
             <p className="mt-8 max-w-2xl text-xl leading-8 text-[var(--muted)] md:text-2xl md:leading-9">
-              I investigate how robots can recognize unreliable sensing and state estimation, adapt to uncertainty, and recover before degradation becomes unsafe.
+              I am an Electrical and Computer Engineer (Integrated MEng) working at the intersection of deep learning, computer vision, and robotics. My experience includes trajectory prediction for road safety and YOLO-based perception for an autonomous delivery robot.
             </p>
 
             <div className="mt-9 flex flex-wrap gap-3">
               <Link href="/projects" className="focus-ring inline-flex items-center gap-2 rounded-full bg-[var(--foreground)] px-6 py-3 text-sm font-semibold text-[var(--background)] transition hover:bg-[var(--accent)]">
-                Explore research <FiArrowUpRight aria-hidden="true" />
+                Explore projects <FiArrowUpRight aria-hidden="true" />
               </Link>
               <Link href="/cv" className="focus-ring rounded-full border border-[var(--line)] bg-[var(--panel)] px-6 py-3 text-sm font-semibold transition hover:border-[var(--accent)]">
-                Academic CV
+                View my CV
               </Link>
               <a href="https://github.com/panagiotagrosdouli" target="_blank" rel="noreferrer" className="focus-ring inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--panel)] px-6 py-3 text-sm font-semibold transition hover:border-[var(--accent)]">
                 <FiGithub aria-hidden="true" /> GitHub
@@ -87,10 +87,10 @@ export default function Home() {
               </div>
             </div>
             <div className="absolute -left-5 top-10 rounded-full border border-[var(--line)] bg-[var(--panel)] px-4 py-2 text-xs font-semibold shadow-xl backdrop-blur-xl">
-              VIO · SLAM
+              Computer Vision
             </div>
             <div className="absolute -right-4 bottom-24 rounded-full border border-[var(--line)] bg-[var(--panel)] px-4 py-2 text-xs font-semibold shadow-xl backdrop-blur-xl">
-              Risk-aware planning
+              Trajectory Prediction
             </div>
           </aside>
         </div>
@@ -101,12 +101,12 @@ export default function Home() {
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
         <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
           <div>
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">Research thesis</p>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">Research & engineering</p>
             <h2 className="mt-4 max-w-lg font-serif text-5xl leading-[0.95] tracking-[-0.06em] md:text-6xl">
-              Uncertainty should change behavior.
+              From prediction to perception.
             </h2>
             <p className="mt-6 max-w-md text-base leading-7 text-[var(--muted)]">
-              My research connects uncertainty estimation with actionable robotic decisions: adapting perception, improving localization, planning safely and recovering when conditions change. I develop reproducible methods at the intersection of AI and autonomy.
+              My diploma thesis explored deterministic and probabilistic trajectory forecasting for vulnerable road users. During my internship at OZZIE Robotics, I trained and tested a YOLO-based semantic segmentation model on real-world video for an autonomous delivery robot.
             </p>
           </div>
 
@@ -198,11 +198,11 @@ export default function Home() {
           <div>
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">Research fit</p>
             <h2 className="mt-4 max-w-3xl font-serif text-4xl leading-tight tracking-[-0.05em] md:text-5xl">
-              Interested in robust perception, state estimation, and safe navigation.
+              Open to junior AI, Computer Vision, Robotics, and research opportunities.
             </h2>
           </div>
           <div className="mt-8 flex shrink-0 flex-wrap gap-3 md:ml-10 md:mt-0">
-            <Link href="/about" className="focus-ring rounded-full bg-[var(--foreground)] px-6 py-3 text-sm font-semibold text-[var(--background)]">Research profile</Link>
+            <Link href="/about" className="focus-ring rounded-full bg-[var(--foreground)] px-6 py-3 text-sm font-semibold text-[var(--background)]">About me</Link>
             <Link href="/contact" className="focus-ring rounded-full border border-[var(--line)] bg-[var(--panel)] px-6 py-3 text-sm font-semibold">Contact</Link>
           </div>
         </div>
