@@ -1,45 +1,40 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FiArrowUpRight } from "react-icons/fi";
 import { SiteNav } from "@/components/portfolio/SiteNav";
-import { ProjectExplorer } from "@/components/portfolio/ProjectExplorer";
+import { Footer } from "@/components/portfolio/Footer";
 import { projects } from "@/data/projects";
 
-export const metadata: Metadata = {
-  title: "Research Projects",
-  description: "Research projects in robotics, deep learning, computer vision, localization, planning and intelligent mobility.",
-};
+export const metadata: Metadata = { title: "Projects", description: "Selected machine learning, computer vision and robotics projects." };
 
-const thesis = projects.find((project) => project.slug === "safecrossai");
+const priority = ["safecrossai", "shield-vio", "dynnav", "adaptive-multimodal-slam"];
+const sorted = [...projects].sort((a, b) => {
+  const ai = priority.indexOf(a.slug);
+  const bi = priority.indexOf(b.slug);
+  return (ai === -1 ? 100 : ai) - (bi === -1 ? 100 : bi);
+});
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+    <main className="min-h-screen bg-[var(--background)]">
       <SiteNav />
-      <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-24">
-        <p className="font-mono text-xs font-semibold uppercase tracking-[0.26em] text-[var(--accent)]">Research portfolio</p>
-        <h1 className="mt-5 max-w-5xl font-serif text-5xl leading-[0.95] tracking-[-0.06em] md:text-7xl">
-          Research projects, methods and discoveries.
-        </h1>
-        <p className="mt-7 max-w-3xl text-lg leading-8 text-[var(--muted)]">
-          Explore my research in trajectory forecasting, perception, robot localization and autonomous navigation. Each project highlights its core contribution, methods and next directions.
-        </p>
-
-        {thesis ? (
-          <section className="research-grid mt-12 grid gap-7 rounded-[2rem] border border-[var(--accent)] bg-[var(--accent-soft)] p-7 md:grid-cols-[1fr_auto] md:items-end md:p-10">
-            <div>
-              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Diploma thesis · featured research</p>
-              <h2 className="mt-4 max-w-4xl font-serif text-4xl leading-tight tracking-[-0.05em] md:text-5xl">{thesis.title}</h2>
-              <p className="mt-5 max-w-3xl text-sm leading-7 text-[var(--muted)]">{thesis.scientificQuestion}</p>
-            </div>
-            <Link href={`/projects/${thesis.slug}`} className="focus-ring inline-flex shrink-0 items-center gap-2 rounded-full bg-[var(--foreground)] px-6 py-3 text-sm font-semibold text-[var(--background)]">
-              Explore diploma thesis <FiArrowUpRight aria-hidden="true" />
+      <div className="mx-auto max-w-6xl px-5 py-20 md:px-10 md:py-28">
+        <p className="text-xs uppercase tracking-[0.2em] text-[var(--muted)]">Portfolio</p>
+        <h1 className="mt-5 text-5xl font-semibold tracking-tight md:text-6xl">Projects<span className="text-[var(--muted)]">.</span></h1>
+        <p className="mt-5 max-w-xl text-base text-[var(--muted)]">Selected work in machine learning, perception and autonomy.</p>
+        <div className="mt-12 grid gap-3">
+          {sorted.map((project) => (
+            <Link key={project.slug} href={`/projects/${project.slug}`} className="group grid gap-3 rounded-xl border border-[var(--line)] p-6 transition hover:border-[var(--foreground)] md:grid-cols-[1fr_2fr_auto] md:items-center">
+              <span className="text-xs text-[var(--muted)]">{project.slug === "safecrossai" ? "Diploma thesis" : project.status}</span>
+              <div>
+                <h2 className="text-lg font-semibold">{project.shortTitle}</h2>
+                <p className="mt-1 text-sm text-[var(--muted)]">{project.domain}</p>
+              </div>
+              <span className="text-sm text-[var(--muted)] group-hover:text-[var(--foreground)]">View ↗</span>
             </Link>
-          </section>
-        ) : null}
-
-        <ProjectExplorer projects={projects} />
+          ))}
+        </div>
       </div>
+      <Footer />
     </main>
   );
 }
