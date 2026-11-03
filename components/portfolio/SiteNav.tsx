@@ -1,15 +1,15 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-const links=[{label:"About",href:"/about"},{label:"Research",href:"/projects"},{label:"CV",href:"/cv"},{label:"Contact",href:"/contact"}];
-export function SiteNav({theme:_theme}:{theme?:"light"|"dark"}) {
+const links=[{label:"Research",href:"/projects"},{label:"About",href:"/about"},{label:"CV",href:"/cv"},{label:"Contact",href:"/contact"}];
+export function SiteNav({theme:_theme}:{theme?:"light"|"dark"}){
  const [open,setOpen]=useState(false);
- return <header className="sticky top-0 z-40 border-b border-[var(--line)] bg-[var(--background)]/95 backdrop-blur-lg">
-  <nav className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-5 md:px-10" aria-label="Main navigation">
-   <Link href="/" className="flex items-center gap-3"><span className="flex h-10 w-10 items-center justify-center border border-[var(--foreground)] font-serif text-xl font-semibold">PG</span><span className="leading-tight"><span className="block text-sm font-semibold tracking-tight">Panagiota Grosdouli</span><span className="mt-1 block text-[10px] uppercase tracking-[.16em] text-[var(--muted)]">Research & Engineering</span></span></Link>
-   <div className="hidden items-center gap-8 text-xs font-semibold uppercase tracking-[.1em] md:flex">{links.map(l=><Link key={l.href} href={l.href} className="transition hover:text-[var(--accent)]">{l.label}</Link>)}</div>
-   <button className="text-sm md:hidden" onClick={()=>setOpen(!open)} aria-expanded={open} aria-label="Toggle navigation">{open?"Close":"Menu"}</button>
+ return <header className="sticky top-0 z-40 border-b border-[#d9ded8] bg-[#f6f5f0]/95 backdrop-blur-xl">
+  <nav className="mx-auto flex max-w-6xl items-center justify-between gap-5 px-6 py-4 md:px-10" aria-label="Main navigation">
+   <Link href="/" className="flex items-center gap-3"><span className="grid h-11 w-11 place-items-center bg-[#142521] font-serif text-xl font-semibold text-[#f6f5f0]">PG<span className="text-[#eead99]">.</span></span><span className="leading-tight"><span className="block text-sm font-semibold text-[#142521]">Panagiota Grosdouli</span><span className="mt-1 block text-[10px] uppercase tracking-[.14em] text-[#61706b]">AI / Robotics / Research</span></span></Link>
+   <div className="hidden items-center gap-8 md:flex">{links.map(x=><Link href={x.href} key={x.href} className="text-xs font-semibold uppercase tracking-[.13em] text-[#142521] transition hover:text-[#c74d31]">{x.label}</Link>)}</div>
+   <button type="button" className="text-sm font-semibold md:hidden" aria-expanded={open} aria-controls="mobile-nav" onClick={()=>setOpen(!open)}>{open?"Close":"Menu"}</button>
   </nav>
-  {open?<div className="grid gap-3 border-t border-[var(--line)] px-6 py-5 text-sm md:hidden">{links.map(l=><Link onClick={()=>setOpen(false)} key={l.href} href={l.href}>{l.label}</Link>)}</div>:null}
+  {open?<div id="mobile-nav" className="grid gap-4 border-t border-[#d9ded8] px-6 py-5 text-sm font-semibold md:hidden">{links.map(x=><Link href={x.href} key={x.href} onClick={()=>setOpen(false)}>{x.label}</Link>)}</div>:null}
  </header>;
 }
