@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 };
 
 const groups = [
-  ["Robotics systems", ["Visual-inertial localization", "SLAM", "sensor fusion", "motion planning", "ROS 2", "simulation"]],
-  ["Learning and perception", ["computer vision", "trajectory prediction", "uncertainty-aware evaluation", "PyTorch", "OpenCV", "data analysis"]],
-  ["Research engineering", ["Python", "C/C++", "TypeScript", "Linux", "Git", "Docker", "technical writing"]],
+  ["Robotics & autonomy", ["ROS 2", "Gazebo", "autonomous systems", "robotic perception", "motion forecasting"]],
+  ["Machine learning & vision", ["deep learning", "computer vision", "YOLO", "semantic segmentation", "trajectory prediction", "PyTorch", "OpenCV"]],
+  ["Programming & tools", ["Python", "C++", "PyTorch", "OpenCV", "ROS 2", "Gazebo", "LaTeX"]],
   ["Scientific practice", ["reproducible experiments", "evaluation design", "ablation studies", "technical communication", "research reporting"]],
 ];
 
@@ -41,11 +41,11 @@ export default function AboutPage() {
           </Reveal>
           <Reveal>
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.26em] text-[var(--accent)]">About</p>
-            <h1 className="mt-5 max-w-4xl font-serif text-5xl leading-[0.95] tracking-[-0.06em] md:text-7xl">Building a research path in robust autonomous systems.</h1>
+            <h1 className="mt-5 max-w-4xl font-serif text-5xl leading-[0.95] tracking-[-0.06em] md:text-7xl">Machine Learning, Computer Vision & Robotics.</h1>
             <div className="mt-8 max-w-3xl space-y-5 text-lg leading-8 text-[var(--muted)]">
-              <p>I am an Electrical and Computer Engineering graduate (Integrated MEng, 2026) building a research profile in machine learning, computer vision, robotic perception, localization and uncertainty-aware autonomous systems.</p>
-              <p>My work connects deep learning, computer vision, and robotics through research questions, implemented systems, and carefully designed experiments.</p>
-              <p>The central theme is robust autonomy under uncertainty: how autonomous systems can perceive, estimate, plan, and recover when their inputs are incomplete, degraded, or unreliable.</p>
+              <p>I am an Electrical and Computer Engineer (Integrated MEng, 2026) from Democritus University of Thrace, interested in Machine Learning, Computer Vision, Robotics, and Autonomous Systems.</p>
+              <p>For my diploma thesis (10/10), I studied trajectory prediction of vulnerable road users for road safety and autonomous driving, comparing deep learning architectures and exploring probabilistic forecasting, uncertainty, and interactions.</p>
+              <p>During my internship at OZZIE Robotics, I developed and trained a YOLO-based semantic segmentation model for road and sidewalk perception in an autonomous delivery robot. I am now seeking junior engineering and research opportunities, and am also open to relevant PhD positions.</p>
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/research-map" className="focus-ring rounded-full border border-[var(--accent)] bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-[var(--background)]">Research map</Link>
@@ -60,7 +60,7 @@ export default function AboutPage() {
         </section>
 
         <section className="mt-20 grid gap-10 border-t border-[var(--line)] pt-12 lg:grid-cols-[300px_1fr]">
-          <div><p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Research directions</p><h2 className="mt-3 font-serif text-3xl tracking-[-0.04em]">Questions guiding the work.</h2></div>
+          <div><p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Areas of interest</p><h2 className="mt-3 font-serif text-3xl tracking-[-0.04em]">Questions guiding the work.</h2></div>
           <div className="grid gap-5 md:grid-cols-3">
             {directions.map(([title, text]) => <Reveal key={title}><article className="command-panel h-full rounded-[1.5rem] p-6"><h3 className="font-serif text-2xl tracking-[-0.035em]">{title}</h3><p className="mt-4 text-sm leading-7 text-[var(--muted)]">{text}</p></article></Reveal>)}
           </div>
