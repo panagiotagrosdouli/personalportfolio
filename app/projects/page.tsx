@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 import { SiteNav } from "@/components/portfolio/SiteNav";
-import { ProjectExplorer } from "@/components/portfolio/ProjectExplorer";
 import { projects } from "@/data/projects";
 
 export const metadata: Metadata = {
@@ -11,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 const thesis = projects.find((project) => project.slug === "safecrossai");
+const secondProject = projects.find((project) => project.slug === "shield-vio");
 
 export default function ProjectsPage() {
   return (
@@ -38,7 +38,14 @@ export default function ProjectsPage() {
           </section>
         ) : null}
 
-        <ProjectExplorer projects={projects} />
+        {secondProject ? (
+          <Link href={`/projects/${secondProject.slug}`} className="focus-ring mt-6 block rounded-[2rem] border border-[var(--line)] bg-[var(--panel)] p-7 transition hover:border-[var(--accent)] md:p-10">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Research prototype</p>
+            <h2 className="mt-4 font-serif text-4xl tracking-[-0.05em] md:text-5xl">{secondProject.shortTitle}</h2>
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-[var(--muted)]">{secondProject.objective}</p>
+            <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)]">View project <FiArrowUpRight aria-hidden="true" /></span>
+          </Link>
+        ) : null}
       </div>
     </main>
   );
