@@ -11,7 +11,7 @@ const studies = [
     type: "MEng diploma thesis",
     title: "Predicting human motion.",
     subtitle: "Trajectory forecasting for vulnerable road users",
-    description: "Investigating how deep learning can anticipate pedestrian and cyclist motion at smart intersections, where human behaviour introduces uncertainty.",
+    description: "Deep learning for safer smart intersections.",
     href: "/projects/safecrossai",
     image: "/datasets/imptc/sample_01_vru_tracks.jpg",
     alt: "Sample vulnerable road-user tracks from the thesis dataset",
@@ -23,7 +23,7 @@ const studies = [
     type: "Research prototype",
     title: "SHIELD-VIO.",
     subtitle: "Reliable visual–inertial state estimation",
-    description: "Exploring uncertainty and degradation detection in visual–inertial localization for autonomous systems operating under imperfect sensing.",
+    description: "Localization that knows when sensing degrades.",
     href: "/projects/shield-vio",
     image: "/evidence/shield-vio/trajectory-evidence.svg",
     alt: "SHIELD-VIO trajectory research evidence visualization",
@@ -42,8 +42,8 @@ export default function Home() {
           <div className="relative z-10">
             <p className="flex items-center gap-4 text-[11px] font-bold uppercase tracking-[.27em] text-[#203459]"><span className="h-[2px] w-11 bg-[#13bdda]" />AI · Computer Vision · Robotics</p>
             <h1 className="mt-9 max-w-[700px] font-serif text-[5rem] font-semibold leading-[.82] tracking-[-.07em] text-[#101b3b] sm:text-[7rem] lg:text-[8rem]">Curiosity<br />in motion<span className="text-[#08b9d7]">.</span></h1>
-            <p className="mt-9 max-w-lg text-xl leading-8 text-[#344362]">Building intelligent systems that perceive, predict and navigate the physical world.</p>
-            <p className="mt-4 max-w-lg text-sm leading-7 text-[#64728b]">Panagiota Grosdouli · Electrical & Computer Engineer (Integrated MEng). Research interests spanning human motion prediction, robot perception and uncertainty-aware autonomy.</p>
+            <p className="mt-9 max-w-lg text-xl leading-8 text-[#344362]">Perception. Prediction. Autonomy.</p>
+            <p className="mt-4 max-w-lg text-sm leading-7 text-[#64728b]">Panagiota Grosdouli · Electrical & Computer Engineer (MEng).</p>
             <div className="mt-9 flex flex-wrap gap-4">
               <Link href="#research" className="rounded-md bg-[#14254a] px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#254777]">Explore research ↗</Link>
               <Link href="/about" className="rounded-md border border-[#14254a] px-7 py-3.5 text-sm font-semibold text-[#14254a] transition hover:bg-white">About me ↗</Link>
@@ -66,23 +66,34 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="research" className="mx-auto max-w-7xl scroll-mt-24 px-6 py-20 md:px-10 lg:py-24">
-        <div className="mb-10 flex flex-wrap items-end justify-between gap-7 border-t border-[#b6c6d9] pt-5">
-          <div><p className="text-[11px] font-bold uppercase tracking-[.25em] text-[#05aeca]">01 / Selected research</p><h2 className="mt-4 font-serif text-6xl font-semibold tracking-[-.06em] md:text-7xl">Research in focus<span className="text-[#08b9d7]">.</span></h2></div>
-          <p className="max-w-sm text-sm leading-7 text-[#5b6b86]">From forecasting human behaviour to reliable robot localization — methods, evidence and open research questions.</p>
+
+      <section id="research" className="mx-auto max-w-7xl scroll-mt-24 px-6 py-20 md:px-10 lg:py-28">
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-5">
+          <div><p className="text-[11px] font-bold uppercase tracking-[.25em] text-[#05aeca]">01 / Selected work</p><h2 className="mt-3 font-serif text-6xl font-semibold tracking-[-.06em] md:text-7xl">Research, <span className="italic text-[#08b9d7]">seen.</span></h2></div>
+          <Link href="/projects" className="border-b border-[#08aeca] pb-2 text-sm font-semibold text-[#17355a]">All projects ↗</Link>
         </div>
-        <div className="grid gap-7 lg:grid-cols-2">
-          {studies.map(study => <Link key={study.number} href={study.href} className="group overflow-hidden rounded-xl border border-[#d9e3ef] bg-white shadow-[0_8px_35px_rgba(25,48,90,.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_55px_rgba(25,48,90,.13)]">
-            <div className={`relative h-60 overflow-hidden ${study.color} md:h-72`}><Image src={`${base}${study.image}`} alt={study.alt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-contain p-5 transition duration-500 group-hover:scale-[1.04]"/><span className="absolute left-5 top-5 rounded-full border border-white/75 bg-white/85 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[.13em] text-[#344b70] backdrop-blur">{study.type}</span></div>
-            <div className="p-7 md:p-9"><div className="flex items-start justify-between gap-4"><div><p className="text-[11px] font-semibold uppercase tracking-[.2em] text-[#13a9c9]">{study.number} / Featured project</p><h3 className="mt-4 font-serif text-4xl font-semibold tracking-[-.04em] md:text-5xl">{study.title}</h3></div><span aria-hidden="true" className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#dff5fa] text-xl text-[#164568] transition group-hover:bg-[#10b8d4] group-hover:text-white">↗</span></div><p className="mt-3 font-semibold text-[#3b5778]">{study.subtitle}</p><p className="mt-3 max-w-lg text-sm leading-7 text-[#60718a]">{study.description}</p><div className="mt-6 flex flex-wrap gap-2">{study.tags.map(tag=><span key={tag} className="rounded-full border border-[#dce6f0] px-3 py-1.5 text-[11px] text-[#45617b]">{tag}</span>)}</div></div>
+        <div className="grid gap-5 lg:grid-cols-2">
+          {studies.map(study=><Link key={study.number} href={study.href} className="group overflow-hidden rounded-2xl border border-[#d9e3ef] bg-white shadow-[0_8px_35px_rgba(25,48,90,.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_55px_rgba(25,48,90,.13)]">
+            <div className={`relative h-[310px] overflow-hidden ${study.color} sm:h-[400px]`}><Image src={`${base}${study.image}`} alt={study.alt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-contain p-4 transition duration-500 group-hover:scale-[1.05]"/><span className="absolute left-5 top-5 rounded-full bg-white/90 px-4 py-2 text-[10px] font-semibold uppercase tracking-[.15em] text-[#344b70] shadow-sm backdrop-blur">{study.type}</span></div>
+            <div className="flex items-center justify-between gap-4 p-6 md:p-8"><div><h3 className="font-serif text-4xl font-semibold tracking-[-.045em] md:text-5xl">{study.title}</h3><p className="mt-2 text-sm text-[#64758d]">{study.description}</p></div><span aria-hidden="true" className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#dff5fa] text-xl text-[#164568]">↗</span></div>
           </Link>)}
         </div>
-        <div className="mt-9 text-right"><Link href="/projects" className="border-b border-[#0aabc7] pb-2 text-sm font-semibold text-[#17355a]">Explore all projects ↗</Link></div>
       </section>
 
-      <section className="border-y border-[#dae4ee] bg-[#f0f5f8]"><div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:px-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:py-20"><div><p className="text-[11px] font-bold uppercase tracking-[.25em] text-[#0baac4]">02 / Research approach</p><h2 className="mt-5 font-serif text-5xl font-semibold leading-[.97] tracking-[-.05em] md:text-6xl">From sensing<br />to decisions.</h2><p className="mt-5 max-w-md text-sm leading-7 text-[#65758e]">A recurring question across my work: how can intelligent systems remain useful when observations and future behaviour are uncertain?</p></div><div className="grid grid-cols-2 gap-3 sm:grid-cols-4">{["Perceive","Predict","Reason","Navigate"].map((item,i)=><div key={item} className="rounded-xl border border-[#d7e5ed] bg-white px-4 py-6 shadow-sm"><p className="text-xs font-bold text-[#0aaecd]">0{i+1}</p><div className="mt-7 h-1 w-full rounded-full bg-[#dbedf6]"><div className="h-1 rounded-full bg-[#10afcc]" style={{width:`${30+i*22}%`}} /></div><p className="mt-5 font-serif text-2xl font-semibold text-[#192d4b]">{item}</p></div>)}</div></div></section>
+      <section className="border-y border-[#dce6ee] bg-[#edf5f9]"><div className="mx-auto max-w-7xl px-6 py-20 md:px-10">
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-5"><div><p className="text-[11px] font-bold uppercase tracking-[.25em] text-[#0baac4]">02 / Inside the research</p><h2 className="mt-3 font-serif text-5xl font-semibold tracking-[-.05em] md:text-6xl">A visual research journal.</h2></div><p className="max-w-xs text-xs leading-6 text-[#63758b]">Selected dataset examples and project visualizations. See individual case studies for methods and limitations.</p></div>
+        <div className="grid gap-4 md:grid-cols-12">
+          <Link href="/projects/safecrossai" className="group relative overflow-hidden rounded-xl bg-white md:col-span-7"><div className="relative h-64 sm:h-80"><Image src={`${base}/datasets/imptc/sample_01_overview.jpg`} alt="Example smart-intersection scene from the thesis dataset" fill sizes="(max-width:768px) 100vw, 58vw" className="object-contain p-3 transition duration-500 group-hover:scale-105"/></div><div className="flex items-center justify-between px-5 pb-5 text-sm font-semibold text-[#294565]">Smart intersection scene <span>↗</span></div></Link>
+          <Link href="/projects/shield-vio" className="group relative overflow-hidden rounded-xl bg-white md:col-span-5"><div className="relative h-64 sm:h-80"><Image src={`${base}/evidence/shield-vio/estimator-health-evidence.svg`} alt="SHIELD-VIO estimator health research visualization" fill sizes="(max-width:768px) 100vw, 42vw" className="object-contain p-3 transition duration-500 group-hover:scale-105"/></div><div className="flex items-center justify-between px-5 pb-5 text-sm font-semibold text-[#294565]">Estimator health visualization <span>↗</span></div></Link>
+          <Link href="/projects/safecrossai" className="group relative overflow-hidden rounded-xl bg-white md:col-span-5"><div className="relative h-56 sm:h-64"><Image src={`${base}/datasets/imptc/sample_02_vru_tracks.jpg`} alt="Sample vulnerable road-user trajectories" fill sizes="(max-width:768px) 100vw, 42vw" className="object-contain p-3 transition duration-500 group-hover:scale-105"/></div><div className="flex items-center justify-between px-5 pb-5 text-sm font-semibold text-[#294565]">Vulnerable road-user tracks <span>↗</span></div></Link>
+          <Link href="/projects/shield-vio" className="group relative overflow-hidden rounded-xl bg-white md:col-span-7"><div className="relative h-56 sm:h-64"><Image src={`${base}/project-media/shield-vio-pipeline.svg`} alt="SHIELD-VIO research pipeline diagram" fill sizes="(max-width:768px) 100vw, 58vw" className="object-contain p-3 transition duration-500 group-hover:scale-105"/></div><div className="flex items-center justify-between px-5 pb-5 text-sm font-semibold text-[#294565]">Localization research pipeline <span>↗</span></div></Link>
+        </div>
+      </div></section>
 
-      <section className="mx-auto grid max-w-7xl gap-10 px-6 py-20 md:px-10 lg:grid-cols-[.7fr_1.3fr] lg:items-center"><div><p className="text-[11px] font-bold uppercase tracking-[.25em] text-[#08aeca]">03 / Experience</p><h2 className="mt-5 font-serif text-5xl font-semibold leading-none tracking-[-.04em] md:text-6xl">Engineering in<br />the real world.</h2></div><div className="border-l-2 border-[#0eb8d4] pl-7"><p className="text-xs font-semibold uppercase tracking-[.15em] text-[#6b7f97]">2025 · Computer Vision Intern</p><h3 className="mt-3 font-serif text-4xl font-semibold">OZZIE Robotics</h3><p className="mt-4 max-w-2xl text-sm leading-8 text-[#61718b]">Developed and trained a YOLO-based semantic segmentation model for roads and sidewalks on an autonomous delivery robot. Work included model evaluation, video analysis and ground-truth annotation.</p><Link href="/about" className="mt-5 inline-block text-sm font-semibold text-[#117e9e]">More about my experience ↗</Link></div></section>
+      <section className="mx-auto grid max-w-7xl gap-10 px-6 py-20 md:px-10 lg:grid-cols-[.85fr_1.15fr] lg:items-center lg:py-24">
+        <div><p className="text-[11px] font-bold uppercase tracking-[.25em] text-[#08aeca]">03 / Experience</p><h2 className="mt-4 font-serif text-5xl font-semibold leading-none tracking-[-.04em] md:text-6xl">From the lab<br/>to the world.</h2><p className="mt-5 text-sm font-semibold text-[#3c5471]">OZZIE Robotics · Computer Vision Intern · 2025</p><p className="mt-3 max-w-md text-sm leading-7 text-[#64768c]">YOLO-based road and sidewalk segmentation for an autonomous delivery robot.</p><Link href="/about" className="mt-5 inline-block border-b border-[#10afc9] pb-2 text-sm font-semibold text-[#117e9e]">About my experience ↗</Link></div>
+        <div className="grid grid-cols-2 gap-4"><div className="relative col-span-2 h-64 overflow-hidden rounded-2xl bg-[#e7f1f7] sm:h-80"><Image src={`${base}/profile.png`} alt="Portrait of Panagiota Grosdouli" fill sizes="(max-width:1024px) 100vw, 55vw" className="object-contain"/></div><div className="rounded-xl border border-[#dce6ef] bg-[#f4f9fc] px-5 py-6"><p className="text-xs uppercase tracking-widest text-[#6b829a]">Research</p><p className="mt-3 font-serif text-3xl font-semibold">AI & Robotics</p></div><div className="rounded-xl border border-[#dce6ef] bg-[#f4f9fc] px-5 py-6"><p className="text-xs uppercase tracking-widest text-[#6b829a]">Training</p><p className="mt-3 font-serif text-3xl font-semibold">Integrated MEng</p></div></div>
+      </section>
 
       <section className="bg-[#13254c] text-white"><div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-8 px-6 py-16 md:px-10"><div><p className="text-[11px] font-bold uppercase tracking-[.22em] text-[#6be2f0]">Let's connect</p><h2 className="mt-4 font-serif text-5xl md:text-6xl">Curious about what's next?</h2><p className="mt-4 text-sm text-[#c8d7eb]">Open to research collaborations, engineering opportunities and relevant PhD conversations.</p></div><Link href="/contact" className="rounded-md bg-[#10c0dc] px-7 py-3.5 text-sm font-semibold text-[#10234a] transition hover:bg-white">Contact me ↗</Link></div></section>
       <Footer />
