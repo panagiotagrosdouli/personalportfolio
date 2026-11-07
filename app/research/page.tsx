@@ -1,50 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteNav } from "@/components/portfolio/SiteNav";
-import { Reveal } from "@/components/portfolio/Reveal";
-
-export const metadata: Metadata = { title: "Research", description: "Research vision, current projects, themes and future directions in robotics, SLAM, sensor fusion and AI for autonomy." };
-
-const themes = [
-  ["SLAM", "Robust mapping and localization under perceptual degradation and incomplete sensing."],
-  ["Visual-Inertial Odometry", "Health-aware VIO with degradation monitoring, diagnosis, and recovery policies."],
-  ["Sensor Fusion", "Adaptive weighting of visual, inertial, event-based, and semantic signals under uncertainty."],
-  ["Autonomous Driving", "Prediction and safety reasoning for vulnerable road users at intelligent intersections."],
-  ["Risk-Aware Robotics", "Planning methods that consider collision risk, returnability, and uncertainty propagation."],
-  ["UAV Autonomy", "Future extension of robust perception and VIO methods to aerial platforms."],
-  ["Computer Vision", "Perception modules that expose reliability, calibration, and failure modes."],
-  ["AI for Robotics", "Learning systems evaluated by decision utility, robustness, and reproducibility."],
-  ["Underwater Communications", "Future Work: communication-constrained autonomy and sensor-network reliability."],
-];
-
-const directions = ["Benchmark degraded VIO and SLAM pipelines against reproducible baselines.", "Connect localization health estimates to planner-level risk and recovery behavior.", "Develop visualization tools for uncertainty, trajectories, semantic perception, and point clouds.", "Keep publication sections ready while marking research outputs as forthcoming until accepted or public."];
-
-export default function ResearchPage() {
-  return (
-    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
-      <SiteNav />
-      <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-24">
-        <Reveal><p className="text-xs font-semibold uppercase tracking-[0.26em] text-[var(--accent)]">Research vision</p><h1 className="mt-5 max-w-5xl font-serif text-5xl leading-[0.95] tracking-[-0.06em] md:text-7xl">Reliable autonomy requires perception systems that know when they are uncertain.</h1><p className="mt-8 max-w-3xl text-lg leading-8 text-[var(--muted)]">My research direction studies how robots can detect degraded sensing, represent uncertainty, adapt estimation and fusion, and make safer navigation decisions before failures become safety-critical.</p></Reveal>
-
-        <section className="mt-16 grid gap-8 border-t border-[var(--line)] pt-12 lg:grid-cols-[280px_1fr]">
-          <div><p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Current projects</p><h2 className="mt-3 font-serif text-3xl tracking-[-0.04em]">A connected research program.</h2></div>
-          <div className="grid gap-5 md:grid-cols-2">
-            {["SHIELD-VIO", "Adaptive Multi-Modal SLAM", "DynNav", "SafeCrossAI"].map((name) => <Reveal key={name}><article className="rounded-[1.5rem] border border-[var(--line)] p-6"><h3 className="font-serif text-2xl tracking-[-0.035em]">{name}</h3><p className="mt-3 text-sm leading-7 text-[var(--muted)]">Active research repository connected to robust perception, uncertainty-aware estimation, or safe decision making.</p></article></Reveal>)}
-          </div>
-        </section>
-
-        <section className="mt-16 grid gap-8 border-t border-[var(--line)] pt-12 lg:grid-cols-[280px_1fr]">
-          <div><p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Themes</p><h2 className="mt-3 font-serif text-3xl tracking-[-0.04em]">Research areas.</h2></div>
-          <div className="grid gap-4 md:grid-cols-3">
-            {themes.map(([title, text]) => <Reveal key={title}><article className="h-full rounded-[1.3rem] border border-[var(--line)] p-5"><h3 className="font-semibold">{title}</h3><p className="mt-3 text-sm leading-7 text-[var(--muted)]">{text}</p></article></Reveal>)}
-          </div>
-        </section>
-
-        <section className="mt-16 grid gap-8 border-t border-[var(--line)] pt-12 lg:grid-cols-[280px_1fr]">
-          <div><p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Future directions</p><h2 className="mt-3 font-serif text-3xl tracking-[-0.04em]">Next research steps.</h2></div>
-          <Reveal><ul className="max-w-3xl space-y-4 text-base leading-8 text-[var(--muted)]">{directions.map((item) => <li key={item} className="border-l border-[var(--accent)] pl-5">{item}</li>)}</ul><Link href="/projects" className="mt-8 inline-flex text-sm font-semibold text-[var(--accent)] underline-offset-4 hover:underline">View project reports</Link></Reveal>
-        </section>
-      </div>
-    </main>
-  );
-}
+import { Footer } from "@/components/portfolio/Footer";
+export const metadata: Metadata = { title: "Research vision", description: "Research interests in trajectory forecasting, robot perception, state estimation and safe autonomous decision making." };
+const themes=[{n:"01",name:"Human motion prediction",text:"Forecasting vulnerable road-user behaviour and representing ambiguity at smart intersections.",href:"/projects/safecrossai"},{n:"02",name:"Robotic state estimation",text:"Exploring degradation-aware visual–inertial odometry and the reliability of localization.",href:"/projects/shield-vio"},{n:"03",name:"Risk-aware autonomy",text:"Investigating how perception uncertainty can inform downstream navigation and decision making.",href:"/research-agenda"}];
+const questions=["How should a robot represent uncertainty in its observations and predictions?","When can a localization or forecasting system recognize that it is becoming unreliable?","How can safety-critical decisions respond to rare but consequential failure modes?"];
+export default function ResearchPage(){return <main className="min-h-screen"><SiteNav/>
+<section className="bg-[radial-gradient(ellipse_at_70%_25%,#dceefa,#f9fcfe_60%,#fff)]"><div className="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28"><p className="text-[11px] font-bold uppercase tracking-[.25em] text-[#08a9c5]">Research direction / Robotics & AI</p><h1 className="mt-7 max-w-6xl font-serif text-6xl leading-[.91] tracking-[-.055em] text-[#15294b] md:text-[7.5rem]">Intelligence should<br/><span className="italic text-[#0ab3cf]">know its limits.</span></h1><p className="mt-9 max-w-3xl text-lg leading-9 text-[#61748b]">My research interests center on intelligent systems that perceive the world, anticipate what may happen next, and make decisions while accounting for uncertainty and degraded sensing.</p><div className="mt-9 flex flex-wrap gap-4"><Link href="/projects" className="rounded-md bg-[#152a50] px-7 py-3.5 text-sm font-semibold text-white">Explore case studies ↗</Link><Link href="/research-agenda" className="rounded-md border border-[#1e4165] px-7 py-3.5 text-sm font-semibold text-[#193858]">Research agenda ↗</Link></div></div></section>
+<section className="mx-auto max-w-7xl px-6 py-20 md:px-10 lg:py-28"><div className="grid gap-10 lg:grid-cols-[.4fr_.6fr]"><div><p className="text-[11px] font-bold uppercase tracking-[.23em] text-[#08a9c5]">01 / A connected direction</p><h2 className="mt-5 font-serif text-6xl font-semibold leading-none tracking-[-.05em]">From perception<br/>to action.</h2><p className="mt-6 max-w-sm text-sm leading-8 text-[#64778e]">These are connected research interests, not claims that every part of the pipeline has already been implemented or validated.</p></div><div className="grid gap-4">{themes.map(t=><Link href={t.href} key={t.n} className="group rounded-2xl border border-[#dae7ee] bg-white p-7 shadow-[0_9px_35px_#1b4b6b08] transition hover:-translate-y-1 hover:border-[#0fb5d0]"><div className="flex items-start gap-6"><span className="font-serif text-5xl italic text-[#1fb6d0]">{t.n}</span><div><h3 className="font-serif text-4xl font-semibold tracking-[-.035em]">{t.name} ↗</h3><p className="mt-3 text-sm leading-7 text-[#62778f]">{t.text}</p></div></div></Link>)}</div></div></section>
+<section className="border-y border-[#dae7ee] bg-[#eff7fa]"><div className="mx-auto max-w-7xl px-6 py-20 md:px-10 lg:py-24"><p className="text-[11px] font-bold uppercase tracking-[.23em] text-[#08a9c5]">02 / Questions worth investigating</p><h2 className="mt-5 max-w-4xl font-serif text-6xl font-semibold leading-none tracking-[-.05em]">Questions before answers.</h2><div className="mt-10 grid gap-5 md:grid-cols-3">{questions.map((q,i)=><div key={q} className="rounded-2xl border border-[#d8e7ef] bg-white p-7"><p className="text-[11px] font-bold tracking-[.2em] text-[#09a9c7]">QUESTION 0{i+1}</p><p className="mt-7 font-serif text-3xl font-semibold leading-tight text-[#1d3458]">{q}</p></div>)}</div></div></section>
+<section className="mx-auto grid max-w-7xl gap-9 px-6 py-20 md:px-10 lg:grid-cols-[.45fr_.55fr] lg:py-28"><div><p className="text-[11px] font-bold uppercase tracking-[.23em] text-[#08a9c5]">03 / Scientific practice</p><h2 className="mt-5 font-serif text-5xl font-semibold">Evidence, not just ambition.</h2></div><div className="space-y-5 text-base leading-8 text-[#63788e]"><p>My goal is to strengthen research through clear problem formulation, reproducible baselines, robust evaluation and explicit discussion of limitations.</p><p>Completed academic work, ongoing prototypes and proposed future experiments are identified separately throughout the portfolio.</p><Link href="/cv" className="inline-block text-sm font-semibold text-[#078aa7]">Academic CV ↗</Link></div></section><Footer/></main>}
