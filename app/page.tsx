@@ -41,28 +41,25 @@ export default function Home() {
         <div className="relative mx-auto grid max-w-7xl gap-10 px-6 pb-14 pt-20 md:px-10 lg:min-h-[645px] lg:grid-cols-[.96fr_1.04fr] lg:items-center lg:py-24">
           <div className="relative z-10">
             <p className="flex items-center gap-4 text-[11px] font-bold uppercase tracking-[.27em] text-[#203459]"><span className="h-[2px] w-11 bg-[#13bdda]" />AI · Computer Vision · Robotics</p>
-            <h1 className="mt-9 max-w-[700px] font-serif text-[5rem] font-semibold leading-[.82] tracking-[-.07em] text-[#101b3b] sm:text-[7rem] lg:text-[8rem]">Curiosity<br />in motion<span className="text-[#08b9d7]">.</span></h1>
-            <p className="mt-9 max-w-lg text-xl leading-8 text-[#344362]">Perception. Prediction. Autonomy.</p>
+            <h1 className="mt-9 max-w-[700px] font-serif text-[4.1rem] font-semibold leading-[.94] tracking-[-.065em] text-[#101b3b] sm:text-[5.8rem] lg:text-[6.6rem]">Panagiota<br />Grosdouli<span className="text-[#08b9d7]">.</span></h1>
+            <p className="mt-7 max-w-lg text-xl font-semibold leading-8 text-[#243b60]">Electrical &amp; Computer Engineer (MEng)</p>
+            <p className="mt-3 max-w-lg text-base leading-7 text-[#4b607b]">I work at the intersection of artificial intelligence, computer vision, and robotics—exploring how intelligent systems perceive, predict, and navigate the world.</p>
             <div className="mt-6 inline-flex max-w-lg items-start gap-3 rounded-xl border border-[#b5dfe8] bg-white/85 px-4 py-3 shadow-sm backdrop-blur"><span aria-hidden="true" className="mt-[6px] h-2.5 w-2.5 shrink-0 rounded-full bg-[#0bb9c4] shadow-[0_0_0_4px_#d9f6f7]"/><div><p className="text-sm font-bold text-[#17395c]">Open to PhD & Research Opportunities</p><p className="mt-1 text-xs leading-5 text-[#56738c]">Also seeking AI / Machine Learning, Computer Vision & Robotics engineering roles.</p></div></div>
-            <p className="mt-4 max-w-lg text-sm leading-7 text-[#64728b]">Panagiota Grosdouli · Electrical & Computer Engineer (MEng).</p>
             <div className="mt-9 flex flex-wrap gap-4">
               <Link href="#research" className="rounded-md bg-[#14254a] px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#254777]">Explore research ↗</Link>
               <Link href="/about" className="rounded-md border border-[#14254a] px-7 py-3.5 text-sm font-semibold text-[#14254a] transition hover:bg-white">About me ↗</Link>
             </div>
           </div>
-          <div className="relative mx-auto flex min-h-[370px] w-full max-w-[650px] items-center justify-center lg:min-h-[510px]">
-            <div className="absolute inset-4 rounded-full bg-[#b9e7ef]/50 blur-3xl" aria-hidden="true" />
-            <svg viewBox="0 0 680 510" role="img" aria-label="Conceptual robotics illustration of an autonomous vehicle navigating a mapped environment" className="relative h-auto w-full drop-shadow-[0_25px_35px_rgba(20,50,90,.13)]">
-              <defs><linearGradient id="road" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#dceaf8"/><stop offset="1" stopColor="#9dbddc"/></linearGradient><linearGradient id="glass" x1="0" x2="1"><stop stopColor="#1a3879"/><stop offset="1" stopColor="#31d1e9"/></linearGradient></defs>
-              <g opacity=".55" stroke="#7fa9d8" strokeWidth="1" fill="none"><path d="M40 390 405 150 650 366 258 505Z" fill="url(#road)" opacity=".4"/>{Array.from({length:13},(_,i)=><path key={i} d={`M${65+i*44} 375 ${375+i*16} 160`} />)}{Array.from({length:9},(_,i)=><path key={i} d={`M${70+i*25} ${370+i*17} ${415+i*28} ${164+i*24}`} />)}</g>
-              <g fill="#7cb0ec" opacity=".72">{Array.from({length:95},(_,i)=><circle key={i} cx={45+(i*73)%570} cy={95+(i*41)%275} r={i%4===0?2.4:1.1}/>)}</g>
-              <path d="M110 431 Q230 352 317 363 T585 259" stroke="#04c0db" strokeWidth="9" fill="none" opacity=".16"/><path d="M110 431 Q230 352 317 363 T585 259" stroke="#04b8d4" strokeWidth="4" fill="none" strokeLinecap="round" strokeDasharray="12 12"/>
-              <g transform="translate(247 247)"><ellipse cx="100" cy="138" rx="145" ry="31" fill="#132b57" opacity=".14"/><path d="M0 90 93 42 219 91 130 142Z" fill="#fefefe" stroke="#225a98" strokeWidth="3"/><path d="M0 90V127L130 179V142ZM130 142V179L219 130V91Z" fill="#b9d8ee" stroke="#225a98" strokeWidth="3"/><path d="M38 77 92 52 174 81 122 107Z" fill="url(#glass)" opacity=".9"/><circle cx="39" cy="146" r="23" fill="#122750"/><circle cx="39" cy="146" r="11" fill="#7194c2"/><circle cx="178" cy="151" r="23" fill="#122750"/><circle cx="178" cy="151" r="11" fill="#7194c2"/><path d="M97 48V5" stroke="#25477b" strokeWidth="8"/><ellipse cx="97" cy="0" rx="33" ry="13" fill="#1b3561"/><rect x="67" y="-18" width="60" height="17" rx="6" fill="#3b81bb"/><ellipse cx="97" cy="-18" rx="30" ry="9" fill="#a2eafb"/></g>
-              <g stroke="#51b9dc" strokeWidth="1.5" opacity=".6" fill="none"><path d="M320 244 180 87M371 235 528 85M416 257 631 161"/><circle cx="180" cy="87" r="11"/><circle cx="528" cy="85" r="11"/><circle cx="631" cy="161" r="11"/></g>
-              <g fill="#163764" fontSize="12" fontFamily="Arial,sans-serif" letterSpacing="2"><text x="84" y="65">PERCEPTION</text><text x="483" y="53">STATE ESTIMATION</text><text x="490" y="454">NAVIGATION</text></g>
-              <g fill="#03bcd4"><circle cx="180" cy="87" r="4"/><circle cx="528" cy="85" r="4"/><circle cx="550" cy="278" r="5"/></g>
-            </svg>
-            <div className="absolute bottom-4 right-4 rounded-lg border border-white/80 bg-white/80 px-4 py-3 text-[10px] font-semibold uppercase tracking-[.18em] text-[#345477] shadow-sm backdrop-blur">Conceptual research visualization</div>
+          <div className="relative mx-auto flex min-h-[370px] w-full max-w-[540px] items-center justify-center py-5 lg:min-h-[510px]">
+            <div className="absolute inset-8 rounded-full bg-[#b9e7ef]/60 blur-3xl" aria-hidden="true" />
+            <div className="relative w-full max-w-[420px]">
+              <div className="absolute -bottom-4 -right-4 h-full w-full rounded-t-[210px] rounded-b-[32px] border-2 border-[#36c5da]" aria-hidden="true" />
+              <Image src={`${base}/profile.png`} alt="Panagiota Grosdouli — Electrical and Computer Engineer" width={720} height={900} priority sizes="(max-width: 1024px) 85vw, 420px" className="relative aspect-[4/5] w-full rounded-t-[210px] rounded-b-[32px] object-cover shadow-[0_30px_65px_rgba(20,50,90,.18)]" />
+              <div className="absolute -bottom-3 left-4 rounded-lg border border-white/80 bg-white/90 px-5 py-3 shadow-lg backdrop-blur sm:left-6">
+                <p className="text-sm font-bold text-[#17395c]">Panagiota Grosdouli</p>
+                <p className="mt-1 text-xs text-[#56738c]">AI · Computer Vision · Robotics</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
