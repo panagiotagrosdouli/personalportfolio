@@ -5,7 +5,7 @@ import { SiteNav } from "@/components/portfolio/SiteNav";
 import { Footer } from "@/components/portfolio/Footer";
 export const metadata:Metadata={title:"About",description:"About Panagiota Grosdouli, electrical and computer engineer working in AI and robotics."};
 const interests=[
-  {title:"Books & storytelling",description:"Creative writing, books, characters and worlds beyond engineering.",links:[{label:"Books on GitHub",url:"https://github.com/panagiotagrosdouli/books"},{label:"Wattpad",url:"https://www.wattpad.com/user/user34912981"}]},
+  {title:"Books & storytelling",description:"Creative writing, books, characters and worlds beyond engineering.",links:[{label:"Visit my books website",url:"https://panagiotagrosdouli.github.io/books/"},{label:"Wattpad",url:"https://www.wattpad.com/user/user34912981"}]},
   {title:"Music & songwriting",description:"Songwriting and musical exploration under Velvet Blue.",links:[{label:"Listen on Suno",url:"https://suno.com/@velvet_blue"}]},
   {title:"Radio & DJing",description:"Radio, music selection and creative broadcasting. Radio website link to be added soon.",links:[]},
   {title:"Photography & running",description:"Observation, movement and a different sense of perspective.",links:[]},
