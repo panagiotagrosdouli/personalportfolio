@@ -18,18 +18,7 @@ const studies = [
     tags: ["Deep learning", "Motion forecasting", "Intelligent transport"],
     color: "bg-[#eaf0f3]",
   },
-  {
-    number: "02",
-    type: "Research prototype",
-    title: "SHIELD-VIO.",
-    subtitle: "Reliable visual–inertial state estimation",
-    description: "Localization that knows when sensing degrades.",
-    href: "/projects/shield-vio",
-    image: "/evidence/shield-vio/trajectory-evidence.svg",
-    alt: "SHIELD-VIO trajectory research evidence visualization",
-    tags: ["Visual–inertial odometry", "Uncertainty", "Robotics"],
-    color: "bg-[#e9f1f2]",
-  },
+
 ];
 
 export default function Home() {
@@ -82,9 +71,7 @@ export default function Home() {
         <div className="mb-8 flex flex-wrap items-end justify-between gap-5"><div><p className="text-[11px] font-bold uppercase tracking-[.25em] text-[#0baac4]">02 / Inside the research</p><h2 className="mt-3 font-serif text-5xl font-semibold tracking-[-.05em] md:text-6xl">A visual research journal.</h2></div><p className="max-w-xs text-xs leading-6 text-[#63758b]">Selected dataset examples and project visualizations. See individual case studies for methods and limitations.</p></div>
         <div className="grid gap-4 md:grid-cols-12">
           <Link href="/projects/safecrossai" className="group relative overflow-hidden rounded-xl bg-white md:col-span-7"><div className="relative h-64 sm:h-80"><Image src={`${base}/datasets/imptc/sample_01_overview.jpg`} alt="Example smart-intersection scene from the thesis dataset" fill sizes="(max-width:768px) 100vw, 58vw" className="object-contain p-3 transition duration-500 group-hover:scale-105"/></div><div className="flex items-center justify-between px-5 pb-5 text-sm font-semibold text-[#294565]">Smart intersection scene <span>↗</span></div></Link>
-          <Link href="/projects/shield-vio" className="group relative overflow-hidden rounded-xl bg-white md:col-span-5"><div className="relative h-64 sm:h-80"><Image src={`${base}/evidence/shield-vio/estimator-health-evidence.svg`} alt="SHIELD-VIO estimator health research visualization" fill sizes="(max-width:768px) 100vw, 42vw" className="object-contain p-3 transition duration-500 group-hover:scale-105"/></div><div className="flex items-center justify-between px-5 pb-5 text-sm font-semibold text-[#294565]">Estimator health visualization <span>↗</span></div></Link>
           <Link href="/projects/safecrossai" className="group relative overflow-hidden rounded-xl bg-white md:col-span-5"><div className="relative h-56 sm:h-64"><Image src={`${base}/datasets/imptc/sample_02_vru_tracks.jpg`} alt="Sample vulnerable road-user trajectories" fill sizes="(max-width:768px) 100vw, 42vw" className="object-contain p-3 transition duration-500 group-hover:scale-105"/></div><div className="flex items-center justify-between px-5 pb-5 text-sm font-semibold text-[#294565]">Vulnerable road-user tracks <span>↗</span></div></Link>
-          <Link href="/projects/shield-vio" className="group relative overflow-hidden rounded-xl bg-white md:col-span-7"><div className="relative h-56 sm:h-64"><Image src={`${base}/project-media/shield-vio-pipeline.svg`} alt="SHIELD-VIO research pipeline diagram" fill sizes="(max-width:768px) 100vw, 58vw" className="object-contain p-3 transition duration-500 group-hover:scale-105"/></div><div className="flex items-center justify-between px-5 pb-5 text-sm font-semibold text-[#294565]">Localization research pipeline <span>↗</span></div></Link>
         </div>
       </div></section>
 
