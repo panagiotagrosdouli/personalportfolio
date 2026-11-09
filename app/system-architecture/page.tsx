@@ -28,7 +28,7 @@ const layers = [
     icon: FiMap,
     description: "Localization and mapping under uncertainty, degradation, and sensor-fusion constraints.",
     modules: ["VIO", "SLAM", "Sensor fusion", "Estimator health"],
-    projects: ["SHIELD-VIO", "AEGIS-VIO", "Adaptive Multi-Modal SLAM"],
+    projects: ["AEGIS-VIO", "Adaptive Multi-Modal SLAM"],
   },
   {
     title: "Uncertainty + Risk",
@@ -49,7 +49,7 @@ const layers = [
     icon: FiCpu,
     description: "Synthetic but clearly labelled experiments for reproducible development before validated benchmarks.",
     modules: ["Seeded scenarios", "Metrics", "Mission logs", "Pending results"],
-    projects: ["Formula 1 Race Simulation", "DynNav", "SHIELD-VIO"],
+    projects: ["Formula 1 Race Simulation", "DynNav"],
   },
 ];
 
