@@ -28,7 +28,6 @@ This repository supports a research-focused personal portfolio for presenting:
 
 - [DynNav: Dynamic Navigation Rerouting in Unknown Environments](https://github.com/panagiotagrosdouli/DynNav-Dynamic-Navigation-Rerouting-in-Unknown-Environments)
 - [SafeCrossAI](https://github.com/panagiotagrosdouli/SafeCrossAI)
-- [SHIELD-VIO](https://github.com/panagiotagrosdouli/SHIELD-VIO)
 - [OpenUWOC-AI](https://github.com/panagiotagrosdouli/OpenUWOC-AI)
 - [Adaptive Multi-Modal SLAM with Uncertainty-Aware Sensor Fusion](https://github.com/panagiotagrosdouli/Adaptive-Multi-Modal-SLAM-with-Uncertainty-Aware-Sensor-Fusion)
 
