@@ -8,7 +8,7 @@ const timeline = [
   ["2020", "Education", "Started MEng Electrical & Computer Engineering at Democritus University of Thrace."],
   ["2025", "Research milestone", "Focused portfolio direction around robust autonomy, trajectory prediction, and risk-aware robotics."],
   ["2025–2026", "Thesis", "Trajectory prediction of vulnerable road users at smart intersections."],
-  ["2026", "Major projects", "SHIELD-VIO, Adaptive Multi-Modal SLAM, DynNav, SafeCrossAI, and uncertainty-aware navigation organized as research repositories."],
+  ["2026", "Major projects", "Adaptive Multi-Modal SLAM, DynNav, SafeCrossAI, and uncertainty-aware navigation organized as research repositories."],
   ["Future", "Future milestone", "Submit research outputs only when experiments, reports, or publications are mature and verifiable."],
 ];
 
