@@ -21,14 +21,6 @@ type ProjectVisual = {
 };
 
 const registry: Record<string, ProjectVisual> = {
-  "shield-vio": {
-    eyebrow: "Estimator health and protective autonomy",
-    heading: "From sensor degradation to protective action.",
-    narrative: "The project connects visual-inertial estimation with consistency checks, failure prediction, domain-shift monitoring, and a supervisory navigation policy.",
-    stages: ["Visual + inertial input", "Estimator diagnostics", "Failure / shift detection", "Protective response"],
-    question: "Can degradation be detected early enough to trigger meaningful recovery?",
-    figures: [{src:"/project-media/shield-vio-pipeline.svg",alt:"Original SHIELD-VIO architecture diagram showing visual-inertial estimation, health monitoring and protective policy",title:"SHIELD-VIO research architecture",caption:"SHIELD-VIO system architecture for estimation, health monitoring and protective navigation.",type:"Architecture diagram",source:"https://github.com/panagiotagrosdouli/SHIELD-VIO"}],
-  },
   "aegis-vio": {
     eyebrow:"Visual-inertial estimator prototype",
     heading:"Track estimation confidence, not only pose.",
