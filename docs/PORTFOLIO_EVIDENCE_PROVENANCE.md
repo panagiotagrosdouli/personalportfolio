@@ -6,7 +6,6 @@ Every project page distinguishes **research schematics** from **simulated experi
 
 | Portfolio file | Origin | Figure type | Scope |
 |---|---|---|---|
-| `shield-vio-pipeline.svg` | SHIELD-VIO / assets/readme/shield_vio_pipeline_v2.svg | Original project architecture diagram | Explanatory schematic; not a real-data benchmark |
 | `adaptive-slam-pipeline.svg` | Adaptive-Multi-Modal-SLAM-with-Uncertainty-Aware-Sensor-Fusion / assets/readme/adaptive_multimodal_pipeline_v2.svg | Project architecture | A conceptual model, not measured sensor fusion |
 | `openuwoc-pipeline.svg` | OpenUWOC-AI / assets/readme/openuwoc_ai_pipeline.svg | Project architecture | Model of an underwater optical link, not observed BER |
 | `uncertainty-nav-pipeline.svg` | uncertainty-aware-navigation / assets/readme/uncertainty_aware_navigation_pipeline.svg | Project architecture | Planning conceptual diagram, not robot runs |
