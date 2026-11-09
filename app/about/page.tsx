@@ -7,7 +7,7 @@ export const metadata:Metadata={title:"About",description:"About Panagiota Grosd
 const interests=[
   {title:"Books & storytelling",description:"Creative writing, books, characters and worlds beyond engineering.",links:[{label:"Visit my books website",url:"https://panagiotagrosdouli.github.io/books/"},{label:"Wattpad",url:"https://www.wattpad.com/user/user34912981"}]},
   {title:"Music & songwriting",description:"Songwriting and musical exploration under Velvet Blue.",links:[{label:"Listen on Suno",url:"https://suno.com/@velvet_blue"}]},
-  {title:"Radio & DJing",description:"Radio, music selection and creative broadcasting. Radio website link to be added soon.",links:[]},
+  {title:"Radio & DJing",description:"Radio, music selection and creative broadcasting.",links:[{label:"Visit my radio website",url:"https://panagiotagrosdouli.github.io/radio/"}]},
   {title:"Photography & running",description:"Observation, movement and a different sense of perspective.",links:[]},
   {title:"Aviation & film",description:"Learning, visual narratives and looking at the world from above.",links:[]},
 ];
