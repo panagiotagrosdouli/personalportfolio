@@ -6,12 +6,6 @@ export type ProjectCover = {
 };
 
 export const projectCovers: Record<string, ProjectCover> = {
-  "shield-vio": {
-    src: "/project-media/shield-vio-pipeline.svg",
-    alt: "The project's visual-inertial estimation and protective-monitoring pipeline",
-    label: "SHIELD-VIO architecture",
-    provenance: "Research architecture",
-  },
   "adaptive-multimodal-slam": {
     src: "/project-media/adaptive-slam-pipeline.svg",
     alt: "The project's adaptive multi-sensor SLAM architecture",
