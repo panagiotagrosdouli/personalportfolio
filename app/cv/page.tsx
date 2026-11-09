@@ -76,7 +76,7 @@ export default function CVPage() {
 
           <Section label="Selected Research Projects">
             <div className="divide-y divide-[var(--line)] overflow-hidden rounded-2xl border border-[var(--line)]">
-              {["shield-vio", "safecrossai", "dynnav", "adaptive-multimodal-slam"].map((slug) => projects.find((project) => project.slug === slug)).filter((project): project is (typeof projects)[number] => Boolean(project)).map((project) => (
+              {["safecrossai", "dynnav", "adaptive-multimodal-slam"].map((slug) => projects.find((project) => project.slug === slug)).filter((project): project is (typeof projects)[number] => Boolean(project)).map((project) => (
                 <div key={project.slug} className="flex items-start gap-6 p-5">
                   <span className="mt-0.5 w-28 shrink-0 font-mono text-xs text-[var(--muted)]">{project.year}</span>
                   <div>
