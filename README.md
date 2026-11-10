@@ -2,6 +2,8 @@
 
 A personal academic and engineering portfolio website built with Next.js, React, TypeScript, and Tailwind CSS.
 
+**Live website:** [panagiota-research-portfolio.vercel.app](https://panagiota-research-portfolio.vercel.app/) (hosted on Vercel).
+
 The site presents selected work in robotics, artificial intelligence, autonomous navigation, computer vision, trajectory prediction, and intelligent safety-critical systems.
 
 ## Purpose
@@ -68,7 +70,9 @@ npm run lint
 
 ## Deployment Notes
 
-Set `NEXT_PUBLIC_SITE_URL` to the final production URL so canonical URLs and social preview metadata resolve correctly.
+The production website is hosted on Vercel: https://panagiota-research-portfolio.vercel.app/.
+
+Set `NEXT_PUBLIC_SITE_URL` to `https://panagiota-research-portfolio.vercel.app` so canonical URLs and social preview metadata resolve correctly.
 
 ## Project Goals
 
