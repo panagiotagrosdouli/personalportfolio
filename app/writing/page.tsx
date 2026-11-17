@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { SiteNav } from "@/components/portfolio/SiteNav";
 
 export const metadata: Metadata = {
@@ -35,7 +36,7 @@ export default function WritingPage() {
         <section className="mt-14 grid gap-8 lg:grid-cols-[340px_1fr] lg:items-start">
           <aside className="command-panel rounded-[2rem] p-5">
             <div className="overflow-hidden rounded-[1.5rem] border border-[var(--line)] bg-[var(--background)]/50 p-4 research-grid">
-              <img src="/books/architecture-of-restraint.jpg" alt="Book cover for The Architecture of Restraint" className="aspect-[2/3] w-full rounded-[1rem] object-cover" />
+              <Image src="/books/architecture-of-restraint.jpg" alt="Book cover for The Architecture of Restraint" width={600} height={900} className="aspect-[2/3] w-full rounded-[1rem] object-cover" />
             </div>
             <div className="mt-5 border-t border-[var(--line)] pt-5">
               <p className="font-mono text-[0.68rem] uppercase tracking-[0.2em] text-[var(--accent)]">Selected fiction</p>

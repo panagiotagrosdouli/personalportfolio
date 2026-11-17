@@ -16,14 +16,6 @@ function Section({ label, children }: { label: string; children: React.ReactNode
   );
 }
 
-const researchInterests = [
-  ["Robust Autonomy", "autonomous systems that remain reliable under perception, localization, and map uncertainty"],
-  ["Visual-Inertial Odometry & SLAM", "degradation monitoring, adaptive sensor fusion, and self-healing localization"],
-  ["Risk-Aware Navigation", "planning and replanning under uncertainty, collision risk, and safety constraints"],
-  ["Intelligent Mobility", "trajectory prediction and vulnerable road-user safety at smart intersections"],
-  ["Computer Vision for Robotics", "scene understanding, semantic perception, and failure-case analysis"],
-];
-
 const skills = [
   ["Robotics & Autonomy", ["Visual-Inertial Odometry", "SLAM", "Sensor Fusion", "Motion Planning", "ROS 2", "Navigation"]],
   ["AI & Vision", ["Python", "PyTorch", "Computer Vision", "Trajectory Prediction", "Uncertainty-Aware Evaluation", "Data Analysis"]],
