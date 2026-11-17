@@ -1,21 +1,23 @@
 @import "tailwindcss";
-:root,.dark{--background:#fff;--foreground:#111;--muted:#626262;--line:#e5e5e5;--accent:#c40012;--accent-soft:#fbebed;--panel:#fff;--warning:#92732c;color-scheme:light}
+:root,.dark{--background:#fbfcfe;--foreground:#132546;--muted:#62758f;--line:#dae5ef;--accent:#069fbe;--accent-soft:#e0f7fa;--panel:#fff;--warning:#92732c;color-scheme:light}
 @theme inline{--color-background:var(--background);--color-foreground:var(--foreground);--font-sans:var(--font-inter);--font-mono:var(--font-inter)}
 *{box-sizing:border-box}
 html{background:var(--background);scroll-behavior:smooth}
-body{background:var(--background);color:var(--foreground);font-family:var(--font-inter),Arial,sans-serif;letter-spacing:-.02em}
-::selection{background:#f7cbd0;color:#111}
-.font-serif{font-family:var(--font-inter),Arial,sans-serif}
+body{background:var(--background);color:var(--foreground);font-family:var(--font-inter),Arial,sans-serif;letter-spacing:-.015em}
+::selection{background:#b9edf5;color:#132546}
+.font-serif{font-family:var(--font-cormorant),Georgia,serif}
 .focus-ring:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
 .academic-page{max-width:1160px;margin:auto;padding:72px 24px 108px}
 .academic-kicker{font-size:11px;font-weight:750;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
 .academic-rule{width:72px;height:2px;background:var(--accent)}
-.academic-card{background:var(--panel);border:1px solid var(--line);border-radius:8px;transition:transform .3s,border-color .3s,box-shadow .3s;overflow:hidden}
-.academic-card:hover{transform:translateY(-4px);border-color:#e4a3a9;box-shadow:0 16px 40px #0000000d}
+.academic-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;transition:transform .3s,border-color .3s,box-shadow .3s;overflow:hidden}
+.academic-card:hover{transform:translateY(-5px);border-color:#a7d3e0;box-shadow:0 20px 55px #102c501a}
 .editorial-grid{background-image:linear-gradient(#ffffff0a 1px,transparent 1px),linear-gradient(90deg,#ffffff0a 1px,transparent 1px);background-size:54px 54px}
-.editorial-number{font-family:var(--font-inter),Arial,sans-serif;font-size:5rem;line-height:1;color:#c7c7c7}
-.project-visual{position:relative;overflow:hidden;background:#f3f3f3}
-.command-panel{background:var(--panel);border:1px solid var(--line);box-shadow:0 12px 40px #00000009}
+.editorial-number{font-family:var(--font-cormorant),Georgia,serif;font-style:italic;font-size:5rem;line-height:1;color:#bdc6da}
+.project-visual{position:relative;overflow:hidden;background:#e7f2f9}
+.project-visual:before{content:"";position:absolute;width:250px;height:250px;border:1px solid #7bb6d07a;border-radius:50%;left:-90px;top:-130px}
+.project-visual:after{content:"";position:absolute;width:250px;height:250px;border:1px solid #7bb6d07a;border-radius:50%;right:-80px;bottom:-150px}
+.command-panel{background:var(--panel);border:1px solid var(--line);box-shadow:0 12px 40px #153a6c09}
 .research-grid{background-image:none}
 @media(min-width:768px){.academic-page{padding:100px 40px 128px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
