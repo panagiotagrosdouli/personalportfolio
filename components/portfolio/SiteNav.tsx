@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 const links=[{label:"Home",href:"/"},{label:"Research",href:"/projects"},{label:"CV",href:"/cv"},{label:"About",href:"/about"},{label:"Contact",href:"/contact"}];
 export function SiteNav({theme:_theme}:{theme?:"light"|"dark"}){
+ void _theme;
  const [open,setOpen]=useState(false);
  return <header className="sticky top-0 z-50 border-b border-[#e7e7e7] bg-white/95 backdrop-blur-lg">
   <nav className="mx-auto flex max-w-[1440px] items-center justify-between gap-6 px-6 py-5 md:px-12 lg:px-16" aria-label="Main navigation">
